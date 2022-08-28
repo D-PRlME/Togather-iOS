@@ -2,7 +2,7 @@
 //  DrawApp.swift
 //  Draw
 //
-//  Created by 조병진 on 2022/08/28.
+//  Created by 홍승재 on 2022/08/29.
 //
 
 import SwiftUI

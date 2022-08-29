@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9065FEC328BBBD7600EABE8D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9065FEC228BBBD7600EABE8D /* Moya */; };
 		907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1DF28BBBA7E008A7562 /* DrawApp.swift */; };
 		907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1E128BBBA7E008A7562 /* ContentView.swift */; };
 		907EF1E428BBBA81008A7562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907EF1E328BBBA81008A7562 /* Assets.xcassets */; };
 		907EF1E728BBBA81008A7562 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907EF1E628BBBA81008A7562 /* Preview Assets.xcassets */; };
+		90D1C69928BC917D00B653C3 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69828BC917D00B653C3 /* CombineMoya */; };
+		90D1C69B28BC917D00B653C3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69A28BC917D00B653C3 /* Moya */; };
+		90D1C69D28BC917D00B653C3 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69C28BC917D00B653C3 /* ReactiveMoya */; };
+		90D1C69F28BC917D00B653C3 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69E28BC917D00B653C3 /* RxMoya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +30,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9065FEC328BBBD7600EABE8D /* Moya in Frameworks */,
+				90D1C69B28BC917D00B653C3 /* Moya in Frameworks */,
+				90D1C69928BC917D00B653C3 /* CombineMoya in Frameworks */,
+				90D1C69F28BC917D00B653C3 /* RxMoya in Frameworks */,
+				90D1C69D28BC917D00B653C3 /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +92,10 @@
 			);
 			name = Draw;
 			packageProductDependencies = (
-				9065FEC228BBBD7600EABE8D /* Moya */,
+				90D1C69828BC917D00B653C3 /* CombineMoya */,
+				90D1C69A28BC917D00B653C3 /* Moya */,
+				90D1C69C28BC917D00B653C3 /* ReactiveMoya */,
+				90D1C69E28BC917D00B653C3 /* RxMoya */,
 			);
 			productName = Draw;
 			productReference = 907EF1DC28BBBA7E008A7562 /* Draw.app */;
@@ -117,7 +126,7 @@
 			);
 			mainGroup = 907EF1D328BBBA7E008A7562;
 			packageReferences = (
-				9065FEC128BBBD7600EABE8D /* XCRemoteSwiftPackageReference "Moya" */,
+				90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 907EF1DD28BBBA7E008A7562 /* Products */;
 			projectDirPath = "";
@@ -349,7 +358,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9065FEC128BBBD7600EABE8D /* XCRemoteSwiftPackageReference "Moya" */ = {
+		90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
@@ -360,10 +369,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9065FEC228BBBD7600EABE8D /* Moya */ = {
+		90D1C69828BC917D00B653C3 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9065FEC128BBBD7600EABE8D /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		90D1C69A28BC917D00B653C3 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		90D1C69C28BC917D00B653C3 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		90D1C69E28BC917D00B653C3 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

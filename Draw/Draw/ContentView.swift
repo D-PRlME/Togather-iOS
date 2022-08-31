@@ -1,11 +1,14 @@
-//
-//  ContentView.swift
-//  Draw
-//
-//  Created by 홍승재 on 2022/08/29.
-//
 
 import SwiftUI
+
+struct ColorManager {
+    // create static variables for custom colors
+    static let BackgroundColor1: Color = .white
+    static let BackgroundColor2: Color = .white
+    static let BackgroundColor3: Color = .white
+    
+    //... add the rest of your colors here
+}
 
 struct ContentView: View {
     var body: some View {

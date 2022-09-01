@@ -40,7 +40,7 @@ struct TabBarView: View {
                         HStack(alignment: .top, spacing: 0) {
                             
                             VStack {
-                                Image(systemName: "house.fill")
+                                Image(tabIndex == .home ? "HomeOn" : "HomeOff")
                                     .font(.system(size: 25))
                                     .foregroundColor(tabIndex == .home ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
                                 
@@ -59,7 +59,7 @@ struct TabBarView: View {
                             }
                             
                             VStack {
-                                Image(systemName: "plus.circle")
+                                Image(tabIndex == .write ? "WritingOn" : "WritingOff")
                                     .font(.system(size: 25))
                                     .foregroundColor(tabIndex == .write ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
                                     .frame(width: 28, height: 28)
@@ -77,7 +77,7 @@ struct TabBarView: View {
                             }
                             
                             VStack {
-                                Image(systemName: "magnifyingglass")
+                                Image(tabIndex == .search ? "SearchOn" : "SearchOff")
                                     .font(.system(size: 25))
                                     .foregroundColor(tabIndex == .search ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
                                     .frame(width: 28, height: 28)
@@ -95,7 +95,7 @@ struct TabBarView: View {
                             }
                             
                             VStack {
-                                Image(systemName: "person")
+                                Image(tabIndex == .mypage ? "MyOn" : "MyOff")
                                     .font(.system(size: 25))
                                     .foregroundColor(tabIndex == .mypage ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
                                     .frame(width: 28, height: 28)

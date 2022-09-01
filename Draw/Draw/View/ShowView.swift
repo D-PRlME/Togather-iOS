@@ -20,7 +20,6 @@ struct ShowView: View {
                 HomeView()
             }
         }
-        
     }
 }
  

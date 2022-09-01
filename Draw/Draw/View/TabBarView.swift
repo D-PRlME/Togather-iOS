@@ -7,7 +7,6 @@ enum TabIndex {
 
 struct TabBarView: View {
     @State var tabIndex = TabIndex.home
-    @State var largerScale: CGFloat = 1.6
     
     func changeMyView(tableIndex: TabIndex) -> ShowView {
         switch tabIndex {
@@ -28,6 +27,7 @@ struct TabBarView: View {
                 Spacer()
                 ZStack(alignment: .bottom) {
                     changeMyView(tableIndex: tabIndex)
+                        .padding(.top, 40)
                     ZStack {
                         VStack(spacing: 0) {
                             Rectangle()
@@ -38,87 +38,78 @@ struct TabBarView: View {
                                 .frame(width: proxy.size.width, height: UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                         }
                         HStack(alignment: .top, spacing: 0) {
-                            Button {
+                            
+                            VStack {
+                                Image(systemName: "house.fill")
+                                    .font(.system(size: 25))
+                                    .foregroundColor(tabIndex == .home ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
+                                
+                                Text("홈")
+                                    .font(.custom("Pretendard-Bold", size: 14))
+                                    .foregroundColor(tabIndex == .home ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
+                                Spacer()
+                            }
+                            .frame(width: proxy.size.width/4, height: 50)
+                            .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 25)
+                            .onTapGesture {
                                 print("----------------------------------")
                                 print("Home View")
                                 print("----------------------------------")
-                                withAnimation {
-                                    tabIndex = .home
-                                }
-                            } label: {
-                                VStack {
-                                    Image(systemName: "house.fill")
-                                        .font(.system(size: 25))
-                                        .foregroundColor(tabIndex == .home ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
-                                    
-                                    Text("홈")
-                                        .font(.custom("Pretendard-Bold", size: 14))
-                                        .foregroundColor(tabIndex == .home ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
-                                    Spacer()
-                                }
-                                .frame(width: proxy.size.width/4, height: 50)
-                                .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 25)
+                                tabIndex = .home
                             }
-                            Button {
+                            
+                            VStack {
+                                Image(systemName: "plus.circle")
+                                    .font(.system(size: 25))
+                                    .foregroundColor(tabIndex == .write ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
+                                    .frame(width: 28, height: 28)
+                                Text("글쓰기")
+                                    .font(.custom("Pretendard-Bold", size: 14))
+                                    .foregroundColor(tabIndex == .write ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
+                                Spacer()
+                            }
+                            .frame(width: proxy.size.width/4, height: 50)
+                            .onTapGesture {
                                 print("----------------------------------")
                                 print("Writing View")
                                 print("----------------------------------")
-                                withAnimation {
-                                    tabIndex = .write
-                                }
-                            } label: {
-                                VStack {
-                                    Image(systemName: "plus.circle")
-                                        .font(.system(size: 25))
-                                        .foregroundColor(tabIndex == .write ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
-                                        .frame(width: 28, height: 28)
-                                    Text("글쓰기")
-                                        .font(.custom("Pretendard-Bold", size: 14))
-                                        .foregroundColor(tabIndex == .write ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
-                                    Spacer()
-                                }
-                                .frame(width: proxy.size.width/4, height: 50)
+                                tabIndex = .write
                             }
                             
-                            Button {
+                            VStack {
+                                Image(systemName: "magnifyingglass")
+                                    .font(.system(size: 25))
+                                    .foregroundColor(tabIndex == .search ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
+                                    .frame(width: 28, height: 28)
+                                Text("검색")
+                                    .font(.custom("Pretendard-Bold", size: 14))
+                                    .foregroundColor(tabIndex == .search ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
+                                Spacer()
+                            }
+                            .frame(width: proxy.size.width/4, height: 50)
+                            .onTapGesture {
                                 print("----------------------------------")
                                 print("Search View")
                                 print("----------------------------------")
-                                withAnimation {
-                                    tabIndex = .search
-                                }
-                            } label: {
-                                VStack {
-                                    Image(systemName: "magnifyingglass")
-                                        .font(.system(size: 25))
-                                        .foregroundColor(tabIndex == .search ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
-                                        .frame(width: 28, height: 28)
-                                    Text("검색")
-                                        .font(.custom("Pretendard-Bold", size: 14))
-                                        .foregroundColor(tabIndex == .mypage ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
-                                    Spacer()
-                                }
-                                .frame(width: proxy.size.width/4, height: 50)
+                                tabIndex = .search
                             }
-                            Button {
+                            
+                            VStack {
+                                Image(systemName: "person")
+                                    .font(.system(size: 25))
+                                    .foregroundColor(tabIndex == .mypage ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
+                                    .frame(width: 28, height: 28)
+                                Text("나")
+                                    .font(.custom("Pretendard-Bold", size: 14))
+                                    .foregroundColor(tabIndex == .mypage ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
+                                Spacer()
+                            }
+                            .frame(width: proxy.size.width/4, height: 50)
+                            .onTapGesture {
                                 print("----------------------------------")
                                 print("My View")
                                 print("----------------------------------")
-                                withAnimation {
-                                    tabIndex = .mypage
-                                }
-                            } label: {
-                                VStack {
-                                    Image(systemName: "person")
-                                        .font(.system(size: 25))
-                                        .foregroundColor(tabIndex == .mypage ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
-                                        .frame(width: 28, height: 28)
-                                    Text("나")
-                                        .font(.custom("Pretendard-Bold", size: 14))
-                                        .foregroundColor(tabIndex == .mypage ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
-                                    Spacer()
-                                }
-                                .frame(width: proxy.size.width/4, height: 50)
+                                tabIndex = .mypage
                             }
                         }
                     }

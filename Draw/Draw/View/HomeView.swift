@@ -1,5 +1,6 @@
 
 import SwiftUI
+import SwiftUIFlowLayout
 
 struct HomeView: View {
     
@@ -36,24 +37,22 @@ struct HomeView: View {
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("제목제목제목제목제목제목제목제목제목제목제목")
                                     .font(.custom("Pretendard-Bold", size: 24))
-                                HStack {
-                                    ForEach(0..<3, id: \.self) { _ in
-                                        VStack {
-                                            ZStack {
-                                                Text(DevLanguage[i])
-                                                    .padding(.horizontal, 13)
-                                                    .padding(.vertical, 7)
-                                                    .font(.custom("Pretendard-Medium", size: 16))
-                                                    .background(Color("TabBarStroke"))
-                                                    .cornerRadius(37)
-                                                Text(DevLanguage[i])
-                                                    .font(.custom("Pretendard-Medium", size: 16))
-                                                    .padding(.horizontal, 12)
-                                                    .padding(.vertical, 6)
-                                                    .background(Color(red: 0.905, green: 0.905, blue: 0.905))
-                                                    .cornerRadius(37)
-                                            }
-                                        }
+                                FlowLayout(mode: .scrollable,
+                                           items: DevLanguage,
+                                           itemSpacing: 5) {_ in
+                                    ZStack {
+                                        Text(DevLanguage[i])
+                                            .font(.custom("Pretendard-Medium", size: 16))
+                                            .padding(.horizontal, 13)
+                                            .padding(.vertical, 7)
+                                            .background(Color("TabBarStroke"))
+                                            .cornerRadius(37)
+                                        Text(DevLanguage[i])
+                                            .font(.custom("Pretendard-Medium", size: 16))
+                                            .padding(.horizontal, 12)
+                                            .padding(.vertical, 6)
+                                            .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                                            .cornerRadius(37)
                                     }
                                 }
                                 Rectangle()
@@ -93,3 +92,21 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+//
+//struct FlowLayout_Previews: PreviewProvider {
+//  static var previews: some View {
+//    FlowLayout(mode: .scrollable,
+//               items: ["Some long item here", "And then some longer one",
+//                       "Short", "Items", "Here", "And", "A", "Few", "More",
+//                       "And then a very very very long one"],
+//               itemSpacing: 4) {
+//      Text($0)
+//        .font(.system(size: 12))
+//        .foregroundColor(.black)
+//        .padding()
+//        .background(RoundedRectangle(cornerRadius: 4)
+//                               .border(Color.gray)
+//                               .foregroundColor(Color.gray))
+//    }.padding()
+//  }
+//}

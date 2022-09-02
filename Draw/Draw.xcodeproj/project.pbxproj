@@ -33,6 +33,7 @@
 		90D1C6FD28BF9BE300B653C3 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90D1C6F428BF9BE300B653C3 /* Pretendard-Light.otf */; };
 		90D1C6FE28BF9BE300B653C3 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90D1C6F528BF9BE300B653C3 /* Pretendard-ExtraBold.otf */; };
 		90D1C6FF28BF9BE300B653C3 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90D1C6F628BF9BE300B653C3 /* Pretendard-Medium.otf */; };
+		90D1C74728C1A3AE00B653C3 /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C74628C1A3AE00B653C3 /* SwiftUIFlowLayout */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 			files = (
 				90D1C69B28BC917D00B653C3 /* Moya in Frameworks */,
 				90D1C69928BC917D00B653C3 /* CombineMoya in Frameworks */,
+				90D1C74728C1A3AE00B653C3 /* SwiftUIFlowLayout in Frameworks */,
 				90D1C69F28BC917D00B653C3 /* RxMoya in Frameworks */,
 				90D1C69D28BC917D00B653C3 /* ReactiveMoya in Frameworks */,
 			);
@@ -184,6 +186,7 @@
 				90D1C69A28BC917D00B653C3 /* Moya */,
 				90D1C69C28BC917D00B653C3 /* ReactiveMoya */,
 				90D1C69E28BC917D00B653C3 /* RxMoya */,
+				90D1C74628C1A3AE00B653C3 /* SwiftUIFlowLayout */,
 			);
 			productName = Draw;
 			productReference = 907EF1DC28BBBA7E008A7562 /* Draw.app */;
@@ -215,6 +218,7 @@
 			mainGroup = 907EF1D328BBBA7E008A7562;
 			packageReferences = (
 				90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */,
+				90D1C74528C1A3AE00B653C3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
 			);
 			productRefGroup = 907EF1DD28BBBA7E008A7562 /* Products */;
 			projectDirPath = "";
@@ -474,6 +478,14 @@
 				kind = branch;
 			};
 		};
+		90D1C74528C1A3AE00B653C3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-flow-layout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -496,6 +508,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		90D1C74628C1A3AE00B653C3 /* SwiftUIFlowLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90D1C74528C1A3AE00B653C3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */;
+			productName = SwiftUIFlowLayout;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

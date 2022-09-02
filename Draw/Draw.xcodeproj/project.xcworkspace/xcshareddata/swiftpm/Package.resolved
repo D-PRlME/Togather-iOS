@@ -35,6 +35,15 @@
         "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
         "version" : "6.5.0"
       }
+    },
+    {
+      "identity" : "swiftui-flow-layout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/globulus/swiftui-flow-layout",
+      "state" : {
+        "revision" : "de7da3440c3b87ba94adfa98c698828d7746a76d",
+        "version" : "1.0.5"
+      }
     }
   ],
   "version" : 2

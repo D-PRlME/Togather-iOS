@@ -4,8 +4,9 @@ import SwiftUIFlowLayout
 
 struct HomeView: View {
     
-    var DevLanguage: [String] = ["Swift", "Java", "Kotlin", "JS", "Pthon", "Flutter"]
+    var DevLanguage: [String] = ["Swift", "Java", "Kotlin", "JS", "Python", "Flutter"]
     var DevColor: [Color] = [.orange, .red, .purple, .yellow, .green, .blue]
+    var Developer: [String] = ["홍승재", "길근우", "정승훈", "강용수", "김은오", "유찬홍"]
     
     var body: some View {
         GeometryReader { proxy in
@@ -21,7 +22,7 @@ struct HomeView: View {
                                             .foregroundColor(DevColor[i])
                                             .frame(width: 56, height: 56)
                                             .cornerRadius(20)
-                                            .padding(.horizontal, 8)
+                                            .padding(.horizontal, 4)
                                         Text(DevLanguage[i])
                                             .font(.custom("Pretendard-ExtraBold", size: 14))
                                             .padding(.bottom, 9)
@@ -39,15 +40,15 @@ struct HomeView: View {
                                     .font(.custom("Pretendard-Bold", size: 24))
                                 FlowLayout(mode: .scrollable,
                                            items: DevLanguage,
-                                           itemSpacing: 5) {_ in
+                                           itemSpacing: 5) {index in
                                     ZStack {
-                                        Text(DevLanguage[i])
+                                        Text(index)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                             .padding(.horizontal, 13)
                                             .padding(.vertical, 7)
                                             .background(Color("TabBarStroke"))
                                             .cornerRadius(37)
-                                        Text(DevLanguage[i])
+                                        Text(index)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                             .padding(.horizontal, 12)
                                             .padding(.vertical, 6)
@@ -62,7 +63,7 @@ struct HomeView: View {
                                     Image(systemName: "person.fill")
                                         .frame(width: 33, height: 33)
                                         .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                                    Text("사람김")
+                                    Text(Developer[i])
                                         .font(.custom("Pretendard-Medium", size: 16))
                                     Spacer()
                                     Text("1시간 전")

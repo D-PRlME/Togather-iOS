@@ -27,12 +27,12 @@ struct TabBarView: View {
                 Spacer()
                 ZStack(alignment: .bottom) {
                     changeMyView(tableIndex: tabIndex)
-                        .padding(.top, 40)
+                        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 0 : 40)
                     ZStack {
                         VStack(spacing: 0) {
                             Rectangle()
                                 .foregroundColor(Color("TabBarStroke"))
-                                .frame(width: proxy.size.width, height: 2)
+                                .frame(width: proxy.size.width, height: 1)
                             Rectangle()
                                 .foregroundColor(Color("TabBarFill"))
                                 .frame(width: proxy.size.width, height: UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)

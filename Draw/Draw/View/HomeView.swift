@@ -2,11 +2,11 @@
 import SwiftUI
 import SwiftUIFlowLayout
 
+var DevLanguage: [String] = ["Swift", "Java", "Kotlin", "JS", "Python", "Flutter"]
+var DevColor: [Color] = [.orange, .red, .purple, .yellow, .green, .blue]
+var Developer: [String] = ["홍승재", "길근우", "정승훈", "강용수", "김은오", "유찬홍"]
+
 struct HomeView: View {
-    
-    var DevLanguage: [String] = ["Swift", "Java", "Kotlin", "JS", "Python", "Flutter"]
-    var DevColor: [Color] = [.orange, .red, .purple, .yellow, .green, .blue]
-    var Developer: [String] = ["홍승재", "길근우", "정승훈", "강용수", "김은오", "유찬홍"]
     
     var body: some View {
         GeometryReader { proxy in
@@ -33,7 +33,7 @@ struct HomeView: View {
                         }
                         Rectangle()
                             .foregroundColor(Color("TabBarStroke"))
-                            .frame(width: proxy.size.width, height: 2)
+                            .frame(width: proxy.size.width, height: 1)
                         ForEach(0..<6, id: \.self) { i in
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("제목제목제목제목제목제목제목제목제목제목제목")
@@ -58,7 +58,7 @@ struct HomeView: View {
                                 }
                                 Rectangle()
                                     .foregroundColor(Color("TabBarStroke"))
-                                    .frame(width: proxy.size.width - 70, height: 2)
+                                    .frame(width: proxy.size.width - 70, height: 1)
                                 HStack(spacing: 8) {
                                     Image(systemName: "person.fill")
                                         .frame(width: 33, height: 33)

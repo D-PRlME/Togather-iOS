@@ -14,6 +14,7 @@
 		907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1E128BBBA7E008A7562 /* ContentView.swift */; };
 		907EF1E428BBBA81008A7562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907EF1E328BBBA81008A7562 /* Assets.xcassets */; };
 		907EF1E728BBBA81008A7562 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907EF1E628BBBA81008A7562 /* Preview Assets.xcassets */; };
+		908ED77128CA5A4600763AC9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */; };
 		90D1C69928BC917D00B653C3 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69828BC917D00B653C3 /* CombineMoya */; };
 		90D1C69B28BC917D00B653C3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69A28BC917D00B653C3 /* Moya */; };
 		90D1C69D28BC917D00B653C3 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69C28BC917D00B653C3 /* ReactiveMoya */; };
@@ -45,6 +46,7 @@
 		907EF1E128BBBA7E008A7562 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		907EF1E328BBBA81008A7562 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		907EF1E628BBBA81008A7562 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		90D1C6E328BF6E1300B653C3 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 		90D1C6E528BF6E2300B653C3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				90D1C70028BF9BF000B653C3 /* Info.plist */,
 				90D1C6ED28BF9B8900B653C3 /* Font */,
 				907EF1DF28BBBA7E008A7562 /* DrawApp.swift */,
+				908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */,
 				907EF1E128BBBA7E008A7562 /* ContentView.swift */,
 				90D1C6E028BF6D8800B653C3 /* View */,
 				4B7F0AAB28BEF0B700BBA52D /* Header */,
@@ -240,6 +243,7 @@
 				90D1C6FC28BF9BE300B653C3 /* Pretendard-ExtraLight.otf in Resources */,
 				90D1C6FB28BF9BE300B653C3 /* Pretendard-Thin.otf in Resources */,
 				90D1C6F728BF9BE300B653C3 /* Pretendard-Bold.otf in Resources */,
+				908ED77128CA5A4600763AC9 /* Launch Screen.storyboard in Resources */,
 				90D1C6FA28BF9BE300B653C3 /* Pretendard-SemiBold.otf in Resources */,
 				907EF1E428BBBA81008A7562 /* Assets.xcassets in Resources */,
 				90D1C6F928BF9BE300B653C3 /* Pretendard-Black.otf in Resources */,

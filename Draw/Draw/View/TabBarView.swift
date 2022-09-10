@@ -7,6 +7,7 @@ enum TabIndex {
 
 struct TabBarView: View {
     @State var tabIndex = TabIndex.home
+    @State var GoWriteModal = false
     
     func changeMyView(tableIndex: TabIndex) -> ShowView {
         switch tabIndex {
@@ -57,25 +58,29 @@ struct TabBarView: View {
                                 print("----------------------------------")
                                 tabIndex = .home
                             }
-                            
-                            VStack {
-                                Image(tabIndex == .write ? "WritingOn" : "WritingOff")
-                                    .font(.system(size: 25))
-                                    .foregroundColor(tabIndex == .write ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
-                                    .frame(width: 28, height: 28)
-                                Text("글쓰기")
-                                    .font(.custom("Pretendard-Bold", size: 14))
-                                    .foregroundColor(tabIndex == .write ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
-                                Spacer()
-                            }
-                            .frame(width: proxy.size.width/4, height: 50)
-                            .onTapGesture {
+                            Button {
                                 print("----------------------------------")
                                 print("Writing View")
                                 print("----------------------------------")
-                                tabIndex = .write
+                                print("MyView -> 계정 정보 수정 -> EditInfo")
+                                GoWriteModal = true
+                            } label: {
+                                VStack {
+                                    Image(tabIndex == .write ? "WritingOn" : "WritingOff")
+                                        .font(.system(size: 25))
+                                        .foregroundColor(tabIndex == .write ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
+                                        .frame(width: 28, height: 28)
+                                    Text("글쓰기")
+                                        .font(.custom("Pretendard-Bold", size: 14))
+                                        .foregroundColor(tabIndex == .write ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
+                                    Spacer()
+                                }
+                                .frame(width: proxy.size.width/4, height: 50)
+                                
+                            } .sheet(isPresented: self.$GoWriteModal) {
+                                WritingView()
                             }
-                            
+                            .buttonStyle(.plain)
                             VStack {
                                 Image(tabIndex == .search ? "SearchOn" : "SearchOff")
                                     .font(.system(size: 25))

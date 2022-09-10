@@ -7,35 +7,22 @@ struct SearchBar: View {
     
     var body: some View {
         HStack {
-            ZStack {
-                HStack {
-                    TextField("검색", text: $text)
-                        .font(.custom("Pretendard-Medium", size: 20))
-                        .foregroundColor(.black)
-                    Image("SearchOff")
-                        .resizable()
-                        .frame(width: 28, height: 28)
-                        .padding(.horizontal, 10)
-                }
-                .padding(.vertical, 12)
-                .padding(.leading, 12)
-                .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
-                .cornerRadius(6)
-                HStack {
-                    TextField("검색", text: $text)
-                        .font(.custom("Pretendard-Medium", size: 20))
-                        .foregroundColor(.black)
-                    Image("SearchOff")
-                        .resizable()
-                        .frame(width: 28, height: 28)
-                        .padding(.horizontal, 10)
-                }
-                .padding(.leading, 12)
-                .padding(.vertical, 10)
-                .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                .cornerRadius(6)
-                .padding(.horizontal, 2)
+            HStack {
+                TextField("검색", text: $text)
+                    .font(.custom("Pretendard-Medium", size: 20))
+                    .foregroundColor(.black)
+                Image("SearchOff")
+                    .resizable()
+                    .frame(width: 28, height: 28)
+                    .padding(.horizontal, 10)
             }
+            .padding(.leading, 12)
+            .padding(.vertical, 10)
+            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+            .cornerRadius(6)
+            .padding(1)
+            .background(Color("TabBarStroke"))
+            .cornerRadius(6)
         }
     }
 }
@@ -56,40 +43,28 @@ struct SearchView: View {
                         FlowLayout(mode: .scrollable,
                                    items: DevLanguage,
                                    itemSpacing: 5) {index in
-                            ZStack {
-                                Text(index)
-                                    .foregroundColor(.black)
-                                    .font(.custom("Pretendard-Medium", size: 16))
-                                    .padding(.horizontal, 13)
-                                    .padding(.vertical, 7)
-                                    .background(Color("TabBarStroke"))
-                                    .cornerRadius(37)
-                                Text(index)
-                                    .foregroundColor(.black)
-                                    .font(.custom("Pretendard-Medium", size: 16))
-                                    .padding(.horizontal, 12)
-                                    .padding(.vertical, 6)
-                                    .background(Color(red: 0.905, green: 0.905, blue: 0.905))
-                                    .cornerRadius(37)
-                            }
+                            Text(index)
+                                .foregroundColor(.black)
+                                .font(.custom("Pretendard-Medium", size: 16))
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                                .cornerRadius(37)
+                                .padding(1)
+                                .background(Color("TabBarStroke"))
+                                .cornerRadius(37)
                         }
                         HStack {
-                            ZStack {
-                                Text("모든 태그 보기")
-                                    .foregroundColor(.black)
-                                    .font(.custom("Pretendard-Bold", size: 18))
-                                    .padding(.horizontal, 13)
-                                    .padding(.vertical, 7)
-                                    .background(Color("YellowStroke"))
-                                    .cornerRadius(37)
-                                Text("모든 태그 보기")
-                                    .foregroundColor(.black)
-                                    .font(.custom("Pretendard-Bold", size: 18))
-                                    .padding(.horizontal, 11)
-                                    .padding(.vertical, 5)
-                                    .background(Color(red: 0.882, green: 0.678, blue: 0.004))
-                                    .cornerRadius(37)
-                            }
+                            Text("모든 태그 보기")
+                                .foregroundColor(.black)
+                                .font(.custom("Pretendard-Bold", size: 18))
+                                .padding(.horizontal, 11)
+                                .padding(.vertical, 5)
+                                .background(Color(red: 0.882, green: 0.678, blue: 0.004))
+                                .cornerRadius(37)
+                                .padding(2)
+                                .background(Color("YellowStroke"))
+                                .cornerRadius(37)
                             Spacer()
                         }
                         .padding(.leading, 3)
@@ -106,14 +81,6 @@ struct SearchView: View {
                                 FlowLayout(mode: .scrollable,
                                            items: DevLanguage,
                                            itemSpacing: 5) {index in
-                                    ZStack {
-                                        Text(index)
-                                            .foregroundColor(.black)
-                                            .font(.custom("Pretendard-Medium", size: 16))
-                                            .padding(.horizontal, 13)
-                                            .padding(.vertical, 7)
-                                            .background(Color("TabBarStroke"))
-                                            .cornerRadius(37)
                                         Text(index)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
@@ -121,7 +88,9 @@ struct SearchView: View {
                                             .padding(.vertical, 6)
                                             .background(Color(red: 0.905, green: 0.905, blue: 0.905))
                                             .cornerRadius(37)
-                                    }
+                                            .padding(1)
+                                            .background(Color("TabBarStroke"))
+                                            .cornerRadius(37)
                                 }
                                 Rectangle()
                                     .foregroundColor(Color("TabBarStroke"))

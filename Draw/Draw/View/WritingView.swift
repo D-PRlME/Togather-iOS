@@ -45,7 +45,7 @@ struct WritingView: View {
             .background(Color(red: 0.97, green: 0.97, blue: 0.97))
             .cornerRadius(4)
             .padding(2)
-            .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+            .background(Color("TabBarStroke"))
             .cornerRadius(6)
             .padding(.horizontal, 16)
                 
@@ -74,7 +74,7 @@ struct WritingView: View {
             .background(Color(red: 0.97, green: 0.97, blue: 0.97))
             .cornerRadius(4)
             .padding(2)
-            .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+            .background(Color("TabBarStroke"))
             .cornerRadius(6)
             .padding(.horizontal, 16)
             
@@ -116,7 +116,7 @@ struct WritingView: View {
                         .cornerRadius(37)
                 }
                 .padding(2)
-                .background(Color(red: 0.7, green: 0.6, blue: 0.004))
+                .background(Color("YellowStroke"))
                 .cornerRadius(37)
                 .padding(EdgeInsets(top: 10, leading: 16, bottom: 20, trailing: 10))
                 

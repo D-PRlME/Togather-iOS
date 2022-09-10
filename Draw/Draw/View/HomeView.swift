@@ -43,22 +43,16 @@ struct HomeView: View {
                                 FlowLayout(mode: .scrollable,
                                            items: DevLanguage,
                                            itemSpacing: 5) {index in
-                                    ZStack {
-                                        Text(index)
-                                            .foregroundColor(.black)
-                                            .font(.custom("Pretendard-Medium", size: 16))
-                                            .padding(.horizontal, 13)
-                                            .padding(.vertical, 7)
-                                            .background(Color("TabBarStroke"))
-                                            .cornerRadius(37)
-                                        Text(index)
-                                            .foregroundColor(.black)
-                                            .font(.custom("Pretendard-Medium", size: 16))
-                                            .padding(.horizontal, 12)
-                                            .padding(.vertical, 6)
-                                            .background(Color(red: 0.905, green: 0.905, blue: 0.905))
-                                            .cornerRadius(37)
-                                    }
+                                    Text(index)
+                                        .foregroundColor(.black)
+                                        .font(.custom("Pretendard-Medium", size: 16))
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 6)
+                                        .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                                        .cornerRadius(37)
+                                        .padding(1)
+                                        .background(Color("TabBarStroke"))
+                                        .cornerRadius(37)
                                 }
                                 Rectangle()
                                     .foregroundColor(Color("TabBarStroke"))
@@ -99,21 +93,3 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
-//
-//struct FlowLayout_Previews: PreviewProvider {
-//  static var previews: some View {
-//    FlowLayout(mode: .scrollable,
-//               items: ["Some long item here", "And then some longer one",
-//                       "Short", "Items", "Here", "And", "A", "Few", "More",
-//                       "And then a very very very long one"],
-//               itemSpacing: 4) {
-//      Text($0)
-//        .font(.system(size: 12))
-//        .foregroundColor(.black)
-//        .padding()
-//        .background(RoundedRectangle(cornerRadius: 4)
-//                               .border(Color.gray)
-//                               .foregroundColor(Color.gray))
-//    }.padding()
-//  }
-//}

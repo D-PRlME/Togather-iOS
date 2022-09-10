@@ -2,6 +2,9 @@
 import SwiftUI
 
 struct MyView: View {
+    
+    @State var GoEditInfoModal = false
+    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -14,23 +17,33 @@ struct MyView: View {
                             .padding(.leading, 10)
                             .padding(.trailing, 8)
                         Text(Developer[0])
+                            .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 20))
                         Spacer()
                     }
                     .padding(.top, 28)
                     .padding(.bottom, 12)
-                    HStack {
-                        Text("계정 정보 수정")
-                            .font(.custom("Pretendard-Medium", size: 18))
-                            .padding(.leading, 12)
-                            .padding(.vertical, 14)
-                        Spacer()
+                    Button {
+                        print("MyView -> 계정 정보 수정 -> EditInfo")
+                        GoEditInfoModal = true
+                    } label: {
+                        HStack {
+                            Text("계정 정보 수정")
+                                .foregroundColor(.black)
+                                .font(.custom("Pretendard-Medium", size: 18))
+                                .padding(.leading, 12)
+                                .padding(.vertical, 14)
+                            Spacer()
+                        }
+                        .frame(width: proxy.size.width - 40)
+                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                        .cornerRadius(8)
+                    } .sheet(isPresented: self.$GoEditInfoModal) {
+                        EditInfo()
                     }
-                    .frame(width: proxy.size.width - 40)
-                    .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                    .cornerRadius(8)
                     HStack {
                         Text("비밀번호 변경")
+                            .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 18))
                             .padding(.leading, 12)
                             .padding(.vertical, 14)
@@ -41,6 +54,7 @@ struct MyView: View {
                     .cornerRadius(8)
                     HStack {
                         Text("내 게시글 보기")
+                            .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 18))
                             .padding(.leading, 12)
                             .padding(.vertical, 14)
@@ -51,6 +65,7 @@ struct MyView: View {
                     .cornerRadius(8)
                     HStack {
                         Text("개발자들")
+                            .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 18))
                             .padding(.leading, 12)
                             .padding(.vertical, 14)
@@ -61,6 +76,7 @@ struct MyView: View {
                     .cornerRadius(8)
                     HStack {
                         Text("로그아웃")
+                            .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 18))
                             .padding(.leading, 12)
                             .padding(.vertical, 14)

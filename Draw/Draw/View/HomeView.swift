@@ -24,6 +24,7 @@ struct HomeView: View {
                                             .cornerRadius(20)
                                             .padding(.horizontal, 4)
                                         Text(DevLanguage[i])
+                                            .foregroundColor(.black)
                                             .font(.custom("Pretendard-ExtraBold", size: 14))
                                             .padding(.bottom, 9)
                                     }
@@ -37,18 +38,21 @@ struct HomeView: View {
                         ForEach(0..<6, id: \.self) { i in
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("제목제목제목제목제목제목제목제목제목제목제목")
+                                    .foregroundColor(.black)
                                     .font(.custom("Pretendard-Bold", size: 24))
                                 FlowLayout(mode: .scrollable,
                                            items: DevLanguage,
                                            itemSpacing: 5) {index in
                                     ZStack {
                                         Text(index)
+                                            .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                             .padding(.horizontal, 13)
                                             .padding(.vertical, 7)
                                             .background(Color("TabBarStroke"))
                                             .cornerRadius(37)
                                         Text(index)
+                                            .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                             .padding(.horizontal, 12)
                                             .padding(.vertical, 6)
@@ -64,9 +68,11 @@ struct HomeView: View {
                                         .frame(width: 33, height: 33)
                                         .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
                                     Text(Developer[i])
+                                        .foregroundColor(.black)
                                         .font(.custom("Pretendard-Medium", size: 16))
                                     Spacer()
                                     Text("1시간 전")
+                                        .foregroundColor(.black)
                                         .font(.custom("Pretendard-Medium", size: 16))
                                 }
                             }

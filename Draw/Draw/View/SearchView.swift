@@ -11,7 +11,7 @@ struct SearchBar: View {
                 HStack {
                     TextField("검색", text: $text)
                         .font(.custom("Pretendard-Medium", size: 20))
-                        .foregroundColor(.primary)
+                        .foregroundColor(.black)
                     Image("SearchOff")
                         .resizable()
                         .frame(width: 28, height: 28)
@@ -24,7 +24,7 @@ struct SearchBar: View {
                 HStack {
                     TextField("검색", text: $text)
                         .font(.custom("Pretendard-Medium", size: 20))
-                        .foregroundColor(Color("TabBarNoSelectedColor"))
+                        .foregroundColor(.black)
                     Image("SearchOff")
                         .resizable()
                         .frame(width: 28, height: 28)
@@ -58,12 +58,14 @@ struct SearchView: View {
                                    itemSpacing: 5) {index in
                             ZStack {
                                 Text(index)
+                                    .foregroundColor(.black)
                                     .font(.custom("Pretendard-Medium", size: 16))
                                     .padding(.horizontal, 13)
                                     .padding(.vertical, 7)
                                     .background(Color("TabBarStroke"))
                                     .cornerRadius(37)
                                 Text(index)
+                                    .foregroundColor(.black)
                                     .font(.custom("Pretendard-Medium", size: 16))
                                     .padding(.horizontal, 12)
                                     .padding(.vertical, 6)
@@ -74,12 +76,14 @@ struct SearchView: View {
                         HStack {
                             ZStack {
                                 Text("모든 태그 보기")
+                                    .foregroundColor(.black)
                                     .font(.custom("Pretendard-Bold", size: 18))
                                     .padding(.horizontal, 13)
                                     .padding(.vertical, 7)
-                                    .background(Color(red: 0.7, green: 0.6, blue: 0.004))
+                                    .background(Color("YellowStroke"))
                                     .cornerRadius(37)
                                 Text("모든 태그 보기")
+                                    .foregroundColor(.black)
                                     .font(.custom("Pretendard-Bold", size: 18))
                                     .padding(.horizontal, 11)
                                     .padding(.vertical, 5)
@@ -97,18 +101,21 @@ struct SearchView: View {
                         ForEach(0..<6, id: \.self) { i in
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("제목제목제목제목제목제목제목제목제목제목제목")
+                                    .foregroundColor(.black)
                                     .font(.custom("Pretendard-Bold", size: 24))
                                 FlowLayout(mode: .scrollable,
                                            items: DevLanguage,
                                            itemSpacing: 5) {index in
                                     ZStack {
                                         Text(index)
+                                            .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                             .padding(.horizontal, 13)
                                             .padding(.vertical, 7)
                                             .background(Color("TabBarStroke"))
                                             .cornerRadius(37)
                                         Text(index)
+                                            .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                             .padding(.horizontal, 12)
                                             .padding(.vertical, 6)
@@ -124,9 +131,11 @@ struct SearchView: View {
                                         .frame(width: 33, height: 33)
                                         .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
                                     Text(Developer[i])
+                                        .foregroundColor(.black)
                                         .font(.custom("Pretendard-Medium", size: 16))
                                     Spacer()
                                     Text("1시간 전")
+                                        .foregroundColor(.black)
                                         .font(.custom("Pretendard-Medium", size: 16))
                                 }
                             }

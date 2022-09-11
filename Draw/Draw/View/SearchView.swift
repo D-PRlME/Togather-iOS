@@ -31,6 +31,8 @@ struct SearchView: View {
     
     @State var text = ""
     
+    @State var GoPostDetail = false
+    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -74,13 +76,17 @@ struct SearchView: View {
                             .frame(width: proxy.size.width - 32, height: 1)
                             .padding(.top, 9)
                         ForEach(0..<6, id: \.self) { i in
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text("제목제목제목제목제목제목제목제목제목제목제목")
-                                    .foregroundColor(.black)
-                                    .font(.custom("Pretendard-Bold", size: 24))
-                                FlowLayout(mode: .scrollable,
-                                           items: DevLanguage,
-                                           itemSpacing: 5) {index in
+                            Button {
+                                GoPostDetail = true
+                            } label: {
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text("제목제목제목제목제목제목제목제목제목제목제목")
+                                        .foregroundColor(.black)
+                                        .font(.custom("Pretendard-Bold", size: 24))
+                                        .multilineTextAlignment(.leading)
+                                    FlowLayout(mode: .scrollable,
+                                               items: DevLanguage,
+                                               itemSpacing: 5) {index in
                                         Text(index)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
@@ -91,30 +97,37 @@ struct SearchView: View {
                                             .padding(1)
                                             .background(Color("TabBarStroke"))
                                             .cornerRadius(37)
+                                    }
+                                    Rectangle()
+                                        .foregroundColor(Color("TabBarStroke"))
+                                        .frame(width: proxy.size.width - 70, height: 1)
+                                    HStack(spacing: 8) {
+                                        Image(systemName: "person.fill")
+                                            .foregroundColor(.black)
+                                            .frame(width: 33, height: 33)
+                                            .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
+                                        Text(Developer[0])
+                                            .foregroundColor(.black)
+                                            .font(.custom("Pretendard-Medium", size: 16))
+                                        Spacer()
+                                        Text("1시간 전")
+                                            .foregroundColor(.black)
+                                            .font(.custom("Pretendard-Medium", size: 16))
+                                    }
                                 }
-                                Rectangle()
-                                    .foregroundColor(Color("TabBarStroke"))
-                                    .frame(width: proxy.size.width - 70, height: 1)
-                                HStack(spacing: 8) {
-                                    Image(systemName: "person.fill")
-                                        .frame(width: 33, height: 33)
-                                        .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                                    Text(Developer[i])
-                                        .foregroundColor(.black)
-                                        .font(.custom("Pretendard-Medium", size: 16))
-                                    Spacer()
-                                    Text("1시간 전")
-                                        .foregroundColor(.black)
-                                        .font(.custom("Pretendard-Medium", size: 16))
-                                }
+                                .padding(12)
+                                .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                                .cornerRadius(8)
                             }
-                            .padding(12)
-                            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                            .cornerRadius(8)
-                            .padding(.vertical, 4)
+                            
                         }
+                        .sheet(isPresented: $GoPostDetail, content: {
+                            PostDetail()
+                        })
+                        .padding(.vertical, 8)
                     }
-                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+                    //                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+                    .padding(.bottom, proxy.safeAreaInsets.bottom != 0 ? 86 : 106)
                 }
                 .padding(.horizontal, 16)
             }

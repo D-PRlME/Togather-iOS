@@ -24,7 +24,6 @@ struct EditInfo: View {
                             Image("CloseBtn")
                                 .resizable()
                                 .frame(width: 30, height: 30)
-                                .padding(.trailing, 16)
                                 .padding(.top, 16)
                                 .onTapGesture {
                                     self.presentationMode.wrappedValue.dismiss()

@@ -129,7 +129,7 @@
 		907EF1D328BBBA7E008A7562 = {
 			isa = PBXGroup;
 			children = (
-				907EF1DE28BBBA7E008A7562 /* Draw */,
+				907EF1DE28BBBA7E008A7562 /* Togather */,
 				907EF1DD28BBBA7E008A7562 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		907EF1DE28BBBA7E008A7562 /* Draw */ = {
+		907EF1DE28BBBA7E008A7562 /* Togather */ = {
 			isa = PBXGroup;
 			children = (
 				90D1C70028BF9BF000B653C3 /* Info.plist */,
@@ -156,7 +156,7 @@
 				907EF1E328BBBA81008A7562 /* Assets.xcassets */,
 				907EF1E528BBBA81008A7562 /* Preview Content */,
 			);
-			path = Draw;
+			path = Togather;
 			sourceTree = "<group>";
 		};
 		907EF1E528BBBA81008A7562 /* Preview Content */ = {
@@ -253,7 +253,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 907EF1D728BBBA7E008A7562 /* Build configuration list for PBXProject "Draw" */;
+			buildConfigurationList = 907EF1D728BBBA7E008A7562 /* Build configuration list for PBXProject "Togather" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -453,7 +453,7 @@
 				DEVELOPMENT_TEAM = 63UM6H56P2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Draw/Info.plist;
+				INFOPLIST_FILE = Togather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,7 +464,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Draw0304;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.Togather0304;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -483,7 +483,7 @@
 				DEVELOPMENT_TEAM = 63UM6H56P2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Draw/Info.plist;
+				INFOPLIST_FILE = Togather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -494,7 +494,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Draw0304;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.Togather0304;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -505,7 +505,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		907EF1D728BBBA7E008A7562 /* Build configuration list for PBXProject "Draw" */ = {
+		907EF1D728BBBA7E008A7562 /* Build configuration list for PBXProject "Togather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				907EF1E828BBBA81008A7562 /* Debug */,

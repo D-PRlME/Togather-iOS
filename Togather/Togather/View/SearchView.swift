@@ -126,7 +126,7 @@ struct SearchView: View {
                         .padding(.vertical, 8)
                     }
                     //                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
-                    .padding(.bottom, proxy.safeAreaInsets.bottom != 0 ? 86 : 106)
+                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                 }
                 .padding(.horizontal, 16)
             }

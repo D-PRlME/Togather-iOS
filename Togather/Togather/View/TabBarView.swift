@@ -29,7 +29,7 @@ struct TabBarView: View {
                 ZStack(alignment: .bottom) {
                     changeMyView(tableIndex: tabIndex)
 //                        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 0 : 40)
-                        .padding(.top, proxy.safeAreaInsets.bottom != 0 ? 0 : 40)
+                        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 0 : 40)
                     ZStack {
                         VStack(spacing: 0) {
                             Rectangle()
@@ -37,7 +37,7 @@ struct TabBarView: View {
                                 .frame(width: proxy.size.width, height: 1)
                             Rectangle()
                                 .foregroundColor(Color("TabBarFill"))
-                                .frame(width: proxy.size.width, height: proxy.safeAreaInsets.bottom != 0 ? 86 : 106)
+                                .frame(width: proxy.size.width, height: UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                         }
                         HStack(alignment: .top, spacing: 0) {
                             
@@ -52,7 +52,7 @@ struct TabBarView: View {
                                 Spacer()
                             }
                             .frame(width: proxy.size.width/4, height: 50)
-                            .padding(.bottom, proxy.safeAreaInsets.bottom != 0 ? 5 : 25)
+                            .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 25)
                             .onTapGesture {
                                 print("----------------------------------")
                                 print("Home View")

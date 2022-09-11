@@ -108,7 +108,7 @@ struct MyView: View {
                     Spacer()
                 }
 //                .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
-                .padding(.bottom, proxy.safeAreaInsets.bottom != 0 ? 86 : 106)
+                .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                 .padding(.horizontal, 20)
             }
         }

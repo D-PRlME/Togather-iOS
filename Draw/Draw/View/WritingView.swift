@@ -31,24 +31,20 @@ struct WritingView: View {
             
             //MARK: - 제목
 
-            HStack {
-                TextField("제목", text: $titleText)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                    .font(.custom("Pretendard-Medium", size: 20))
-//                    .foregroundColor(Color("TabBarNoSelectedColor"))
-                    .frame(height: 28)
-                    .padding(.trailing, 5)
-            }
-            .padding(.leading, 12)
-            .padding(.vertical, 10)
-            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-            .cornerRadius(4)
-            .padding(2)
-            .background(Color("TabBarStroke"))
-            .cornerRadius(6)
-            .padding(.horizontal, 16)
-                
+            TextField("제목", text: $titleText)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+                .font(.custom("Pretendard-Medium", size: 20))
+                .foregroundColor(.black)
+                .frame(height: 28)
+                .padding(12)
+                .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                .cornerRadius(4)
+                .padding(1)
+                .background(Color("TabBarStroke"))
+                .cornerRadius(6)
+                .padding(.horizontal, 16)
+            
             
             //MARK: - 링크
 
@@ -57,7 +53,7 @@ struct WritingView: View {
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .font(.custom("Pretendard-Medium", size: 20))
-//                            .foregroundColor(Color("TabBarNoSelectedColor"))
+                    .foregroundColor(.black)
                     .frame(height: 28)
                 
                 Button( action: {
@@ -69,11 +65,10 @@ struct WritingView: View {
                         .padding(.trailing, 10)
                 }
             }
-            .padding(.leading, 12)
-            .padding(.vertical, 10)
+            .padding(12)
             .background(Color(red: 0.97, green: 0.97, blue: 0.97))
             .cornerRadius(4)
-            .padding(2)
+            .padding(1)
             .background(Color("TabBarStroke"))
             .cornerRadius(6)
             .padding(.horizontal, 16)
@@ -85,7 +80,7 @@ struct WritingView: View {
                     .font(.custom("Pretendard-Medium", size: 20))
                     .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                     .cornerRadius(4)
-                    .padding(2.5)
+                    .padding(1)
                     .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
                     .cornerRadius(6)
                 

@@ -1,42 +1,42 @@
+//
+//  MyPost.swift
+//  Draw
+//
+//  Created by 홍승재 on 2022/09/11.
+//
 
 import SwiftUI
 import SwiftUIFlowLayout
 
-var DevLanguage: [String] = ["Swift", "Java", "Kotlin", "JS", "Python", "Flutter"]
-var DevColor: [Color] = [.orange, .red, .purple, .yellow, .green, .blue]
-var Developer: [String] = ["홍승재", "길근우", "정승훈", "강용수", "김은오", "유찬홍"]
-
-struct HomeView: View {
+struct MyPost: View {
     
     @State var GoPostDetail = false
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         GeometryReader { proxy in
-            ZStack() {
+            ZStack {
                 ColorManager.BackgroundColor1.ignoresSafeArea()
                 VStack(spacing: 0) {
-                    ScrollView() {
-                        ScrollView(.horizontal, showsIndicators: true) {
-                            HStack {
-                                ForEach(0..<DevLanguage.count, id: \.self) { i in
-                                    VStack {
-                                        Rectangle()
-                                            .foregroundColor(DevColor[i])
-                                            .frame(width: 56, height: 56)
-                                            .cornerRadius(20)
-                                            .padding(.horizontal, 4)
-                                        Text(DevLanguage[i])
-                                            .foregroundColor(.black)
-                                            .font(.custom("Pretendard-ExtraBold", size: 14))
-                                            .padding(.bottom, 9)
-                                    }
-                                }
+                    HStack {
+                        Spacer()
+                        Image("CloseBtn")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .padding(.top, 16)
+                            .onTapGesture {
+                                self.presentationMode.wrappedValue.dismiss()
                             }
-                            .padding(.horizontal,  8)
+                    }
+                    ScrollView {
+                        HStack {
+                            Text("내 게시글 보기")
+                                .foregroundColor(.black)
+                                .font(.custom("Pretendard-Bold", size: 28))
+                                .padding(.top, 40)
+                            Spacer()
                         }
-                        Rectangle()
-                            .foregroundColor(Color("TabBarStroke"))
-                            .frame(width: proxy.size.width, height: 1)
                         ForEach(0..<6, id: \.self) { i in
                             Button {
                                 GoPostDetail = true
@@ -68,7 +68,7 @@ struct HomeView: View {
                                             .foregroundColor(.black)
                                             .frame(width: 33, height: 33)
                                             .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                                        Text(Developer[i])
+                                        Text(Developer[0])
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                         Spacer()
@@ -81,28 +81,23 @@ struct HomeView: View {
                                 .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                                 .cornerRadius(8)
                             }
-
+                            
                         }
                         .sheet(isPresented: $GoPostDetail, content: {
                             PostDetail()
                         })
-                        .padding(.horizontal, 16)
                         .padding(.vertical, 8)
-                        
                     }
-//                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
-                    .padding(.bottom, proxy.safeAreaInsets.bottom != 0 ? 86 : 106)
-                    
                 }
                 Spacer()
             }
+            .padding(.horizontal, 16)
         }
     }
 }
 
-
-struct HomeView_Previews: PreviewProvider {
+struct MyPost_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        MyPost()
     }
 }

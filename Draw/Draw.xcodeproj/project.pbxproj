@@ -10,6 +10,7 @@
 		4B7F0AA828BEE24C00BBA52D /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AA728BEE24C00BBA52D /* UserClient.swift */; };
 		4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AA928BEE25900BBA52D /* PostClient.swift */; };
 		4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AAC28BEF0C300BBA52D /* Header.swift */; };
+		900990A828CDDBA300FD9462 /* MyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A728CDDBA300FD9462 /* MyPost.swift */; };
 		906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906908AD28CDC49C00BBF0B7 /* Developers.swift */; };
 		907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1DF28BBBA7E008A7562 /* DrawApp.swift */; };
 		907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1E128BBBA7E008A7562 /* ContentView.swift */; };
@@ -45,6 +46,7 @@
 		4B7F0AA728BEE24C00BBA52D /* UserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
 		4B7F0AA928BEE25900BBA52D /* PostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
 		4B7F0AAC28BEF0C300BBA52D /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		900990A728CDDBA300FD9462 /* MyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPost.swift; sourceTree = "<group>"; };
 		906908AD28CDC49C00BBF0B7 /* Developers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developers.swift; sourceTree = "<group>"; };
 		907EF1DC28BBBA7E008A7562 /* Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907EF1DF28BBBA7E008A7562 /* DrawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawApp.swift; sourceTree = "<group>"; };
@@ -152,7 +154,7 @@
 			children = (
 				908ED77328CB789100763AC9 /* EditInfo.swift */,
 				90C50A5228CC8254007EA639 /* DeleteAccount.swift */,
-				90C50A5628CCBE8C007EA639 /* PostDetail.swift */,
+				900990A728CDDBA300FD9462 /* MyPost.swift */,
 				906908AD28CDC49C00BBF0B7 /* Developers.swift */,
 			);
 			path = "myview ->";
@@ -164,6 +166,7 @@
 				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
 				90D1C6E328BF6E1300B653C3 /* ShowView.swift */,
 				90D1C6E528BF6E2300B653C3 /* HomeView.swift */,
+				90C50A5628CCBE8C007EA639 /* PostDetail.swift */,
 				90D1C6E728BF6E3000B653C3 /* WritingView.swift */,
 				90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */,
 				90D1C6E928BF6E3D00B653C3 /* MyView.swift */,
@@ -282,6 +285,7 @@
 				90C50A5728CCBE8C007EA639 /* PostDetail.swift in Sources */,
 				4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */,
 				4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */,
+				900990A828CDDBA300FD9462 /* MyPost.swift in Sources */,
 				90C50A5328CC8254007EA639 /* DeleteAccount.swift in Sources */,
 				90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */,
 				908ED77428CB789100763AC9 /* EditInfo.swift in Sources */,

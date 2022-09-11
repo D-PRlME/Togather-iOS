@@ -91,7 +91,7 @@ struct HomeView: View {
                         
                     }
 //                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
-                    .padding(.bottom, proxy.safeAreaInsets.bottom != 0 ? 86 : 106)
+                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                     
                 }
                 Spacer()

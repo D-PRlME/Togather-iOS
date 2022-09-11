@@ -5,6 +5,10 @@ struct MyView: View {
     
     @State var GoEditInfoModal = false
     
+    @State var GoMyPost = false
+    
+    @State var GoDevelopers = false
+    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -52,28 +56,44 @@ struct MyView: View {
                     .frame(width: proxy.size.width - 40)
                     .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                     .cornerRadius(8)
-                    HStack {
-                        Text("내 게시글 보기")
-                            .foregroundColor(.black)
-                            .font(.custom("Pretendard-Medium", size: 18))
-                            .padding(.leading, 12)
-                            .padding(.vertical, 14)
-                        Spacer()
+                    Button {
+                        GoMyPost = true
+                    } label: {
+                        HStack {
+                            Text("내 게시글 보기")
+                                .foregroundColor(.black)
+                                .font(.custom("Pretendard-Medium", size: 18))
+                                .padding(.leading, 12)
+                                .padding(.vertical, 14)
+                            Spacer()
+                        }
+                        .frame(width: proxy.size.width - 40)
+                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                        .cornerRadius(8)
                     }
-                    .frame(width: proxy.size.width - 40)
-                    .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                    .cornerRadius(8)
-                    HStack {
-                        Text("개발자들")
-                            .foregroundColor(.black)
-                            .font(.custom("Pretendard-Medium", size: 18))
-                            .padding(.leading, 12)
-                            .padding(.vertical, 14)
-                        Spacer()
+                    .sheet(isPresented: $GoMyPost) {
+                        MyPost()
                     }
-                    .frame(width: proxy.size.width - 40)
-                    .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                    .cornerRadius(8)
+
+                    Button {
+                        GoDevelopers = true
+                    } label: {
+                        HStack {
+                            Text("개발자들")
+                                .foregroundColor(.black)
+                                .font(.custom("Pretendard-Medium", size: 18))
+                                .padding(.leading, 12)
+                                .padding(.vertical, 14)
+                            Spacer()
+                        }
+                        .frame(width: proxy.size.width - 40)
+                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                        .cornerRadius(8)
+                    }
+                    .sheet(isPresented: $GoDevelopers) {
+                        Developers()
+                    }
+
                     HStack {
                         Text("로그아웃")
                             .foregroundColor(.black)
@@ -87,7 +107,8 @@ struct MyView: View {
                     .cornerRadius(8)
                     Spacer()
                 }
-                .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+//                .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+                .padding(.bottom, proxy.safeAreaInsets.bottom != 0 ? 86 : 106)
                 .padding(.horizontal, 20)
             }
         }

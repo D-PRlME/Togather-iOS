@@ -23,6 +23,7 @@
 		4BE1C61D28CDEA900052AE3D /* SignUpEmailVerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1C61C28CDEA900052AE3D /* SignUpEmailVerifyView.swift */; };
 		4BE1C61F28CDEADA0052AE3D /* signUpSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1C61E28CDEADA0052AE3D /* signUpSuccessView.swift */; };
 		900990A828CDDBA300FD9462 /* MyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A728CDDBA300FD9462 /* MyPost.swift */; };
+		900990AA28CE3E7E00FD9462 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A928CE3E7E00FD9462 /* SignInView.swift */; };
 		906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906908AD28CDC49C00BBF0B7 /* Developers.swift */; };
 		907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1DF28BBBA7E008A7562 /* DrawApp.swift */; };
 		907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1E128BBBA7E008A7562 /* ContentView.swift */; };
@@ -62,6 +63,7 @@
 		4BE1C61C28CDEA900052AE3D /* SignUpEmailVerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailVerifyView.swift; sourceTree = "<group>"; };
 		4BE1C61E28CDEADA0052AE3D /* signUpSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpSuccessView.swift; sourceTree = "<group>"; };
 		900990A728CDDBA300FD9462 /* MyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPost.swift; sourceTree = "<group>"; };
+		900990A928CE3E7E00FD9462 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		906908AD28CDC49C00BBF0B7 /* Developers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developers.swift; sourceTree = "<group>"; };
 		907EF1DC28BBBA7E008A7562 /* Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907EF1DF28BBBA7E008A7562 /* DrawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawApp.swift; sourceTree = "<group>"; };
@@ -179,6 +181,8 @@
 		90D1C6E028BF6D8800B653C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				900990A928CE3E7E00FD9462 /* SignInView.swift */,
+				4BE1C61928CDE9C00052AE3D /* SignUpView */,
 				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
 				90D1C6E328BF6E1300B653C3 /* ShowView.swift */,
 				90D1C6E528BF6E2300B653C3 /* HomeView.swift */,
@@ -187,7 +191,6 @@
 				90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */,
 				90D1C6E928BF6E3D00B653C3 /* MyView.swift */,
 				908ED77228CB787900763AC9 /* myview -> */,
-				4BE1C61928CDE9C00052AE3D /* SignUpView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				90D1C6E428BF6E1300B653C3 /* ShowView.swift in Sources */,
 				4B7F0AA828BEE24C00BBA52D /* UserClient.swift in Sources */,
 				4BE1C61B28CDEA100052AE3D /* SignUpView.swift in Sources */,
+				900990AA28CE3E7E00FD9462 /* SignInView.swift in Sources */,
 				90D1C6E628BF6E2300B653C3 /* HomeView.swift in Sources */,
 				90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */,
 				907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */,

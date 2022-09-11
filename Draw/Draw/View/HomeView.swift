@@ -8,6 +8,8 @@ var Developer: [String] = ["홍승재", "길근우", "정승훈", "강용수", "
 
 struct HomeView: View {
     
+    @State var GoPostDetail = false
+    
     var body: some View {
         GeometryReader { proxy in
             ZStack() {
@@ -36,49 +38,60 @@ struct HomeView: View {
                             .foregroundColor(Color("TabBarStroke"))
                             .frame(width: proxy.size.width, height: 1)
                         ForEach(0..<6, id: \.self) { i in
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text("제목제목제목제목제목제목제목제목제목제목제목")
-                                    .foregroundColor(.black)
-                                    .font(.custom("Pretendard-Bold", size: 24))
-                                FlowLayout(mode: .scrollable,
-                                           items: DevLanguage,
-                                           itemSpacing: 5) {index in
-                                    Text(index)
+                            Button {
+                                GoPostDetail = true
+                            } label: {
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text("제목제목제목제목제목제목제목제목제목제목제목")
                                         .foregroundColor(.black)
-                                        .font(.custom("Pretendard-Medium", size: 16))
-                                        .padding(.horizontal, 12)
-                                        .padding(.vertical, 6)
-                                        .background(Color(red: 0.905, green: 0.905, blue: 0.905))
-                                        .cornerRadius(37)
-                                        .padding(1)
-                                        .background(Color("TabBarStroke"))
-                                        .cornerRadius(37)
+                                        .font(.custom("Pretendard-Bold", size: 24))
+                                        .multilineTextAlignment(.leading)
+                                    FlowLayout(mode: .scrollable,
+                                               items: DevLanguage,
+                                               itemSpacing: 5) {index in
+                                        Text(index)
+                                            .foregroundColor(.black)
+                                            .font(.custom("Pretendard-Medium", size: 16))
+                                            .padding(.horizontal, 12)
+                                            .padding(.vertical, 6)
+                                            .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                                            .cornerRadius(37)
+                                            .padding(1)
+                                            .background(Color("TabBarStroke"))
+                                            .cornerRadius(37)
+                                    }
+                                    Rectangle()
+                                        .foregroundColor(Color("TabBarStroke"))
+                                        .frame(width: proxy.size.width - 70, height: 1)
+                                    HStack(spacing: 8) {
+                                        Image(systemName: "person.fill")
+                                            .foregroundColor(.black)
+                                            .frame(width: 33, height: 33)
+                                            .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
+                                        Text(Developer[i])
+                                            .foregroundColor(.black)
+                                            .font(.custom("Pretendard-Medium", size: 16))
+                                        Spacer()
+                                        Text("1시간 전")
+                                            .foregroundColor(.black)
+                                            .font(.custom("Pretendard-Medium", size: 16))
+                                    }
                                 }
-                                Rectangle()
-                                    .foregroundColor(Color("TabBarStroke"))
-                                    .frame(width: proxy.size.width - 70, height: 1)
-                                HStack(spacing: 8) {
-                                    Image(systemName: "person.fill")
-                                        .frame(width: 33, height: 33)
-                                        .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                                    Text(Developer[i])
-                                        .foregroundColor(.black)
-                                        .font(.custom("Pretendard-Medium", size: 16))
-                                    Spacer()
-                                    Text("1시간 전")
-                                        .foregroundColor(.black)
-                                        .font(.custom("Pretendard-Medium", size: 16))
-                                }
+                                .padding(12)
+                                .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                                .cornerRadius(8)
                             }
-                            .padding(12)
-                            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                            .cornerRadius(8)
+
                         }
+                        .sheet(isPresented: $GoPostDetail, content: {
+                            PostDetail()
+                        })
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
                         
                     }
-                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+//                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+                    .padding(.bottom, proxy.safeAreaInsets.bottom != 0 ? 86 : 106)
                     
                 }
                 Spacer()

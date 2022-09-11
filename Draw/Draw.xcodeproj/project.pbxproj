@@ -10,6 +10,7 @@
 		4B7F0AA828BEE24C00BBA52D /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AA728BEE24C00BBA52D /* UserClient.swift */; };
 		4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AA928BEE25900BBA52D /* PostClient.swift */; };
 		4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AAC28BEF0C300BBA52D /* Header.swift */; };
+		906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906908AD28CDC49C00BBF0B7 /* Developers.swift */; };
 		907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1DF28BBBA7E008A7562 /* DrawApp.swift */; };
 		907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1E128BBBA7E008A7562 /* ContentView.swift */; };
 		907EF1E428BBBA81008A7562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907EF1E328BBBA81008A7562 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 		908ED77128CA5A4600763AC9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */; };
 		908ED77428CB789100763AC9 /* EditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908ED77328CB789100763AC9 /* EditInfo.swift */; };
 		90C50A5328CC8254007EA639 /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C50A5228CC8254007EA639 /* DeleteAccount.swift */; };
+		90C50A5728CCBE8C007EA639 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C50A5628CCBE8C007EA639 /* PostDetail.swift */; };
 		90D1C69928BC917D00B653C3 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69828BC917D00B653C3 /* CombineMoya */; };
 		90D1C69B28BC917D00B653C3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69A28BC917D00B653C3 /* Moya */; };
 		90D1C69D28BC917D00B653C3 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69C28BC917D00B653C3 /* ReactiveMoya */; };
@@ -43,6 +45,7 @@
 		4B7F0AA728BEE24C00BBA52D /* UserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
 		4B7F0AA928BEE25900BBA52D /* PostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
 		4B7F0AAC28BEF0C300BBA52D /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		906908AD28CDC49C00BBF0B7 /* Developers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developers.swift; sourceTree = "<group>"; };
 		907EF1DC28BBBA7E008A7562 /* Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907EF1DF28BBBA7E008A7562 /* DrawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawApp.swift; sourceTree = "<group>"; };
 		907EF1E128BBBA7E008A7562 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		908ED77328CB789100763AC9 /* EditInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfo.swift; sourceTree = "<group>"; };
 		90C50A5228CC8254007EA639 /* DeleteAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccount.swift; sourceTree = "<group>"; };
+		90C50A5628CCBE8C007EA639 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		90D1C6E328BF6E1300B653C3 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 		90D1C6E528BF6E2300B653C3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -143,13 +147,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		908ED77228CB787900763AC9 /* EditInfo */ = {
+		908ED77228CB787900763AC9 /* myview -> */ = {
 			isa = PBXGroup;
 			children = (
 				908ED77328CB789100763AC9 /* EditInfo.swift */,
 				90C50A5228CC8254007EA639 /* DeleteAccount.swift */,
+				90C50A5628CCBE8C007EA639 /* PostDetail.swift */,
+				906908AD28CDC49C00BBF0B7 /* Developers.swift */,
 			);
-			path = EditInfo;
+			path = "myview ->";
 			sourceTree = "<group>";
 		};
 		90D1C6E028BF6D8800B653C3 /* View */ = {
@@ -161,7 +167,7 @@
 				90D1C6E728BF6E3000B653C3 /* WritingView.swift */,
 				90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */,
 				90D1C6E928BF6E3D00B653C3 /* MyView.swift */,
-				908ED77228CB787900763AC9 /* EditInfo */,
+				908ED77228CB787900763AC9 /* myview -> */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,11 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C50A5728CCBE8C007EA639 /* PostDetail.swift in Sources */,
 				4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */,
 				4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */,
 				90C50A5328CC8254007EA639 /* DeleteAccount.swift in Sources */,
 				90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */,
 				908ED77428CB789100763AC9 /* EditInfo.swift in Sources */,
+				906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */,
 				90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */,
 				907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */,
 				90D1C6E428BF6E1300B653C3 /* ShowView.swift in Sources */,
@@ -428,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Draw;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.Draw0304;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -458,7 +466,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Draw;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.Draw0304;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

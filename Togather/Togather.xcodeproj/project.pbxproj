@@ -25,6 +25,8 @@
 		4BE919CC28CEF0C40002A268 /* ChangePasswordVerify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919CB28CEF0C40002A268 /* ChangePasswordVerify.swift */; };
 		4BE919CE28CEF0CF0002A268 /* EnterNewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919CD28CEF0CE0002A268 /* EnterNewPassword.swift */; };
 		4BE919D028CEF0D60002A268 /* ChangePasswordSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919CF28CEF0D60002A268 /* ChangePasswordSuccess.swift */; };
+		4BE919D428CF65880002A268 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919D328CF65880002A268 /* TokenModel.swift */; };
+		4BE919D728CF678A0002A268 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919D628CF678A0002A268 /* ErrorModel.swift */; };
 		900990A828CDDBA300FD9462 /* MyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A728CDDBA300FD9462 /* MyPost.swift */; };
 		900990AA28CE3E7E00FD9462 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A928CE3E7E00FD9462 /* SignInView.swift */; };
 		906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906908AD28CDC49C00BBF0B7 /* Developers.swift */; };
@@ -68,6 +70,8 @@
 		4BE919CB28CEF0C40002A268 /* ChangePasswordVerify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVerify.swift; sourceTree = "<group>"; };
 		4BE919CD28CEF0CE0002A268 /* EnterNewPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterNewPassword.swift; sourceTree = "<group>"; };
 		4BE919CF28CEF0D60002A268 /* ChangePasswordSuccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordSuccess.swift; sourceTree = "<group>"; };
+		4BE919D328CF65880002A268 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		4BE919D628CF678A0002A268 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		900990A728CDDBA300FD9462 /* MyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPost.swift; sourceTree = "<group>"; };
 		900990A928CE3E7E00FD9462 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		906908AD28CDC49C00BBF0B7 /* Developers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developers.swift; sourceTree = "<group>"; };
@@ -142,6 +146,15 @@
 			path = PasswordChangeView;
 			sourceTree = "<group>";
 		};
+		4BE919D228CF65750002A268 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4BE919D328CF65880002A268 /* TokenModel.swift */,
+				4BE919D628CF678A0002A268 /* ErrorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		907EF1D328BBBA7E008A7562 = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +174,7 @@
 		907EF1DE28BBBA7E008A7562 /* Togather */ = {
 			isa = PBXGroup;
 			children = (
-				90D1C70028BF9BF000B653C3 /* Info.plist */,
+				4BE919D228CF65750002A268 /* Model */,
 				90D1C6ED28BF9B8900B653C3 /* Font */,
 				907EF1DF28BBBA7E008A7562 /* DrawApp.swift */,
 				908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */,
@@ -170,6 +183,7 @@
 				4B7F0AAB28BEF0B700BBA52D /* Header */,
 				4B7F0AA628BEE22700BBA52D /* MoyaClient */,
 				907EF1E328BBBA81008A7562 /* Assets.xcassets */,
+				90D1C70028BF9BF000B653C3 /* Info.plist */,
 				907EF1E528BBBA81008A7562 /* Preview Content */,
 			);
 			path = Togather;
@@ -324,6 +338,7 @@
 				4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */,
 				900990A828CDDBA300FD9462 /* MyPost.swift in Sources */,
 				90C50A5328CC8254007EA639 /* DeleteAccount.swift in Sources */,
+				4BE919D728CF678A0002A268 /* ErrorModel.swift in Sources */,
 				90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */,
 				908ED77428CB789100763AC9 /* EditInfo.swift in Sources */,
 				906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */,
@@ -332,6 +347,7 @@
 				90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */,
 				907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */,
 				90D1C6E428BF6E1300B653C3 /* ShowView.swift in Sources */,
+				4BE919D428CF65880002A268 /* TokenModel.swift in Sources */,
 				4BE919CC28CEF0C40002A268 /* ChangePasswordVerify.swift in Sources */,
 				4B7F0AA828BEE24C00BBA52D /* UserClient.swift in Sources */,
 				4BE1C61B28CDEA100052AE3D /* SignUpView.swift in Sources */,

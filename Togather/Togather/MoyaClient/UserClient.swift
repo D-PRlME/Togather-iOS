@@ -3,7 +3,7 @@ import Moya
 
 enum UserService {
     case login(accountID: String, password: String)
-    case signup(accountID: String, password: String, email: String, name: String, authCode: String)
+    case signup(password: String, email: String, name: String)
     case mailDuplicate(email: String)
     case mailSignup(email: String)
     case mailVerify(email: String, authCode: String)
@@ -17,7 +17,7 @@ enum UserService {
 
 extension UserService: TargetType {
     var baseURL: URL {
-        return URL(string: "url/users")!
+        return URL(string: "http://44.209.75.36:8080/users")!
     }
     
     var path: String {
@@ -80,9 +80,9 @@ extension UserService: TargetType {
         case .changePassword(let oldPassword, let newPassword):
             return .requestJSONEncodable(["old_password" : oldPassword, "new_password" : newPassword])
         case .login(let ID, let PW):
-            return .requestJSONEncodable(["account_id" : ID, "password" : PW])
-        case .signup(let accountID, let password, let email, let name,_):
-            return .requestJSONEncodable(["account_id" : accountID, "password" : password, "name" : name, "email" : email])
+            return .requestJSONEncodable(["email" : ID, "password" : PW])
+        case .signup(let password, let email, let name):
+            return .requestJSONEncodable(["password" : password, "name" : name, "email" : email])
         }
     }
     

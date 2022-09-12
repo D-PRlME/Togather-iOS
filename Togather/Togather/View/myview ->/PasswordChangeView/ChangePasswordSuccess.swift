@@ -6,7 +6,6 @@ struct ChangePasswordSuccess: View {
             VStack(alignment: .leading) {
                 Text("비밀번호가\n변경되었어요")
                     .font(.custom("Pretendard-Bold", size: 32))
-                    .padding(.horizontal, 16)
                     .padding(.top, proxy.size.height / 5)
                 
                 GeometryReader { imageProxy in
@@ -34,11 +33,11 @@ struct ChangePasswordSuccess: View {
                     .padding(2)
                     .background(Color(red: 0.7, green: 0.6, blue: 0.004))
                     .cornerRadius(8)
-                    .padding(.horizontal, 16)
-                    
                 }
                 .padding(.bottom, proxy.safeAreaInsets.bottom == 0 ? 30 : 5)
             }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
         }
     }
 }

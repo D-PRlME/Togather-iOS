@@ -188,6 +188,7 @@
 			children = (
 				908ED77328CB789100763AC9 /* EditInfo.swift */,
 				90C50A5228CC8254007EA639 /* DeleteAccount.swift */,
+				4BE919CA28CEF0850002A268 /* PasswordChangeView */,
 				900990A728CDDBA300FD9462 /* MyPost.swift */,
 				906908AD28CDC49C00BBF0B7 /* Developers.swift */,
 			);
@@ -197,7 +198,6 @@
 		90D1C6E028BF6D8800B653C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4BE919CA28CEF0850002A268 /* PasswordChangeView */,
 				900990A928CE3E7E00FD9462 /* SignInView.swift */,
 				4BE1C61928CDE9C00052AE3D /* SignUpView */,
 				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,

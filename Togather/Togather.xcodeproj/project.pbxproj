@@ -65,7 +65,7 @@
 		900990A728CDDBA300FD9462 /* MyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPost.swift; sourceTree = "<group>"; };
 		900990A928CE3E7E00FD9462 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		906908AD28CDC49C00BBF0B7 /* Developers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developers.swift; sourceTree = "<group>"; };
-		907EF1DC28BBBA7E008A7562 /* Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		907EF1DC28BBBA7E008A7562 /* Togather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Togather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907EF1DF28BBBA7E008A7562 /* DrawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawApp.swift; sourceTree = "<group>"; };
 		907EF1E128BBBA7E008A7562 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		907EF1E328BBBA81008A7562 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		907EF1DD28BBBA7E008A7562 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				907EF1DC28BBBA7E008A7562 /* Draw.app */,
+				907EF1DC28BBBA7E008A7562 /* Togather.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,9 +214,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		907EF1DB28BBBA7E008A7562 /* Draw */ = {
+		907EF1DB28BBBA7E008A7562 /* Togather */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 907EF1EA28BBBA81008A7562 /* Build configuration list for PBXNativeTarget "Draw" */;
+			buildConfigurationList = 907EF1EA28BBBA81008A7562 /* Build configuration list for PBXNativeTarget "Togather" */;
 			buildPhases = (
 				907EF1D828BBBA7E008A7562 /* Sources */,
 				907EF1D928BBBA7E008A7562 /* Frameworks */,
@@ -226,7 +226,7 @@
 			);
 			dependencies = (
 			);
-			name = Draw;
+			name = Togather;
 			packageProductDependencies = (
 				90D1C69828BC917D00B653C3 /* CombineMoya */,
 				90D1C69A28BC917D00B653C3 /* Moya */,
@@ -235,7 +235,7 @@
 				90D1C74628C1A3AE00B653C3 /* SwiftUIFlowLayout */,
 			);
 			productName = Draw;
-			productReference = 907EF1DC28BBBA7E008A7562 /* Draw.app */;
+			productReference = 907EF1DC28BBBA7E008A7562 /* Togather.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -270,7 +270,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				907EF1DB28BBBA7E008A7562 /* Draw */,
+				907EF1DB28BBBA7E008A7562 /* Togather */,
 			);
 		};
 /* End PBXProject section */
@@ -449,14 +449,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Draw/Preview Content\"";
-				DEVELOPMENT_TEAM = 63UM6H56P2;
+				DEVELOPMENT_ASSET_PATHS = "\"Togather/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Togather/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Togather;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -464,11 +466,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Togather0304;
+				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -479,14 +481,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Draw/Preview Content\"";
-				DEVELOPMENT_TEAM = 63UM6H56P2;
+				DEVELOPMENT_ASSET_PATHS = "\"Togather/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Togather/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Togather;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -494,11 +498,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Togather0304;
+				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -514,7 +518,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		907EF1EA28BBBA81008A7562 /* Build configuration list for PBXNativeTarget "Draw" */ = {
+		907EF1EA28BBBA81008A7562 /* Build configuration list for PBXNativeTarget "Togather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				907EF1EB28BBBA81008A7562 /* Debug */,

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "907EF1DB28BBBA7E008A7562"
-               BuildableName = "Draw.app"
-               BlueprintName = "Draw"
+               BuildableName = "Togather.app"
+               BlueprintName = "Togather"
                ReferencedContainer = "container:Togather.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "907EF1DB28BBBA7E008A7562"
-            BuildableName = "Draw.app"
-            BlueprintName = "Draw"
+            BuildableName = "Togather.app"
+            BlueprintName = "Togather"
             ReferencedContainer = "container:Togather.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "907EF1DB28BBBA7E008A7562"
-            BuildableName = "Draw.app"
-            BlueprintName = "Draw"
+            BuildableName = "Togather.app"
+            BlueprintName = "Togather"
             ReferencedContainer = "container:Togather.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

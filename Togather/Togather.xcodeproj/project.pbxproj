@@ -30,7 +30,6 @@
 		900990A828CDDBA300FD9462 /* MyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A728CDDBA300FD9462 /* MyPost.swift */; };
 		900990AA28CE3E7E00FD9462 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A928CE3E7E00FD9462 /* SignInView.swift */; };
 		900990EB28D033C000FD9462 /* LookUpMyProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990EA28D033C000FD9462 /* LookUpMyProfileModel.swift */; };
-		900990ED28D034B200FD9462 /* LookUpUserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990EC28D034B200FD9462 /* LookUpUserProfileModel.swift */; };
 		900990EF28D04EE700FD9462 /* LookUpPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990EE28D04EE700FD9462 /* LookUpPostModel.swift */; };
 		900990F128D0586C00FD9462 /* LookUpPostDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990F028D0586C00FD9462 /* LookUpPostDetailModel.swift */; };
 		900990F328D05BAE00FD9462 /* LookUpTagPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990F228D05BAE00FD9462 /* LookUpTagPostModel.swift */; };
@@ -82,7 +81,6 @@
 		900990A728CDDBA300FD9462 /* MyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPost.swift; sourceTree = "<group>"; };
 		900990A928CE3E7E00FD9462 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		900990EA28D033C000FD9462 /* LookUpMyProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpMyProfileModel.swift; sourceTree = "<group>"; };
-		900990EC28D034B200FD9462 /* LookUpUserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpUserProfileModel.swift; sourceTree = "<group>"; };
 		900990EE28D04EE700FD9462 /* LookUpPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpPostModel.swift; sourceTree = "<group>"; };
 		900990F028D0586C00FD9462 /* LookUpPostDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpPostDetailModel.swift; sourceTree = "<group>"; };
 		900990F228D05BAE00FD9462 /* LookUpTagPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpTagPostModel.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				4BE919D328CF65880002A268 /* TokenModel.swift */,
 				4BE919D628CF678A0002A268 /* ErrorModel.swift */,
 				900990EA28D033C000FD9462 /* LookUpMyProfileModel.swift */,
-				900990EC28D034B200FD9462 /* LookUpUserProfileModel.swift */,
 				900990EE28D04EE700FD9462 /* LookUpPostModel.swift */,
 				900990F028D0586C00FD9462 /* LookUpPostDetailModel.swift */,
 				900990F228D05BAE00FD9462 /* LookUpTagPostModel.swift */,
@@ -372,7 +369,6 @@
 				907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */,
 				90D1C6E428BF6E1300B653C3 /* ShowView.swift in Sources */,
 				4BE919D428CF65880002A268 /* TokenModel.swift in Sources */,
-				900990ED28D034B200FD9462 /* LookUpUserProfileModel.swift in Sources */,
 				4BE919CC28CEF0C40002A268 /* ChangePasswordVerify.swift in Sources */,
 				4B7F0AA828BEE24C00BBA52D /* UserClient.swift in Sources */,
 				900990F528D05CE900FD9462 /* SearchPostModel.swift in Sources */,

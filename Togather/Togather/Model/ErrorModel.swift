@@ -1,5 +1,6 @@
 import Foundation
 
+// MARK: - ErrorModel
 struct ErrorModel: Codable {
     let status: Int
     let code: String

@@ -1,16 +1,11 @@
-//
-//  SignInView.swift
-//  Draw
-//
-//  Created by 홍승재 on 2022/09/12.
-//
-
 import SwiftUI
 
 struct SignInView: View {
     
     @State var email = ""
     @State var password = ""
+    
+    @StateObject var loginViewModel = LoginViewModel()
     
     var body: some View {
         GeometryReader { proxy in
@@ -27,6 +22,7 @@ struct SignInView: View {
                             .foregroundColor(Color("TabBarSelectedColor"))
                             .font(.custom("Pretendard-Bold", size: 32))
                     }
+                    
                     TextField("이메일", text: $email)
                         .font(.custom("Pretendard-Medium", size: 20))
                         .foregroundColor(.black)
@@ -36,6 +32,7 @@ struct SignInView: View {
                         .padding(1)
                         .background(Color("TabBarStroke"))
                         .cornerRadius(6)
+                    
                     SecureField("비밀번호", text: $password)
                         .font(.custom("Pretendard-Medium", size: 20))
                         .foregroundColor(.black)
@@ -45,16 +42,27 @@ struct SignInView: View {
                         .padding(1)
                         .background(Color("TabBarStroke"))
                         .cornerRadius(6)
-                    Text("로그인")
-                        .font(.custom("Pretendard-Bold", size: 18))
-                        .foregroundColor(.black)
-                        .frame(width: proxy.size.width - 32)
-                        .padding(.vertical, 13)
-                        .background(Color("TabBarSelectedColor"))
-                        .cornerRadius(6)
-                        .padding(2)
-                        .background(Color("YellowStroke"))
-                        .cornerRadius(6)
+                    
+                    
+                    Button(action: {
+                        loginViewModel.email = email
+                        loginViewModel.password = password
+                        
+                        loginViewModel.Login()
+                    }) {
+                        Text("로그인")
+                            .font(.custom("Pretendard-Bold", size: 18))
+                            .foregroundColor(.black)
+                            .frame(width: proxy.size.width - 32)
+                            .padding(.vertical, 13)
+                            .background(Color("TabBarSelectedColor"))
+                            .cornerRadius(6)
+                            .padding(2)
+                            .background(Color("YellowStroke"))
+                            .cornerRadius(6)
+                    }
+                    
+                    
                     HStack(spacing: 12) {
                         Spacer()
                         Text("회원가입")

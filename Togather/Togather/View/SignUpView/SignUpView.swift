@@ -6,6 +6,9 @@ struct SignUpView: View {
     @State private var passwordText: String = ""
     @State private var nameText: String = ""
     
+    @StateObject var signUpViewModel = SignUpViewModel()
+    @StateObject var emailDuplicateViewModel = EmailDuplicateViewModel()
+    
     //MARK: - 버튼 활성화 여부 함수
 
     private func ButtonAtivation() -> Bool {
@@ -102,9 +105,8 @@ struct SignUpView: View {
                 //MARK: - 다음 버튼
 
                 Button(action: {
-                    if(ButtonAtivation()) {
-                        print("next")
-                    }
+                    emailDuplicateViewModel.email = emailText
+                    emailDuplicateViewModel.emailDuplicate()
                 }) {
                     VStack(spacing: 0) {
                         Rectangle()

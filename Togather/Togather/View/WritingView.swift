@@ -1,10 +1,13 @@
 
 import SwiftUI
+import SwiftUIFlowLayout
 
 struct WritingView: View {
     @State var titleText: String = ""
     @State var linkText: String = ""
     @State var contentText: String = ""
+    
+    @StateObject var postViewModel = PostViewModel()
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -43,8 +46,6 @@ struct WritingView: View {
                 .padding(1)
                 .background(Color("TabBarStroke"))
                 .cornerRadius(6)
-                .padding(.horizontal, 16)
-            
             
             //MARK: - 링크
 
@@ -71,13 +72,14 @@ struct WritingView: View {
             .padding(1)
             .background(Color("TabBarStroke"))
             .cornerRadius(6)
-            .padding(.horizontal, 16)
             
             //MARK: - 본문
 
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $contentText)
                     .font(.custom("Pretendard-Medium", size: 20))
+                    .padding(.leading, 10)
+                    .padding(.top, 12)
                     .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                     .cornerRadius(4)
                     .padding(1)
@@ -91,16 +93,36 @@ struct WritingView: View {
                         .disableAutocorrection(true)
                         .font(.custom("Pretendard-Medium", size: 20))
                         .foregroundColor(Color(red: 0.75, green: 0.75, blue: 0.75))
-                        .padding(EdgeInsets(top: 12, leading: 8, bottom: 0, trailing: 0))
+                        .padding(.leading, 15)
+                        .padding(.top, 20)
                 } //플레이스 홀더
             }
-            .padding(.horizontal, 16)
+            
+            FlowLayout(mode: .scrollable,
+                       items: DevLanguage,
+                       itemSpacing: 5) {index in
+                Text(index)
+                    .foregroundColor(.black)
+                    .font(.custom("Pretendard-Medium", size: 16))
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                    .cornerRadius(37)
+                    .padding(1)
+                    .background(Color("TabBarStroke"))
+                    .cornerRadius(37)
+            }
             
             //MARK: - 글쓰기 버튼
 
             HStack {
                 Button(action: {
-                    print("글쓰기")
+                    postViewModel.title = titleText
+                    postViewModel.content = contentText
+//                    postViewModel.tag =
+                    postViewModel.link = linkText
+                    
+                    postViewModel.post()
                 }) {
                     Text("글쓰기")
                         .font(.custom("Pretendard-Bold", size: 18))
@@ -113,12 +135,13 @@ struct WritingView: View {
                 .padding(2)
                 .background(Color("YellowStroke"))
                 .cornerRadius(37)
-                .padding(EdgeInsets(top: 10, leading: 16, bottom: 20, trailing: 10))
                 
                 Spacer()
             }
             
         } //Vstack
+        .padding(.horizontal, 16)
+        .padding(.bottom, 16)
     } // body
 }
 

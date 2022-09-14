@@ -34,7 +34,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToGather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apV-BB-b48">
-                                <rect key="frame" x="154" y="833" width="106" height="29"/>
+                                <rect key="frame" x="154" y="817" width="106" height="29"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,7 +50,7 @@
                             <constraint firstItem="dNx-40-zTi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PpI-jk-cW0"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
                             <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="apV-BB-b48" secondAttribute="bottom" id="yPe-2T-rpQ"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="apV-BB-b48" secondAttribute="bottom" constant="16" id="yPe-2T-rpQ"/>
                         </constraints>
                     </view>
                 </viewController>

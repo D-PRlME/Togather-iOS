@@ -81,6 +81,7 @@ struct HomeView: View {
                                 .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                                 .cornerRadius(8)
                             }
+                            .buttonStyle(.plain)
 
                         }
                         .sheet(isPresented: $GoPostDetail, content: {

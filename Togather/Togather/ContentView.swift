@@ -12,7 +12,10 @@ struct ColorManager {
 
 struct ContentView: View {
     var body: some View {
-        SignInView()
+        NavigationView {
+            SignInView()
+                .navigationBarHidden(true)
+        }
     }
 }
 

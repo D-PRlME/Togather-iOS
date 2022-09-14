@@ -11,6 +11,7 @@ struct SignInView: View {
         GeometryReader { proxy in
             ZStack {
                 ColorManager.BackgroundColor1.ignoresSafeArea()
+                NavigationLink(destination: TabBarView(), tag: 1, selection: $loginViewModel.viewTag ) { EmptyView() }
                 VStack(alignment: .leading, spacing: 12) {
                     Spacer()
                     VStack(alignment: .leading) {
@@ -53,15 +54,14 @@ struct SignInView: View {
                         Text("로그인")
                             .font(.custom("Pretendard-Bold", size: 18))
                             .foregroundColor(.black)
-                            .frame(width: proxy.size.width - 32)
-                            .padding(.vertical, 13)
+                            .padding(.vertical, 12)
+                            .frame(width: UIScreen.main.bounds.width - 32)
                             .background(Color("TabBarSelectedColor"))
                             .cornerRadius(6)
                             .padding(2)
                             .background(Color("YellowStroke"))
                             .cornerRadius(6)
                     }
-                    
                     
                     HStack(spacing: 12) {
                         Spacer()

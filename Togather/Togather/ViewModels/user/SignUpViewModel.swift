@@ -7,7 +7,6 @@ class SignUpViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
-
     
     func signUpClient() {
         UserClient.request(.signup(password: password, email: email, name: name)) { res in
@@ -35,7 +34,7 @@ class SignUpViewModel: ObservableObject {
                 }
                 
             case .failure(let err):
-                print("⚠️signup Error: \(err.localizedDescription)")
+                print("⛔️signup Error: \(err.localizedDescription)")
             }
         }
     }

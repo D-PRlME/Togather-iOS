@@ -26,7 +26,7 @@ class EmailDuplicateViewModel: ObservableObject {
                     }
                 }
             case .failure(let err):
-                print("emailDupilcate error: \(err.localizedDescription)")
+                print("⛔️emailDupilcate error: \(err.localizedDescription)")
             }
         }
     }

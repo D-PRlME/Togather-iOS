@@ -32,6 +32,7 @@
 		4BE919EF28D304090002A268 /* EmailDuplicateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919EA28D304090002A268 /* EmailDuplicateViewModel.swift */; };
 		4BE919F028D304090002A268 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919EB28D304090002A268 /* SignUpViewModel.swift */; };
 		4BE919F128D304090002A268 /* SendEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919EC28D304090002A268 /* SendEmailViewModel.swift */; };
+		9001F5FC28D3931700EC1F23 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9001F5FB28D3931700EC1F23 /* HomeViewModel.swift */; };
 		900990A828CDDBA300FD9462 /* MyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A728CDDBA300FD9462 /* MyPost.swift */; };
 		900990AA28CE3E7E00FD9462 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A928CE3E7E00FD9462 /* SignInView.swift */; };
 		900990EB28D033C000FD9462 /* MyProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990EA28D033C000FD9462 /* MyProfileModel.swift */; };
@@ -46,23 +47,22 @@
 		908ED77128CA5A4600763AC9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */; };
 		908ED77428CB789100763AC9 /* EditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908ED77328CB789100763AC9 /* EditInfo.swift */; };
 		90A05CAD28D0B78C0031E71B /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CAC28D0B78C0031E71B /* PostViewModel.swift */; };
-		90A05CB628D2A2690031E71B /* TagsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CB528D2A2690031E71B /* TagsFlowLayout.swift */; };
 		90A05CBB28D300CD0031E71B /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CBA28D300CD0031E71B /* UserProfileModel.swift */; };
 		90A05CBD28D304220031E71B /* UserPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CBC28D304220031E71B /* UserPostModel.swift */; };
 		90A05CBF28D306040031E71B /* TagListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CBE28D306040031E71B /* TagListModel.swift */; };
 		90C50A5328CC8254007EA639 /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C50A5228CC8254007EA639 /* DeleteAccount.swift */; };
 		90C50A5728CCBE8C007EA639 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C50A5628CCBE8C007EA639 /* PostDetail.swift */; };
-		90D1C69928BC917D00B653C3 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69828BC917D00B653C3 /* CombineMoya */; };
-		90D1C69B28BC917D00B653C3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69A28BC917D00B653C3 /* Moya */; };
-		90D1C69D28BC917D00B653C3 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69C28BC917D00B653C3 /* ReactiveMoya */; };
-		90D1C69F28BC917D00B653C3 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C69E28BC917D00B653C3 /* RxMoya */; };
 		90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */; };
 		90D1C6E428BF6E1300B653C3 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E328BF6E1300B653C3 /* ShowView.swift */; };
 		90D1C6E628BF6E2300B653C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E528BF6E2300B653C3 /* HomeView.swift */; };
 		90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E728BF6E3000B653C3 /* WritingView.swift */; };
 		90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E928BF6E3D00B653C3 /* MyView.swift */; };
 		90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */; };
-		90D1C74728C1A3AE00B653C3 /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 90D1C74628C1A3AE00B653C3 /* SwiftUIFlowLayout */; };
+		90FCBE0228D4C0F400E0A9E3 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0128D4C0F400E0A9E3 /* CombineMoya */; };
+		90FCBE0428D4C0F400E0A9E3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0328D4C0F400E0A9E3 /* Moya */; };
+		90FCBE0628D4C0F400E0A9E3 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0528D4C0F400E0A9E3 /* ReactiveMoya */; };
+		90FCBE0828D4C0F400E0A9E3 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0728D4C0F400E0A9E3 /* RxMoya */; };
+		90FCBE0B28D4C12700E0A9E3 /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0A28D4C12700E0A9E3 /* SwiftUIFlowLayout */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +91,7 @@
 		4BE919EA28D304090002A268 /* EmailDuplicateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailDuplicateViewModel.swift; sourceTree = "<group>"; };
 		4BE919EB28D304090002A268 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		4BE919EC28D304090002A268 /* SendEmailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailViewModel.swift; sourceTree = "<group>"; };
+		9001F5FB28D3931700EC1F23 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		900990A728CDDBA300FD9462 /* MyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPost.swift; sourceTree = "<group>"; };
 		900990A928CE3E7E00FD9462 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		900990EA28D033C000FD9462 /* MyProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileModel.swift; sourceTree = "<group>"; };
@@ -106,7 +107,6 @@
 		908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		908ED77328CB789100763AC9 /* EditInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfo.swift; sourceTree = "<group>"; };
 		90A05CAC28D0B78C0031E71B /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
-		90A05CB528D2A2690031E71B /* TagsFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsFlowLayout.swift; sourceTree = "<group>"; };
 		90A05CBA28D300CD0031E71B /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		90A05CBC28D304220031E71B /* UserPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostModel.swift; sourceTree = "<group>"; };
 		90A05CBE28D306040031E71B /* TagListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListModel.swift; sourceTree = "<group>"; };
@@ -126,11 +126,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90D1C69B28BC917D00B653C3 /* Moya in Frameworks */,
-				90D1C69928BC917D00B653C3 /* CombineMoya in Frameworks */,
-				90D1C74728C1A3AE00B653C3 /* SwiftUIFlowLayout in Frameworks */,
-				90D1C69F28BC917D00B653C3 /* RxMoya in Frameworks */,
-				90D1C69D28BC917D00B653C3 /* ReactiveMoya in Frameworks */,
+				90FCBE0428D4C0F400E0A9E3 /* Moya in Frameworks */,
+				90FCBE0228D4C0F400E0A9E3 /* CombineMoya in Frameworks */,
+				90FCBE0B28D4C12700E0A9E3 /* SwiftUIFlowLayout in Frameworks */,
+				90FCBE0828D4C0F400E0A9E3 /* RxMoya in Frameworks */,
+				90FCBE0628D4C0F400E0A9E3 /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				90A05CAC28D0B78C0031E71B /* PostViewModel.swift */,
+				9001F5FB28D3931700EC1F23 /* HomeViewModel.swift */,
 			);
 			path = post;
 			sourceTree = "<group>";
@@ -233,8 +234,8 @@
 		907EF1DE28BBBA7E008A7562 /* Togather */ = {
 			isa = PBXGroup;
 			children = (
-				4BE919DF28D071AB0002A268 /* ViewModels */,
 				90D1C6ED28BF9B8900B653C3 /* Font */,
+				4BE919DF28D071AB0002A268 /* ViewModels */,
 				4BE919D228CF65750002A268 /* Model */,
 				907EF1DF28BBBA7E008A7562 /* DrawApp.swift */,
 				908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */,
@@ -269,14 +270,6 @@
 			path = "myview ->";
 			sourceTree = "<group>";
 		};
-		90A05CB228D2A2420031E71B /* ViewSupporter */ = {
-			isa = PBXGroup;
-			children = (
-				90A05CB528D2A2690031E71B /* TagsFlowLayout.swift */,
-			);
-			path = ViewSupporter;
-			sourceTree = "<group>";
-		};
 		90A05CB828D2FFDF0031E71B /* user */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,7 +294,6 @@
 		90D1C6E028BF6D8800B653C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				90A05CB228D2A2420031E71B /* ViewSupporter */,
 				4BE1C61928CDE9C00052AE3D /* SignUpView */,
 				900990A928CE3E7E00FD9462 /* SignInView.swift */,
 				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
@@ -349,11 +341,11 @@
 			);
 			name = Togather;
 			packageProductDependencies = (
-				90D1C69828BC917D00B653C3 /* CombineMoya */,
-				90D1C69A28BC917D00B653C3 /* Moya */,
-				90D1C69C28BC917D00B653C3 /* ReactiveMoya */,
-				90D1C69E28BC917D00B653C3 /* RxMoya */,
-				90D1C74628C1A3AE00B653C3 /* SwiftUIFlowLayout */,
+				90FCBE0128D4C0F400E0A9E3 /* CombineMoya */,
+				90FCBE0328D4C0F400E0A9E3 /* Moya */,
+				90FCBE0528D4C0F400E0A9E3 /* ReactiveMoya */,
+				90FCBE0728D4C0F400E0A9E3 /* RxMoya */,
+				90FCBE0A28D4C12700E0A9E3 /* SwiftUIFlowLayout */,
 			);
 			productName = Draw;
 			productReference = 907EF1DC28BBBA7E008A7562 /* Togather.app */;
@@ -384,8 +376,8 @@
 			);
 			mainGroup = 907EF1D328BBBA7E008A7562;
 			packageReferences = (
-				90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */,
-				90D1C74528C1A3AE00B653C3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
+				90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */,
+				90FCBE0928D4C12700E0A9E3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
 			);
 			productRefGroup = 907EF1DD28BBBA7E008A7562 /* Products */;
 			projectDirPath = "";
@@ -441,7 +433,6 @@
 				906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */,
 				4BE919EE28D304090002A268 /* LoginViewModel.swift in Sources */,
 				4BE919CE28CEF0CF0002A268 /* EnterNewPassword.swift in Sources */,
-				90A05CB628D2A2690031E71B /* TagsFlowLayout.swift in Sources */,
 				4BE919F128D304090002A268 /* SendEmailViewModel.swift in Sources */,
 				4BE1C61D28CDEA900052AE3D /* SignUpEmailVerifyView.swift in Sources */,
 				90A05CAD28D0B78C0031E71B /* PostViewModel.swift in Sources */,
@@ -458,6 +449,7 @@
 				900990AA28CE3E7E00FD9462 /* SignInView.swift in Sources */,
 				4BE919D028CEF0D60002A268 /* ChangePasswordSuccess.swift in Sources */,
 				90D1C6E628BF6E2300B653C3 /* HomeView.swift in Sources */,
+				9001F5FC28D3931700EC1F23 /* HomeViewModel.swift in Sources */,
 				90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */,
 				907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */,
 				4BE1C61F28CDEADA0052AE3D /* signUpSuccessView.swift in Sources */,
@@ -672,7 +664,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */ = {
+		90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
@@ -680,40 +672,41 @@
 				kind = branch;
 			};
 		};
-		90D1C74528C1A3AE00B653C3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */ = {
+		90FCBE0928D4C12700E0A9E3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/globulus/swiftui-flow-layout";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = versionRange;
+				maximumVersion = 2.0.0;
 				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		90D1C69828BC917D00B653C3 /* CombineMoya */ = {
+		90FCBE0128D4C0F400E0A9E3 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = CombineMoya;
 		};
-		90D1C69A28BC917D00B653C3 /* Moya */ = {
+		90FCBE0328D4C0F400E0A9E3 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
-		90D1C69C28BC917D00B653C3 /* ReactiveMoya */ = {
+		90FCBE0528D4C0F400E0A9E3 /* ReactiveMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = ReactiveMoya;
 		};
-		90D1C69E28BC917D00B653C3 /* RxMoya */ = {
+		90FCBE0728D4C0F400E0A9E3 /* RxMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90D1C69728BC917D00B653C3 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
 		};
-		90D1C74628C1A3AE00B653C3 /* SwiftUIFlowLayout */ = {
+		90FCBE0A28D4C12700E0A9E3 /* SwiftUIFlowLayout */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90D1C74528C1A3AE00B653C3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */;
+			package = 90FCBE0928D4C12700E0A9E3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */;
 			productName = SwiftUIFlowLayout;
 		};
 /* End XCSwiftPackageProductDependency section */

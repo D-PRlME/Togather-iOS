@@ -1,20 +1,20 @@
 import Foundation
 import Moya
 
-class EmailDuplicateViewModel: ObservableObject {
+class SendEmailViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>()
     
     @Published var email: String = ""
-    @Published var showingAlert: Bool = false
+    @Published var access: Bool = false
     
     
-    func emailDuplicate() {
-        userClient.request(.mailDuplicate(email: email)) { res in
+    func SendEmailToUser() {
+        userClient.request(.mailSignup(email: email)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {
-                case 200...201:
-                    print("이메일 중복 확인 성공")
+                case 200...206:
+                    print("✅유저에게 이메일을 보냄")
                 default:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
@@ -22,13 +22,13 @@ class EmailDuplicateViewModel: ObservableObject {
                         print("code: \(data.code)")
                         print("message: \(data.message)")
                     } else {
-                        print("⚠️emailDupilcate Error handling")
+                        print("⚠️sendEmail Error handling")
                     }
                 }
             case .failure(let err):
-                print("emailDupilcate error: \(err.localizedDescription)")
+                print("⛔️sendEmail error: \(err.localizedDescription)")
             }
         }
+        
     }
-    
 }

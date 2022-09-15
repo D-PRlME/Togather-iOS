@@ -27,9 +27,11 @@
 		4BE919D028CEF0D60002A268 /* ChangePasswordSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919CF28CEF0D60002A268 /* ChangePasswordSuccess.swift */; };
 		4BE919D428CF65880002A268 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919D328CF65880002A268 /* TokenModel.swift */; };
 		4BE919D728CF678A0002A268 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919D628CF678A0002A268 /* ErrorModel.swift */; };
-		4BE919DE28D071870002A268 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919DD28D071870002A268 /* SignUpViewModel.swift */; };
-		4BE919E128D078920002A268 /* EmailDuplicateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919E028D078920002A268 /* EmailDuplicateViewModel.swift */; };
-		4BE919E328D07FB90002A268 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919E228D07FB90002A268 /* LoginViewModel.swift */; };
+		4BE919ED28D304090002A268 /* EmailVerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919E828D304090002A268 /* EmailVerifyViewModel.swift */; };
+		4BE919EE28D304090002A268 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919E928D304090002A268 /* LoginViewModel.swift */; };
+		4BE919EF28D304090002A268 /* EmailDuplicateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919EA28D304090002A268 /* EmailDuplicateViewModel.swift */; };
+		4BE919F028D304090002A268 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919EB28D304090002A268 /* SignUpViewModel.swift */; };
+		4BE919F128D304090002A268 /* SendEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE919EC28D304090002A268 /* SendEmailViewModel.swift */; };
 		900990A828CDDBA300FD9462 /* MyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A728CDDBA300FD9462 /* MyPost.swift */; };
 		900990AA28CE3E7E00FD9462 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990A928CE3E7E00FD9462 /* SignInView.swift */; };
 		900990EB28D033C000FD9462 /* MyProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990EA28D033C000FD9462 /* MyProfileModel.swift */; };
@@ -84,9 +86,11 @@
 		4BE919CF28CEF0D60002A268 /* ChangePasswordSuccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordSuccess.swift; sourceTree = "<group>"; };
 		4BE919D328CF65880002A268 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		4BE919D628CF678A0002A268 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
-		4BE919DD28D071870002A268 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
-		4BE919E028D078920002A268 /* EmailDuplicateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDuplicateViewModel.swift; sourceTree = "<group>"; };
-		4BE919E228D07FB90002A268 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4BE919E828D304090002A268 /* EmailVerifyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerifyViewModel.swift; sourceTree = "<group>"; };
+		4BE919E928D304090002A268 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4BE919EA28D304090002A268 /* EmailDuplicateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailDuplicateViewModel.swift; sourceTree = "<group>"; };
+		4BE919EB28D304090002A268 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		4BE919EC28D304090002A268 /* SendEmailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailViewModel.swift; sourceTree = "<group>"; };
 		900990A728CDDBA300FD9462 /* MyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPost.swift; sourceTree = "<group>"; };
 		900990A928CE3E7E00FD9462 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		900990EA28D033C000FD9462 /* MyProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileModel.swift; sourceTree = "<group>"; };
@@ -193,9 +197,11 @@
 		900990F828D0B35F00FD9462 /* user */ = {
 			isa = PBXGroup;
 			children = (
-				4BE919E228D07FB90002A268 /* LoginViewModel.swift */,
-				4BE919DD28D071870002A268 /* SignUpViewModel.swift */,
-				4BE919E028D078920002A268 /* EmailDuplicateViewModel.swift */,
+				4BE919EA28D304090002A268 /* EmailDuplicateViewModel.swift */,
+				4BE919E828D304090002A268 /* EmailVerifyViewModel.swift */,
+				4BE919E928D304090002A268 /* LoginViewModel.swift */,
+				4BE919EC28D304090002A268 /* SendEmailViewModel.swift */,
+				4BE919EB28D304090002A268 /* SignUpViewModel.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -422,7 +428,9 @@
 				900990EF28D04EE700FD9462 /* MyPostModel.swift in Sources */,
 				90A05CBF28D306040031E71B /* TagListModel.swift in Sources */,
 				4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */,
+				4BE919F028D304090002A268 /* SignUpViewModel.swift in Sources */,
 				4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */,
+				4BE919ED28D304090002A268 /* EmailVerifyViewModel.swift in Sources */,
 				900990A828CDDBA300FD9462 /* MyPost.swift in Sources */,
 				90C50A5328CC8254007EA639 /* DeleteAccount.swift in Sources */,
 				4BE919D728CF678A0002A268 /* ErrorModel.swift in Sources */,
@@ -431,9 +439,10 @@
 				908ED77428CB789100763AC9 /* EditInfo.swift in Sources */,
 				900990F728D05D7400FD9462 /* UploadImageModel.swift in Sources */,
 				906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */,
+				4BE919EE28D304090002A268 /* LoginViewModel.swift in Sources */,
 				4BE919CE28CEF0CF0002A268 /* EnterNewPassword.swift in Sources */,
 				90A05CB628D2A2690031E71B /* TagsFlowLayout.swift in Sources */,
-				4BE919E328D07FB90002A268 /* LoginViewModel.swift in Sources */,
+				4BE919F128D304090002A268 /* SendEmailViewModel.swift in Sources */,
 				4BE1C61D28CDEA900052AE3D /* SignUpEmailVerifyView.swift in Sources */,
 				90A05CAD28D0B78C0031E71B /* PostViewModel.swift in Sources */,
 				90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */,
@@ -441,18 +450,17 @@
 				90D1C6E428BF6E1300B653C3 /* ShowView.swift in Sources */,
 				4BE919D428CF65880002A268 /* TokenModel.swift in Sources */,
 				4BE919CC28CEF0C40002A268 /* ChangePasswordVerify.swift in Sources */,
+				4BE919EF28D304090002A268 /* EmailDuplicateViewModel.swift in Sources */,
 				4B7F0AA828BEE24C00BBA52D /* UserClient.swift in Sources */,
 				90A05CBB28D300CD0031E71B /* UserProfileModel.swift in Sources */,
 				900990EB28D033C000FD9462 /* MyProfileModel.swift in Sources */,
 				4BE1C61B28CDEA100052AE3D /* SignUpView.swift in Sources */,
-				4BE919E128D078920002A268 /* EmailDuplicateViewModel.swift in Sources */,
 				900990AA28CE3E7E00FD9462 /* SignInView.swift in Sources */,
 				4BE919D028CEF0D60002A268 /* ChangePasswordSuccess.swift in Sources */,
 				90D1C6E628BF6E2300B653C3 /* HomeView.swift in Sources */,
 				90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */,
 				907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */,
 				4BE1C61F28CDEADA0052AE3D /* signUpSuccessView.swift in Sources */,
-				4BE919DE28D071870002A268 /* SignUpViewModel.swift in Sources */,
 				90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

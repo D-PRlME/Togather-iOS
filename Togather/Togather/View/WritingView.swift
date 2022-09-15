@@ -98,21 +98,7 @@ struct WritingView: View {
                 } //플레이스 홀더
             }
             
-            FlowLayout(mode: .scrollable,
-                       items: DevLanguage,
-                       itemSpacing: 5) {index in
-                Text(index)
-                    .foregroundColor(.black)
-                    .font(.custom("Pretendard-Medium", size: 16))
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 6)
-                    .background(Color(red: 0.905, green: 0.905, blue: 0.905))
-                    .cornerRadius(37)
-                    .padding(1)
-                    .background(Color("TabBarStroke"))
-                    .cornerRadius(37)
-            }
-            
+            TagsFlowLayout()
             //MARK: - 글쓰기 버튼
 
             HStack {
@@ -131,10 +117,10 @@ struct WritingView: View {
                         .padding(.vertical, 5)
                         .background(Color(red: 0.882, green: 0.678, blue: 0.004))
                         .cornerRadius(37)
+                        .padding(2)
+                        .background(Color("YellowStroke"))
+                        .cornerRadius(37)
                 }
-                .padding(2)
-                .background(Color("YellowStroke"))
-                .cornerRadius(37)
                 
                 Spacer()
             }

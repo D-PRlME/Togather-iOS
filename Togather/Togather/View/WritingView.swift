@@ -1,23 +1,16 @@
-
 import SwiftUI
 import SwiftUIFlowLayout
 
 struct WritingView: View {
-    @State var titleText: String = ""
-    @State var linkText: String = ""
-    @State var contentText: String = ""
+    
+    @Binding var showModal: Bool
+
+    @State var tagBtnArr: [String] = []
     
     @StateObject var postViewModel = PostViewModel()
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
-    init() {
-        UITextView.appearance().backgroundColor = .clear
-    } //textEditor 기본배경 지우기 (안하면 배경색이 적용 안됨)
-    
     var body: some View {
         VStack {
-            
             //MARK: - 취소버튼
 
             HStack {
@@ -28,13 +21,13 @@ struct WritingView: View {
                     .padding(.trailing, 16)
                     .padding(.top, 16)
                     .onTapGesture {
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.showModal.toggle()
                     }
             }
             
             //MARK: - 제목
 
-            TextField("제목", text: $titleText)
+            TextField("제목", text: $postViewModel.title)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 .font(.custom("Pretendard-Medium", size: 20))
@@ -50,7 +43,7 @@ struct WritingView: View {
             //MARK: - 링크
 
             HStack {
-                TextField("연락받을 링크", text: $linkText)
+                TextField("연락받을 링크", text: $postViewModel.link)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .font(.custom("Pretendard-Medium", size: 20))
@@ -76,8 +69,9 @@ struct WritingView: View {
             //MARK: - 본문
 
             ZStack(alignment: .topLeading) {
-                TextEditor(text: $contentText)
+                TextEditor(text: $postViewModel.content)
                     .font(.custom("Pretendard-Medium", size: 20))
+                    .foregroundColor(.black)
                     .padding(.leading, 10)
                     .padding(.top, 12)
                     .background(Color(red: 0.97, green: 0.97, blue: 0.97))
@@ -87,7 +81,7 @@ struct WritingView: View {
                     .cornerRadius(6)
                 
                 
-                if(self.contentText.count <= 0) {
+                if(self.postViewModel.content.count <= 0) {
                     Text("본문을 입력하세요")
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
@@ -98,17 +92,33 @@ struct WritingView: View {
                 } //플레이스 홀더
             }
             
-            TagsFlowLayout()
+            FlowLayout(mode: .scrollable,
+                       items: postViewModel.tagListName,
+                       itemSpacing: 5) {index in
+                
+                Button {
+                    print("hi")
+                } label: {
+                    Text(index)
+                        .foregroundColor(.black)
+                        .font(.custom("Pretendard-Medium", size: 16))
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                        .cornerRadius(37)
+                        .padding(1)
+                        .background(Color("TabBarStroke"))
+                        .cornerRadius(37)
+                }
+                .buttonStyle(.plain)
+            }
+            
             //MARK: - 글쓰기 버튼
 
             HStack {
                 Button(action: {
-                    postViewModel.title = titleText
-                    postViewModel.content = contentText
-//                    postViewModel.tag = 여기에 태그 String 배열 넣어요
-                    postViewModel.link = linkText
-                    
                     postViewModel.post()
+                    showModal = false
                 }) {
                     Text("글쓰기")
                         .font(.custom("Pretendard-Bold", size: 18))
@@ -121,18 +131,20 @@ struct WritingView: View {
                         .background(Color("YellowStroke"))
                         .cornerRadius(37)
                 }
-                
                 Spacer()
             }
-            
         } //Vstack
         .padding(.horizontal, 16)
         .padding(.bottom, 16)
+        .onAppear {
+            UITextView.appearance().backgroundColor = .clear
+            postViewModel.GetTagList()
+        }
     } // body
 }
 
 struct Writing_Previews: PreviewProvider {
     static var previews: some View {
-        WritingView()
+        WritingView(showModal: .constant(true))
     }
 }

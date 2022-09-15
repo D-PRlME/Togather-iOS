@@ -41,20 +41,7 @@ struct SearchView: View {
                         SearchBar(text: $text)
                             .padding(.top, 11)
                             .padding(.bottom, 16)
-                        FlowLayout(mode: .scrollable,
-                                   items: DevLanguage,
-                                   itemSpacing: 5) {index in
-                            Text(index)
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Medium", size: 16))
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 6)
-                                .background(Color(red: 0.905, green: 0.905, blue: 0.905))
-                                .cornerRadius(37)
-                                .padding(1)
-                                .background(Color("TabBarStroke"))
-                                .cornerRadius(37)
-                        }
+                        TagsFlowLayout()
                         HStack {
                             Text("모든 태그 보기")
                                 .foregroundColor(.black)
@@ -83,20 +70,7 @@ struct SearchView: View {
                                         .foregroundColor(.black)
                                         .font(.custom("Pretendard-Bold", size: 24))
                                         .multilineTextAlignment(.leading)
-                                    FlowLayout(mode: .scrollable,
-                                               items: DevLanguage,
-                                               itemSpacing: 5) {index in
-                                        Text(index)
-                                            .foregroundColor(.black)
-                                            .font(.custom("Pretendard-Medium", size: 16))
-                                            .padding(.horizontal, 12)
-                                            .padding(.vertical, 6)
-                                            .background(Color(red: 0.905, green: 0.905, blue: 0.905))
-                                            .cornerRadius(37)
-                                            .padding(1)
-                                            .background(Color("TabBarStroke"))
-                                            .cornerRadius(37)
-                                    }
+                                    TagsFlowLayout()
                                     Rectangle()
                                         .foregroundColor(Color("TabBarStroke"))
                                         .frame(width: proxy.size.width - 70, height: 1)

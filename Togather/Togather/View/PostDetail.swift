@@ -44,20 +44,7 @@ struct PostDetail: View {
                     Rectangle()
                         .foregroundColor(Color("TabBarStroke"))
                         .frame(width: proxy.size.width - 32, height: 1)
-                    FlowLayout(mode: .scrollable,
-                               items: DevLanguage,
-                               itemSpacing: 5) {index in
-                        Text(index)
-                            .foregroundColor(.black)
-                            .font(.custom("Pretendard-Medium", size: 16))
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
-                            .background(Color(red: 0.905, green: 0.905, blue: 0.905))
-                            .cornerRadius(37)
-                            .padding(1)
-                            .background(Color("TabBarStroke"))
-                            .cornerRadius(37)
-                    }
+                    TagsFlowLayout()
                     Text("내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용이 울부지저따“콰아아아아”내용이 울부짖자 대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수해따.")
                         .foregroundColor(.black)
                         .font(.custom("Pretendard-Medium", size: 18))

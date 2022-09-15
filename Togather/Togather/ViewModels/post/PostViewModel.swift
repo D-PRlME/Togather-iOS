@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class PostViewModel: ObservableObject {
-    let postClient = MoyaProvider<PostService>()
+    let postClient = MoyaProvider<PostService>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
     
     @Published var title: String = ""
     @Published var content: String = ""
@@ -14,7 +14,7 @@ class PostViewModel: ObservableObject {
             switch res {
             case .success(let result):
                 switch result.statusCode {
-                case 200...201:
+                case 200...206:
                     print("게시물 올리기 성공")
                 default:
                     let decoder = JSONDecoder()
@@ -23,11 +23,11 @@ class PostViewModel: ObservableObject {
                         print("code: \(data.code)")
                         print("message: \(data.message)")
                     } else {
-                        print("⚠️post error")
+                        print("⚠️post Error handling")
                     }
                 }
             case .failure(let err):
-                print("emailDupilcate error: \(err.localizedDescription)")
+                print("⛔️post error: \(err.localizedDescription)")
             }
         }
     }

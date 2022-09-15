@@ -21,7 +21,6 @@ class LoginViewModel: ObservableObject {
                         Token.refreshToken = data.refresh_token
                         print("✅로그인 성공")
                         print("🔊\(data.expired_at)")
-                        print(data.access_token)
                         self.viewTag = 1
                     } else {
                         print("⚠️login docoder error")
@@ -37,7 +36,7 @@ class LoginViewModel: ObservableObject {
                     }
                 }
             case .failure(let err):
-                print("login error: \(err.localizedDescription)")
+                print("⛔️login error: \(err.localizedDescription)")
             }
         }
     }

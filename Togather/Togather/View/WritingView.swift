@@ -105,7 +105,7 @@ struct WritingView: View {
                 Button(action: {
                     postViewModel.title = titleText
                     postViewModel.content = contentText
-//                    postViewModel.tag =
+//                    postViewModel.tag = 여기에 태그 String 배열 넣어요
                     postViewModel.link = linkText
                     
                     postViewModel.post()

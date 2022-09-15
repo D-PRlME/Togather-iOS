@@ -70,19 +70,66 @@ extension UserService: TargetType {
         case .tokenReissue, .getMyprofile, .logout, .quitAccount:
             return .requestPlain
         case .mailDuplicate(let email):
-            return .requestJSONEncodable(["email" : email])
+            return .requestParameters(
+                parameters:
+                    [
+                        "email" : email
+                    ],
+                encoding: JSONEncoding.default)
+            
         case .mailSignup(let email):
-            return .requestJSONEncodable(["email" : email])
+            return .requestParameters(
+                parameters:
+                    [
+                        "email" : email
+                    ],
+                encoding: JSONEncoding.default)
+            
         case .mailVerify(let email, let authCode):
-            return .requestJSONEncodable(["email" : email, "auth_code" : authCode])
+            return .requestParameters(
+                parameters:
+                    [
+                        "email" : email,
+                        "auth_code" : authCode
+                    ],
+                encoding: JSONEncoding.default)
+            
         case .changeMyInfo(let name, let picture):
-            return .requestJSONEncodable(["name" : name, "picture" : picture])
+            return .requestParameters(
+                parameters:
+                    [
+                        "name" : name,
+                        "picture" : picture
+                    ],
+                encoding: JSONEncoding.default)
+
         case .changePassword(let oldPassword, let newPassword):
-            return .requestJSONEncodable(["old_password" : oldPassword, "new_password" : newPassword])
+            return .requestParameters(
+                parameters:
+                    [
+                        "old_password" : oldPassword,
+                        "new_password" : newPassword
+                    ],
+                encoding: JSONEncoding.default)
+            
         case .login(let ID, let PW):
-            return .requestJSONEncodable(["email" : ID, "password" : PW])
+            return .requestParameters(
+                parameters:
+                    [
+                        "email" : ID,
+                        "password" : PW
+                    ],
+                encoding: JSONEncoding.default)
+            
         case .signup(let password, let email, let name):
-            return .requestJSONEncodable(["password" : password, "name" : name, "email" : email])
+            return .requestParameters(
+                parameters:
+                    [
+                        "password" : password,
+                        "name" : name,
+                        "email" : email
+                    ],
+                encoding: JSONEncoding.default)
         }
     }
     

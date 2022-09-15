@@ -32,7 +32,7 @@ extension PostService: TargetType {
         case .deletePost(let postID):
             return "/\(postID)"
         case .getTag:
-            return "/tag"
+            return "/tag/list"
         }
     }
     
@@ -53,14 +53,47 @@ extension PostService: TargetType {
     var task: Task {
         switch self {
             
-        case .post(let title, let content, let tags, _):
-            return .requestJSONEncodable(["title" : title, "tag" : "\(tags)", "content" : content])
+        case .post(let title, let content, let tags, let link):
+            return .requestParameters(
+                parameters:
+                    [
+                        "title": title,
+                        "tags": tags,
+                        "content": content,
+                        "link": link
+                    ],
+                encoding: JSONEncoding.default)
+            
         case .editPost(let title, let content, let tags, _, _):
-            return .requestJSONEncodable(["title" : title, "tag" : "\(tags)", "content" : content])
+            return .requestParameters(
+                parameters:
+                    [
+                        "title" : title,
+                        "tags" : tags,
+                        "content" : content
+                    ],
+                encoding: JSONEncoding.default)
+            
         case .getMyPosts(let page, let size, let sort):
-            return .requestParameters(parameters: ["page" : page, "size" : size, "sort" : sort], encoding: URLEncoding.queryString)
+            return .requestParameters(
+                parameters:
+                    [
+                        "page" : page,
+                        "size" : size,
+                        "sort" : sort
+                    ],
+                encoding: URLEncoding.queryString)
+            
         case .getPosts(let page, let size, let sort):
-            return .requestParameters(parameters: ["page" : page, "size" : size, "sort" : sort], encoding: URLEncoding.queryString)
+            return .requestParameters(
+                parameters:
+                    [
+                        "page" : page,
+                        "size" : size,
+                        "sort" : sort
+                    ],
+                encoding: URLEncoding.queryString)
+            
         case .getDetailPosts, .deletePost, .getTag:
             return .requestPlain
         }
@@ -68,9 +101,7 @@ extension PostService: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .post, .editPost, .deletePost, .getTag:
-            return Header.tokenIsEmpty.header()
-        case .getMyPosts, .getPosts, .getDetailPosts:
+        case .getMyPosts, .getPosts, .getDetailPosts, .post, .editPost, .deletePost, .getTag:
             return Header.accessToken.header()
         }
     }

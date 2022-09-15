@@ -1,7 +1,7 @@
 import Foundation
 
-// MARK: - LookUpMyProfileModel (내 프로필 조회)
-struct LookUpProfileModel: Codable {
+// MARK: - MyProfileModel (내 프로필 조회)
+struct MyProfileModel: Codable {
     let account_id: String
     let email: String
     let profile_image_url: String

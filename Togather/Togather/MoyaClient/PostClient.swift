@@ -5,7 +5,8 @@ enum PostService {
     case post(title: String, content: String, tag: [String], link: String)
     case editPost(title: String, content: String, tag: [String], link: String, postID: Int)
     case getMyPosts(page: Int, size: Int, sort: String)
-    case getPosts(page: Int, size: Int, sort: String)
+//    case getPosts(page: Int, size: Int, sort: String)
+    case getPosts
     case getDetailPosts(postID: Int)
     case deletePost(postID: Int)
     case getTag
@@ -84,17 +85,17 @@ extension PostService: TargetType {
                     ],
                 encoding: URLEncoding.queryString)
             
-        case .getPosts(let page, let size, let sort):
-            return .requestParameters(
-                parameters:
-                    [
-                        "page" : page,
-                        "size" : size,
-                        "sort" : sort
-                    ],
-                encoding: URLEncoding.queryString)
+//        case .getPosts(let page, let size, let sort):
+//            return .requestParameters(
+//                parameters:
+//                    [
+//                        "page" : page,
+//                        "size" : size,
+//                        "sort" : sort
+//                    ],
+//                encoding: URLEncoding.queryString)
             
-        case .getDetailPosts, .deletePost, .getTag:
+        case .getDetailPosts, .deletePost, .getTag, .getPosts:
             return .requestPlain
         }
     }

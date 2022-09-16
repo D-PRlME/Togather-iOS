@@ -4,10 +4,14 @@ import Moya
 class PostViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
     
+    
     @Published var title: String = ""
     @Published var content: String = ""
     @Published var tag: [String] = []
     @Published var link: String = ""
+    
+    @Published var tagList: [Tag] = []
+    @Published var tagListName: [String] = []
     
     func post() {
         postClient.request(.post(title: title, content: content, tag: tag, link: link)) { res in
@@ -31,5 +35,34 @@ class PostViewModel: ObservableObject {
             }
         }
     }
-    
+    func GetTagList() {
+        postClient.request(.getTag) { res in
+            switch res {
+            case .success(let result):
+                switch result.statusCode {
+                case 200...206:
+                    let decoder = JSONDecoder()
+                    if let data = try? decoder.decode(TagListModel.self, from: result.data) {
+                        self.tagList = data.tags
+                        for i in 0..<self.tagList.count {
+                            self.tagListName.append(self.tagList[i].name)
+                        }
+                    } else {
+                        print("⚠️login docoder error")
+                    }
+                default:
+                    let decoder = JSONDecoder()
+                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
+                        print("status: \(data.status)")
+                        print("code: \(data.code)")
+                        print("message: \(data.message)")
+                    } else {
+                        print("⚠️post Error handling")
+                    }
+                }
+            case .failure(let err):
+                print("⛔️post error: \(err.localizedDescription)")
+            }
+        }
+    }
 }

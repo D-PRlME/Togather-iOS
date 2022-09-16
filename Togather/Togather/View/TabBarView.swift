@@ -7,7 +7,8 @@ enum TabIndex {
 
 struct TabBarView: View {
     @State var tabIndex = TabIndex.home
-    @State var GoWriteModal = false
+    @State var showModal = false
+    
     
     func changeMyView(tableIndex: TabIndex) -> ShowView {
         switch tabIndex {
@@ -64,7 +65,7 @@ struct TabBarView: View {
                                 print("Writing View")
                                 print("----------------------------------")
                                 print("MyView -> 계정 정보 수정 -> EditInfo")
-                                GoWriteModal = true
+                                showModal.toggle()
                             } label: {
                                 VStack {
                                     Image(tabIndex == .write ? "WritingOn" : "WritingOff")
@@ -78,8 +79,8 @@ struct TabBarView: View {
                                 }
                                 .frame(width: proxy.size.width/4, height: 50)
                                 
-                            } .sheet(isPresented: self.$GoWriteModal) {
-                                WritingView()
+                            } .sheet(isPresented: self.$showModal) {
+                                WritingView(showModal: self.$showModal)
                             }
                             .buttonStyle(.plain)
                             VStack {

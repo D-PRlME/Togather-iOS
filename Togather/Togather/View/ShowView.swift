@@ -11,7 +11,7 @@ struct ShowView: View {
             case 1 :
                 HomeView()
             case 2 :
-                WritingView()
+                HomeView()
             case 3 :
                 SearchView()
             case 4:

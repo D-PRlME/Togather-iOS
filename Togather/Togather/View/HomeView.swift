@@ -10,6 +10,10 @@ struct HomeView: View {
     
     @State var GoPostDetail = false
     
+    @State var postList: [PostList] = []
+    
+    @StateObject var homeViewModel = HomeViewModel()
+    
     var body: some View {
         GeometryReader { proxy in
             ZStack() {
@@ -18,14 +22,20 @@ struct HomeView: View {
                     ScrollView() {
                         ScrollView(.horizontal, showsIndicators: true) {
                             HStack {
-                                ForEach(0..<DevLanguage.count, id: \.self) { i in
+                                ForEach(homeViewModel.tagList, id: \.self) { index in
                                     VStack {
-                                        Rectangle()
-                                            .foregroundColor(DevColor[i])
-                                            .frame(width: 56, height: 56)
-                                            .cornerRadius(20)
-                                            .padding(.horizontal, 4)
-                                        Text(DevLanguage[i])
+                                        AsyncImage(url: URL(string: index.image_url)) { image in
+                                            image
+                                                .resizable()
+                                                .scaledToFit()
+                                        } placeholder: {
+                                            Image(systemName: "image.fill")
+                                                .foregroundColor(.black)
+                                        }
+                                        .frame(width: 56, height: 56)
+                                        .cornerRadius(20)
+                                        .padding(.horizontal, 4)
+                                        Text(index.name)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-ExtraBold", size: 14))
                                             .padding(.bottom, 9)
@@ -37,25 +47,48 @@ struct HomeView: View {
                         Rectangle()
                             .foregroundColor(Color("TabBarStroke"))
                             .frame(width: proxy.size.width, height: 1)
-                        ForEach(0..<6, id: \.self) { i in
+                        ForEach(homeViewModel.postList, id: \.post_id) { data in
                             Button {
                                 GoPostDetail = true
                             } label: {
                                 VStack(alignment: .leading, spacing: 8) {
-                                    Text("제목제목제목제목제목제목제목제목제목제목제목")
+                                    Text(data.title)
                                         .foregroundColor(.black)
                                         .font(.custom("Pretendard-Bold", size: 24))
                                         .multilineTextAlignment(.leading)
-                                    TagsFlowLayout()
+                                        .padding(.leading, 5)
+                                    FlowLayout(mode: .scrollable,
+                                               items: data.tags,
+                                               itemSpacing: 5) {
+                                        Text($0.name)
+                                            .foregroundColor(.black)
+                                            .font(.custom("Pretendard-Medium", size: 16))
+                                            .padding(.horizontal, 12)
+                                            .padding(.vertical, 6)
+                                            .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                                            .cornerRadius(37)
+                                            .padding(1)
+                                            .background(Color("TabBarStroke"))
+                                            .cornerRadius(37)
+                                    }
                                     Rectangle()
                                         .foregroundColor(Color("TabBarStroke"))
                                         .frame(width: proxy.size.width - 70, height: 1)
                                     HStack(spacing: 8) {
-                                        Image(systemName: "person.fill")
-                                            .foregroundColor(.black)
-                                            .frame(width: 33, height: 33)
-                                            .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                                        Text(Developer[i])
+                                        AsyncImage(url: URL(string: data.user_profile_image)) { image in
+                                            image
+                                                .resizable()
+                                                .scaledToFit()
+                                                .clipShape(Circle())
+                                        } placeholder: {
+                                            Image(systemName: "person.fill")
+                                                .foregroundColor(.black)
+                                        }
+                                        
+                                        .frame(width: 33, height: 33)
+                                        .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
+
+                                        Text(data.user_name)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                         Spacer()
@@ -69,7 +102,7 @@ struct HomeView: View {
                                 .cornerRadius(8)
                             }
                             .buttonStyle(.plain)
-
+                            
                         }
                         .sheet(isPresented: $GoPostDetail, content: {
                             PostDetail()
@@ -78,8 +111,12 @@ struct HomeView: View {
                         .padding(.vertical, 8)
                         
                     }
-//                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+                    //                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                     .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+                    .onAppear() {
+                        homeViewModel.post()
+                        homeViewModel.GetTagList()
+                    }
                     
                 }
                 Spacer()

@@ -1,41 +1,36 @@
 import Foundation
 
 struct Posts_Detail {
-    let post_id: Int
     let title: String
-    let user_name: String
-    let user_profile_image: String
+    let user: Users
     let created_at: String
     let tags: [Tags]
     let content: String
+    let link: String
     
     init(
-        post_id: Int,
         title: String,
-        user_name: String,
-        user_profile_image: String,
+        user: Users,
         created_at: String,
         tags: [Tags],
-        content: String
+        content: String,
+        link: String
     ){
-        self.post_id = post_id
         self.title = title
-        self.user_name = user_name
-        self.user_profile_image = user_profile_image
+        self.user = user
         self.created_at = created_at
         self.tags = tags
         self.content = content
+        self.link = link
     }
 }
 
 // MARK: - PostDetailModel
 struct PostDetailModel: Codable {
-    let post_id: Int
-    let title, user_name: String
-    let user_profile_image: String
-    let created_at: String
-    let tag: [Tag]
-    let content: String
+    let title, created_at: String
+    let user: User
+    let tags: [Tag]
+    let content, link: String
 }
 
 /*

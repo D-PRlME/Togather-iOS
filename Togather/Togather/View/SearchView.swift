@@ -54,6 +54,8 @@ struct SearchView: View {
                                 .padding(1)
                                 .background(Color("TabBarStroke"))
                                 .cornerRadius(37)
+                                .padding(.trailing, 8)
+                                .padding(.bottom, 8)
                         }
                         HStack {
                             Text("모든 태그 보기")
@@ -96,6 +98,8 @@ struct SearchView: View {
                                             .padding(1)
                                             .background(Color("TabBarStroke"))
                                             .cornerRadius(37)
+                                            .padding(.trailing, 8)
+                                            .padding(.bottom, 8)
                                     }
                                     Rectangle()
                                         .foregroundColor(Color("TabBarStroke"))

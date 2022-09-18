@@ -1,5 +1,6 @@
 import Foundation
 import Moya
+import SwiftUI
 
 class PostViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
@@ -14,6 +15,11 @@ class PostViewModel: ObservableObject {
     @Published var tagListName: [String] = []
     
     func post() {
+        for i in 0..<self.tag.count {
+            self.tag[i] = self.tag[i].uppercased()
+            self.tag[i] = self.tag[i].replacingOccurrences(of: ".", with: "_")
+        }
+        print(self.tag)
         postClient.request(.post(title: title, content: content, tag: tag, link: link)) { res in
             switch res {
             case .success(let result):
@@ -27,7 +33,7 @@ class PostViewModel: ObservableObject {
                         print("code: \(data.code)")
                         print("message: \(data.message)")
                     } else {
-                        print("⚠️post Error handling")
+                        print("⚠️Writing Error handling")
                     }
                 }
             case .failure(let err):

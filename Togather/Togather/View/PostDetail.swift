@@ -9,8 +9,6 @@ import SwiftUI
 import SwiftUIFlowLayout
 
 struct PostDetail: View {
-    @Binding var postID: Int
-    
     @Binding var showModal: Bool
     
     @StateObject var postDetailViewModel = PostDetailViewModel()
@@ -19,7 +17,7 @@ struct PostDetail: View {
         GeometryReader { proxy in
             ZStack {
                 ColorManager.BackgroundColor1.ignoresSafeArea()
-                VStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 12) {
                     HStack {
                         Spacer()
                         Image("CloseBtn")
@@ -33,9 +31,10 @@ struct PostDetail: View {
                     Text(postDetailViewModel.postDetail.title)
                         .foregroundColor(.black)
                         .font(.custom("Pretendard-Bold", size: 24))
+                    
                         .padding(.top, 7)
                     HStack(spacing: 8) {
-                        AsyncImage(url: URL(string: postDetailViewModel.postDetail.user_profile_image)) { image in
+                        AsyncImage(url: URL(string: postDetailViewModel.postDetail.user.profile_image_url)) { image in
                             image
                                 .resizable()
                                 .scaledToFit()
@@ -48,20 +47,22 @@ struct PostDetail: View {
                         .frame(width: 33, height: 33)
                         .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
 
-                        Text(postDetailViewModel.postDetail.user_name)
+                        Text(postDetailViewModel.postDetail.user.user_name)
                             .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 16))
                         Spacer()
-                        Text("1시간 전")
-                            .foregroundColor(.black)
+                        Text(postDetailViewModel.postDetail.created_at)
+                            .foregroundColor(Color(red: 0.47, green: 0.47, blue: 0.47, opacity: 1))
                             .font(.custom("Pretendard-Medium", size: 16))
                     }
+                    
                     Rectangle()
                         .foregroundColor(Color("TabBarStroke"))
                         .frame(width: proxy.size.width - 32, height: 1)
+                    
                     FlowLayout(mode: .scrollable,
                                items: postDetailViewModel.postDetail.tags,
-                               itemSpacing: 5) {
+                               itemSpacing: 0) {
                         Text($0.name)
                             .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 16))
@@ -72,7 +73,10 @@ struct PostDetail: View {
                             .padding(1)
                             .background(Color("TabBarStroke"))
                             .cornerRadius(37)
+                            .padding(.trailing, 8)
+                            .padding(.bottom, 8)
                     }
+                    
                     Text(postDetailViewModel.postDetail.content)
                         .foregroundColor(.black)
                         .font(.custom("Pretendard-Medium", size: 18))
@@ -102,8 +106,9 @@ struct PostDetail: View {
             }
         }
         .onAppear() {
+            print("postdetail:", UserDefaults.standard.integer(forKey: "postID"))
+            postDetailViewModel.postID = UserDefaults.standard.integer(forKey: "postID")
             postDetailViewModel.getPostDetail()
-            postDetailViewModel.postID = postID
         }
     }
 }

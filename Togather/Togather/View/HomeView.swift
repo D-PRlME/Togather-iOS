@@ -102,11 +102,14 @@ struct HomeView: View {
                                 .cornerRadius(8)
                             }
                             .buttonStyle(.plain)
+                            .sheet(isPresented: $GoPostDetail, content: {
+                                PostDetail(
+                                    postID: .constant(data.post_id),
+                                    showModal: self.$GoPostDetail
+                                )
+                            })
                             
                         }
-                        .sheet(isPresented: $GoPostDetail, content: {
-                            PostDetail()
-                        })
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
                         

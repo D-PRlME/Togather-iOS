@@ -9,7 +9,12 @@ import SwiftUI
 import SwiftUIFlowLayout
 
 struct PostDetail: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Binding var postID: Int
+    
+    @Binding var showModal: Bool
+    
+    @StateObject var postDetailViewModel = PostDetailViewModel()
+    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -22,18 +27,28 @@ struct PostDetail: View {
                             .frame(width: 30, height: 30)
                             .padding(.top, 16)
                             .onTapGesture {
-                                self.presentationMode.wrappedValue.dismiss()
+                                showModal.toggle()
                             }
                     }
-                    Text("제목제목제목제목제목제목제목제목제목제목제목")
+                    Text(postDetailViewModel.postDetail.title)
                         .foregroundColor(.black)
                         .font(.custom("Pretendard-Bold", size: 24))
                         .padding(.top, 7)
                     HStack(spacing: 8) {
-                        Image(systemName: "person.fill")
-                            .frame(width: 33, height: 33)
-                            .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                        Text(Developer[0])
+                        AsyncImage(url: URL(string: postDetailViewModel.postDetail.user_profile_image)) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(Circle())
+                        } placeholder: {
+                            Image(systemName: "person.fill")
+                                .foregroundColor(.black)
+                        }
+                        
+                        .frame(width: 33, height: 33)
+                        .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
+
+                        Text(postDetailViewModel.postDetail.user_name)
                             .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 16))
                         Spacer()
@@ -45,9 +60,9 @@ struct PostDetail: View {
                         .foregroundColor(Color("TabBarStroke"))
                         .frame(width: proxy.size.width - 32, height: 1)
                     FlowLayout(mode: .scrollable,
-                               items: DevLanguage,
-                               itemSpacing: 5) {index in
-                        Text(index)
+                               items: postDetailViewModel.postDetail.tags,
+                               itemSpacing: 5) {
+                        Text($0.name)
                             .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 16))
                             .padding(.horizontal, 12)
@@ -58,7 +73,7 @@ struct PostDetail: View {
                             .background(Color("TabBarStroke"))
                             .cornerRadius(37)
                     }
-                    Text("내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용이 울부지저따“콰아아아아”내용이 울부짖자 대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수해따.")
+                    Text(postDetailViewModel.postDetail.content)
                         .foregroundColor(.black)
                         .font(.custom("Pretendard-Medium", size: 18))
                     Spacer()
@@ -86,11 +101,15 @@ struct PostDetail: View {
                 .padding(.bottom, 16)
             }
         }
+        .onAppear() {
+            postDetailViewModel.getPostDetail()
+            postDetailViewModel.postID = postID
+        }
     }
 }
 
-struct PostDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        PostDetail()
-    }
-}
+//struct PostDetail_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PostDetail(postID: .constant(1), showModal: .constant(true))
+//    }
+//}

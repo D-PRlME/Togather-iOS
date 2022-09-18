@@ -83,9 +83,9 @@ struct MyPost: View {
                             }
                             
                         }
-                        .sheet(isPresented: $GoPostDetail, content: {
-                            PostDetail()
-                        })
+//                        .sheet(isPresented: $GoPostDetail, content: {
+//                            PostDetail(postID: <#Binding<Int>#>, showModal: <#Binding<Bool>#>)
+//                        })
                         .padding(.vertical, 8)
                     }
                 }

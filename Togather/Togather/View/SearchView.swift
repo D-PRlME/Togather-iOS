@@ -120,9 +120,9 @@ struct SearchView: View {
                             }
                             
                         }
-                        .sheet(isPresented: $GoPostDetail, content: {
-                            PostDetail()
-                        })
+//                        .sheet(isPresented: $GoPostDetail, content: {
+//                            PostDetail(postID: <#Binding<Int>#>, showModal: <#Binding<Bool>#>)
+//                        })
                         .padding(.vertical, 8)
                     }
                     //                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)

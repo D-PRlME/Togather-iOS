@@ -7,19 +7,16 @@ class HomeViewModel: ObservableObject {
     @Published var postList: [Posts] = []
     
     @Published var post_id: [Int] = []
-    @Published var title: [String] = []
-    @Published var user_name: [String] = []
-    @Published var user_profile_image: [String] = []
-    @Published var created_at: [String] = []
-    @Published var tags: [Tags] = []
+//    @Published var title: [String] = []
+//    @Published var user_name: [String] = []
+//    @Published var user_profile_image: [String] = []
+//    @Published var created_at: [String] = []
+//    @Published var tags: [Tags] = []
     
     @Published var tagList: [Tags] = []
     
     func post() {
         postClient.request(.getPosts) { res in
-            func timeDiff(_ :String) {
-                
-            }
             switch res {
             case .success(let result):
                 switch result.statusCode {

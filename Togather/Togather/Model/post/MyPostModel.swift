@@ -3,17 +3,18 @@ import Foundation
 // MARK: - MyPostModel
 struct MyPostModel: Codable {
     let post_list: [MyPostList]
-    let totalPage: Int
-    let last, first: Bool
 }
 
 // MARK: - PostList
 struct MyPostList: Codable {
     let post_id: Int
-    let title, user_name: String
-    let tag: [String]
+    let title: String
+    let user: User
+    let created_at: String
+    let tags: [Tag]
+    let is_complete: Bool
+    let like_count: Int
 }
-
 /*
  {
      "post_list" : [

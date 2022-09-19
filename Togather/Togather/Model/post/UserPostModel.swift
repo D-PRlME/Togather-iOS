@@ -1,6 +1,11 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let userPostModel = try? newJSONDecoder().decode(UserPostModel.self, from: jsonData)
+
 import Foundation
 
-// MARK: - UserPostModel (그냥 포스트랑 제목, 태그 검생 포함)
+// MARK: - UserPostModel
 struct UserPostModel: Codable {
     let post_list: [PostList]
 }
@@ -8,32 +13,36 @@ struct UserPostModel: Codable {
 // MARK: - PostList
 struct PostList: Codable {
     let post_id: Int
-    let title, user_name: String
-    let user_profile_image: String
+    let title: String
+    let user: User
+    let tag: [Tag]
     let created_at: String
-    let tags: [Tag]
+}
+// MARK: - User
+struct User: Codable {
+    let user_id: Int
+    let user_name: String
+    let profile_image_url: String
 }
 
+//
 struct Posts {
     let post_id: Int
     let title: String
-    let user_name: String
-    let user_profile_image: String
+    let users: Users
+    let tags: [Tags]
     let created_at: String
-    let tags : [Tags]
     
     init(
         post_id: Int,
         title: String,
-        user_name: String,
-        user_profile_image: String,
-        created_at: String,
-        tags: [Tags]
+        users: Users,
+        tags: [Tags],
+        created_at: String
     ){
         self.post_id = post_id
         self.title = title
-        self.user_name = user_name
-        self.user_profile_image = user_profile_image
+        self.users = users
         self.created_at = created_at
         self.tags = tags
     }
@@ -42,6 +51,12 @@ struct Posts {
 struct Tags: Hashable {
     let name: String
     let image_url: String
+}
+
+struct Users {
+    let user_id: Int
+    let user_name: String
+    let profile_image_url: String
 }
 
 /*

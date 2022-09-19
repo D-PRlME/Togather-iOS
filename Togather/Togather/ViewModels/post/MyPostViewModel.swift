@@ -2,7 +2,7 @@ import Foundation
 import Moya
 import SwiftUI
 
-class PostViewModel: ObservableObject {
+class MyPostViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
     
     

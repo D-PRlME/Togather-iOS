@@ -4,20 +4,20 @@ import Moya
 class PostDetailViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>()
     
-    @Published var postID: Int = 0
+    @Published var postID: CLong = 0
     @Published var postDetail: Posts_Detail = Posts_Detail(
-        post_id: 0,
         title: "",
-        user_name: "",
-        user_profile_image: "",
+        user: Users(user_id: 0, user_name: "", profile_image_url: ""),
         created_at: "",
         tags: [
             Tags(name: "", image_url: "")
             ],
-        content: ""
+        content: "",
+        link: ""
     )
     
     func getPostDetail() {
+
         postClient.request(.getDetailPosts(postID: postID)) { res in
             switch res {
             case .success(let result):
@@ -25,32 +25,29 @@ class PostDetailViewModel: ObservableObject {
                 case 200...206:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(PostDetailModel.self, from: result.data) {
-                        
-                        let postID = data.post_id
                         let title = data.title
-                        let userName = data.user_name
-                        let userProfileImage = data.user_profile_image
+                        let users: Users = Users(user_id: data.user.user_id, user_name: data.user.user_name, profile_image_url: data.user.profile_image_url)
                         let createdAt = data.created_at
-                        let tags: [Tags] = data.tag.map {
+                        let tags: [Tags] = data.tags.map {
                             let name = $0.name
                             let imageURL = $0.image_url
                             
                             return Tags(name: name, image_url: imageURL)
                         }
                         let content = data.content
+                        let link = data.link
                         
                         self.postDetail = Posts_Detail(
-                            post_id: postID,
                             title: title,
-                            user_name: userName,
-                            user_profile_image: userProfileImage,
+                            user: users,
                             created_at: createdAt,
                             tags: tags,
-                            content: content
+                            content: content,
+                            link: link
                         )
                         
                     } else {
-                        print("⚠️login docoder error")
+                        print("⚠️post detail docoder error")
                     }
                 default:
                     let decoder = JSONDecoder()

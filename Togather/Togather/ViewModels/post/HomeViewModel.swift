@@ -7,12 +7,6 @@ class HomeViewModel: ObservableObject {
     @Published var postList: [Posts] = []
     
     @Published var post_id: [Int] = []
-//    @Published var title: [String] = []
-//    @Published var user_name: [String] = []
-//    @Published var user_profile_image: [String] = []
-//    @Published var created_at: [String] = []
-//    @Published var tags: [Tags] = []
-    
     @Published var tagList: [Tags] = []
     
     func post() {
@@ -24,13 +18,18 @@ class HomeViewModel: ObservableObject {
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(UserPostModel.self, from: result.data) {
                         
+//                        let post_id: Int
+//                        let title: String
+//                        let users: Users
+//                        let tags: [Tags]
+//                        let created_at: String
+                        
                         self.postList = data.post_list.map { index in
                             let postID = index.post_id
                             let title = index.title
-                            let userName = index.user_name
-                            let userProfileImage = index.user_profile_image
+                            let users: Users = Users(user_id: index.user.user_id, user_name: index.user.user_name, profile_image_url: index.user.profile_image_url)
                             let createdAt = index.created_at
-                            let tags: [Tags] = index.tags.map {
+                            let tags: [Tags] = index.tag.map {
                                 let name = $0.name
                                 let imageURL = $0.image_url
                                 
@@ -40,14 +39,13 @@ class HomeViewModel: ObservableObject {
                             return Posts(
                                 post_id: postID,
                                 title: title,
-                                user_name: userName,
-                                user_profile_image: userProfileImage,
-                                created_at: createdAt,
-                                tags: tags
+                                users: users,
+                                tags: tags,
+                                created_at: createdAt
                             )
                         }
                     } else {
-                        print("⚠️login docoder error")
+                        print("⚠️post docoder error")
                     }
                 default:
                     let decoder = JSONDecoder()
@@ -56,7 +54,7 @@ class HomeViewModel: ObservableObject {
                         print("code: \(data.code)")
                         print("message: \(data.message)")
                     } else {
-                        print("⚠️post Error handling")
+                        print("⚠️Appear post Error handling")
                     }
                 }
             case .failure(let err):

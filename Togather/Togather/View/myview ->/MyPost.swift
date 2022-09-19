@@ -59,6 +59,8 @@ struct MyPost: View {
                                             .padding(1)
                                             .background(Color("TabBarStroke"))
                                             .cornerRadius(37)
+                                            .padding(.trailing, 8)
+                                            .padding(.bottom, 8)
                                     }
                                     Rectangle()
                                         .foregroundColor(Color("TabBarStroke"))

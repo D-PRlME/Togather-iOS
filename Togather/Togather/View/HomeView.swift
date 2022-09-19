@@ -1,6 +1,8 @@
 
 import SwiftUI
 import SwiftUIFlowLayout
+import Kingfisher
+import Moya
 
 var DevLanguage: [String] = ["Swift", "Java", "Kotlin", "JS", "Python", "Flutter"]
 var DevColor: [Color] = [.orange, .red, .purple, .yellow, .green, .blue]
@@ -24,17 +26,15 @@ struct HomeView: View {
                             HStack {
                                 ForEach(homeViewModel.tagList, id: \.self) { index in
                                     VStack {
-                                        AsyncImage(url: URL(string: index.image_url)) { image in
-                                            image
-                                                .resizable()
-                                                .scaledToFit()
-                                        } placeholder: {
-                                            Image(systemName: "image.fill")
-                                                .foregroundColor(.black)
-                                        }
-                                        .frame(width: 56, height: 56)
-                                        .cornerRadius(20)
-                                        .padding(.horizontal, 4)
+                                        KFImage.url(URL(string: index.image_url))
+                                            .placeholder {
+                                                Circle().fill(Color.secondary)
+                                                    .frame(width: 56, height: 56)
+                                            }
+                                            .resizable()
+                                            .frame(width: 56, height: 56)
+                                            .cornerRadius(20)
+                                            .padding(.horizontal, 4)
                                         Text(index.name)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-ExtraBold", size: 14))
@@ -50,6 +50,8 @@ struct HomeView: View {
                         ForEach(homeViewModel.postList, id: \.post_id) { data in
                             Button {
                                 GoPostDetail = true
+                                print("homeview :",data.post_id)
+                                UserDefaults.standard.set(data.post_id, forKey: "postID")
                             } label: {
                                 VStack(alignment: .leading, spacing: 8) {
                                     Text(data.title)
@@ -59,7 +61,7 @@ struct HomeView: View {
                                         .padding(.leading, 5)
                                     FlowLayout(mode: .scrollable,
                                                items: data.tags,
-                                               itemSpacing: 5) {
+                                               itemSpacing: 0) {
                                         Text($0.name)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
@@ -70,30 +72,42 @@ struct HomeView: View {
                                             .padding(1)
                                             .background(Color("TabBarStroke"))
                                             .cornerRadius(37)
+                                            .padding(.trailing, 8)
+                                            .padding(.bottom, 8)
                                     }
                                     Rectangle()
                                         .foregroundColor(Color("TabBarStroke"))
-                                        .frame(width: proxy.size.width - 70, height: 1)
+                                        .frame(width: proxy.size.width - 56, height: 1)
                                     HStack(spacing: 8) {
-                                        AsyncImage(url: URL(string: data.user_profile_image)) { image in
-                                            image
-                                                .resizable()
-                                                .scaledToFit()
-                                                .clipShape(Circle())
-                                        } placeholder: {
-                                            Image(systemName: "person.fill")
-                                                .foregroundColor(.black)
-                                        }
+//                                        AsyncImage(url: URL(string: data.user_profile_image)) { image in
+//                                            image
+//                                                .resizable()
+//                                                .scaledToFit()
+//                                                .clipShape(Circle())
+//                                        } placeholder: {
+//                                            ProgressView()
+//                                                .foregroundColor(.gray)
+//                                        }
+//
+//                                        .frame(width: 33, height: 33)
+                                        KFImage.url(URL(string: data.users.profile_image_url))
+                                            .placeholder {
+                                                Circle().fill(Color.secondary)
+                                            }
+                                            .resizable()
+                                            .scaledToFit()
+                                            .clipShape(Circle())
+                                            .frame(width: 33, height: 33)
+                                            .cornerRadius(20)
+                                            .padding(.horizontal, 4)
+                                            .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
                                         
-                                        .frame(width: 33, height: 33)
-                                        .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-
-                                        Text(data.user_name)
+                                        Text(data.users.user_name)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                         Spacer()
-                                        Text("1시간 전")
-                                            .foregroundColor(.black)
+                                        Text(data.created_at)
+                                            .foregroundColor(Color(red: 0.47, green: 0.47, blue: 0.47, opacity: 1))
                                             .font(.custom("Pretendard-Medium", size: 16))
                                     }
                                 }
@@ -104,7 +118,6 @@ struct HomeView: View {
                             .buttonStyle(.plain)
                             .sheet(isPresented: $GoPostDetail, content: {
                                 PostDetail(
-                                    postID: .constant(data.post_id),
                                     showModal: self.$GoPostDetail
                                 )
                             })
@@ -112,9 +125,7 @@ struct HomeView: View {
                         }
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
-                        
                     }
-                    //                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                     .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                     .onAppear() {
                         homeViewModel.post()

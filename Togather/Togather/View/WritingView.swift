@@ -94,21 +94,27 @@ struct WritingView: View {
             
             FlowLayout(mode: .scrollable,
                        items: postViewModel.tagListName,
-                       itemSpacing: 5) {index in
+                       itemSpacing: 0) {index in
                 
                 Button {
-                    print("hi")
+                    if tagBtnArr.contains(index) {
+                        tagBtnArr.removeAll(where: { $0 == index })
+                    } else {
+                        tagBtnArr.append(index)
+                    }
                 } label: {
                     Text(index)
                         .foregroundColor(.black)
                         .font(.custom("Pretendard-Medium", size: 16))
                         .padding(.horizontal, 12)
                         .padding(.vertical, 6)
-                        .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                        .background(tagBtnArr.contains(index) ? Color(red: 0.882, green: 0.678, blue: 0.004) : Color(red: 0.905, green: 0.905, blue: 0.905))
                         .cornerRadius(37)
                         .padding(1)
-                        .background(Color("TabBarStroke"))
+                        .background(tagBtnArr.contains(index) ? Color("YellowStroke") : Color("TabBarStroke"))
                         .cornerRadius(37)
+                        .padding(.trailing, 8)
+                        .padding(.bottom, 8)
                 }
                 .buttonStyle(.plain)
             }
@@ -117,6 +123,7 @@ struct WritingView: View {
 
             HStack {
                 Button(action: {
+                    postViewModel.tag = self.tagBtnArr
                     postViewModel.post()
                     showModal = false
                 }) {

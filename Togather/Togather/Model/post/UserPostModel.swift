@@ -15,7 +15,7 @@ struct PostList: Codable {
     let post_id: Int
     let title: String
     let user: User
-    let tag: [Tag]
+    let tags: [Tag]
     let created_at: String
 }
 // MARK: - User

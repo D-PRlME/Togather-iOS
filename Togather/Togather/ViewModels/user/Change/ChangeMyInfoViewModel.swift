@@ -1,34 +1,36 @@
 import Foundation
 import Moya
 
-class EmailDuplicateViewModel: ObservableObject {
-    let userClient = MoyaProvider<UserService>()
+class ChangeMyInfoViewModel: ObservableObject {
+    let UserClient = MoyaProvider<UserService>()
     
-    @Published var email: String = ""
+    @Published var name: String = ""
+    @Published var profileImageLink: String = ""
     @Published var showingAlert: Bool = false
     
-    
-    func emailDuplicate() {
-        userClient.request(.mailDuplicate(email: email)) { res in
+    func signUpClient() {
+        UserClient.request(.changeMyInfo(name: name, picture: profileImageLink)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {
-                case 200...201:
-                    print("이메일 중복 확인 성공")
+                case 204:
+                    self.showingAlert = true
                 default:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
+                        print("============🆘============")
                         print("status: \(data.status)")
                         print("code: \(data.code)")
                         print("message: \(data.message)")
+                        print("==========================")
                     } else {
-                        print("⚠️emailDupilcate Error handling")
+                        print("⚠️changeMyInfo Error decode")
                     }
                 }
+                
             case .failure(let err):
-                print("⛔️emailDupilcate error: \(err.localizedDescription)")
+                print("⛔️changeMyInfo Error: \(err.localizedDescription)")
             }
         }
     }
-    
 }

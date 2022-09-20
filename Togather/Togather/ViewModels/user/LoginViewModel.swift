@@ -13,12 +13,15 @@ class LoginViewModel: ObservableObject {
         userClient.request(.login(accountID: email, password: password)) { res in
             switch res {
             case .success(let result):
+                print(result.statusCode)
                 switch result.statusCode {
-                case 200...201:
+                case 201:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(TokenModel.self, from: result.data) {
+                        
                         Token.accessToken = data.access_token
                         Token.refreshToken = data.refresh_token
+                        
                         print("✅로그인 성공")
                         print("🔊\(data.expired_at)")
                         print(data.access_token)
@@ -29,9 +32,11 @@ class LoginViewModel: ObservableObject {
                 default:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
+                        print("============🆘============")
                         print("status: \(data.status)")
                         print("code: \(data.code)")
                         print("message: \(data.message)")
+                        print("==========================")
                     } else {
                         print("⚠️login Error handling")
                     }

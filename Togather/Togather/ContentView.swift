@@ -13,7 +13,7 @@ struct ColorManager {
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            SignUpView()
+            SignInView()
                 .navigationBarHidden(true)
         }
     }

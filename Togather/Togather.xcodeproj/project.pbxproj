@@ -59,7 +59,9 @@
 		90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E928BF6E3D00B653C3 /* MyView.swift */; };
 		90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */; };
 		90EC085128D873AD00E34BCE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 90EC085028D873AD00E34BCE /* Kingfisher */; };
-		90EC085328D8B72600E34BCE /* MyPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC085228D8B72600E34BCE /* MyPostViewModel.swift */; };
+		90EC085C28D9947F00E34BCE /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 90EC085B28D9947F00E34BCE /* SwiftUIPullToRefresh */; };
+		90EC085E28D9AE5A00E34BCE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */; };
+		90EC086228D9D64400E34BCE /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC086128D9D64400E34BCE /* MyViewModel.swift */; };
 		90FCBE0228D4C0F400E0A9E3 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0128D4C0F400E0A9E3 /* CombineMoya */; };
 		90FCBE0428D4C0F400E0A9E3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0328D4C0F400E0A9E3 /* Moya */; };
 		90FCBE0628D4C0F400E0A9E3 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0528D4C0F400E0A9E3 /* ReactiveMoya */; };
@@ -122,7 +124,8 @@
 		90D1C6E928BF6E3D00B653C3 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		90D1C70028BF9BF000B653C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		90EC085228D8B72600E34BCE /* MyPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewModel.swift; sourceTree = "<group>"; };
+		90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		90EC086128D9D64400E34BCE /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
 		90FCBE0E28D4C12700E0A9E3 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +140,7 @@
 				90FCBE0B28D4C12700E0A9E3 /* SwiftUIFlowLayout in Frameworks */,
 				90FCBE0828D4C0F400E0A9E3 /* RxMoya in Frameworks */,
 				90FCBE0628D4C0F400E0A9E3 /* ReactiveMoya in Frameworks */,
+				90EC085C28D9947F00E34BCE /* SwiftUIPullToRefresh in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +222,8 @@
 				90A05CAC28D0B78C0031E71B /* PostViewModel.swift */,
 				9001F5FB28D3931700EC1F23 /* HomeViewModel.swift */,
 				90FCBE0E28D4C12700E0A9E3 /* PostDetailViewModel.swift */,
-				90EC085228D8B72600E34BCE /* MyPostViewModel.swift */,
+				90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */,
+				90EC086128D9D64400E34BCE /* MyViewModel.swift */,
 			);
 			path = post;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				90FCBE0728D4C0F400E0A9E3 /* RxMoya */,
 				90FCBE0A28D4C12700E0A9E3 /* SwiftUIFlowLayout */,
 				90EC085028D873AD00E34BCE /* Kingfisher */,
+				90EC085B28D9947F00E34BCE /* SwiftUIPullToRefresh */,
 			);
 			productName = Draw;
 			productReference = 907EF1DC28BBBA7E008A7562 /* Togather.app */;
@@ -388,6 +394,7 @@
 				90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */,
 				90FCBE0928D4C12700E0A9E3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
 				90EC084F28D873AD00E34BCE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				90EC085A28D9947F00E34BCE /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */,
 			);
 			productRefGroup = 907EF1DD28BBBA7E008A7562 /* Products */;
 			projectDirPath = "";
@@ -426,7 +433,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A05CBD28D304220031E71B /* UserPostModel.swift in Sources */,
-				90EC085328D8B72600E34BCE /* MyPostViewModel.swift in Sources */,
 				90C50A5728CCBE8C007EA639 /* PostDetail.swift in Sources */,
 				900990EF28D04EE700FD9462 /* MyPostModel.swift in Sources */,
 				90A05CBF28D306040031E71B /* TagListModel.swift in Sources */,
@@ -437,6 +443,7 @@
 				900990A828CDDBA300FD9462 /* MyPost.swift in Sources */,
 				90FCBE0F28D4C12700E0A9E3 /* PostDetailViewModel.swift in Sources */,
 				90C50A5328CC8254007EA639 /* DeleteAccount.swift in Sources */,
+				90EC085E28D9AE5A00E34BCE /* SearchViewModel.swift in Sources */,
 				4BE919D728CF678A0002A268 /* ErrorModel.swift in Sources */,
 				900990F128D0586C00FD9462 /* PostDetailModel.swift in Sources */,
 				90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */,
@@ -451,6 +458,7 @@
 				90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */,
 				907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */,
 				90D1C6E428BF6E1300B653C3 /* ShowView.swift in Sources */,
+				90EC086228D9D64400E34BCE /* MyViewModel.swift in Sources */,
 				4BE919D428CF65880002A268 /* TokenModel.swift in Sources */,
 				4BE919CC28CEF0C40002A268 /* ChangePasswordVerify.swift in Sources */,
 				4BE919EF28D304090002A268 /* EmailDuplicateViewModel.swift in Sources */,
@@ -684,6 +692,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		90EC085A28D9947F00E34BCE /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-pull-to-refresh";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -708,6 +724,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90EC084F28D873AD00E34BCE /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		90EC085B28D9947F00E34BCE /* SwiftUIPullToRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90EC085A28D9947F00E34BCE /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */;
+			productName = SwiftUIPullToRefresh;
 		};
 		90FCBE0128D4C0F400E0A9E3 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -1,16 +1,12 @@
-//
-//  MyPost.swift
-//  Draw
-//
-//  Created by 홍승재 on 2022/09/11.
-//
-
 import SwiftUI
 import SwiftUIFlowLayout
+import Kingfisher
 
 struct MyPost: View {
     
     @State var GoPostDetail = false
+    
+    @StateObject var myPageViewModel = MyViewModel()
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -37,19 +33,22 @@ struct MyPost: View {
                                 .padding(.top, 40)
                             Spacer()
                         }
-                        ForEach(0..<6, id: \.self) { i in
+                        ForEach(myPageViewModel.postList, id: \.post_id) { data in
                             Button {
                                 GoPostDetail = true
+                                print("homeview :",data.post_id)
+                                UserDefaults.standard.set(data.post_id, forKey: "postID")
                             } label: {
                                 VStack(alignment: .leading, spacing: 8) {
-                                    Text("제목제목제목제목제목제목제목제목제목제목제목")
+                                    Text(data.title)
                                         .foregroundColor(.black)
                                         .font(.custom("Pretendard-Bold", size: 24))
                                         .multilineTextAlignment(.leading)
+                                        .padding(.leading, 5)
                                     FlowLayout(mode: .scrollable,
-                                               items: DevLanguage,
-                                               itemSpacing: 5) {index in
-                                        Text(index)
+                                               items: data.tags,
+                                               itemSpacing: 0) {
+                                        Text($0.name)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                             .padding(.horizontal, 12)
@@ -64,36 +63,48 @@ struct MyPost: View {
                                     }
                                     Rectangle()
                                         .foregroundColor(Color("TabBarStroke"))
-                                        .frame(width: proxy.size.width - 70, height: 1)
+                                        .frame(width: proxy.size.width - 56, height: 1)
                                     HStack(spacing: 8) {
-                                        Image(systemName: "person.fill")
-                                            .foregroundColor(.black)
+                                        KFImage.url(URL(string: data.users.profile_image_url))
+                                            .placeholder {
+                                                Circle().fill(Color.secondary)
+                                            }
+                                            .resizable()
+                                            .scaledToFit()
+                                            .clipShape(Circle())
                                             .frame(width: 33, height: 33)
+                                            .cornerRadius(20)
+                                            .padding(.horizontal, 4)
                                             .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                                        Text(Developer[0])
+                                        
+                                        Text(data.users.user_name)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 16))
                                         Spacer()
-                                        Text("1시간 전")
-                                            .foregroundColor(.black)
+                                        Text(data.created_at)
+                                            .foregroundColor(Color(red: 0.47, green: 0.47, blue: 0.47, opacity: 1))
                                             .font(.custom("Pretendard-Medium", size: 16))
                                     }
                                 }
                                 .padding(12)
                                 .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                                 .cornerRadius(8)
+                                .padding(.vertical, 6)
                             }
-                            
+                            .sheet(isPresented: $GoPostDetail, content: {
+                                PostDetail(
+                                    showModal: self.$GoPostDetail
+                                )
+                            })
                         }
-//                        .sheet(isPresented: $GoPostDetail, content: {
-//                            PostDetail(postID: <#Binding<Int>#>, showModal: <#Binding<Bool>#>)
-//                        })
-                        .padding(.vertical, 8)
                     }
                 }
                 Spacer()
             }
             .padding(.horizontal, 16)
+        }
+        .onAppear() {
+            myPageViewModel.post()
         }
     }
 }

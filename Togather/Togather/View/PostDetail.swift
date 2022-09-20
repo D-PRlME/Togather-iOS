@@ -1,12 +1,6 @@
-//
-//  PostDetail.swift
-//  Draw
-//
-//  Created by 홍승재 on 2022/09/10.
-//
-
 import SwiftUI
 import SwiftUIFlowLayout
+import Kingfisher
 
 struct PostDetail: View {
     @Binding var showModal: Bool
@@ -34,18 +28,17 @@ struct PostDetail: View {
                     
                         .padding(.top, 7)
                     HStack(spacing: 8) {
-                        AsyncImage(url: URL(string: postDetailViewModel.postDetail.user.profile_image_url)) { image in
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .clipShape(Circle())
-                        } placeholder: {
-                            Image(systemName: "person.fill")
-                                .foregroundColor(.black)
-                        }
-                        
-                        .frame(width: 33, height: 33)
-                        .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
+                        KFImage.url(URL(string: postDetailViewModel.postDetail.user.profile_image_url))
+                            .placeholder {
+                                Circle().fill(Color.secondary)
+                            }
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .frame(width: 33, height: 33)
+                            .cornerRadius(20)
+                            .padding(.horizontal, 4)
+                            .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
 
                         Text(postDetailViewModel.postDetail.user.user_name)
                             .foregroundColor(.black)

@@ -98,8 +98,14 @@ struct WritingView: View {
                 
                 Button {
                     if tagBtnArr.contains(index) {
+//                        withAnimation {
+//                            tagBtnArr.removeAll(where: { $0 == index })
+//                        }
                         tagBtnArr.removeAll(where: { $0 == index })
                     } else {
+//                        withAnimation {
+//                            tagBtnArr.append(index)
+//                        }
                         tagBtnArr.append(index)
                     }
                 } label: {
@@ -108,15 +114,18 @@ struct WritingView: View {
                         .font(.custom("Pretendard-Medium", size: 16))
                         .padding(.horizontal, 12)
                         .padding(.vertical, 6)
-                        .background(tagBtnArr.contains(index) ? Color(red: 0.882, green: 0.678, blue: 0.004) : Color(red: 0.905, green: 0.905, blue: 0.905))
+                        .background(tagBtnArr.contains(index) ?
+                                    Color(red: 0.924, green: 0.792, blue: 0.356) :
+                                        Color(red: 0.905, green: 0.905, blue: 0.905))
                         .cornerRadius(37)
                         .padding(1)
-                        .background(tagBtnArr.contains(index) ? Color("YellowStroke") : Color("TabBarStroke"))
+                        .background(tagBtnArr.contains(index) ?
+                                    Color("YellowStroke") :
+                                        Color("TabBarStroke"))
                         .cornerRadius(37)
                         .padding(.trailing, 8)
                         .padding(.bottom, 8)
                 }
-                .buttonStyle(.plain)
             }
             
             //MARK: - 글쓰기 버튼

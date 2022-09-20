@@ -29,7 +29,7 @@ class HomeViewModel: ObservableObject {
                             let title = index.title
                             let users: Users = Users(user_id: index.user.user_id, user_name: index.user.user_name, profile_image_url: index.user.profile_image_url)
                             let createdAt = index.created_at
-                            let tags: [Tags] = index.tag.map {
+                            let tags: [Tags] = index.tags.map {
                                 let name = $0.name
                                 let imageURL = $0.image_url
                                 

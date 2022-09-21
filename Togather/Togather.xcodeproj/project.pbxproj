@@ -246,9 +246,9 @@
 		4BC8992628DA8CD800189553 /* SignUpView */ = {
 			isa = PBXGroup;
 			children = (
+				4BC8992928DA8CD800189553 /* SignUpView.swift */,
 				4BC8992728DA8CD800189553 /* SignUpEmailVerifyView.swift */,
 				4BC8992828DA8CD800189553 /* signUpSuccessView.swift */,
-				4BC8992928DA8CD800189553 /* SignUpView.swift */,
 			);
 			path = SignUpView;
 			sourceTree = "<group>";

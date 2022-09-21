@@ -118,6 +118,7 @@ struct SignUpView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         }
+        .navigationBarHidden(true)
         
         .alert("안내", isPresented: $emailDuplicateVM.showingAlert) {
             Button("OK", role: .cancel) { }

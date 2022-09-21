@@ -6,25 +6,16 @@ struct SignUpView: View {
     @State private var passwordText: String = ""
     @State private var nameText: String = ""
     
-    @StateObject var signUpViewModel = SignUpViewModel()
-    @StateObject var emailDuplicateViewModel = EmailDuplicateViewModel()
+    @StateObject var emailDuplicateVM = EmailDuplicateViewModel()
+    @StateObject var signUpValueCheckVM = SignUpValueCheckViewModel()
     
-    //MARK: - 버튼 활성화 여부 함수
-
-    private func ButtonAtivation() -> Bool {
-        if emailText.count > 0 && passwordText.count > 0 && nameText.count > 0 {
-            return true
-        } else {
-            return false
-        }
-    }
     //MARK: - body
 
     var body: some View {
+        
         GeometryReader { proxy in
+            NavigationLink(destination: EmailVerify(emailText, passwordText, nameText), tag: 1, selection: $emailDuplicateVM.viewTag) { EmptyView() }
             VStack(alignment: .leading, spacing: 0) {
-                
-
                 VStack(alignment: .leading) {
                     Text("ToGathrer")
                         .font(.custom("Pretendard-Bold", size: 32))
@@ -50,13 +41,12 @@ struct SignUpView: View {
                         .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                         .cornerRadius(4)
                         .padding(1)
-                        .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                        .background(signUpValueCheckVM.EmailValueCheck(emailText) ? Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15) : .red)
                         .cornerRadius(6)
                     HStack {
                         Text("dsm.hs.kr 도메인을 사용하는 이메일을 사용하세요")
-                            .foregroundColor(.black)
+                            .foregroundColor(signUpValueCheckVM.EmailValueCheck(emailText) ? Color.black.opacity(0.5) : .red)
                             .font(.custom("Pretendard-ExtraBold", size: 14))
-                            .opacity(0.5)
                             .padding(.leading, 12)
                             .padding(.bottom, 12)
                         Spacer()
@@ -74,13 +64,12 @@ struct SignUpView: View {
                         .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                         .cornerRadius(4)
                         .padding(1)
-                        .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                        .background(signUpValueCheckVM.PasswordValueCheck(passwordText) ? Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15) : .red)
                         .cornerRadius(6)
                     HStack {
                         Text("8자리 이상, 숫자, 영어 소문자, 특수문자를 포함해야 합니다")
-                            .foregroundColor(.black)
+                            .foregroundColor(signUpValueCheckVM.PasswordValueCheck(passwordText) ? Color.black.opacity(0.5) : .red)
                             .font(.custom("Pretendard-ExtraBold", size: 14))
-                            .opacity(0.5)
                             .padding(.leading, 12)
                             .padding(.bottom, 12)
                         Spacer()
@@ -105,8 +94,9 @@ struct SignUpView: View {
                 //MARK: - 다음 버튼
 
                 Button(action: {
-                    emailDuplicateViewModel.email = emailText
-                    emailDuplicateViewModel.emailDuplicate()
+                    emailDuplicateVM.email = emailText
+                    emailDuplicateVM.emailDuplicate()
+                    
                 }) {
                     VStack(spacing: 0) {
                         Rectangle()
@@ -117,16 +107,22 @@ struct SignUpView: View {
                             .foregroundColor(.black)
                     }
                     .padding(.vertical, 13)
-                    .background(ButtonAtivation() ? Color(red: 0.882, green: 0.678, blue: 0.004) : Color(red: 0.97, green: 0.97, blue: 0.97))
+                    .background(signUpValueCheckVM.CheckTotalSignUpValue(emailText, passwordText, nameText) ? Color(red: 0.882, green: 0.678, blue: 0.004) : Color(red: 0.97, green: 0.97, blue: 0.97))
                     .cornerRadius(6)
                     .padding(2)
-                    .background(ButtonAtivation() ? Color(red: 0.7, green: 0.6, blue: 0.004) : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                    .background(signUpValueCheckVM.CheckTotalSignUpValue(emailText, passwordText, nameText) ? Color(red: 0.7, green: 0.6, blue: 0.004) : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
                     .cornerRadius(8)
                 }
-                .disabled(ButtonAtivation() == false)
+                .disabled(signUpValueCheckVM.CheckTotalSignUpValue(emailText, passwordText, nameText) == false)
             } //Vstack
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
+        }
+        
+        .alert("안내", isPresented: $emailDuplicateVM.showingAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(emailDuplicateVM.alertMessage)
         }
     } //body
 }

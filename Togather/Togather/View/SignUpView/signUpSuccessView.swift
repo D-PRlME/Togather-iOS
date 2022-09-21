@@ -1,8 +1,22 @@
 import SwiftUI
 
 struct signUpSuccess: View {
+    
+    @StateObject var signUpVM = SignUpViewModel()
+    
+    var userEmail: String = ""
+    var password: String = ""
+    var name: String = ""
+    
+    init(_ email: String, _ password: String, _ name: String) {
+        self.userEmail = email
+        self.password = password
+        self.name = name
+    }
+    
     var body: some View {
         GeometryReader { proxy in
+            NavigationLink(destination: TabBarView(), tag: 1, selection: $signUpVM.isSuccess ) { EmptyView() }
             VStack(alignment: .leading) {
                 Text("가입이\n완료되었어요")
                     .font(.custom("Pretendard-Bold", size: 32))
@@ -16,7 +30,11 @@ struct signUpSuccess: View {
                 }
                 
                 Button(action: {
-                     print("next")
+                    signUpVM.email = userEmail
+                    signUpVM.password = password
+                    signUpVM.name = name
+                    
+                    signUpVM.signUpClient()
                 }) {
                     VStack(spacing: 0) {
                         Rectangle()
@@ -37,11 +55,12 @@ struct signUpSuccess: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         }
+        .navigationBarHidden(true)
     }
 }
 
-struct signUpSuccess_Previews: PreviewProvider {
-    static var previews: some View {
-        signUpSuccess()
-    }
-}
+//struct signUpSuccess_Previews: PreviewProvider {
+//    static var previews: some View {
+//        signUpSuccess()
+//    }
+//}

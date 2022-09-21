@@ -1,33 +1,28 @@
 import Foundation
 import Moya
 
-class LoginViewModel: ObservableObject {
-    let userClient = MoyaProvider<UserService>()
+class SignUpViewModel: ObservableObject {
+    let UserClient = MoyaProvider<UserService>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
     
+    @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
+    @Published var isSuccess: Int?
     
-    @Published var viewTag: Int? = nil
-    
-    func Login() {
-        userClient.request(.login(accountID: email, password: password)) { res in
+    func signUpClient() {
+        UserClient.request(.signup(password: password, email: email, name: name)) { res in
             switch res {
             case .success(let result):
-                print(result.statusCode)
                 switch result.statusCode {
                 case 200...201:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(TokenModel.self, from: result.data) {
-                        
                         Token.accessToken = data.access_token
                         Token.refreshToken = data.refresh_token
-                        
-                        print("✅로그인 성공")
+                        self.isSuccess = 1
                         print("🔊\(data.expired_at)")
-                        print(data.access_token)
-                        self.viewTag = 1
                     } else {
-                        print("⚠️login docoder error")
+                        print("⚠️signup docoder error")
                     }
                 default:
                     let decoder = JSONDecoder()
@@ -38,11 +33,12 @@ class LoginViewModel: ObservableObject {
                         print("message: \(data.message)")
                         print("==========================")
                     } else {
-                        print("⚠️login Error handling")
+                        print("⚠️signup Error decode")
                     }
                 }
+                
             case .failure(let err):
-                print("⛔️login error: \(err.localizedDescription)")
+                print("⛔️signup Error: \(err.localizedDescription)")
             }
         }
     }

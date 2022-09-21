@@ -2,17 +2,24 @@ import Foundation
 import Moya
 
 enum UserService {
+    //계정 관련
     case login(accountID: String, password: String)
     case signup(password: String, email: String, name: String)
+    case logout
+    case quitAccount
+    
+    //메일 관련
     case mailDuplicate(email: String)
     case mailSignup(email: String)
     case mailVerify(email: String, authCode: String)
+    
+    //토큰 재발급
     case tokenReissue
+    
+    //유저 정보 관련
     case changeMyInfo(name: String, picture: String)
     case changePassword(oldPassword: String, newPassword: String)
     case getMyprofile
-    case logout
-    case quitAccount
 }
 
 extension UserService: TargetType {
@@ -137,8 +144,10 @@ extension UserService: TargetType {
         switch self {
         case .mailSignup, .mailVerify, .mailDuplicate, .signup, .login, .changeMyInfo, .changePassword:
             return Header.tokenIsEmpty.header()
+            
         case  .tokenReissue:
             return Header.refreshToken.header()
+            
         case .getMyprofile, .logout, .quitAccount:
             return Header.accessToken.header()
         }

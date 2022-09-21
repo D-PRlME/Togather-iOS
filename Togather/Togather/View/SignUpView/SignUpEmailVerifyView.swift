@@ -2,11 +2,21 @@ import SwiftUI
 
 struct EmailVerify: View {
     
-    var userEmail: String
-    @State private var numberText: String = ""
+    var userEmail: String = ""
+    var password: String = ""
+    var name: String = ""
+    
+    @StateObject var sendEmailVM = SendEmailViewModel()
+    @StateObject var emailVerifyVM = EmailVerifyViewModel()
+    
+    init(_ userEmail: String, _ password: String, _ name: String) {
+        self.userEmail = userEmail
+        self.password = password
+        self.name = name
+    }
     
     private func ButtonAtivation() -> Bool {
-        if numberText.count > 0 {
+        if emailVerifyVM.code.count == 6 {
             return true
         } else {
             return false
@@ -15,17 +25,19 @@ struct EmailVerify: View {
     
     var body: some View {
         GeometryReader { proxy in
+            NavigationLink(destination: signUpSuccess(userEmail, password, name), tag: 1, selection: $emailVerifyVM.accessVerify ) { EmptyView() }
+            
+            
             VStack(alignment: .leading, spacing: 12) {
-                
                 Text("이메일 인증")
                     .font(.custom("Pretendard-Bold", size: 32))
                     .padding(.top, proxy.size.height / 6)
                 
-                Text("\(userEmail)로 전송된 n자리 인증 번호를 입력해 주세요. 인증 번호는 5분 후에 만료됩니다")
+                Text("\(userEmail)로 전송된 6자리 인증 번호를 입력해 주세요. 인증 번호는 5분 후에 만료됩니다")
                     .font(.custom("Pretendard-Medium", size: 20))
                     .allowsTightening(true)
                 
-                TextField("인증 번호", text: $numberText)
+                TextField("인증 번호", text: $emailVerifyVM.code)
                     .keyboardType(.asciiCapableNumberPad)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
@@ -50,7 +62,9 @@ struct EmailVerify: View {
                     
                 
                 Button(action: {
-                     print("next")
+                    //인증 코드 인증후 회원가입
+                    emailVerifyVM.email = userEmail
+                    emailVerifyVM.EmailVerify()
                 }) {
                     VStack(spacing: 0) {
                         Rectangle()
@@ -71,12 +85,17 @@ struct EmailVerify: View {
             } //Vstack
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
+            .onAppear {
+                sendEmailVM.email = userEmail
+                sendEmailVM.SendEmailToUser()
+            }
         }
+        .navigationBarHidden(true)
     }
 }
 
-struct EmailVerify_Previews: PreviewProvider {
-    static var previews: some View {
-        EmailVerify(userEmail: "bjcho1503@dsm.hs.kr")
-    }
-}
+//struct EmailVerify_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EmailVerify("bjcho1503")
+//    }
+//}

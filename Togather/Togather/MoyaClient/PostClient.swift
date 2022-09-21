@@ -70,13 +70,14 @@ extension PostService: TargetType {
                     ],
                 encoding: JSONEncoding.default)
             
-        case .editPost(let title, let content, let tags, _, _):
+        case .editPost(let title, let content, let tags, let link, _):
             return .requestParameters(
                 parameters:
                     [
-                        "title" : title,
-                        "tags" : tags,
-                        "content" : content
+                        "title": title,
+                        "tags": tags,
+                        "content": content,
+                        "link": link
                     ],
                 encoding: JSONEncoding.default)
             

@@ -6,7 +6,8 @@ class EmailVerifyViewModel: ObservableObject {
     
     @Published var email: String = ""
     @Published var code: String = ""
-    @Published var accessVerify: Bool = false
+    
+    @Published var accessVerify: Int?
     
     
     func EmailVerify() {
@@ -14,14 +15,19 @@ class EmailVerifyViewModel: ObservableObject {
             switch res {
             case .success(let result):
                 switch result.statusCode {
-                case 200...206:
-                    self.accessVerify = true
+                case 204:
+                    self.accessVerify = 1
+                    print("✅인증 성공!")
+                case 401:
+                    print("인증코드가 잘못됨")
                 default:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
+                        print("============🆘============")
                         print("status: \(data.status)")
                         print("code: \(data.code)")
                         print("message: \(data.message)")
+                        print("==========================")
                     } else {
                         print("⚠️emailVerify Error handling")
                     }

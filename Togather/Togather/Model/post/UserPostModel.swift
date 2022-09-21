@@ -49,7 +49,7 @@ struct Posts {
 }
 
 struct Tags: Hashable {
-    let name: String
+    var name: String
     let image_url: String
 }
 

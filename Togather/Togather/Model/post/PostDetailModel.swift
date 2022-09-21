@@ -1,18 +1,20 @@
 import Foundation
 
 struct Posts_Detail {
-    let title: String
+    var title: String
     let user: Users
     let created_at: String
-    let tags: [Tags]
-    let content: String
-    let link: String
+    var tags: [Tags]
+    let is_mine: Bool
+    var content: String
+    var link: String
     
     init(
         title: String,
         user: Users,
         created_at: String,
         tags: [Tags],
+        is_mine: Bool,
         content: String,
         link: String
     ){
@@ -20,6 +22,7 @@ struct Posts_Detail {
         self.user = user
         self.created_at = created_at
         self.tags = tags
+        self.is_mine = is_mine
         self.content = content
         self.link = link
     }
@@ -30,6 +33,7 @@ struct PostDetailModel: Codable {
     let title, created_at: String
     let user: User
     let tags: [Tag]
+    let is_mine: Bool
     let content, link: String
 }
 

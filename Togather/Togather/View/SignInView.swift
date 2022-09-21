@@ -65,10 +65,12 @@ struct SignInView: View {
                     
                     HStack(spacing: 12) {
                         Spacer()
-                        Text("회원가입")
-                            .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.5))
-                            .font(.custom("Pretendard-Medium", size: 18))
-                            .padding(.vertical, 13)
+                        NavigationLink (destination: SignUpView()) {
+                            Text("회원가입")
+                                .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.5))
+                                .font(.custom("Pretendard-Medium", size: 18))
+                                .padding(.vertical, 13)
+                        }
                         Spacer()
                         Text("비밀번호 변경")
                             .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.5))

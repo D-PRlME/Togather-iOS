@@ -50,6 +50,8 @@
 		900990EF28D04EE700FD9462 /* MyPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990EE28D04EE700FD9462 /* MyPostModel.swift */; };
 		900990F128D0586C00FD9462 /* PostDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990F028D0586C00FD9462 /* PostDetailModel.swift */; };
 		900990F728D05D7400FD9462 /* UploadImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990F628D05D7400FD9462 /* UploadImageModel.swift */; };
+		9039DBCB28DC944A00BE988C /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 9039DBCA28DC944A00BE988C /* SocketIO */; };
+		9039DBCD28DC9E3C00BE988C /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9039DBCC28DC9E3C00BE988C /* SwiftUIView.swift */; };
 		906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906908AD28CDC49C00BBF0B7 /* Developers.swift */; };
 		907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1DF28BBBA7E008A7562 /* DrawApp.swift */; };
 		907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1E128BBBA7E008A7562 /* ContentView.swift */; };
@@ -68,6 +70,7 @@
 		90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E728BF6E3000B653C3 /* WritingView.swift */; };
 		90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E928BF6E3D00B653C3 /* MyView.swift */; };
 		90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */; };
+		90E9557D28DC04F1005132C9 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 90E9557C28DC04F1005132C9 /* SkeletonUI */; };
 		90EC085128D873AD00E34BCE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 90EC085028D873AD00E34BCE /* Kingfisher */; };
 		90EC085C28D9947F00E34BCE /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 90EC085B28D9947F00E34BCE /* SwiftUIPullToRefresh */; };
 		90EC085E28D9AE5A00E34BCE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */; };
@@ -126,6 +129,7 @@
 		900990EE28D04EE700FD9462 /* MyPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostModel.swift; sourceTree = "<group>"; };
 		900990F028D0586C00FD9462 /* PostDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailModel.swift; sourceTree = "<group>"; };
 		900990F628D05D7400FD9462 /* UploadImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageModel.swift; sourceTree = "<group>"; };
+		9039DBCC28DC9E3C00BE988C /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		906908AD28CDC49C00BBF0B7 /* Developers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developers.swift; sourceTree = "<group>"; };
 		907EF1DC28BBBA7E008A7562 /* Togather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Togather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907EF1DF28BBBA7E008A7562 /* DrawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawApp.swift; sourceTree = "<group>"; };
@@ -163,8 +167,10 @@
 				90FCBE0228D4C0F400E0A9E3 /* CombineMoya in Frameworks */,
 				90FCBE0B28D4C12700E0A9E3 /* SwiftUIFlowLayout in Frameworks */,
 				90FCBE0828D4C0F400E0A9E3 /* RxMoya in Frameworks */,
+				90E9557D28DC04F1005132C9 /* SkeletonUI in Frameworks */,
 				90FCBE0628D4C0F400E0A9E3 /* ReactiveMoya in Frameworks */,
 				90EC085C28D9947F00E34BCE /* SwiftUIPullToRefresh in Frameworks */,
+				9039DBCB28DC944A00BE988C /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +298,7 @@
 				90A05CB828D2FFDF0031E71B /* user */,
 				90A05CB928D2FFE70031E71B /* post */,
 				900990F628D05D7400FD9462 /* UploadImageModel.swift */,
+				9039DBCC28DC9E3C00BE988C /* SwiftUIView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -445,6 +452,8 @@
 				90FCBE0A28D4C12700E0A9E3 /* SwiftUIFlowLayout */,
 				90EC085028D873AD00E34BCE /* Kingfisher */,
 				90EC085B28D9947F00E34BCE /* SwiftUIPullToRefresh */,
+				90E9557C28DC04F1005132C9 /* SkeletonUI */,
+				9039DBCA28DC944A00BE988C /* SocketIO */,
 			);
 			productName = Draw;
 			productReference = 907EF1DC28BBBA7E008A7562 /* Togather.app */;
@@ -479,6 +488,8 @@
 				90FCBE0928D4C12700E0A9E3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
 				90EC084F28D873AD00E34BCE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				90EC085A28D9947F00E34BCE /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */,
+				90E9557B28DC04F0005132C9 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
+				9039DBC928DC944A00BE988C /* XCRemoteSwiftPackageReference "socket" */,
 			);
 			productRefGroup = 907EF1DD28BBBA7E008A7562 /* Products */;
 			projectDirPath = "";
@@ -540,6 +551,7 @@
 				90EC086428DA9FDD00E34BCE /* EditPostView.swift in Sources */,
 				908ED77428CB789100763AC9 /* EditInfo.swift in Sources */,
 				900990F728D05D7400FD9462 /* UploadImageModel.swift in Sources */,
+				9039DBCD28DC9E3C00BE988C /* SwiftUIView.swift in Sources */,
 				4BC8992228DA8CA000189553 /* GetUserProfileViewModel.swift in Sources */,
 				906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */,
 				4BE919CE28CEF0CF0002A268 /* EnterNewPassword.swift in Sources */,
@@ -780,6 +792,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9039DBC928DC944A00BE988C /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		90E9557B28DC04F0005132C9 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CSolanaM/SkeletonUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		90EC084F28D873AD00E34BCE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -816,6 +844,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9039DBCA28DC944A00BE988C /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9039DBC928DC944A00BE988C /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+		90E9557C28DC04F1005132C9 /* SkeletonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90E9557B28DC04F0005132C9 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
+			productName = SkeletonUI;
+		};
 		90EC085028D873AD00E34BCE /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 90EC084F28D873AD00E34BCE /* XCRemoteSwiftPackageReference "Kingfisher" */;

@@ -6,6 +6,9 @@ struct PostDetail: View {
     
     @Binding var showModal: Bool
     
+    @State var heart: Int = 0
+    @State var heartToggle: Bool = false
+    
     @StateObject var postDetailViewModel = PostDetailViewModel()
     
     var body: some View {
@@ -76,7 +79,7 @@ struct PostDetail: View {
                             .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 18))
                         Spacer()
-                        HStack {
+                        HStack(alignment: .bottom) {
                             HStack(spacing: 8) {
                                 Image("LinkImage")
                                     .resizable()
@@ -86,30 +89,72 @@ struct PostDetail: View {
                                     .foregroundColor(.black)
                                     .font(.custom("Pretendard-Bold", size: 18))
                             }
-                            .padding(.horizontal, 11)
-                            .padding(.vertical, 5)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
                             .background(Color(red: 0.882, green: 0.678, blue: 0.004))
                             .cornerRadius(37)
                             .padding(2)
                             .background(Color("YellowStroke"))
                             .cornerRadius(37)
                             Spacer()
-                            if postDetailViewModel.postDetail.is_mine {
-                                NavigationLink(destination: EditPostView(
-                                    tagBtnArr: $postDetailViewModel.tagName,
-                                    title: $postDetailViewModel.postDetail.title,
-                                    content: $postDetailViewModel.postDetail.content,
-                                    link: $postDetailViewModel.postDetail.link)) {
-                                    Text("수정")
-                                        .foregroundColor(.black)
-                                        .font(.custom("Pretendard-Bold", size: 18))
-                                        .padding(.horizontal, 11)
-                                        .padding(.vertical, 5)
-                                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                                        .cornerRadius(37)
-                                        .padding(2)
-                                        .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
-                                        .cornerRadius(37)
+                            VStack(alignment: .trailing) {
+                                Spacer()
+                                Button {
+                                    switch heartToggle {
+                                    case true:
+                                        heart -= 1
+                                        heartToggle.toggle()
+                                    case false:
+                                        heart += 1
+                                        heartToggle.toggle()
+                                    }
+                                } label: {
+                                    HStack(spacing: 0) {
+                                        Text(String(heart))
+                                            .foregroundColor(.black)
+                                            .font(.custom("Pretendard-Bold", size: 18))
+                                        Image(heartToggle ? "OnHeart" : "OffHeart")
+                                            .resizable()
+                                            .frame(width: 20, height: 17)
+                                            .padding(.leading, 4)
+                                    }
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 8)
+                                    .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                                    .cornerRadius(37)
+                                    .padding(2)
+                                    .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                                    .cornerRadius(37)
+                                }
+                                HStack {
+                                    if postDetailViewModel.postDetail.is_mine {
+                                        NavigationLink(destination: EditPostView(
+                                            tagBtnArr: $postDetailViewModel.tagName,
+                                            title: $postDetailViewModel.postDetail.title,
+                                            content: $postDetailViewModel.postDetail.content,
+                                            link: $postDetailViewModel.postDetail.link)) {
+                                            Text("수정")
+                                                .foregroundColor(.black)
+                                                .font(.custom("Pretendard-Bold", size: 18))
+                                                .padding(.horizontal, 16)
+                                                .padding(.vertical, 8)
+                                                .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                                                .cornerRadius(37)
+                                                .padding(2)
+                                                .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                                                .cornerRadius(37)
+                                        }
+                                        Text("삭제")
+                                            .foregroundColor(.black)
+                                            .font(.custom("Pretendard-Bold", size: 18))
+                                            .padding(.horizontal, 16)
+                                            .padding(.vertical, 8)
+                                            .background(Color(red: 0.995, green: 0.238, blue: 0.238))
+                                            .cornerRadius(37)
+                                            .padding(2)
+                                            .background(Color("RedStroke"))
+                                            .cornerRadius(37)
+                                    }
                                 }
                             }
                         }

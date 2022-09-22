@@ -76,6 +76,7 @@ extension UserService: TargetType {
             
         case .tokenReissue, .getMyprofile, .logout, .quitAccount:
             return .requestPlain
+            
         case .mailDuplicate(let email):
             return .requestParameters(
                 parameters:
@@ -145,7 +146,7 @@ extension UserService: TargetType {
         case .mailSignup, .mailVerify, .mailDuplicate, .signup, .login, .changeMyInfo, .changePassword:
             return Header.tokenIsEmpty.header()
             
-        case  .tokenReissue:
+        case .tokenReissue:
             return Header.refreshToken.header()
             
         case .getMyprofile, .logout, .quitAccount:

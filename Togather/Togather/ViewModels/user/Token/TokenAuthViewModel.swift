@@ -4,7 +4,7 @@ import Moya
 class TokenAuthViewModel: ObservableObject {
     let UserClient = MoyaProvider<UserService>()
     
-    func signUpClient() {
+    func TokenReissueClient() {
         UserClient.request(.tokenReissue) { res in
             switch res {
             case .success(let result):
@@ -19,8 +19,8 @@ class TokenAuthViewModel: ObservableObject {
                     } else {
                         print("⚠️tokenAuth docoder error")
                     }
-                case 400:
-                    print("알수 없는 리프레시 토큰")
+                case 404:
+                    print("알수없는 토큰")
                 default:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(ErrorModel.self, from: result.data) {

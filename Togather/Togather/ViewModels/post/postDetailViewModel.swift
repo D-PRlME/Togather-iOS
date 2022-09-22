@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class PostDetailViewModel: ObservableObject {
-    let postClient = MoyaProvider<PostService>()
+    let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var postID: CLong = 0
     @Published var tagName: [String] = []

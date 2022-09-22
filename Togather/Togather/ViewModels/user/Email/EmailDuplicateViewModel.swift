@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class EmailDuplicateViewModel: ObservableObject {
-    let userClient = MoyaProvider<UserService>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var email: String = ""
     @Published var showingAlert: Bool = false

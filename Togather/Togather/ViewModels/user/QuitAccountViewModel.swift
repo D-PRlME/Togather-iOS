@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class QuitAccountViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>()
+    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     func signUpClient() {
         UserClient.request(.getMyprofile) { res in

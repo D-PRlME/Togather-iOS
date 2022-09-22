@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class ChangeMyInfoViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>()
+    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var name: String = ""
     @Published var profileImageLink: String = ""

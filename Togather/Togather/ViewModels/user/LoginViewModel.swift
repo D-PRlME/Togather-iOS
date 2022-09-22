@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class LoginViewModel: ObservableObject {
-    let userClient = MoyaProvider<UserService>()
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var email: String = ""
     @Published var password: String = ""
@@ -13,7 +13,6 @@ class LoginViewModel: ObservableObject {
         userClient.request(.login(accountID: email, password: password)) { res in
             switch res {
             case .success(let result):
-                print(result.statusCode)
                 switch result.statusCode {
                 case 200...201:
                     let decoder = JSONDecoder()
@@ -24,7 +23,6 @@ class LoginViewModel: ObservableObject {
                         
                         print("✅로그인 성공")
                         print("🔊\(data.expired_at)")
-                        print(data.access_token)
                         self.viewTag = 1
                     } else {
                         print("⚠️login docoder error")

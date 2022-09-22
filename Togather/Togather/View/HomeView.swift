@@ -4,6 +4,7 @@ import SwiftUIFlowLayout
 import Kingfisher
 import Moya
 import SwiftUIPullToRefresh
+import SkeletonUI
 
 var DevLanguage: [String] = ["Swift", "Java", "Kotlin", "JS", "Python", "Flutter"]
 var DevColor: [Color] = [.orange, .red, .purple, .yellow, .green, .blue]
@@ -12,9 +13,7 @@ var Developer: [String] = ["홍승재", "길근우", "정승훈", "강용수", "
 struct HomeView: View {
     
     @State var GoPostDetail = false
-    
-    @State var postList: [PostList] = []
-    
+
     @StateObject var homeViewModel = HomeViewModel()
     
     var body: some View {
@@ -23,9 +22,14 @@ struct HomeView: View {
                 ColorManager.BackgroundColor1.ignoresSafeArea()
                 VStack(spacing: 0) {
                     RefreshableScrollView(onRefresh: { done in
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                            homeViewModel.post()
-                            homeViewModel.GetTagList()
+                        withAnimation {
+                            homeViewModel.postList = []
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            withAnimation {
+                                homeViewModel.post()
+                                homeViewModel.GetTagList()
+                            }
                             done()
                         }
                     }) {
@@ -112,6 +116,7 @@ struct HomeView: View {
                                     .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                                     .cornerRadius(8)
                                     .padding(.vertical, 6)
+                                    .animation(.linear)
                                 }
                                 .sheet(isPresented: $GoPostDetail, content: {
                                     PostDetail(
@@ -125,8 +130,10 @@ struct HomeView: View {
                     
                     .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                     .onAppear() {
-                        homeViewModel.post()
-                        homeViewModel.GetTagList()
+                        withAnimation {
+                            homeViewModel.post()
+                            homeViewModel.GetTagList()
+                        }
                     }
                     
                 }

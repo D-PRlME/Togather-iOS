@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class SendEmailViewModel: ObservableObject {
-    let userClient = MoyaProvider<UserService>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var email: String = ""
     
@@ -11,7 +11,6 @@ class SendEmailViewModel: ObservableObject {
             print("email: \(self.email)")
             switch res {
             case .success(let result):
-                print("sendE: \(result.statusCode)")
                 switch result.statusCode {
                 case 204:
                     print("✅유저에게 이메일을 보냄")

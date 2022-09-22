@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class GetUserProfileViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>()
+    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var userID: String = ""
     @Published var userEmail: String = ""

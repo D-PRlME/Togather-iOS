@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class SignUpViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])
+    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var name: String = ""
     @Published var email: String = ""

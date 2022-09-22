@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class EmailVerifyViewModel: ObservableObject {
-    let userClient = MoyaProvider<UserService>()
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var email: String = ""
     @Published var code: String = ""

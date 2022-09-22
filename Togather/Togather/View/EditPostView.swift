@@ -141,18 +141,23 @@ struct EditPostView: View {
                     editPostViewModel.title = title
                     editPostViewModel.content = content
                     editPostViewModel.link = link
-                    for i in 1..<tagBtnArr.count - 1 {
-                        editPostViewModel.tag.append(tagBtnArr[i])
-                        print("tag 추가 \(tagBtnArr[i])")
-                    }
+//                    for i in 0..<tagBtnArr.count {
+//                        editPostViewModel.tag.append(tagBtnArr[i])
+//                        print("tag 추가 \(tagBtnArr[i])")
+//                    }
+                    editPostViewModel.tag.append(contentsOf: tagBtnArr.map { data in
+                        print("tag 추가 \(data)")
+                        return data
+                    })
                     postViewModel.tag = self.tagBtnArr
                     editPostViewModel.edit()
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("저장")
                         .font(.custom("Pretendard-Bold", size: 18))
                         .foregroundColor(.black)
-                        .padding(.horizontal, 11)
-                        .padding(.vertical, 5)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
                         .background(Color(red: 0.882, green: 0.678, blue: 0.004))
                         .cornerRadius(37)
                         .padding(2)

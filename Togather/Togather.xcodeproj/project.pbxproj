@@ -27,6 +27,8 @@
 		4BC8992B28DA8CD800189553 /* signUpSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8992828DA8CD800189553 /* signUpSuccessView.swift */; };
 		4BC8992C28DA8CD800189553 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8992928DA8CD800189553 /* SignUpView.swift */; };
 		4BC8992E28DA8D0700189553 /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8992D28DA8D0700189553 /* UserClient.swift */; };
+		4BC8993128DA973000189553 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8993028DA973000189553 /* MoyaLoggerPlugin.swift */; };
+		4BC8993628DC3E7400189553 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC8993528DC3E7400189553 /* Preview Assets.xcassets */; };
 		4BE1C61028CDE9B60052AE3D /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4BE1C60728CDE9B60052AE3D /* Pretendard-Black.otf */; };
 		4BE1C61128CDE9B60052AE3D /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4BE1C60828CDE9B60052AE3D /* Pretendard-Regular.otf */; };
 		4BE1C61228CDE9B60052AE3D /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4BE1C60928CDE9B60052AE3D /* Pretendard-ExtraBold.otf */; };
@@ -52,7 +54,6 @@
 		907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1DF28BBBA7E008A7562 /* DrawApp.swift */; };
 		907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1E128BBBA7E008A7562 /* ContentView.swift */; };
 		907EF1E428BBBA81008A7562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907EF1E328BBBA81008A7562 /* Assets.xcassets */; };
-		907EF1E728BBBA81008A7562 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907EF1E628BBBA81008A7562 /* Preview Assets.xcassets */; };
 		908ED77128CA5A4600763AC9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */; };
 		908ED77428CB789100763AC9 /* EditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908ED77328CB789100763AC9 /* EditInfo.swift */; };
 		90A05CAD28D0B78C0031E71B /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CAC28D0B78C0031E71B /* PostViewModel.swift */; };
@@ -102,6 +103,8 @@
 		4BC8992828DA8CD800189553 /* signUpSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpSuccessView.swift; sourceTree = "<group>"; };
 		4BC8992928DA8CD800189553 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4BC8992D28DA8D0700189553 /* UserClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
+		4BC8993028DA973000189553 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
+		4BC8993528DC3E7400189553 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4BE1C60728CDE9B60052AE3D /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		4BE1C60828CDE9B60052AE3D /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		4BE1C60928CDE9B60052AE3D /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -128,7 +131,6 @@
 		907EF1DF28BBBA7E008A7562 /* DrawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawApp.swift; sourceTree = "<group>"; };
 		907EF1E128BBBA7E008A7562 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		907EF1E328BBBA81008A7562 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		907EF1E628BBBA81008A7562 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		908ED77028CA5A4600763AC9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		908ED77328CB789100763AC9 /* EditInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfo.swift; sourceTree = "<group>"; };
 		90A05CAC28D0B78C0031E71B /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
@@ -189,15 +191,15 @@
 		4BC8990428DA8CA000189553 /* user */ = {
 			isa = PBXGroup;
 			children = (
+				4BC8991428DA8CA000189553 /* Email */,
+				4BC8991128DA8CA000189553 /* Get */,
+				4BC8990828DA8CA000189553 /* Change */,
+				4BC8990E28DA8CA000189553 /* SignUp */,
 				4BC8990528DA8CA000189553 /* Token */,
 				4BC8990728DA8CA000189553 /* LoginViewModel.swift */,
-				4BC8990828DA8CA000189553 /* Change */,
 				4BC8990B28DA8CA000189553 /* LogOutViewModel.swift */,
 				4BC8990C28DA8CA000189553 /* FindPasswordEmailViewModel.swift */,
 				4BC8990D28DA8CA000189553 /* QuitAccountViewModel.swift */,
-				4BC8990E28DA8CA000189553 /* SignUp */,
-				4BC8991128DA8CA000189553 /* Get */,
-				4BC8991428DA8CA000189553 /* Email */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -255,6 +257,22 @@
 				4BC8992828DA8CD800189553 /* signUpSuccessView.swift */,
 			);
 			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		4BC8992F28DA96F300189553 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				4BC8993028DA973000189553 /* MoyaLoggerPlugin.swift */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		4BC8993728DC3EFA00189553 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4BC8993528DC3E7400189553 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		4BE919CA28CEF0850002A268 /* PasswordChangeView */ = {
@@ -328,19 +346,12 @@
 				90D1C6E028BF6D8800B653C3 /* View */,
 				4B7F0AAB28BEF0B700BBA52D /* Header */,
 				4B7F0AA628BEE22700BBA52D /* MoyaClient */,
+				4BC8992F28DA96F300189553 /* Plugin */,
 				907EF1E328BBBA81008A7562 /* Assets.xcassets */,
 				90D1C70028BF9BF000B653C3 /* Info.plist */,
-				907EF1E528BBBA81008A7562 /* Preview Content */,
+				4BC8993728DC3EFA00189553 /* Preview Content */,
 			);
 			path = Togather;
-			sourceTree = "<group>";
-		};
-		907EF1E528BBBA81008A7562 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				907EF1E628BBBA81008A7562 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		908ED77228CB787900763AC9 /* myview -> */ = {
@@ -483,11 +494,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				907EF1E728BBBA81008A7562 /* Preview Assets.xcassets in Resources */,
 				4BE1C61428CDE9B60052AE3D /* Pretendard-Light.otf in Resources */,
 				908ED77128CA5A4600763AC9 /* Launch Screen.storyboard in Resources */,
 				4BE1C61328CDE9B60052AE3D /* Pretendard-Thin.otf in Resources */,
 				4BE1C61228CDE9B60052AE3D /* Pretendard-ExtraBold.otf in Resources */,
+				4BC8993628DC3E7400189553 /* Preview Assets.xcassets in Resources */,
 				4BE1C61128CDE9B60052AE3D /* Pretendard-Regular.otf in Resources */,
 				4BE1C61028CDE9B60052AE3D /* Pretendard-Black.otf in Resources */,
 				4BE1C61628CDE9B60052AE3D /* Pretendard-SemiBold.otf in Resources */,
@@ -537,6 +548,7 @@
 				4BC8991F28DA8CA000189553 /* SignUpViewModel.swift in Sources */,
 				4BC8991828DA8CA000189553 /* TokenAuthViewModel.swift in Sources */,
 				90A05CAD28D0B78C0031E71B /* PostViewModel.swift in Sources */,
+				4BC8993128DA973000189553 /* MoyaLoggerPlugin.swift in Sources */,
 				90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */,
 				907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */,
 				4BC8992B28DA8CD800189553 /* signUpSuccessView.swift in Sources */,

@@ -1,15 +1,30 @@
-//
-//  Developers.swift
-//  Draw
-//
-//  Created by 홍승재 on 2022/09/11.
-//
-
 import SwiftUI
+import Alamofire
+import Kingfisher
 
 struct Developers: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var developers: [String] = ["김성원", "조병진", "김상구", "김은빈", "홍승재", "정승훈", "심미진"]
+    var githubID: [String] = [
+        "lilseongwon",
+        "BJCHO0501",
+        "MONOTYPEEE",
+        "rlaisqls",
+        "HongSJae",
+        "Tmdhoon2",
+        "azure-553"
+    ]
+    var Image_url_Arr: [String] = [
+        "https://avatars.githubusercontent.com/u/102791105?v=4",
+        "https://avatars.githubusercontent.com/u/80248855?v=4",
+        "https://avatars.githubusercontent.com/u/76112135?v=4",
+        "https://avatars.githubusercontent.com/u/81006587?v=4",
+        "https://avatars.githubusercontent.com/u/102791216?v=4",
+        "https://avatars.githubusercontent.com/u/102812085?v=4",
+        "https://avatars.githubusercontent.com/u/80371353?v=4"
+    ]
     
     let columns = [
         GridItem(.flexible(), spacing: 12),
@@ -40,15 +55,19 @@ struct Developers: View {
                             Spacer()
                         }
                         LazyVGrid(columns: columns, spacing: 12) {
-                            ForEach(0..<Developer.count, id: \.self) { i in
+                            ForEach(0..<developers.count, id: \.self) { i in
                                 ZStack{
                                     VStack(spacing: 8) {
                                         HStack(spacing: 0) {
-                                            Circle()
-                                                .foregroundColor(DevColor[i])
+                                            KFImage.url(URL(string: Image_url_Arr[i]))
+                                                .placeholder {
+                                                    Circle().fill(Color.secondary)
+                                                        .frame(width: 56, height: 56)
+                                                }
+                                                .resizable()
                                                 .frame(width: 62, height: 62)
                                             Spacer()
-                                            Text(Developer[i])
+                                            Text(developers[i])
                                                 .foregroundColor(.black)
                                                 .font(.custom("Pretendard-Bold", size: 24))
                                                 .padding(.trailing, 8)
@@ -89,6 +108,9 @@ struct Developers: View {
                 }
                 .padding(.horizontal, 16)
             }
+        }
+        .onAppear() {
+            
         }
     }
 }

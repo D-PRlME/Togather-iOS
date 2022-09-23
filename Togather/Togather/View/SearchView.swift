@@ -24,6 +24,8 @@ struct SearchView: View {
                             HStack {
                                 HStack {
                                     TextField("검색", text: $searchViewModel.title)
+                                        .autocapitalization(.none)
+                                        .disableAutocorrection(true)
                                         .font(.custom("Pretendard-Medium", size: 20))
                                         .foregroundColor(.black)
                                     Image("SearchOff")

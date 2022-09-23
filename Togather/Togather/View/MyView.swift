@@ -1,15 +1,15 @@
 
 import SwiftUI
+import Kingfisher
 
 struct MyView: View {
     
     @State var GoEditInfoModal = false
-    
     @State var GoMyPost = false
-    
     @State var GoDevelopers = false
-    
     @State var GoChangePassword = false
+    
+    @StateObject var getMyprofileVM = GetMyProfileViewModel()
     
     var body: some View {
         GeometryReader { proxy in
@@ -17,18 +17,31 @@ struct MyView: View {
                 ColorManager.BackgroundColor3.ignoresSafeArea()
                 VStack(alignment: .leading, spacing: 12) {
                     HStack(spacing: 0) {
-                        Image(systemName: "person.fill")
+                        KFImage.url(URL(string: getMyprofileVM.myProfilImageLink))
+                            .placeholder {
+                                Circle().fill(Color.secondary)
+                                    .frame(width: 48, height: 48)
+                            }
+                            .resizable()
+                            .clipShape(Circle())
                             .frame(width: 48, height: 48)
                             .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
                             .padding(.leading, 10)
                             .padding(.trailing, 8)
-                        Text(Developer[0])
-                            .foregroundColor(.black)
-                            .font(.custom("Pretendard-Medium", size: 20))
+                        VStack(alignment: .leading) {
+                            Text(getMyprofileVM.myID)
+                                .foregroundColor(.black)
+                                .font(.custom("Pretendard-Medium", size: 20))
+                            
+                            Text(getMyprofileVM.myEmail)
+                                .foregroundColor(.secondary)
+                                .font(.custom("Pretendard-Light", size: 15))
+                        }
                         Spacer()
                     }
                     .padding(.top, 28)
                     .padding(.bottom, 12)
+                    
                     Button {
                         print("MyView -> 계정 정보 수정 -> EditInfo")
                         GoEditInfoModal = true
@@ -122,6 +135,9 @@ struct MyView: View {
                 .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                 .padding(.horizontal, 20)
             }
+        }
+        .onAppear {
+            getMyprofileVM.GetMyprofile()
         }
     }
 }

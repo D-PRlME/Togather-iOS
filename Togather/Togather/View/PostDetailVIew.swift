@@ -6,9 +6,6 @@ struct PostDetail: View {
     
     @Binding var showModal: Bool
     
-    @State var heart: Int = 0
-    @State var heartToggle: Bool = false
-    
     @StateObject var postDetailViewModel = PostDetailViewModel()
     
     var body: some View {
@@ -100,20 +97,22 @@ struct PostDetail: View {
                             VStack(alignment: .trailing) {
                                 Spacer()
                                 Button {
-                                    switch heartToggle {
+                                    switch postDetailViewModel.postDetail.is_liked {
                                     case true:
-                                        heart -= 1
-                                        heartToggle.toggle()
+                                        postDetailViewModel.postDetail.like_count -= 1
+                                        postDetailViewModel.postDetail.is_liked.toggle()
+                                        postDetailViewModel.dislike()
                                     case false:
-                                        heart += 1
-                                        heartToggle.toggle()
+                                        postDetailViewModel.postDetail.like_count += 1
+                                        postDetailViewModel.postDetail.is_liked.toggle()
+                                        postDetailViewModel.like()
                                     }
                                 } label: {
                                     HStack(spacing: 0) {
-                                        Text(String(heart))
+                                        Text(String(postDetailViewModel.postDetail.like_count))
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Bold", size: 18))
-                                        Image(heartToggle ? "OnHeart" : "OffHeart")
+                                        Image(postDetailViewModel.postDetail.is_liked ? "OnHeart" : "OffHeart")
                                             .resizable()
                                             .frame(width: 20, height: 17)
                                             .padding(.leading, 4)
@@ -144,16 +143,21 @@ struct PostDetail: View {
                                                 .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
                                                 .cornerRadius(37)
                                         }
-                                        Text("삭제")
-                                            .foregroundColor(.black)
-                                            .font(.custom("Pretendard-Bold", size: 18))
-                                            .padding(.horizontal, 16)
-                                            .padding(.vertical, 8)
-                                            .background(Color(red: 0.995, green: 0.238, blue: 0.238))
-                                            .cornerRadius(37)
-                                            .padding(2)
-                                            .background(Color("RedStroke"))
-                                            .cornerRadius(37)
+                                        Button  {
+                                            postDetailViewModel.delete()
+                                            showModal.toggle()
+                                        } label: {
+                                            Text("삭제")
+                                                .foregroundColor(.black)
+                                                .font(.custom("Pretendard-Bold", size: 18))
+                                                .padding(.horizontal, 16)
+                                                .padding(.vertical, 8)
+                                                .background(Color(red: 0.995, green: 0.238, blue: 0.238))
+                                                .cornerRadius(37)
+                                                .padding(2)
+                                                .background(Color("RedStroke"))
+                                                .cornerRadius(37)
+                                        }
                                     }
                                 }
                             }

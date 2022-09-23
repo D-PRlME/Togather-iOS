@@ -44,6 +44,7 @@ struct WritingView: View {
 
             HStack {
                 TextField("연락받을 링크", text: $postViewModel.link)
+                    .keyboardType(.alphabet)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .font(.custom("Pretendard-Medium", size: 20))

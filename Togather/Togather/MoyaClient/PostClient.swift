@@ -11,6 +11,8 @@ enum PostService {
     case getDetailPosts(postID: Int)
     case deletePost(postID: Int)
     case getTag
+    case like(postID: Int)
+    case dislike(postID: Int)
 }
 
 extension PostService: TargetType {
@@ -39,18 +41,20 @@ extension PostService: TargetType {
             return "/title"
         case .getTagPosts:
             return "/tag"
+        case .like(let postID), .dislike(let postID):
+            return "/like/\(postID)"
         }
     }
     var method: Moya.Method {
         switch self {
             
-        case .post:
+        case .post, .like :
             return .post
         case .getMyPosts, .getPosts, .getDetailPosts, .getTag, .getTitlePosts, .getTagPosts:
             return .get
         case .editPost:
             return .patch
-        case .deletePost:
+        case .deletePost, .dislike:
             return .delete
         }
     }
@@ -96,7 +100,7 @@ extension PostService: TargetType {
                     ],
                 encoding: URLEncoding.queryString)
             
-        case .getDetailPosts, .deletePost, .getTag, .getPosts, .getMyPosts:
+        case .getDetailPosts, .deletePost, .getTag, .getPosts, .getMyPosts, .like, .dislike:
             return .requestPlain
         }
     }
@@ -105,7 +109,7 @@ extension PostService: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .getMyPosts, .getPosts, .getDetailPosts, .post, .editPost, .deletePost, .getTag, .getTitlePosts, .getTagPosts:
+        case .getMyPosts, .getPosts, .getDetailPosts, .post, .editPost, .deletePost, .getTag, .getTitlePosts, .getTagPosts, .like, .dislike:
             return Header.accessToken.header()
         }
     }

@@ -22,16 +22,7 @@ class TokenAuthViewModel: ObservableObject {
                 case 404:
                     print("알수없는 토큰")
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("============🆘============")
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                        print("==========================")
-                    } else {
-                        print("⚠️tokenAuth Error decode")
-                    }
+                    print("\(result.statusCode)")
                 }
                 
             case .failure(let err):

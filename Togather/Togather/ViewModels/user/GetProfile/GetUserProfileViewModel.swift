@@ -23,16 +23,7 @@ class GetUserProfileViewModel: ObservableObject {
                         print("⚠️getUserProfile docoder error")
                     }
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("============🆘============")
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                        print("==========================")
-                    } else {
-                        print("⚠️getUserProfile Error decode")
-                    }
+                    print(result.statusCode)
                 }
                 
             case .failure(let err):

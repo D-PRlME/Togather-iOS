@@ -19,16 +19,7 @@ class SendEmailViewModel: ObservableObject {
                 case 409:
                     print("이메일이 중복됨")
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("============🆘============")
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                        print("==========================")
-                    } else {
-                        print("⚠️sendEmail Error handling")
-                    }
+                    print(result.statusCode)
                 }
             case .failure(let err):
                 print("⛔️sendEmail error: \(err.localizedDescription)")

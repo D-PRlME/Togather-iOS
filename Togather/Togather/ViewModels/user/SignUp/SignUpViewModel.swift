@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class SignUpViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var name: String = ""
     @Published var email: String = ""
@@ -10,7 +10,7 @@ class SignUpViewModel: ObservableObject {
     @Published var isSuccess: Int?
     
     func signUpClient() {
-        UserClient.request(.signup(password: password, email: email, name: name)) { res in
+        userClient.request(.signup(password: password, email: email, name: name)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {
@@ -25,16 +25,7 @@ class SignUpViewModel: ObservableObject {
                         print("⚠️signup docoder error")
                     }
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("============🆘============")
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                        print("==========================")
-                    } else {
-                        print("⚠️signup Error decode")
-                    }
+                    print(result.statusCode)
                 }
                 
             case .failure(let err):

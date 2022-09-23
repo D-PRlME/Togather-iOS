@@ -28,16 +28,7 @@ class EmailDuplicateViewModel: ObservableObject {
                     self.alertMessage = "이미 등록된 이메일 입니다."
                     print("이메일이 중복됨")
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("============🆘============")
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                        print("==========================")
-                    } else {
-                        print("⚠️emailDupilcate Error handling")
-                    }
+                    print(result.statusCode)
                 }
             case .failure(let err):
                 print("⛔️emailDupilcate error: \(err.localizedDescription)")

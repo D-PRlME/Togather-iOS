@@ -2,26 +2,17 @@ import Foundation
 import Moya
 
 class QuitAccountViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     func signUpClient() {
-        UserClient.request(.getMyprofile) { res in
+        userClient.request(.getMyprofile) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {
                 case 204:
                     print("회원탈퇴(계정 삭제)")
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("============🆘============")
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                        print("==========================")
-                    } else {
-                        print("⚠️quitAccount Error decode")
-                    }
+                    print(result.statusCode)
                 }
                 
             case .failure(let err):

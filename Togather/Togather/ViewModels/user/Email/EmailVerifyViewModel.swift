@@ -21,16 +21,7 @@ class EmailVerifyViewModel: ObservableObject {
                 case 401:
                     print("인증코드가 잘못됨")
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("============🆘============")
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                        print("==========================")
-                    } else {
-                        print("⚠️emailVerify Error handling")
-                    }
+                    print(result.statusCode)
                 }
             case .failure(let err):
                 print("⛔️emailVerity error: \(err.localizedDescription)")

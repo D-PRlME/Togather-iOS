@@ -16,23 +16,14 @@ class GetMyProfileViewModel: ObservableObject {
                 case 200:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(MyProfileModel.self, from: result.data) {
-                        self.myID = data.account_id
+                        self.myID = data.name
                         self.myEmail = data.email
                         self.myProfilImageLink = data.profile_image_url
                     } else {
                         print("⚠️getMyProfile docoder error")
                     }
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("============🆘============")
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                        print("==========================")
-                    } else {
-                        print("⚠️getMyProfile Error decode")
-                    }
+                    print(result.statusCode)
                 }
                 
             case .failure(let err):

@@ -6,7 +6,24 @@ struct Developers: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    var developers: [String] = ["김성원", "조병진", "김상구", "김은빈", "홍승재", "정승훈", "심미진"]
+    var developers: [String] = [
+        "김성원",
+        "조병진",
+        "김상구",
+        "김은빈",
+        "홍승재",
+        "정승훈",
+        "심미진"
+    ]
+    var stack: [String] = [
+        "백엔드",
+        "iOS",
+        "디자인",
+        "백엔드",
+        "iOS",
+        "Android",
+        "웹 프론트엔드"
+    ]
     var githubID: [String] = [
         "lilseongwon",
         "BJCHO0501",
@@ -65,6 +82,7 @@ struct Developers: View {
                                                         .frame(width: 56, height: 56)
                                                 }
                                                 .resizable()
+                                                .clipShape(Circle())
                                                 .frame(width: 62, height: 62)
                                             Spacer()
                                             Text(developers[i])
@@ -73,7 +91,7 @@ struct Developers: View {
                                                 .padding(.trailing, 8)
                                         }
                                         HStack {
-                                            Text("기술")
+                                            Text(stack[i])
                                                 .foregroundColor(.black)
                                                 .font(.custom("Pretendard-Medium", size: 16))
                                                 .padding(.horizontal, 12)
@@ -85,16 +103,19 @@ struct Developers: View {
                                                 .cornerRadius(37)
                                             Spacer()
                                         }
-                                        HStack(spacing: 0) {
-                                            Image("LinkImage")
-                                                .resizable()
-                                                .frame(width: 12, height: 12)
-                                                .padding(4)
-                                            Text("Github")
-                                                .foregroundColor(.black)
-                                                .font(.custom("Pretendard-Medium", size: 18))
-                                                .underline()
-                                            Spacer()
+                                        
+                                        Link(destination: URL(string: "https://github.com/" + githubID[i])!) {
+                                            HStack(spacing: 0) {
+                                                Image("LinkImage")
+                                                    .resizable()
+                                                    .frame(width: 12, height: 12)
+                                                    .padding(4)
+                                                Text("Github")
+                                                    .foregroundColor(.black)
+                                                    .font(.custom("Pretendard-Medium", size: 18))
+                                                    .underline()
+                                                Spacer()
+                                            }
                                         }
                                     }
                                 }

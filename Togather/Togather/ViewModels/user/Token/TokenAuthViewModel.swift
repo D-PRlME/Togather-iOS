@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class TokenAuthViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>()
+    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     func TokenReissueClient() {
         UserClient.request(.tokenReissue) { res in

@@ -4,7 +4,6 @@ import SwiftUIFlowLayout
 import Kingfisher
 import Moya
 import SwiftUIPullToRefresh
-import SkeletonUI
 
 var DevLanguage: [String] = ["Swift", "Java", "Kotlin", "JS", "Python", "Flutter"]
 var DevColor: [Color] = [.orange, .red, .purple, .yellow, .green, .blue]

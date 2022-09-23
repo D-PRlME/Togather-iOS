@@ -89,18 +89,27 @@ extension PostService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "title" : title
+                        "title" : title,
+                        "sort" : "id,desc"
                     ],
                 encoding: URLEncoding.queryString)
         case .getTagPosts(tag: let tag):
             return .requestParameters(
                 parameters:
                     [
-                        "tag" : tag
+                        "tag" : tag,
+                        "sort" : "id,desc"
+                    ],
+                encoding: URLEncoding.queryString)
+        case .getPosts, .getMyPosts:
+            return .requestParameters(
+                parameters:
+                    [
+                        "sort" : "id,desc"
                     ],
                 encoding: URLEncoding.queryString)
             
-        case .getDetailPosts, .deletePost, .getTag, .getPosts, .getMyPosts, .like, .dislike:
+        case .getDetailPosts, .deletePost, .getTag, .like, .dislike:
             return .requestPlain
         }
     }

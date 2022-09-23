@@ -50,7 +50,6 @@
 		900990EF28D04EE700FD9462 /* MyPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990EE28D04EE700FD9462 /* MyPostModel.swift */; };
 		900990F128D0586C00FD9462 /* PostDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990F028D0586C00FD9462 /* PostDetailModel.swift */; };
 		900990F728D05D7400FD9462 /* UploadImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990F628D05D7400FD9462 /* UploadImageModel.swift */; };
-		9039DBCB28DC944A00BE988C /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 9039DBCA28DC944A00BE988C /* SocketIO */; };
 		9039DBCD28DC9E3C00BE988C /* Github_Profile_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9039DBCC28DC9E3C00BE988C /* Github_Profile_Image.swift */; };
 		906908AE28CDC49C00BBF0B7 /* Developers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906908AD28CDC49C00BBF0B7 /* Developers.swift */; };
 		907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1DF28BBBA7E008A7562 /* DrawApp.swift */; };
@@ -64,24 +63,25 @@
 		90A05CBF28D306040031E71B /* TagListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CBE28D306040031E71B /* TagListModel.swift */; };
 		90C50A5328CC8254007EA639 /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C50A5228CC8254007EA639 /* DeleteAccount.swift */; };
 		90C50A5728CCBE8C007EA639 /* PostDetailVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C50A5628CCBE8C007EA639 /* PostDetailVIew.swift */; };
+		90C8C07E28DDC1140083577B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C07D28DDC1140083577B /* Alamofire */; };
+		90C8C08128DDC12D0083577B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08028DDC12D0083577B /* CombineMoya */; };
+		90C8C08328DDC12D0083577B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08228DDC12D0083577B /* Moya */; };
+		90C8C08528DDC12D0083577B /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08428DDC12D0083577B /* ReactiveMoya */; };
+		90C8C08728DDC12D0083577B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08628DDC12D0083577B /* RxMoya */; };
+		90C8C08A28DDC1450083577B /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08928DDC1450083577B /* SwiftUIFlowLayout */; };
+		90C8C08D28DDC1620083577B /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08C28DDC1620083577B /* SwiftUIPullToRefresh */; };
+		90C8C09028DDC1800083577B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08F28DDC1800083577B /* Kingfisher */; };
+		90C8C09328DDC1940083577B /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C09228DDC1940083577B /* SocketIO */; };
 		90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */; };
 		90D1C6E428BF6E1300B653C3 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E328BF6E1300B653C3 /* ShowView.swift */; };
 		90D1C6E628BF6E2300B653C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E528BF6E2300B653C3 /* HomeView.swift */; };
 		90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E728BF6E3000B653C3 /* WritingView.swift */; };
 		90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E928BF6E3D00B653C3 /* MyView.swift */; };
 		90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */; };
-		90E9557D28DC04F1005132C9 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 90E9557C28DC04F1005132C9 /* SkeletonUI */; };
-		90EC085128D873AD00E34BCE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 90EC085028D873AD00E34BCE /* Kingfisher */; };
-		90EC085C28D9947F00E34BCE /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 90EC085B28D9947F00E34BCE /* SwiftUIPullToRefresh */; };
 		90EC085E28D9AE5A00E34BCE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */; };
 		90EC086228D9D64400E34BCE /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC086128D9D64400E34BCE /* MyViewModel.swift */; };
 		90EC086428DA9FDD00E34BCE /* EditPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC086328DA9FDD00E34BCE /* EditPostView.swift */; };
 		90EC086628DAA03700E34BCE /* EditPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC086528DAA03700E34BCE /* EditPostViewModel.swift */; };
-		90FCBE0228D4C0F400E0A9E3 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0128D4C0F400E0A9E3 /* CombineMoya */; };
-		90FCBE0428D4C0F400E0A9E3 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0328D4C0F400E0A9E3 /* Moya */; };
-		90FCBE0628D4C0F400E0A9E3 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0528D4C0F400E0A9E3 /* ReactiveMoya */; };
-		90FCBE0828D4C0F400E0A9E3 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0728D4C0F400E0A9E3 /* RxMoya */; };
-		90FCBE0B28D4C12700E0A9E3 /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 90FCBE0A28D4C12700E0A9E3 /* SwiftUIFlowLayout */; };
 		90FCBE0F28D4C12700E0A9E3 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FCBE0E28D4C12700E0A9E3 /* PostDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -162,15 +162,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90EC085128D873AD00E34BCE /* Kingfisher in Frameworks */,
-				90FCBE0428D4C0F400E0A9E3 /* Moya in Frameworks */,
-				90FCBE0228D4C0F400E0A9E3 /* CombineMoya in Frameworks */,
-				90FCBE0B28D4C12700E0A9E3 /* SwiftUIFlowLayout in Frameworks */,
-				90FCBE0828D4C0F400E0A9E3 /* RxMoya in Frameworks */,
-				90E9557D28DC04F1005132C9 /* SkeletonUI in Frameworks */,
-				90FCBE0628D4C0F400E0A9E3 /* ReactiveMoya in Frameworks */,
-				90EC085C28D9947F00E34BCE /* SwiftUIPullToRefresh in Frameworks */,
-				9039DBCB28DC944A00BE988C /* SocketIO in Frameworks */,
+				90C8C08728DDC12D0083577B /* RxMoya in Frameworks */,
+				90C8C08128DDC12D0083577B /* CombineMoya in Frameworks */,
+				90C8C08A28DDC1450083577B /* SwiftUIFlowLayout in Frameworks */,
+				90C8C08528DDC12D0083577B /* ReactiveMoya in Frameworks */,
+				90C8C09028DDC1800083577B /* Kingfisher in Frameworks */,
+				90C8C07E28DDC1140083577B /* Alamofire in Frameworks */,
+				90C8C08328DDC12D0083577B /* Moya in Frameworks */,
+				90C8C08D28DDC1620083577B /* SwiftUIPullToRefresh in Frameworks */,
+				90C8C09328DDC1940083577B /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,15 +446,15 @@
 			);
 			name = Togather;
 			packageProductDependencies = (
-				90FCBE0128D4C0F400E0A9E3 /* CombineMoya */,
-				90FCBE0328D4C0F400E0A9E3 /* Moya */,
-				90FCBE0528D4C0F400E0A9E3 /* ReactiveMoya */,
-				90FCBE0728D4C0F400E0A9E3 /* RxMoya */,
-				90FCBE0A28D4C12700E0A9E3 /* SwiftUIFlowLayout */,
-				90EC085028D873AD00E34BCE /* Kingfisher */,
-				90EC085B28D9947F00E34BCE /* SwiftUIPullToRefresh */,
-				90E9557C28DC04F1005132C9 /* SkeletonUI */,
-				9039DBCA28DC944A00BE988C /* SocketIO */,
+				90C8C07D28DDC1140083577B /* Alamofire */,
+				90C8C08028DDC12D0083577B /* CombineMoya */,
+				90C8C08228DDC12D0083577B /* Moya */,
+				90C8C08428DDC12D0083577B /* ReactiveMoya */,
+				90C8C08628DDC12D0083577B /* RxMoya */,
+				90C8C08928DDC1450083577B /* SwiftUIFlowLayout */,
+				90C8C08C28DDC1620083577B /* SwiftUIPullToRefresh */,
+				90C8C08F28DDC1800083577B /* Kingfisher */,
+				90C8C09228DDC1940083577B /* SocketIO */,
 			);
 			productName = Draw;
 			productReference = 907EF1DC28BBBA7E008A7562 /* Togather.app */;
@@ -485,12 +485,12 @@
 			);
 			mainGroup = 907EF1D328BBBA7E008A7562;
 			packageReferences = (
-				90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */,
-				90FCBE0928D4C12700E0A9E3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
-				90EC084F28D873AD00E34BCE /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				90EC085A28D9947F00E34BCE /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */,
-				90E9557B28DC04F0005132C9 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
-				9039DBC928DC944A00BE988C /* XCRemoteSwiftPackageReference "socket" */,
+				90C8C07C28DDC1140083577B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				90C8C07F28DDC12D0083577B /* XCRemoteSwiftPackageReference "Moya" */,
+				90C8C08828DDC1450083577B /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
+				90C8C08B28DDC1620083577B /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */,
+				90C8C08E28DDC1800083577B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				90C8C09128DDC1940083577B /* XCRemoteSwiftPackageReference "socket" */,
 			);
 			productRefGroup = 907EF1DD28BBBA7E008A7562 /* Products */;
 			projectDirPath = "";
@@ -793,39 +793,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9039DBC928DC944A00BE988C /* XCRemoteSwiftPackageReference "socket" */ = {
+		90C8C07C28DDC1140083577B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		90E9557B28DC04F0005132C9 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CSolanaM/SkeletonUI";
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 5.0.0;
 			};
 		};
-		90EC084F28D873AD00E34BCE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		90EC085A28D9947F00E34BCE /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/globulus/swiftui-pull-to-refresh";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */ = {
+		90C8C07F28DDC12D0083577B /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
@@ -833,62 +809,85 @@
 				kind = branch;
 			};
 		};
-		90FCBE0928D4C12700E0A9E3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */ = {
+		90C8C08828DDC1450083577B /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/globulus/swiftui-flow-layout";
 			requirement = {
-				kind = versionRange;
-				maximumVersion = 2.0.0;
+				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
+			};
+		};
+		90C8C08B28DDC1620083577B /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-pull-to-refresh";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		90C8C08E28DDC1800083577B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		90C8C09128DDC1940083577B /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9039DBCA28DC944A00BE988C /* SocketIO */ = {
+		90C8C07D28DDC1140083577B /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9039DBC928DC944A00BE988C /* XCRemoteSwiftPackageReference "socket" */;
-			productName = SocketIO;
+			package = 90C8C07C28DDC1140083577B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
-		90E9557C28DC04F1005132C9 /* SkeletonUI */ = {
+		90C8C08028DDC12D0083577B /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90E9557B28DC04F0005132C9 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
-			productName = SkeletonUI;
-		};
-		90EC085028D873AD00E34BCE /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 90EC084F28D873AD00E34BCE /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		90EC085B28D9947F00E34BCE /* SwiftUIPullToRefresh */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 90EC085A28D9947F00E34BCE /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */;
-			productName = SwiftUIPullToRefresh;
-		};
-		90FCBE0128D4C0F400E0A9E3 /* CombineMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 90C8C07F28DDC12D0083577B /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = CombineMoya;
 		};
-		90FCBE0328D4C0F400E0A9E3 /* Moya */ = {
+		90C8C08228DDC12D0083577B /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 90C8C07F28DDC12D0083577B /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
-		90FCBE0528D4C0F400E0A9E3 /* ReactiveMoya */ = {
+		90C8C08428DDC12D0083577B /* ReactiveMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 90C8C07F28DDC12D0083577B /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = ReactiveMoya;
 		};
-		90FCBE0728D4C0F400E0A9E3 /* RxMoya */ = {
+		90C8C08628DDC12D0083577B /* RxMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90FCBE0028D4C0F400E0A9E3 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 90C8C07F28DDC12D0083577B /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
 		};
-		90FCBE0A28D4C12700E0A9E3 /* SwiftUIFlowLayout */ = {
+		90C8C08928DDC1450083577B /* SwiftUIFlowLayout */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90FCBE0928D4C12700E0A9E3 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */;
+			package = 90C8C08828DDC1450083577B /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */;
 			productName = SwiftUIFlowLayout;
+		};
+		90C8C08C28DDC1620083577B /* SwiftUIPullToRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C8C08B28DDC1620083577B /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */;
+			productName = SwiftUIPullToRefresh;
+		};
+		90C8C08F28DDC1800083577B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C8C08E28DDC1800083577B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		90C8C09228DDC1940083577B /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C8C09128DDC1940083577B /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

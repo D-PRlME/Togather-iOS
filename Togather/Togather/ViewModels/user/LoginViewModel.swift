@@ -28,16 +28,7 @@ class LoginViewModel: ObservableObject {
                         print("⚠️login docoder error")
                     }
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("============🆘============")
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                        print("==========================")
-                    } else {
-                        print("⚠️login Error handling")
-                    }
+                    print("\(result.statusCode)")
                 }
             case .failure(let err):
                 print("⛔️login error: \(err.localizedDescription)")

@@ -12,16 +12,7 @@ class LogOutViewModel: ObservableObject {
                 case 204:
                     print("로그아웃 함")
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("============🆘============")
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                        print("==========================")
-                    } else {
-                        print("⚠️Logout Error decode")
-                    }
+                    print("\(result.statusCode)")
                 }
                 
             case .failure(let err):

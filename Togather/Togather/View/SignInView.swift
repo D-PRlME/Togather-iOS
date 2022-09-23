@@ -26,6 +26,9 @@ struct SignInView: View {
                     
                     TextField("이메일", text: $email)
                         .font(.custom("Pretendard-Medium", size: 20))
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
                         .foregroundColor(.black)
                         .padding(12)
                         .background(Color(red: 0.97, green: 0.97, blue: 0.97))
@@ -35,6 +38,8 @@ struct SignInView: View {
                         .cornerRadius(6)
                     
                     SecureField("비밀번호", text: $password)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
                         .font(.custom("Pretendard-Medium", size: 20))
                         .foregroundColor(.black)
                         .padding(12)

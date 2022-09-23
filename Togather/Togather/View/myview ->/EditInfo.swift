@@ -48,6 +48,10 @@ struct EditInfo: View {
                         }
                         .padding(.top, 26)
                         TextField("홍승재", text: $name)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
                             .font(.custom("Pretendard-Medium", size: 20))
                             .foregroundColor(.black)
                             .padding(12)

@@ -2,19 +2,12 @@ import SwiftUI
 
 struct EnterNewPassword: View {
     
-    @State private var newPasswordText: String = ""
-    private func ButtonAtivation() -> Bool {
-        if newPasswordText.count > 0 {
-            return true
-        } else {
-            return false
-        }
-    }
+    @StateObject var changePWToEmailVM = ChangePasswordToEmailViewModel()
     
     var body: some View {
         GeometryReader { proxy in
             VStack(alignment: .leading, spacing: 0) {
-                
+                NavigationLink(destination: ChangePasswordSuccess(), tag: 1, selection: $changePWToEmailVM.goSucced) { EmptyView() }
                 Text("비밀번호 변경")
                     .font(.custom("Pretendard-Bold", size: 32))
                     .padding(.top, proxy.size.height / 6)
@@ -25,7 +18,7 @@ struct EnterNewPassword: View {
                     .padding(.bottom, 42)
                     .allowsTightening(true)
                 VStack {
-                    TextField("비밀번호", text: $newPasswordText)
+                    SecureField("비밀번호", text: $changePWToEmailVM.newPassword)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                         .font(.custom("Pretendard-Medium", size: 20))
@@ -49,7 +42,7 @@ struct EnterNewPassword: View {
                 Spacer()
                 
                 Button(action: {
-                     print("next")
+                    changePWToEmailVM.ChangePassword()
                 }) {
                     VStack(spacing: 0) {
                         Rectangle()
@@ -60,19 +53,20 @@ struct EnterNewPassword: View {
                             .foregroundColor(.black)
                     }
                     .padding(.vertical, 13)
-                    .background(ButtonAtivation() ? Color(red: 0.882, green: 0.678, blue: 0.004) : Color(red: 0.97, green: 0.97, blue: 0.97))
+                    .background(changePWToEmailVM.PasswordValueCheck() ? Color(red: 0.882, green: 0.678, blue: 0.004) : Color(red: 0.97, green: 0.97, blue: 0.97))
                     .cornerRadius(6)
                     .padding(2)
-                    .background(ButtonAtivation() ? Color(red: 0.7, green: 0.6, blue: 0.004) : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                    .background(changePWToEmailVM.PasswordValueCheck() ? Color(red: 0.7, green: 0.6, blue: 0.004) : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
                     .cornerRadius(8)
                     
                 }
-                .disabled(ButtonAtivation() == false)
+                .disabled(changePWToEmailVM.PasswordValueCheck() == false)
                 .padding(.bottom, proxy.safeAreaInsets.bottom == 0 ? 30 : 5)
             } //Vstack
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         }
+        .navigationBarHidden(true)
     }
 }
 

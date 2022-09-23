@@ -9,6 +9,8 @@ struct MyView: View {
     
     @State var GoDevelopers = false
     
+    @State var GoChangePassword = false
+    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -45,17 +47,26 @@ struct MyView: View {
                     } .sheet(isPresented: self.$GoEditInfoModal) {
                         EditInfo()
                     }
-                    HStack {
-                        Text("비밀번호 변경")
-                            .foregroundColor(.black)
-                            .font(.custom("Pretendard-Medium", size: 18))
-                            .padding(.leading, 12)
-                            .padding(.vertical, 14)
-                        Spacer()
+                    
+                    Button {
+                        GoChangePassword = true
+                    } label: {
+                        HStack {
+                            Text("비밀번호 변경")
+                                .foregroundColor(.black)
+                                .font(.custom("Pretendard-Medium", size: 18))
+                                .padding(.leading, 12)
+                                .padding(.vertical, 14)
+                            Spacer()
+                        }
+                        .frame(width: proxy.size.width - 40)
+                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                        .cornerRadius(8)
                     }
-                    .frame(width: proxy.size.width - 40)
-                    .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                    .cornerRadius(8)
+                    .fullScreenCover(isPresented: $GoChangePassword) {
+                        ChangePasswordVerify()
+                    }
+                    
                     Button {
                         GoMyPost = true
                     } label: {

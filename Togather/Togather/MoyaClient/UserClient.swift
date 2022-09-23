@@ -20,6 +20,10 @@ enum UserService {
     case changeMyInfo(name: String, picture: String)
     case changePassword(oldPassword: String, newPassword: String)
     case getMyprofile
+    
+    //비밀번호 변경
+    case sendFindEmail(email: String)
+    case changePasswordEmail(newPassword: String)
 }
 
 extension UserService: TargetType {
@@ -52,15 +56,19 @@ extension UserService: TargetType {
             return "/logout"
         case .quitAccount:
             return ""
+        case .sendFindEmail:
+            return "/mail"
+        case .changePasswordEmail:
+            return "/password"
         }
     }
     
     var method: Moya.Method {
         switch self {
             
-        case .login, .signup, .mailDuplicate, .mailSignup, .mailVerify:
+        case .login, .signup, .mailDuplicate, .mailSignup, .mailVerify, .sendFindEmail:
             return .post
-        case .tokenReissue:
+        case .tokenReissue, .changePasswordEmail:
             return .put
         case .changeMyInfo, .changePassword:
             return .patch
@@ -138,18 +146,37 @@ extension UserService: TargetType {
                         "email" : email
                     ],
                 encoding: JSONEncoding.default)
+            
+        case .sendFindEmail(let email):
+            return .requestParameters(
+                parameters:
+                    [
+                        "email" : email
+                    ],
+                encoding: JSONEncoding.default)
+            
+        case .changePasswordEmail(let newPassword):
+            return .requestParameters(
+                parameters:
+                    [
+                        "new_password" : newPassword
+                    ],
+                encoding: JSONEncoding.default)
         }
     }
     
     var headers: [String : String]? {
         switch self {
+            //토큰 필요없음
         case .mailSignup, .mailVerify, .mailDuplicate, .signup, .login, .changeMyInfo, .changePassword:
             return Header.tokenIsEmpty.header()
             
+            //리프레시 토큰
         case .tokenReissue:
             return Header.refreshToken.header()
             
-        case .getMyprofile, .logout, .quitAccount:
+            //엑세스 토큰
+        case .getMyprofile, .logout, .quitAccount, .changePasswordEmail, .sendFindEmail:
             return Header.accessToken.header()
         }
     }

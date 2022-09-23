@@ -1,6 +1,9 @@
 import SwiftUI
+import AVFoundation
 
 struct ChangePasswordSuccess: View {
+    @State var goHome: Bool = false
+    
     var body: some View {
         GeometryReader { proxy in
             VStack(alignment: .leading) {
@@ -17,7 +20,7 @@ struct ChangePasswordSuccess: View {
                 
                 
                 Button(action: {
-                     print("next")
+                    goHome = true
                 }) {
                     VStack(spacing: 0) {
                         Rectangle()
@@ -38,7 +41,11 @@ struct ChangePasswordSuccess: View {
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
+            .fullScreenCover(isPresented: $goHome) {
+                TabBarView()
+            }
         }
+        .navigationBarHidden(true)
     }
 }
 

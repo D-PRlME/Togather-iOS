@@ -8,7 +8,7 @@ class GetMyProfileViewModel: ObservableObject {
     @Published var myEmail: String = ""
     @Published var myProfilImageLink: String = ""
     
-    func signUpClient() {
+    func GetMyprofile() {
         UserClient.request(.getMyprofile) { res in
             switch res {
             case .success(let result):

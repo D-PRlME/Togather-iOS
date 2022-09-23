@@ -78,7 +78,6 @@ struct SignUpView: View {
                 
                 TextField("이름", text: $nameText)
                     .foregroundColor(.black)
-                    .keyboardType(.namePhonePad)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .font(.custom("Pretendard-Medium", size: 20))

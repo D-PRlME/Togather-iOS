@@ -21,6 +21,7 @@ class LoginViewModel: ObservableObject {
                         Token.accessToken = data.access_token
                         Token.refreshToken = data.refresh_token
                         
+                        self.getMyProFile()
                         print("✅로그인 성공")
                         print("🔊\(data.expired_at)")
                         self.viewTag = 1
@@ -35,4 +36,27 @@ class LoginViewModel: ObservableObject {
             }
         }
     }
+    
+    func getMyProFile() {
+        userClient.request(.getMyprofile) { res in
+            switch res {
+            case .success(let result):
+                switch result.statusCode {
+                case 200:
+                    if let data = try? JSONDecoder().decode(MyProfileModel.self, from: result.data) {
+                        Account.ID = data.name
+                        Account.email = data.email
+                        Account.profileImagLink = data.profile_image_url
+                    } else {
+                        print("⚠️myProfile LG docoder error")
+                    }
+                default:
+                    print(result.statusCode)
+                }
+            case .failure(let err):
+                print("⛔️myProfile LG Error: \(err.localizedDescription)")
+            }
+        }
+    }
+    
 }

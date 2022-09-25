@@ -1,22 +1,26 @@
 import Foundation
 import Moya
 
-class LogOutViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
+class LogoutViewModel: ObservableObject {
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
-    func signUpClient() {
-        UserClient.request(.getMyprofile) { res in
+    @Published var isSucced: Bool = false
+    
+    func Logout() {
+        userClient.request(.logout) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {
                 case 204:
-                    print("로그아웃 함")
+                    Account.deleteAccount()
+                    Token.removeToken()
+                    self.isSucced = true
+                    print("로그아웃")
                 default:
                     print("\(result.statusCode)")
                 }
-                
             case .failure(let err):
-                print("⛔️Logout Error: \(err.localizedDescription)")
+                print("⛔️logout error: \(err.localizedDescription)")
             }
         }
     }

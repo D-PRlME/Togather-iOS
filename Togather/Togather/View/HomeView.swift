@@ -116,7 +116,6 @@ struct HomeView: View {
                                             Image("SeperateBar")
                                                 .resizable()
                                                 .frame(width: 1, height: 15)
-                                                .padding(.horizontal, 8)
                                             Text(data.created_at)
                                                 .foregroundColor(Color(red: 0.47, green: 0.47, blue: 0.47, opacity: 1))
                                                 .font(.custom("Pretendard-Medium", size: 16))

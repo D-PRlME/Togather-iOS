@@ -30,12 +30,14 @@ class SearchViewModel: ObservableObject {
                                 
                                 return Tags(name: name, image_url: imageURL)
                             }
+                            let like_count = index.like_count
                             return Posts(
                                 post_id: postID,
                                 title: title,
                                 users: users,
                                 tags: tags,
-                                created_at: createdAt
+                                created_at: createdAt,
+                                like_count: like_count
                             )
                         }
                     } else {
@@ -80,13 +82,15 @@ class SearchViewModel: ObservableObject {
                                 
                                 return Tags(name: name, image_url: imageURL)
                             }
+                            let like_count = index.like_count
                             
                             return Posts(
                                 post_id: postID,
                                 title: title,
                                 users: users,
                                 tags: tags,
-                                created_at: createdAt
+                                created_at: createdAt,
+                                like_count: like_count
                             )
                         }
                     } else {

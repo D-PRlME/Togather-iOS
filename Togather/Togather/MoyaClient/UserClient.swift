@@ -6,7 +6,7 @@ enum UserService {
     case login(accountID: String, password: String)
     case signup(password: String, email: String, name: String)
     case logout
-    case quitAccount
+    case quitAccount(password: String)
     
     //메일 관련
     case mailDuplicate(email: String)
@@ -82,7 +82,7 @@ extension UserService: TargetType {
     var task: Task {
         switch self {
             
-        case .tokenReissue, .getMyprofile, .logout, .quitAccount:
+        case .tokenReissue, .getMyprofile, .logout:
             return .requestPlain
             
         case .mailDuplicate(let email):
@@ -160,6 +160,14 @@ extension UserService: TargetType {
                 parameters:
                     [
                         "new_password" : newPassword
+                    ],
+                encoding: JSONEncoding.default)
+            
+        case .quitAccount(let pw):
+            return .requestParameters(
+                parameters:
+                    [
+                        "password" : pw
                     ],
                 encoding: JSONEncoding.default)
         }

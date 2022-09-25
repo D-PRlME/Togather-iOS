@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */; };
 		4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AA928BEE25900BBA52D /* PostClient.swift */; };
 		4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AAC28BEF0C300BBA52D /* Header.swift */; };
 		4BC8991828DA8CA000189553 /* TokenAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUDModel.swift; sourceTree = "<group>"; };
 		4B7F0AA928BEE25900BBA52D /* PostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
 		4B7F0AAC28BEF0C300BBA52D /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAuthViewModel.swift; sourceTree = "<group>"; };
@@ -177,6 +179,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B320D8428E0295300BCC086 /* QuitAccount */ = {
+			isa = PBXGroup;
+			children = (
+				4BC8990D28DA8CA000189553 /* QuitAccountViewModel.swift */,
+			);
+			path = QuitAccount;
+			sourceTree = "<group>";
+		};
 		4B7F0AA628BEE22700BBA52D /* MoyaClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,13 +207,13 @@
 		4BC8990428DA8CA000189553 /* user */ = {
 			isa = PBXGroup;
 			children = (
+				4B320D8428E0295300BCC086 /* QuitAccount */,
 				4BC89A2928DDAF1800189553 /* Get */,
 				4BC8991428DA8CA000189553 /* Email */,
 				4BC8990828DA8CA000189553 /* Change */,
 				4BC8990E28DA8CA000189553 /* SignUp */,
 				4BC8990528DA8CA000189553 /* Token */,
 				4BC8990C28DA8CA000189553 /* FindPasswordEmailViewModel.swift */,
-				4BC8990D28DA8CA000189553 /* QuitAccountViewModel.swift */,
 				4BC89A2E28DDAF2600189553 /* LoginViewModel.swift */,
 				4BC89A2F28DDAF2600189553 /* LogOutViewModel.swift */,
 			);
@@ -379,6 +389,7 @@
 				4BE919D328CF65880002A268 /* TokenModel.swift */,
 				900990EA28D033C000FD9462 /* MyProfileModel.swift */,
 				90A05CBA28D300CD0031E71B /* UserProfileModel.swift */,
+				4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -573,6 +584,7 @@
 				4BC8991D28DA8CA000189553 /* FindPasswordEmailViewModel.swift in Sources */,
 				900990EB28D033C000FD9462 /* MyProfileModel.swift in Sources */,
 				4BC89A3328DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift in Sources */,
+				4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */,
 				4BC8992E28DA8D0700189553 /* UserClient.swift in Sources */,
 				900990AA28CE3E7E00FD9462 /* SignInView.swift in Sources */,
 				4BE919D028CEF0D60002A268 /* ChangePasswordSuccessView.swift in Sources */,

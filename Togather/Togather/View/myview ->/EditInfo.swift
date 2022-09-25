@@ -1,17 +1,16 @@
-//
-//  EditInfo.swift
-//  Draw
-//
-//  Created by 홍승재 on 2022/09/09.
-//
-
 import SwiftUI
+import Kingfisher
 
 struct EditInfo: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State var name = ""
-    @State var email = ""
+    
+    @State var name: String = ""
+    @State var email: String = Account.email ?? "Email"
+    @State var position: String = ""
+    @State var introduce : String = ""
+    
+    @State var goBack: Bool = false
     
     var body: some View {
         NavigationView {
@@ -30,7 +29,13 @@ struct EditInfo: View {
                                 }
                         }
                         HStack(spacing: 12) {
-                            Image(systemName: "person.fill")
+                            KFImage.url(URL(string: Account.profileImagLink ?? ""))
+                                .placeholder {
+                                    Circle().fill(Color.secondary)
+                                        .frame(width: 48, height: 48)
+                                }
+                                .resizable()
+                                .clipShape(Circle())
                                 .frame(width: 48, height: 48)
                                 .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
                                 .padding(.leading, 10)
@@ -47,9 +52,9 @@ struct EditInfo: View {
                             Spacer()
                         }
                         .padding(.top, 26)
-                        TextField("홍승재", text: $name)
-                            .autocapitalization(.none)
-                            .disableAutocorrection(true)
+                        
+                        //ID
+                        TextField(Account.ID ?? "", text: $name)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .font(.custom("Pretendard-Medium", size: 20))
@@ -61,7 +66,29 @@ struct EditInfo: View {
                             .background(Color("TabBarStroke"))
                             .cornerRadius(6)
                             .padding(.top, 12)
-                        TextField("gtw030488@gmail.com", text: $email)
+                        
+                        //Email
+                        VStack(alignment: .leading ,spacing: 0) {
+                            Rectangle()
+                                .frame(height: 0)
+                            
+                            Text(email)
+                                .font(.custom("Pretendard-Medium", size: 20))
+                                .foregroundColor(.secondary)
+                                
+                        }
+                        .padding(12)
+                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                        .cornerRadius(6)
+                        .padding(1)
+                        .background(Color("TabBarStroke"))
+                        .cornerRadius(6)
+                        .padding(.top, 8)
+                        
+                        //Position
+                        TextField("Position", text: $position)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
                             .font(.custom("Pretendard-Medium", size: 20))
                             .foregroundColor(.black)
                             .padding(12)
@@ -70,7 +97,22 @@ struct EditInfo: View {
                             .padding(1)
                             .background(Color("TabBarStroke"))
                             .cornerRadius(6)
-                            .padding(.top, 8)
+                            .padding(.top, 12)
+                        
+                        //Introduce
+                        TextField("Introduce", text: $introduce)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
+                            .font(.custom("Pretendard-Medium", size: 20))
+                            .foregroundColor(.black)
+                            .padding(12)
+                            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                            .cornerRadius(6)
+                            .padding(1)
+                            .background(Color("TabBarStroke"))
+                            .cornerRadius(6)
+                            .padding(.top, 12)
+                        
                         Spacer()
                         HStack {
                             Text("저장")
@@ -84,7 +126,7 @@ struct EditInfo: View {
                                 .background(Color("YellowStroke"))
                                 .cornerRadius(37)
                             Spacer()
-                            NavigationLink(destination: DeleteAccount()) {
+                            NavigationLink(destination: DeleteAccount(goSignView: $goBack)) {
                                 Text("계정 삭제")
                                     .foregroundColor(.black)
                                     .font(.custom("Pretendard-Bold", size: 18))
@@ -101,6 +143,16 @@ struct EditInfo: View {
                         .padding(.bottom, 17)
                     }
                     .padding(.horizontal, 16)
+                    .onAppear {
+                        if goBack {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                    }
+                    .fullScreenCover(isPresented: $goBack) {
+                        NavigationView {
+                            SignInView()
+                        }
+                    }
                 }
             }
             .navigationBarHidden(true)

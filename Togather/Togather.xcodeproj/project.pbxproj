@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */; };
+		4B320D8728E11A2800BCC086 /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */; };
 		4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AA928BEE25900BBA52D /* PostClient.swift */; };
 		4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AAC28BEF0C300BBA52D /* Header.swift */; };
 		4BC8991828DA8CA000189553 /* TokenAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */; };
@@ -28,7 +29,6 @@
 		4BC89A2C28DDAF1800189553 /* GetMyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC89A2A28DDAF1800189553 /* GetMyProfileViewModel.swift */; };
 		4BC89A2D28DDAF1800189553 /* GetUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC89A2B28DDAF1800189553 /* GetUserProfileViewModel.swift */; };
 		4BC89A3028DDAF2600189553 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC89A2E28DDAF2600189553 /* LoginViewModel.swift */; };
-		4BC89A3128DDAF2600189553 /* LogOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC89A2F28DDAF2600189553 /* LogOutViewModel.swift */; };
 		4BC89A3328DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC89A3228DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift */; };
 		4BE1C61028CDE9B60052AE3D /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4BE1C60728CDE9B60052AE3D /* Pretendard-Black.otf */; };
 		4BE1C61128CDE9B60052AE3D /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4BE1C60828CDE9B60052AE3D /* Pretendard-Regular.otf */; };
@@ -88,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUDModel.swift; sourceTree = "<group>"; };
+		4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
 		4B7F0AA928BEE25900BBA52D /* PostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
 		4B7F0AAC28BEF0C300BBA52D /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAuthViewModel.swift; sourceTree = "<group>"; };
@@ -108,7 +109,6 @@
 		4BC89A2A28DDAF1800189553 /* GetMyProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMyProfileViewModel.swift; sourceTree = "<group>"; };
 		4BC89A2B28DDAF1800189553 /* GetUserProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserProfileViewModel.swift; sourceTree = "<group>"; };
 		4BC89A2E28DDAF2600189553 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		4BC89A2F28DDAF2600189553 /* LogOutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewModel.swift; sourceTree = "<group>"; };
 		4BC89A3228DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordToEmailViewModel.swift; sourceTree = "<group>"; };
 		4BE1C60728CDE9B60052AE3D /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		4BE1C60828CDE9B60052AE3D /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 				4BC8990528DA8CA000189553 /* Token */,
 				4BC8990C28DA8CA000189553 /* FindPasswordEmailViewModel.swift */,
 				4BC89A2E28DDAF2600189553 /* LoginViewModel.swift */,
-				4BC89A2F28DDAF2600189553 /* LogOutViewModel.swift */,
+				4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -547,7 +547,6 @@
 				90A05CBF28D306040031E71B /* TagListModel.swift in Sources */,
 				90EC086628DAA03700E34BCE /* EditPostViewModel.swift in Sources */,
 				4BC89A3028DDAF2600189553 /* LoginViewModel.swift in Sources */,
-				4BC89A3128DDAF2600189553 /* LogOutViewModel.swift in Sources */,
 				4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */,
 				4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */,
 				900990A828CDDBA300FD9462 /* MyPost.swift in Sources */,
@@ -570,6 +569,7 @@
 				4BC8992328DA8CA000189553 /* EmailDuplicateViewModel.swift in Sources */,
 				4BC89A2C28DDAF1800189553 /* GetMyProfileViewModel.swift in Sources */,
 				4BC8991F28DA8CA000189553 /* SignUpViewModel.swift in Sources */,
+				4B320D8728E11A2800BCC086 /* LogoutViewModel.swift in Sources */,
 				4BC8991828DA8CA000189553 /* TokenAuthViewModel.swift in Sources */,
 				90A05CAD28D0B78C0031E71B /* PostViewModel.swift in Sources */,
 				4BC8993128DA973000189553 /* MoyaLoggerPlugin.swift in Sources */,

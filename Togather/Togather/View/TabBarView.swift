@@ -52,7 +52,7 @@ struct TabBarView: View {
                                     .foregroundColor(tabIndex == .home ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
                                 Spacer()
                             }
-                            .frame(width: proxy.size.width/4, height: 50)
+                            .frame(width: proxy.size.width/5, height: 50)
                             .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 25)
                             .onTapGesture {
                                 print("----------------------------------")
@@ -77,7 +77,7 @@ struct TabBarView: View {
                                         .foregroundColor(tabIndex == .write ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
                                     Spacer()
                                 }
-                                .frame(width: proxy.size.width/4, height: 50)
+                                .frame(width: proxy.size.width/5, height: 50)
                                 
                             } .sheet(isPresented: self.$showModal) {
                                 WritingView(showModal: self.$showModal)
@@ -93,7 +93,7 @@ struct TabBarView: View {
                                     .foregroundColor(tabIndex == .search ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
                                 Spacer()
                             }
-                            .frame(width: proxy.size.width/4, height: 50)
+                            .frame(width: proxy.size.width/5, height: 50)
                             .onTapGesture {
                                 print("----------------------------------")
                                 print("Search View")
@@ -111,7 +111,7 @@ struct TabBarView: View {
                                     .foregroundColor(tabIndex == .mypage ? Color("TabBarSelectedColor") : Color("TabBarNoSelectedColor"))
                                 Spacer()
                             }
-                            .frame(width: proxy.size.width/4, height: 50)
+                            .frame(width: proxy.size.width/5, height: 50)
                             .onTapGesture {
                                 print("----------------------------------")
                                 print("My View")

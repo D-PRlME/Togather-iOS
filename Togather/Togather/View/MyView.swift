@@ -1,6 +1,7 @@
 
 import SwiftUI
 import Kingfisher
+import CarPlay
 
 struct MyView: View {
     
@@ -8,6 +9,9 @@ struct MyView: View {
     @State var GoMyPost = false
     @State var GoDevelopers = false
     @State var GoChangePassword = false
+    @State var GoLogout = false
+    
+    @StateObject var logoutVM = LogoutViewModel()
     
     var body: some View {
         GeometryReader { proxy in
@@ -115,18 +119,39 @@ struct MyView: View {
                     .sheet(isPresented: $GoDevelopers) {
                         Developers()
                     }
-
-                    HStack {
-                        Text("로그아웃")
-                            .foregroundColor(.black)
-                            .font(.custom("Pretendard-Medium", size: 18))
-                            .padding(.leading, 12)
-                            .padding(.vertical, 14)
-                        Spacer()
+                    
+                    Button {
+                        GoLogout = true
+                    } label: {
+                        HStack {
+                            Text("로그아웃")
+                                .foregroundColor(.black)
+                                .font(.custom("Pretendard-Medium", size: 18))
+                                .padding(.leading, 12)
+                                .padding(.vertical, 14)
+                            Spacer()
+                        }
+                        .frame(width: proxy.size.width - 40)
+                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                        .cornerRadius(8)
+                        
+                        .alert("로그아웃", isPresented: $GoLogout) {
+                            Button("로그아웃", role: .destructive) {
+                                logoutVM.Logout()
+                            }
+                            Button("취소", role: .cancel) { }
+                        } message: {
+                            Text("로그아웃 하시겠습니까?")
+                        }
+                        
                     }
-                    .frame(width: proxy.size.width - 40)
-                    .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                    .cornerRadius(8)
+                    
+                    .fullScreenCover(isPresented: $logoutVM.isSucced) {
+                        NavigationView {
+                            SignInView()
+                        }
+                    }
+                    
                     Spacer()
                 }
 //                .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)

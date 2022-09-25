@@ -1,11 +1,5 @@
-//
-//  DeleteAccount.swift
-//  Draw
-//
-//  Created by 홍승재 on 2022/09/10.
-//
-
 import SwiftUI
+import Kingfisher
 
 struct DeleteAccount: View {
     
@@ -15,9 +9,14 @@ struct DeleteAccount: View {
     @State var password = ""
     @State var showAlert = false
     
+    @Binding var goSignView: Bool
+    
+    @StateObject var quitAccountVM = QuitAccountViewModel()
+    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
+                NavigationLink(destination: Text("View #2"), isActive: $quitAccountVM.isSucced) { EmptyView() }
                 ColorManager.BackgroundColor1.ignoresSafeArea()
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
@@ -38,43 +37,68 @@ struct DeleteAccount: View {
                         .foregroundColor(.black)
                         .font(.custom("Pretendard-Medium", size: 18))
                     Spacer()
-                    Button {
-                        if SamePW {
-                            showAlert = true
-                        }
-                    } label: {
+                    
+                    Button(action: {
+                        showAlert = true
+                    }) {
                         Text("계정 삭제")
                             .font(.custom("Pretendard-Bold", size: 18))
-                            .foregroundColor(SamePW ?
+                            .foregroundColor(quitAccountVM.CheckPassword() ?
                                 .black : Color(red: 0.47, green: 0.47, blue: 0.47))
                             .frame(width: proxy.size.width - 32)
                             .padding(.vertical, 13)
-                            .background(SamePW ?
+                            .background(quitAccountVM.CheckPassword() ?
                                         Color(red: 0.996, green: 0.239, blue: 0.239) :
                                             Color(red: 0.97, green: 0.97, blue: 0.97))
                             .cornerRadius(6)
                             .padding(2)
-                            .background(SamePW ? Color("RedStroke") : Color("TabBarStroke"))
+                            .background(quitAccountVM.CheckPassword() ? Color("RedStroke") : Color("TabBarStroke"))
                             .cornerRadius(6)
+                        
+                        
                             .alert("정말 계정을 삭제하시겠습니까?", isPresented: $showAlert) {
-                                Button("진행", role: .cancel) {}
-                                Button("취소", role: .destructive) {}
+                                Button("진행", role: .destructive) {
+                                    quitAccountVM.DeleteAccount()
+                                }
+                                Button("취소", role: .cancel) { }
                             } message: {
                                 Text("모든 입력한 정보, 작성한 글이 서버에서 삭제되며 이 작업은 되돌릴 수 없습니다.")
                             }
+                        
+                            .alert("안내" , isPresented: $quitAccountVM.wrongPW) {
+                                Button("확인", role: .cancel) { }
+                            } message: {
+                                Text("비밀번호가 옳바르지 않습니다.")
+                            }
+                        
+                            .alert("안내" , isPresented: $quitAccountVM.isSucced) {
+                                Button("확인", role: .cancel) {
+                                    self.presentationMode.wrappedValue.dismiss()
+                                    goSignView = true
+                                }
+                            } message: {
+                                Text("계정이 성공적으로 삭제되었습다.")
+                            }
+                        
                     }
                 }
                 .padding(.horizontal, 16)
                 VStack {
                     HStack(spacing: 8) {
-                        Image(systemName: "person.fill")
+                        KFImage.url(URL(string: Account.profileImagLink ?? ""))
+                            .placeholder {
+                                Circle().fill(Color.secondary)
+                                    .frame(width: 48, height: 48)
+                            }
+                            .resizable()
+                            .clipShape(Circle())
                             .frame(width: 48, height: 48)
                             .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                        Text(Developer[0])
+                        Text(Account.ID ?? "")
                             .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 20))
                     }
-                    SecureField("비밀번호", text: $password)
+                    SecureField("비밀번호", text: $quitAccountVM.inputPassword)
                         .font(.custom("Pretendard-Medium", size: 20))
                         .foregroundColor(.black)
                         .padding(.leading, 12)
@@ -94,8 +118,8 @@ struct DeleteAccount: View {
     }
 }
 
-struct DeleteAccount_Previews: PreviewProvider {
-    static var previews: some View {
-        DeleteAccount()
-    }
-}
+//struct DeleteAccount_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DeleteAccount(.constant(true))
+//    }
+//}

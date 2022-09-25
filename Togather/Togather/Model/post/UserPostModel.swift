@@ -17,6 +17,7 @@ struct PostList: Codable {
     let user: User
     let tags: [Tag]
     let created_at: String
+    let like_count: Int
 }
 // MARK: - User
 struct User: Codable {
@@ -32,19 +33,22 @@ struct Posts {
     let users: Users
     let tags: [Tags]
     let created_at: String
+    let like_count: Int
     
     init(
         post_id: Int,
         title: String,
         users: Users,
         tags: [Tags],
-        created_at: String
+        created_at: String,
+        like_count: Int
     ){
         self.post_id = post_id
         self.title = title
         self.users = users
         self.created_at = created_at
         self.tags = tags
+        self.like_count = like_count
     }
 }
 

@@ -9,15 +9,13 @@ struct MyView: View {
     @State var GoDevelopers = false
     @State var GoChangePassword = false
     
-    @StateObject var getMyprofileVM = GetMyProfileViewModel()
-    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
                 ColorManager.BackgroundColor3.ignoresSafeArea()
                 VStack(alignment: .leading, spacing: 12) {
                     HStack(spacing: 0) {
-                        KFImage.url(URL(string: getMyprofileVM.myProfilImageLink))
+                        KFImage.url(URL(string: Account.profileImagLink ?? ""))
                             .placeholder {
                                 Circle().fill(Color.secondary)
                                     .frame(width: 48, height: 48)
@@ -29,11 +27,11 @@ struct MyView: View {
                             .padding(.leading, 10)
                             .padding(.trailing, 8)
                         VStack(alignment: .leading) {
-                            Text(getMyprofileVM.myID)
+                            Text(Account.ID ?? "")
                                 .foregroundColor(.black)
                                 .font(.custom("Pretendard-Medium", size: 20))
                             
-                            Text(getMyprofileVM.myEmail)
+                            Text(Account.email ?? "")
                                 .foregroundColor(.secondary)
                                 .font(.custom("Pretendard-Light", size: 15))
                         }
@@ -135,9 +133,6 @@ struct MyView: View {
                 .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                 .padding(.horizontal, 20)
             }
-        }
-        .onAppear {
-            getMyprofileVM.GetMyprofile()
         }
     }
 }

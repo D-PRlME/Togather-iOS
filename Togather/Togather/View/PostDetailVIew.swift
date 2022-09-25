@@ -172,7 +172,7 @@ struct PostDetail: View {
                 postDetailViewModel.postID = UserDefaults.standard.integer(forKey: "postID")
                 postDetailViewModel.getPostDetail()
             }
-            .navigationBarHidden(true )
+            .navigationBarHidden(true)
         }
     }
 }

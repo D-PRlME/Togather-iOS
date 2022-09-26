@@ -5,14 +5,11 @@ import Kingfisher
 
 struct SearchView: View {
     @State var GoPostDetail = false
-    
     @State var postList: [PostList] = []
     
-    @State var tagBtnValue: String = ""
-    
-    @State var text = ""
-    
+    @State var tagBtnValue: [String] = []
     @State var stringTagList: [String] = []
+    @State var goTagList: Bool = false
     
     @StateObject var searchViewModel = SearchViewModel()
     
@@ -35,7 +32,7 @@ struct SearchView: View {
                                         .frame(width: 28, height: 28)
                                         .padding(.horizontal, 10)
                                         .onTapGesture {
-                                            tagBtnValue = ""
+                                            tagBtnValue.removeAll()
                                             searchViewModel.postTitle()
                                         }
                                 }
@@ -48,42 +45,25 @@ struct SearchView: View {
                             }
                             .padding(.top, 11)
                             .padding(.bottom, 16)
-//                            FlowLayout(mode: .scrollable,
-//                                       items: searchViewModel.tagList,
-//                                       itemSpacing: 0) {index in
-//                                Button {
-//                                    if tagBtnValue == index.name {
-//                                        tagBtnValue = ""
-//                                        print("\(index.name) 태그 끄기")
-//                                    } else {
-//                                        tagBtnValue = index.name
-//                                        print("\(index.name) 태그 켜기")
-//                                    }
-//                                    searchViewModel.tag = self.tagBtnValue
-//                                    searchViewModel.postTag()
-//
-//                                } label: {
-//                                    Text(index.name)
-//                                        .foregroundColor(.black)
-//                                        .font(.custom("Pretendard-Medium", size: 16))
-//                                        .padding(.horizontal, 12)
-//                                        .padding(.vertical, 6)
-//                                        .background(tagBtnValue == index.name ?
-//                                                    Color(red: 0.924, green: 0.792, blue: 0.356) :
-//                                                        Color(red: 0.905, green: 0.905, blue: 0.905))
-//                                        .cornerRadius(37)
-//                                        .padding(1)
-//                                        .background(tagBtnValue == index.name ?
-//                                                    Color("YellowStroke") :
-//                                                        Color("TabBarStroke"))
-//                                        .cornerRadius(37)
-//                                        .padding(.trailing, 8)
-//                                        .padding(.bottom, 8)
-//                                }
-//                            }
+                            FlowLayout(mode: .scrollable,
+                                       items: tagBtnValue,
+                                       itemSpacing: 0) { index in
+                                Text(index)
+                                    .foregroundColor(.black)
+                                    .font(.custom("Pretendard-Medium", size: 16))
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 6)
+                                    .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                                    .cornerRadius(37)
+                                    .padding(1)
+                                    .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                                    .cornerRadius(37)
+                                    .padding(.trailing, 8)
+                                    .padding(.bottom, 8)
+                            }
+                            
                             Button {
-                               //모든 태그 보기 누름
-                                
+                                goTagList = true
                             } label: {
                                 HStack {
                                     Text("모든 태그 보기")
@@ -100,11 +80,15 @@ struct SearchView: View {
                                 }
                             }
                             .padding(.leading, 3)
+                            .sheet(isPresented: $goTagList) {
+                                SearchTagListView(goBack: $goTagList, tagLists: $tagBtnValue)
+                            }
                             
                             Rectangle()
                                 .foregroundColor(Color("TabBarStroke"))
                                 .frame(width: proxy.size.width - 32, height: 1)
                                 .padding(.top, 9)
+                            
                             ForEach(searchViewModel.postList, id: \.post_id) { data in
                                 Button {
                                     GoPostDetail = true
@@ -172,13 +156,13 @@ struct SearchView: View {
                         }
                         .padding(.horizontal, 16)
                     }
-                    
                     .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
-                    .onAppear() {
-//                        homeViewModel.post()
-                        searchViewModel.GetTagList()
+                    .onChange(of: self.tagBtnValue) { (newValue) in
+                        if newValue.isEmpty == false {
+                            searchViewModel.tag = newValue[0]
+                            searchViewModel.postTag()
+                        }
                     }
-                    
                 }
                 Spacer()
             }

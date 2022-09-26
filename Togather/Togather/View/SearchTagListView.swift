@@ -1,12 +1,14 @@
 import SwiftUI
 import Kingfisher
 
-struct TagListView: View {
+struct SearchTagListView: View {
     @StateObject var tagVM = TagViewModel()
 //    @State var search: String = ""
     
     @Binding var goBack: Bool
     @Binding var tagLists: [String]
+    
+    @StateObject var searchVM = SearchViewModel()
     
     var body: some View {
         VStack {
@@ -55,12 +57,12 @@ struct TagListView: View {
             List {
                 ForEach(tagVM.tagValues, id: \.self) { data in
                     Button {
-                        if tagLists.contains(data.name) {
-                            tagLists.removeAll{ $0 == "\(data.name)" }
+                        if tagLists.contains(data.name){
+                            tagLists.removeAll()
                         } else {
+                            tagLists.removeAll()
                             tagLists.append(data.name)
                         }
-                        
                     } label: {
                         HStack {
                             KFImage(

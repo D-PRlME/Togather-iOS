@@ -48,14 +48,14 @@ class PostViewModel: ObservableObject {
                 switch result.statusCode {
                 case 200...206:
                     let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(TagListModel.self, from: result.data) {
-                        self.tagList = data.tags
-                        for i in 0..<self.tagList.count {
-                            self.tagListName.append(self.tagList[i].name)
+                        if let data = try? decoder.decode(TagListModel.self, from: result.data) {
+                            self.tagList = data.tags
+                            for i in 0..<self.tagList.count {
+                                self.tagListName.append(self.tagList[i].name)
+                            }
+                        } else {
+                            print("⚠️login docoder error")
                         }
-                    } else {
-                        print("⚠️login docoder error")
-                    }
                 default:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(ErrorModel.self, from: result.data) {

@@ -11,6 +11,8 @@ struct EditPostView: View {
     @Binding var content: String
     @Binding var link: String
     
+    @State var goTags: Bool = false
+    
     @StateObject var postDetailViewModel = PostDetailViewModel()
     @StateObject var editPostViewModel = EditPostViewModel()
     @StateObject var postViewModel = PostViewModel()
@@ -99,39 +101,21 @@ struct EditPostView: View {
             }
             
             FlowLayout(mode: .scrollable,
-                       items: postViewModel.tagList,
-                       itemSpacing: 0) {index in
+                       items: tagBtnArr,
+                       itemSpacing: 0) { index in
                 
-                Button {
-                    if tagBtnArr.contains(index.name) {
-//                        withAnimation {
-//                            tagBtnArr.removeAll(where: { $0 == index })
-//                        }
-                        tagBtnArr.removeAll(where: { $0 == index.name })
-                    } else {
-//                        withAnimation {
-//                            tagBtnArr.append(index)
-//                        }
-                        tagBtnArr.append(index.name)
-                    }
-                } label: {
-                    Text(index.name)
-                        .foregroundColor(.black)
-                        .font(.custom("Pretendard-Medium", size: 16))
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 6)
-                        .background(tagBtnArr.contains(index.name) ?
-                                    Color(red: 0.924, green: 0.792, blue: 0.356) :
-                                        Color(red: 0.905, green: 0.905, blue: 0.905))
-                        .cornerRadius(37)
-                        .padding(1)
-                        .background(tagBtnArr.contains(index.name) ?
-                                    Color("YellowStroke") :
-                                        Color("TabBarStroke"))
-                        .cornerRadius(37)
-                        .padding(.trailing, 8)
-                        .padding(.bottom, 8)
-                }
+                Text(index)
+                    .foregroundColor(.white)
+                    .font(.custom("Pretendard-Medium", size: 16))
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(Color(red: 0.254, green: 0.254, blue: 0.254))
+                    .cornerRadius(37)
+                    .padding(1)
+                    .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                    .cornerRadius(37)
+                    .padding(.trailing, 8)
+                    .padding(.bottom, 8)
             }
             
             //MARK: - 글쓰기 버튼
@@ -165,6 +149,28 @@ struct EditPostView: View {
                         .cornerRadius(37)
                 }
                 Spacer()
+                
+                Button {
+                   //모든 태그 보기 누름
+                    goTags = true
+                } label: {
+                    HStack {
+                        Text("모든 태그 보기")
+                            .foregroundColor(.black)
+                            .font(.custom("Pretendard-Bold", size: 18))
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                            .cornerRadius(37)
+                            .padding(2)
+                            .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                            .cornerRadius(37)
+                    }
+                }
+                .padding(.leading, 3)
+                .sheet(isPresented: $goTags) {
+                    TagListView(goBack: $goTags, tagLists: $tagBtnArr)
+                }
             }
         } //Vstack
         .padding(.horizontal, 16)

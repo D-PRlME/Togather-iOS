@@ -3,7 +3,7 @@ import Kingfisher
 
 struct TagListView: View {
     @StateObject var tagVM = TagViewModel()
-    @State var search: String = ""
+//    @State var search: String = ""
     
     @Binding var goBack: Bool
     @Binding var tagLists: [String]

@@ -21,14 +21,12 @@ struct HomeView: View {
                 ColorManager.BackgroundColor1.ignoresSafeArea()
                 VStack(spacing: 0) {
                     RefreshableScrollView(onRefresh: { done in
-                        withAnimation {
-                            homeViewModel.postList = []
-                        }
+                        homeViewModel.postList = []
+                        
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            withAnimation {
-                                homeViewModel.post()
-                                homeViewModel.GetTagList()
-                            }
+                            
+                            homeViewModel.post()
+                            homeViewModel.GetTagList()
                             done()
                         }
                     }) {
@@ -128,7 +126,7 @@ struct HomeView: View {
                                     .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                                     .cornerRadius(8)
                                     .padding(.vertical, 6)
-                                    .animation(.linear)
+//                                    .animation(.linear)
                                 }
                                 .sheet(isPresented: $GoPostDetail, content: {
                                     PostDetail(
@@ -142,12 +140,9 @@ struct HomeView: View {
                     
                     .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                     .onAppear() {
-                        withAnimation {
-                            homeViewModel.post()
-                            homeViewModel.GetTagList()
-                        }
+                        homeViewModel.post()
+                        homeViewModel.GetTagList()
                     }
-                    
                 }
                 Spacer()
             }

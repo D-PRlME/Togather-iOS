@@ -165,7 +165,7 @@ struct PostDetail: View {
                     .padding(.bottom, 16)
                 }
             }
-            .onAppear() {
+            .onAppear {
                 print("postdetail:", UserDefaults.standard.integer(forKey: "postID"))
                 postDetailViewModel.postID = UserDefaults.standard.integer(forKey: "postID")
                 postDetailViewModel.getPostDetail()

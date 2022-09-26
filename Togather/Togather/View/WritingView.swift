@@ -19,7 +19,6 @@ struct WritingView: View {
                 Image("CloseBtn")
                     .resizable()
                     .frame(width: 30, height: 30)
-                    .padding(.trailing, 16)
                     .padding(.top, 16)
                     .onTapGesture {
                         self.showModal.toggle()
@@ -160,7 +159,6 @@ struct WritingView: View {
         .padding(.bottom, 16)
         .onAppear {
             UITextView.appearance().backgroundColor = .clear
-            postViewModel.GetTagList()
         }
     } // body
 }

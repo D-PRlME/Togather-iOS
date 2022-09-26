@@ -16,39 +16,40 @@ class HomeViewModel: ObservableObject {
                 switch result.statusCode {
                 case 200...206:
                     let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(UserPostModel.self, from: result.data) {
-                        
-//                        let post_id: Int
-//                        let title: String
-//                        let users: Users
-//                        let tags: [Tags]
-//                        let created_at: String
-                        
-                        self.postList = data.post_list.map { index in
-                            let postID = index.post_id
-                            let title = index.title
-                            let users: Users = Users(user_id: index.user.user_id, user_name: index.user.user_name, profile_image_url: index.user.profile_image_url)
-                            let createdAt = index.created_at
-                            let tags: [Tags] = index.tags.map {
-                                let name = $0.name
-                                let imageURL = $0.image_url
-                                
-                                return Tags(name: name, image_url: imageURL)
-                            }
-                            let like_count = index.like_count
+                        if let data = try? decoder.decode(UserPostModel.self, from: result.data) {
                             
-                            return Posts(
-                                post_id: postID,
-                                title: title,
-                                users: users,
-                                tags: tags,
-                                created_at: createdAt,
-                                like_count: like_count
-                            )
+    //                        let post_id: Int
+    //                        let title: String
+    //                        let users: Users
+    //                        let tags: [Tags]
+    //                        let created_at: String
+                            
+                            self.postList = data.post_list.map { index in
+                                let postID = index.post_id
+                                let title = index.title
+                                let users: Users = Users(user_id: index.user.user_id, user_name: index.user.user_name, profile_image_url: index.user.profile_image_url)
+                                let createdAt = index.created_at
+                                let tags: [Tags] = index.tags.map {
+                                    let name = $0.name
+                                    let imageURL = $0.image_url
+                                    
+                                    return Tags(name: name, image_url: imageURL)
+                                }
+                                let like_count = index.like_count
+                                
+                                return Posts(
+                                    post_id: postID,
+                                    title: title,
+                                    users: users,
+                                    tags: tags,
+                                    created_at: createdAt,
+                                    like_count: like_count
+                                )
+                            }
+                        } else {
+                            print("⚠️post docoder error")
                         }
-                    } else {
-                        print("⚠️post docoder error")
-                    }
+                    
                 default:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(ErrorModel.self, from: result.data) {

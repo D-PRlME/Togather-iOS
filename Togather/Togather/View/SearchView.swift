@@ -12,6 +12,8 @@ struct SearchView: View {
     
     @State var text = ""
     
+    @State var stringTagList: [String] = []
+    
     @StateObject var searchViewModel = SearchViewModel()
     
     var body: some View {
@@ -46,51 +48,56 @@ struct SearchView: View {
                             }
                             .padding(.top, 11)
                             .padding(.bottom, 16)
-                            FlowLayout(mode: .scrollable,
-                                       items: searchViewModel.tagList,
-                                       itemSpacing: 0) {index in
-                                Button {
-                                    if tagBtnValue == index.name {
-                                        tagBtnValue = ""
-                                        print("\(index.name) 태그 끄기")
-                                    } else {
-                                        tagBtnValue = index.name
-                                        print("\(index.name) 태그 켜기")
-                                    }
-                                    searchViewModel.tag = self.tagBtnValue
-                                    searchViewModel.postTag()
-                                    
-                                } label: {
-                                    Text(index.name)
+//                            FlowLayout(mode: .scrollable,
+//                                       items: searchViewModel.tagList,
+//                                       itemSpacing: 0) {index in
+//                                Button {
+//                                    if tagBtnValue == index.name {
+//                                        tagBtnValue = ""
+//                                        print("\(index.name) 태그 끄기")
+//                                    } else {
+//                                        tagBtnValue = index.name
+//                                        print("\(index.name) 태그 켜기")
+//                                    }
+//                                    searchViewModel.tag = self.tagBtnValue
+//                                    searchViewModel.postTag()
+//
+//                                } label: {
+//                                    Text(index.name)
+//                                        .foregroundColor(.black)
+//                                        .font(.custom("Pretendard-Medium", size: 16))
+//                                        .padding(.horizontal, 12)
+//                                        .padding(.vertical, 6)
+//                                        .background(tagBtnValue == index.name ?
+//                                                    Color(red: 0.924, green: 0.792, blue: 0.356) :
+//                                                        Color(red: 0.905, green: 0.905, blue: 0.905))
+//                                        .cornerRadius(37)
+//                                        .padding(1)
+//                                        .background(tagBtnValue == index.name ?
+//                                                    Color("YellowStroke") :
+//                                                        Color("TabBarStroke"))
+//                                        .cornerRadius(37)
+//                                        .padding(.trailing, 8)
+//                                        .padding(.bottom, 8)
+//                                }
+//                            }
+                            Button {
+                               //모든 태그 보기 누름
+                                
+                            } label: {
+                                HStack {
+                                    Text("모든 태그 보기")
                                         .foregroundColor(.black)
-                                        .font(.custom("Pretendard-Medium", size: 16))
-                                        .padding(.horizontal, 12)
-                                        .padding(.vertical, 6)
-                                        .background(tagBtnValue == index.name ?
-                                                    Color(red: 0.924, green: 0.792, blue: 0.356) :
-                                                        Color(red: 0.905, green: 0.905, blue: 0.905))
+                                        .font(.custom("Pretendard-Bold", size: 18))
+                                        .padding(.horizontal, 16)
+                                        .padding(.vertical, 8)
+                                        .background(Color(red: 0.882, green: 0.678, blue: 0.004))
                                         .cornerRadius(37)
-                                        .padding(1)
-                                        .background(tagBtnValue == index.name ?
-                                                    Color("YellowStroke") :
-                                                        Color("TabBarStroke"))
+                                        .padding(2)
+                                        .background(Color("YellowStroke"))
                                         .cornerRadius(37)
-                                        .padding(.trailing, 8)
-                                        .padding(.bottom, 8)
+                                    Spacer()
                                 }
-                            }
-                            HStack {
-                                Text("모든 태그 보기")
-                                    .foregroundColor(.black)
-                                    .font(.custom("Pretendard-Bold", size: 18))
-                                    .padding(.horizontal, 16)
-                                    .padding(.vertical, 8)
-                                    .background(Color(red: 0.882, green: 0.678, blue: 0.004))
-                                    .cornerRadius(37)
-                                    .padding(2)
-                                    .background(Color("YellowStroke"))
-                                    .cornerRadius(37)
-                                Spacer()
                             }
                             .padding(.leading, 3)
                             

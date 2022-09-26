@@ -51,9 +51,7 @@ struct PostDetail: View {
                                 .font(.custom("Pretendard-Medium", size: 16))
                         }
                         
-                        Rectangle()
-                            .foregroundColor(Color("TabBarStroke"))
-                            .frame(width: proxy.size.width - 32, height: 1)
+                        Divider()
                         
                         FlowLayout(mode: .scrollable,
                                    items: postDetailViewModel.postDetail.tags,

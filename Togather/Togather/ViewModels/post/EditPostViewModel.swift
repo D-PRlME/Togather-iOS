@@ -24,14 +24,7 @@ class EditPostViewModel: ObservableObject {
                 case 200...206:
                     print("수정 성공!")
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                    } else {
-                        print("⚠️edit Appear post Error handling")
-                    }
+                    print(result.statusCode)
                 }
             case .failure(let err):
                 print("⛔️post error: \(err.localizedDescription)")

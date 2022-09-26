@@ -15,19 +15,22 @@ class LoginViewModel: ObservableObject {
             case .success(let result):
                 switch result.statusCode {
                 case 200...201:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(TokenModel.self, from: result.data) {
-                        
-                        Token.accessToken = data.access_token
-                        Token.refreshToken = data.refresh_token
-                        
-                        self.getMyProFile()
-                        print("✅로그인 성공")
-                        print("🔊\(data.expired_at)")
-                        self.viewTag = 1
-                    } else {
-                        print("⚠️login docoder error")
+                    DispatchQueue.main.async {
+                        let decoder = JSONDecoder()
+                        if let data = try? decoder.decode(TokenModel.self, from: result.data) {
+                            
+                            Token.accessToken = data.access_token
+                            Token.refreshToken = data.refresh_token
+                            
+                            self.getMyProFile()
+                            print("✅로그인 성공")
+                            print("🔊\(data.expired_at)")
+                            self.viewTag = 1
+                        } else {
+                            print("⚠️login docoder error")
+                        }
                     }
+
                 default:
                     print("\(result.statusCode)")
                 }

@@ -15,15 +15,17 @@ class SignUpViewModel: ObservableObject {
             case .success(let result):
                 switch result.statusCode {
                 case 200...201:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(TokenModel.self, from: result.data) {
-                        Token.accessToken = data.access_token
-                        Token.refreshToken = data.refresh_token
-                        self.isSuccess = 1
-                        self.getMyProFile()
-                        print("🔊\(data.expired_at)")
-                    } else {
-                        print("⚠️signup docoder error")
+                    DispatchQueue.main.async {
+                        let decoder = JSONDecoder()
+                        if let data = try? decoder.decode(TokenModel.self, from: result.data) {
+                            Token.accessToken = data.access_token
+                            Token.refreshToken = data.refresh_token
+                            self.isSuccess = 1
+                            self.getMyProFile()
+                            print("🔊\(data.expired_at)")
+                        } else {
+                            print("⚠️signup docoder error")
+                        }
                     }
                 default:
                     print(result.statusCode)

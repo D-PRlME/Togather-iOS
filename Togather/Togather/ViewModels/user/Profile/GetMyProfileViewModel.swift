@@ -14,13 +14,15 @@ class GetMyProfileViewModel: ObservableObject {
             case .success(let result):
                 switch result.statusCode {
                 case 200:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(MyProfileModel.self, from: result.data) {
-                        self.myID = data.name
-                        self.myEmail = data.email
-                        self.myProfilImageLink = data.profile_image_url
-                    } else {
-                        print("⚠️getMyProfile docoder error")
+                    DispatchQueue.main.async {
+                        let decoder = JSONDecoder()
+                        if let data = try? decoder.decode(MyProfileModel.self, from: result.data) {
+                            self.myID = data.name
+                            self.myEmail = data.email
+                            self.myProfilImageLink = data.profile_image_url
+                        } else {
+                            print("⚠️getMyProfile docoder error")
+                        }
                     }
                 default:
                     print("\(result.statusCode)")

@@ -19,7 +19,6 @@ class PostViewModel: ObservableObject {
             self.tag[i] = self.tag[i].uppercased()
             self.tag[i] = self.tag[i].replacingOccurrences(of: ".", with: "_")
         }
-        print(self.tag)
         postClient.request(.post(title: title, content: content, tag: tag, link: link)) { res in
             switch res {
             case .success(let result):
@@ -27,14 +26,7 @@ class PostViewModel: ObservableObject {
                 case 200...206:
                     print("게시물 올리기 성공")
                 default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                    } else {
-                        print("⚠️Writing Error handling")
-                    }
+                    print(result.statusCode)
                 }
             case .failure(let err):
                 print("⛔️post error: \(err.localizedDescription)")
@@ -47,7 +39,8 @@ class PostViewModel: ObservableObject {
             case .success(let result):
                 switch result.statusCode {
                 case 200...206:
-                    let decoder = JSONDecoder()
+                    DispatchQueue.main.async {
+                        let decoder = JSONDecoder()
                         if let data = try? decoder.decode(TagListModel.self, from: result.data) {
                             self.tagList = data.tags
                             for i in 0..<self.tagList.count {
@@ -56,15 +49,9 @@ class PostViewModel: ObservableObject {
                         } else {
                             print("⚠️login docoder error")
                         }
-                default:
-                    let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ErrorModel.self, from: result.data) {
-                        print("status: \(data.status)")
-                        print("code: \(data.code)")
-                        print("message: \(data.message)")
-                    } else {
-                        print("⚠️post Error handling")
                     }
+                default:
+                    print(result.statusCode)
                 }
             case .failure(let err):
                 print("⛔️post error: \(err.localizedDescription)")

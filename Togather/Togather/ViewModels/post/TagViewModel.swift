@@ -12,16 +12,19 @@ class TagViewModel: ObservableObject {
             case .success(let result):
                 switch result.statusCode {
                 case 200:
-                    if let data = try? JSONDecoder().decode(TagListModel.self, from: result.data) {
-                        self.tagValues = data.tags.map {
-                            let name = $0.name
-                            let link = $0.image_url
-                            
-                            return Tags(name: name, image_url: link)
+                    DispatchQueue.main.async {
+                        if let data = try? JSONDecoder().decode(TagListModel.self, from: result.data) {
+                            self.tagValues = data.tags.map {
+                                let name = $0.name
+                                let link = $0.image_url
+                                
+                                return Tags(name: name, image_url: link)
+                            }
+                        } else {
+                            print("⚠️tag Error handling")
                         }
-                    } else {
-                        print("⚠️tag Error handling")
                     }
+                    
                 default:
                     print("\(result.statusCode)")
                 }

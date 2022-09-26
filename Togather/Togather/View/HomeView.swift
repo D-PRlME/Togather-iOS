@@ -41,6 +41,7 @@ struct HomeView: View {
                                                 .placeholder {
                                                     Circle().fill(Color.secondary)
                                                         .frame(width: 56, height: 56)
+                                                        .opacity(0.1)
                                                 }
                                                 .resizable()
                                                 .frame(width: 56, height: 56)
@@ -92,7 +93,9 @@ struct HomeView: View {
                                         HStack(spacing: 8) {
                                             KFImage.url(URL(string: data.users.profile_image_url))
                                                 .placeholder {
-                                                    Circle().fill(Color.secondary)
+                                                    Circle()
+                                                        .fill(Color.secondary)
+                                                        .opacity(0.1)
                                                 }
                                                 .resizable()
                                                 .scaledToFit()

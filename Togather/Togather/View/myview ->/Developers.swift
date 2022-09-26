@@ -80,6 +80,7 @@ struct Developers: View {
                                                 .placeholder {
                                                     Circle().fill(Color.secondary)
                                                         .frame(width: 56, height: 56)
+                                                        .opacity(0.1)
                                                 }
                                                 .resizable()
                                                 .clipShape(Circle())

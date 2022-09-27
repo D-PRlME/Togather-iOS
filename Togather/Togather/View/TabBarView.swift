@@ -9,7 +9,6 @@ struct TabBarView: View {
     @State var tabIndex = TabIndex.home
     @State var showModal = false
     
-    
     func changeMyView(tableIndex: TabIndex) -> ShowView {
         switch tabIndex {
         case .home:

@@ -6,7 +6,7 @@ struct SignInView: View {
     @State var password = ""
     
     @StateObject var loginViewModel = LoginViewModel()
-    
+
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -53,19 +53,31 @@ struct SignInView: View {
                     Button(action: {
                         loginViewModel.email = email
                         loginViewModel.password = password
-                        
+                        loginViewModel.showProgrees = true
                         loginViewModel.Login()
                     }) {
-                        Text("로그인")
-                            .font(.custom("Pretendard-Bold", size: 18))
-                            .foregroundColor(.black)
-                            .padding(.vertical, 12)
-                            .frame(width: UIScreen.main.bounds.width - 32)
-                            .background(Color("TabBarSelectedColor"))
-                            .cornerRadius(6)
-                            .padding(2)
-                            .background(Color("YellowStroke"))
-                            .cornerRadius(6)
+                        if loginViewModel.showProgrees {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                .padding(.vertical, 12)
+                                .frame(width: UIScreen.main.bounds.width - 32)
+                                .background(Color("TabBarSelectedColor"))
+                                .cornerRadius(6)
+                                .padding(2)
+                                .background(Color("YellowStroke"))
+                                .cornerRadius(6)
+                        } else {
+                            Text("로그인")
+                                .font(.custom("Pretendard-Bold", size: 18))
+                                .foregroundColor(.black)
+                                .padding(.vertical, 12)
+                                .frame(width: UIScreen.main.bounds.width - 32)
+                                .background(Color("TabBarSelectedColor"))
+                                .cornerRadius(6)
+                                .padding(2)
+                                .background(Color("YellowStroke"))
+                                .cornerRadius(6)
+                        }
                     }
                     
                     HStack(spacing: 12) {

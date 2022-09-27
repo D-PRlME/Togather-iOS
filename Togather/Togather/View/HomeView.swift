@@ -12,8 +12,12 @@ var Developer: [String] = ["홍승재", "길근우", "정승훈", "강용수", "
 struct HomeView: View {
     
     @State var GoPostDetail = false
+    @State var GoSearch = false
 
     @StateObject var homeViewModel = HomeViewModel()
+    let animation = Animation
+        .linear
+        .repeatForever(autoreverses: false)
     
     var body: some View {
         GeometryReader { proxy in
@@ -21,10 +25,7 @@ struct HomeView: View {
                 ColorManager.BackgroundColor1.ignoresSafeArea()
                 VStack(spacing: 0) {
                     RefreshableScrollView(onRefresh: { done in
-                        homeViewModel.postList = []
-                        
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            
                             homeViewModel.post()
                             homeViewModel.GetTagList()
                             done()
@@ -50,6 +51,11 @@ struct HomeView: View {
                                                 .font(.custom("Pretendard-ExtraBold", size: 14))
                                                 .padding(.bottom, 9)
                                         }
+                                        .onTapGesture {
+                                            GoSearch = true
+                                            print(index.name)
+                                        }
+                                        
                                     }
                                 }
                                 .padding(.horizontal,  8)
@@ -137,11 +143,12 @@ struct HomeView: View {
                             .padding(.horizontal, 16)
                         }
                     }
-                    
                     .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                     .onAppear() {
-                        homeViewModel.post()
-                        homeViewModel.GetTagList()
+                        DispatchQueue.global().async {
+                            homeViewModel.GetTagList()
+                            homeViewModel.post()
+                        }
                     }
                 }
                 Spacer()

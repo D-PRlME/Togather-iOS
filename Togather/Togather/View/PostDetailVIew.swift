@@ -24,6 +24,8 @@ struct PostDetail: View {
                                     showModal.toggle()
                                 }
                         }
+                        .unredacted()
+                        
                         Text(postDetailViewModel.postDetail.title)
                             .foregroundColor(.black)
                             .font(.custom("Pretendard-Bold", size: 24))
@@ -31,9 +33,6 @@ struct PostDetail: View {
                             .padding(.top, 7)
                         HStack(spacing: 8) {
                             KFImage.url(URL(string: postDetailViewModel.postDetail.user.profile_image_url))
-                                .placeholder {
-                                    Circle().fill(Color.secondary)
-                                }
                                 .resizable()
                                 .scaledToFit()
                                 .clipShape(Circle())
@@ -159,11 +158,13 @@ struct PostDetail: View {
                                     }
                                 }
                             }
+                            .unredacted()
                         }
                     }
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
                 }
+                .redacted(reason: postDetailViewModel.postDetail.content.isEmpty ? .placeholder : [])
             }
             .onAppear {
                 print("postdetail:", UserDefaults.standard.integer(forKey: "postID"))

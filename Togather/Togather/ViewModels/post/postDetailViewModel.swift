@@ -7,12 +7,10 @@ class PostDetailViewModel: ObservableObject {
     @Published var postID: CLong = 0
     @Published var tagName: [String] = []
     @Published var postDetail: Posts_Detail = Posts_Detail(
-        title: "",
-        user: Users(user_id: 0, user_name: "", profile_image_url: ""),
-        created_at: "",
-        tags: [
-            Tags(name: "", image_url: "")
-        ],
+        title: "제목 더미 데이터 입니다",
+        user: Users(user_id: 0, user_name: "이름입니다", profile_image_url: ""),
+        created_at: "시간 더미 데이터",
+        tags: [],
         is_mine: false,
         content: "",
         link: "",

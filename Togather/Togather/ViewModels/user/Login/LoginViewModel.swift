@@ -8,6 +8,7 @@ class LoginViewModel: ObservableObject {
     @Published var password: String = ""
     
     @Published var viewTag: Int? = nil
+    @Published var showProgrees: Bool = false
     
     func Login() {
         userClient.request(.login(accountID: email, password: password)) { res in
@@ -18,7 +19,6 @@ class LoginViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         let decoder = JSONDecoder()
                         if let data = try? decoder.decode(TokenModel.self, from: result.data) {
-                            
                             Token.accessToken = data.access_token
                             Token.refreshToken = data.refresh_token
                             
@@ -30,9 +30,13 @@ class LoginViewModel: ObservableObject {
                             print("⚠️login docoder error")
                         }
                     }
-
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.showProgrees = false
+                    }
                 default:
                     print("\(result.statusCode)")
+                    self.showProgrees = false
                 }
             case .failure(let err):
                 print("⛔️login error: \(err.localizedDescription)")

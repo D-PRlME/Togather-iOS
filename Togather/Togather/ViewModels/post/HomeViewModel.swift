@@ -61,7 +61,6 @@ class HomeViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         let decoder = JSONDecoder()
                         if let data = try? decoder.decode(TagListModel.self, from: result.data) {
-                            
                             self.tagList = data.tags.map { index in
                                 let name = index.name
                                 let imageURL = index.image_url

@@ -56,6 +56,7 @@ class PostDetailViewModel: ObservableObject {
                                 is_liked: is_liked
                             )
                             print("게시물 상세 정보 : ", self.postDetail)
+                            print("좋아요 여부 : \(self.postDetail.is_liked)")
                             self.tagName = tags.map {
                                 $0.name
                             }

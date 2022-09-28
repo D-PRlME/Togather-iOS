@@ -3,10 +3,11 @@ import Kingfisher
 
 struct SearchTagListView: View {
     @StateObject var tagVM = TagViewModel()
-//    @State var search: String = ""
+    //    @State var search: String = ""
     
     @Binding var goBack: Bool
-    @Binding var tagLists: [String]
+    
+    @Binding var tagBtnValue: String
     
     @StateObject var searchVM = SearchViewModel()
     
@@ -35,73 +36,79 @@ struct SearchTagListView: View {
             }
             
             
-//            HStack {
-//                TextField("검색", text: $search)
-//                    .autocapitalization(.none)
-//                    .disableAutocorrection(true)
-//                    .font(.custom("Pretendard-Medium", size: 20))
-//                    .foregroundColor(.black)
-//                Image("SearchOff")
-//                    .resizable()
-//                    .frame(width: 28, height: 28)
-//            }
-//            .padding(12)
-//            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-//            .cornerRadius(6)
-//            .padding(1)
-//            .background(Color("TabBarStroke"))
-//            .cornerRadius(6)
-//            .padding(.horizontal, 16)
+            //            HStack {
+            //                TextField("검색", text: $search)
+            //                    .autocapitalization(.none)
+            //                    .disableAutocorrection(true)
+            //                    .font(.custom("Pretendard-Medium", size: 20))
+            //                    .foregroundColor(.black)
+            //                Image("SearchOff")
+            //                    .resizable()
+            //                    .frame(width: 28, height: 28)
+            //            }
+            //            .padding(12)
+            //            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+            //            .cornerRadius(6)
+            //            .padding(1)
+            //            .background(Color("TabBarStroke"))
+            //            .cornerRadius(6)
+            //            .padding(.horizontal, 16)
             
             //list
-            List {
-                ForEach(tagVM.tagValues, id: \.self) { data in
-                    Button {
-                        if tagLists.contains(data.name){
-                            tagLists.removeAll()
-                        } else {
-                            tagLists.removeAll()
-                            tagLists.append(data.name)
+            List(tagVM.tagValues, id: \.self) { data in
+                Button {
+//                    tagLists.removeAll()
+//                    if tagLists.contains(data.name){
+//                    } else {
+//                        tagLists.append(data.name)
+//                    }
+                    if tagBtnValue == data.name {
+                        tagBtnValue = ""
+                        print("\(data.name) 태그 끄기")
+                    } else {
+                        tagBtnValue = data.name
+                        print("\(data.name) 태그 켜기")
+                    }
+                } label: {
+                    HStack {
+                        KFImage(
+                            URL(string: "\(data.image_url)")!
+                        )
+                        .placeholder {
+                            Rectangle()
+                                .frame(width: 45, height: 45)
+                                .cornerRadius(15)
+                                .foregroundColor(.secondary)
+                                .opacity(0.1)
                         }
-                    } label: {
-                        HStack {
-                            KFImage(
-                                URL(string: "\(data.image_url)")!
-                            )
-                            .placeholder {
-                                Rectangle()
-                                    .frame(width: 45, height: 45)
-                                    .cornerRadius(15)
-                                    .foregroundColor(.secondary)
-                                    .opacity(0.1)
-                            }
-                            .resizable()
-                            .frame(width: 45, height: 45)
-                            .cornerRadius(15)
-                            .overlay(
-                                Rectangle()
-                                    .foregroundColor(.black)
-                                    .frame(width: 45, height: 45)
-                                    .opacity(0.5)
-                                    .cornerRadius(15)
-                                    .overlay(
-                                        Image("WhiteCheck")
-                                            .resizable()
-                                            .frame(width: 28, height: 28)
-                                    )
-                                    .opacity(tagLists.contains(data.name) ? 1 : 0)
-                            )
-                            
-                            Text("\(data.name)")
-                                .font(.custom("Pretendard-Medium", size: 20))
-                        }
+                        .resizable()
+                        .frame(width: 45, height: 45)
+                        .cornerRadius(15)
+                        .overlay(
+                            Rectangle()
+                                .foregroundColor(.black)
+                                .frame(width: 45, height: 45)
+                                .opacity(0.5)
+                                .cornerRadius(15)
+                                .overlay(
+                                    Image("WhiteCheck")
+                                        .resizable()
+                                        .frame(width: 28, height: 28)
+                                )
+                                .opacity(tagBtnValue == data.name ? 1 : 0)
+                        )
+                        
+                        Text("\(data.name)")
+                            .font(.custom("Pretendard-Medium", size: 20))
                     }
                 }
             }
-            .listStyle(.inset)
         }
+        .listStyle(.inset)
         .onAppear {
             tagVM.GstTagDatas()
+        }
+        .onDisappear() {
         }
     }
 }

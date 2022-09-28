@@ -24,6 +24,7 @@ struct HomeView: View {
             ZStack() {
                 ColorManager.BackgroundColor1.ignoresSafeArea()
                 VStack(spacing: 0) {
+                    
                     RefreshableScrollView(onRefresh: { done in
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             homeViewModel.post()
@@ -138,11 +139,15 @@ struct HomeView: View {
                                     PostDetail(
                                         showModal: self.$GoPostDetail
                                     )
+                                    .onDisappear() {
+                                        homeViewModel.post()
+                                    }
                                 })
                             }
                             .padding(.horizontal, 16)
                         }
                     }
+                    .padding(.top, 8)
                     .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                     .onAppear() {
                         DispatchQueue.global().async {

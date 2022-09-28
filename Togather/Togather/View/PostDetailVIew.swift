@@ -97,13 +97,12 @@ struct PostDetail: View {
                                     switch postDetailViewModel.postDetail.is_liked {
                                     case true:
                                         postDetailViewModel.postDetail.like_count -= 1
-                                        postDetailViewModel.postDetail.is_liked.toggle()
                                         postDetailViewModel.dislike()
                                     case false:
                                         postDetailViewModel.postDetail.like_count += 1
-                                        postDetailViewModel.postDetail.is_liked.toggle()
                                         postDetailViewModel.like()
                                     }
+                                    postDetailViewModel.postDetail.is_liked.toggle()
                                 } label: {
                                     HStack(spacing: 0) {
                                         Text(String(postDetailViewModel.postDetail.like_count))

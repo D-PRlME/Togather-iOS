@@ -431,7 +431,6 @@
 		90D1C6E028BF6D8800B653C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */,
 				4B320D8D28E1293500BCC086 /* TagListView.swift */,
 				4BE919CA28CEF0850002A268 /* PasswordChangeView */,
 				4BC8992628DA8CD800189553 /* SignUpView */,
@@ -443,6 +442,7 @@
 				90C50A5628CCBE8C007EA639 /* PostDetailView.swift */,
 				90EC086328DA9FDD00E34BCE /* EditPostView.swift */,
 				90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */,
+				4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */,
 				90D1C6E928BF6E3D00B653C3 /* MyView.swift */,
 				908ED77228CB787900763AC9 /* myview -> */,
 			);
@@ -508,6 +508,7 @@
 				TargetAttributes = {
 					907EF1DB28BBBA7E008A7562 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -748,6 +749,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Togather/Preview Content\"";
@@ -771,6 +773,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather0304;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -781,6 +784,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Togather/Preview Content\"";

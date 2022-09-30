@@ -10,6 +10,7 @@ struct ColorManager {
     //... add the rest of your colors here
 }
 
+@available(iOS 16.0, *)
 struct ContentView: View {
     var body: some View {
         NavigationView {
@@ -19,6 +20,7 @@ struct ContentView: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

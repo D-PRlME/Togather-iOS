@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 16.0, *)
 struct ChangePasswordVerify: View {
     
     @StateObject var changePWToEmailVM = ChangePasswordToEmailViewModel()
@@ -83,6 +84,7 @@ struct ChangePasswordVerify: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct ChangePasswordVerify_Previews: PreviewProvider {
     static var previews: some View {
         ChangePasswordVerify()

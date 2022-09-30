@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftUIFlowLayout
 
+@available(iOS 16.0, *)
 struct WritingView: View {
     
     @Binding var showModal: Bool
@@ -75,6 +76,7 @@ struct WritingView: View {
                     .foregroundColor(.black)
                     .padding(.leading, 10)
                     .padding(.top, 12)
+                    .scrollContentBackground(.hidden)
                     .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                     .cornerRadius(4)
                     .padding(1)
@@ -156,13 +158,10 @@ struct WritingView: View {
             }
         } //Vstack
         .padding(.horizontal, 16)
-        .padding(.bottom, 16)
-        .onAppear {
-            UITextView.appearance().backgroundColor = .clear
-        }
-    } // body
+        .padding(.bottom, 16)    } // body
 }
 
+@available(iOS 16.0, *)
 struct Writing_Previews: PreviewProvider {
     static var previews: some View {
         WritingView(showModal: .constant(true))

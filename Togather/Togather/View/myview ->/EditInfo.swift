@@ -1,6 +1,7 @@
 import SwiftUI
 import Kingfisher
 
+@available(iOS 16.0, *)
 struct EditInfo: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -160,6 +161,7 @@ struct EditInfo: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct EditInfo_Previews: PreviewProvider {
     static var previews: some View {
         EditInfo()

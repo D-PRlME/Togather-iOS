@@ -5,6 +5,7 @@ enum TabIndex {
     case home, write, mypage, search
 }
 
+@available(iOS 16.0, *)
 struct TabBarView: View {
     @State var tabIndex = TabIndex.home
     @State var showModal = false
@@ -145,6 +146,7 @@ struct RoundedCorner: Shape {
     }
 }
 
+@available(iOS 16.0, *)
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView()

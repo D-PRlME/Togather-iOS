@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 16.0, *)
 struct EmailVerify: View {
     
     var userEmail: String = ""

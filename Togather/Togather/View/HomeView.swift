@@ -56,7 +56,6 @@ struct HomeView: View {
                                             GoSearch = true
                                             print(index.name)
                                         }
-                                        
                                     }
                                 }
                                 .padding(.horizontal,  8)

@@ -12,7 +12,7 @@ struct SignInView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                ColorManager.BackgroundColor1.ignoresSafeArea()
+                ColorManager.BackgroundColor.ignoresSafeArea()
                 NavigationLink(destination: TabBarView(), tag: 1, selection: $loginViewModel.viewTag ) { EmptyView() }
                 VStack(alignment: .leading, spacing: 12) {
                     Spacer()
@@ -91,10 +91,12 @@ struct SignInView: View {
                                 .padding(.vertical, 13)
                         }
                         Spacer()
-                        Text("비밀번호 변경")
-                            .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.5))
-                            .font(.custom("Pretendard-Medium", size: 18))
-                            .padding(.vertical, 13)
+                        NavigationLink(destination: ChangePasswordVerify()) {
+                            Text("비밀번호 변경")
+                                .foregroundColor(Color(red: 0, green: 0, blue: 0, opacity: 0.5))
+                                .font(.custom("Pretendard-Medium", size: 18))
+                                .padding(.vertical, 13)
+                        }
                         Spacer()
                     }
                     Spacer()

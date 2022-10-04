@@ -159,11 +159,12 @@ struct PostDetail: View {
                             }
                             .unredacted()
                         }
+                        .unredacted()
                     }
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
                 }
-                .redacted(reason: postDetailViewModel.postDetail.content.isEmpty ? .placeholder : [])
+                .redacted(reason: postDetailViewModel.showSkeleton ? .placeholder : [])
             }
             .onAppear {
                 print("postdetail:", UserDefaults.standard.integer(forKey: "postID"))

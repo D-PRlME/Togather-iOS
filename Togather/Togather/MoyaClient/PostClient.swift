@@ -115,7 +115,6 @@ extension PostService: TargetType {
     }
     
     
-    
     var headers: [String : String]? {
         switch self {
         case .getMyPosts, .getPosts, .getDetailPosts, .post, .editPost, .deletePost, .getTag, .getTitlePosts, .getTagPosts, .like, .dislike:

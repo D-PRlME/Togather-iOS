@@ -4,15 +4,16 @@ import Moya
 class PostDetailViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
     
+    @Published var showSkeleton = true
     @Published var postID: CLong = 0
     @Published var tagName: [String] = []
     @Published var postDetail: Posts_Detail = Posts_Detail(
-        title: "제목 더미 데이터 입니다",
-        user: Users(user_id: 0, user_name: "이름입니다", profile_image_url: ""),
-        created_at: "시간 더미 데이터",
+        title: DumyData.title,
+        user: Users(user_id: 0, user_name: DumyData.name, profile_image_url: ""),
+        created_at: DumyData.time,
         tags: [],
         is_mine: false,
-        content: "",
+        content: DumyData.content,
         link: "",
         like_count: 0,
         is_liked: false
@@ -55,14 +56,14 @@ class PostDetailViewModel: ObservableObject {
                                 like_count: like_count,
                                 is_liked: is_liked
                             )
-                            print("게시물 상세 정보 : ", self.postDetail)
-                            print("좋아요 여부 : \(self.postDetail.is_liked)")
                             self.tagName = tags.map {
                                 $0.name
                             }
+                            
                         } else {
                             print("⚠️post detail docoder error")
                         }
+                        self.showSkeleton = false
                     }
                 default:
                     print(result.statusCode)

@@ -36,7 +36,7 @@ struct Token {
 }
 
 enum Header {
-    case refreshToken, accessToken, tokenIsEmpty
+    case refreshToken, accessToken, tokenIsEmpty, socket
     
     func header() -> [String : String]? {
         guard let token = Token.accessToken else {
@@ -54,6 +54,8 @@ enum Header {
             return ["Authorization" : "Bearer " + token, "Content-Type" : "application/json"]
         case .tokenIsEmpty:
             return ["Content-Type" : "application/json"]
+        case .socket:
+            return ["Authorization" : "Bearer " + token]
         }
     }
 }

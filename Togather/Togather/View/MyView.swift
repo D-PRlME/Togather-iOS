@@ -17,7 +17,7 @@ struct MyView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                ColorManager.BackgroundColor3.ignoresSafeArea()
+                ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(alignment: .leading, spacing: 12) {
                     HStack(spacing: 0) {
                         KFImage.url(URL(string: Account.profileImagLink ?? ""))

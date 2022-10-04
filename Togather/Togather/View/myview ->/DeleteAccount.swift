@@ -17,7 +17,7 @@ struct DeleteAccount: View {
         GeometryReader { proxy in
             ZStack {
                 NavigationLink(destination: Text("View #2"), isActive: $quitAccountVM.isSucced) { EmptyView() }
-                ColorManager.BackgroundColor1.ignoresSafeArea()
+                ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
                         Spacer()

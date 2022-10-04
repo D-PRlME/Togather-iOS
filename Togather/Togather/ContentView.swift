@@ -2,12 +2,7 @@
 import SwiftUI
 
 struct ColorManager {
-    // create static variables for custom colors
-    static let BackgroundColor1: Color = .white
-    static let BackgroundColor2: Color = .white
-    static let BackgroundColor3: Color = .white
-    
-    //... add the rest of your colors here
+    static let BackgroundColor: Color = .white
 }
 
 @available(iOS 16.0, *)

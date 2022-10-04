@@ -13,7 +13,7 @@ struct MyPost: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                ColorManager.BackgroundColor1.ignoresSafeArea()
+                ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(spacing: 0) {
                     HStack {
                         Spacer()

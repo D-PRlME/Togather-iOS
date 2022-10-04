@@ -14,15 +14,15 @@ struct ChangePasswordVerify: View {
     }
     
     var body: some View {
-        NavigationView {
-            GeometryReader { proxy in
+        GeometryReader { proxy in
+            ZStack {
                 NavigationLink(destination: EnterNewPassword(), tag: 1, selection: $changePWToEmailVM.goEnterPW) { EmptyView() }
                 VStack(alignment: .leading, spacing: 0) {
                     Text("비밀번호 변경")
                         .font(.custom("Pretendard-Bold", size: 32))
                         .padding(.top, proxy.size.height / 6)
                         .padding(.bottom, 10)
-
+                    
                     Text("계정에 입력된 이메일로 전송된 6자리 인증 번호를 입력해 주세요. 인증 번호는 5분 후에 만료됩니다")
                         .font(.custom("Pretendard-Medium", size: 20))
                         .padding(.bottom, 12)
@@ -42,14 +42,14 @@ struct ChangePasswordVerify: View {
                         .cornerRadius(6)
                     
                     GeometryReader { imageProxy in
-                            Image("PostBox")
-                                .resizable()
-                                .frame(width: 150, height: 150)
-                                .position(x: imageProxy.size.width / 2, y: imageProxy.frame(in: .local).midY / 1.3)
-                                .opacity(imageProxy.size.height > 170 ? 1 : 0)
+                        Image("PostBox")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                            .position(x: imageProxy.size.width / 2, y: imageProxy.frame(in: .local).midY / 1.3)
+                            .opacity(imageProxy.size.height > 170 ? 1 : 0)
                     }
                     .coordinateSpace(name: "imageGeometry")
-                        
+                    
                     
                     Button(action: {
                         changePWToEmailVM.EmailVerify()
@@ -80,6 +80,7 @@ struct ChangePasswordVerify: View {
             .onAppear {
                 changePWToEmailVM.MyProfile()
             }
+            BackBtn()
         }
     }
 }

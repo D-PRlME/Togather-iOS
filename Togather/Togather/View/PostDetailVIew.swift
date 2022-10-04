@@ -12,7 +12,7 @@ struct PostDetail: View {
         NavigationView {
             GeometryReader { proxy in
                 ZStack {
-                    ColorManager.BackgroundColor1.ignoresSafeArea()
+                    ColorManager.BackgroundColor.ignoresSafeArea()
                     VStack(alignment: .leading, spacing: 12) {
                         HStack {
                             Spacer()

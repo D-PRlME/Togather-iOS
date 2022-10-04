@@ -17,6 +17,7 @@ class EmailVerifyViewModel: ObservableObject {
                 switch result.statusCode {
                 case 204:
                     print("✅인증 성공!")
+                    self.accessVerify = 1
                 case 401:
                     print("인증코드가 잘못됨")
                 default:

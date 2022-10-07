@@ -72,11 +72,11 @@ struct WritingView: View {
 
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $postViewModel.content)
+                    .scrollContentBackground(.hidden)
                     .font(.custom("Pretendard-Medium", size: 20))
                     .foregroundColor(.black)
                     .padding(.leading, 10)
                     .padding(.top, 12)
-                    .scrollContentBackground(.hidden)
                     .background(Color(red: 0.97, green: 0.97, blue: 0.97))
                     .cornerRadius(4)
                     .padding(1)
@@ -86,8 +86,6 @@ struct WritingView: View {
                 
                 if(self.postViewModel.content.count <= 0) {
                     Text("본문을 입력하세요")
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
                         .font(.custom("Pretendard-Medium", size: 20))
                         .foregroundColor(Color(red: 0.75, green: 0.75, blue: 0.75))
                         .padding(.leading, 15)

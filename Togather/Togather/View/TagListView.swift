@@ -56,11 +56,10 @@ struct TagListView: View {
                 ForEach(tagVM.tagValues, id: \.self) { data in
                     Button {
                         if tagLists.contains(data.name) {
-                            tagLists.removeAll{ $0 == "\(data.name)" }
+                            self.tagLists.removeAll{ $0 == data.name }
                         } else {
-                            tagLists.append(data.name)
+                            self.tagLists.append(data.name)
                         }
-                        
                     } label: {
                         HStack {
                             KFImage(

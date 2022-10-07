@@ -17,7 +17,7 @@ enum UserService {
     case tokenReissue
     
     //유저 정보 관련
-    case changeMyInfo(name: String, picture: String)
+    case changeMyInfo(name: String, picture: String, introduce: String, position: [String])
     case changePassword(oldPassword: String, newPassword: String)
     case getMyprofile
     
@@ -110,12 +110,14 @@ extension UserService: TargetType {
                     ],
                 encoding: JSONEncoding.default)
             
-        case .changeMyInfo(let name, let picture):
+        case .changeMyInfo(let name, let picture, let introduce, let position):
             return .requestParameters(
                 parameters:
                     [
-                        "name" : name,
-                        "picture" : picture
+                        "user_name" : name,
+                        "profile_image_url" : picture,
+                        "introduce" : introduce,
+                        "position" : position
                     ],
                 encoding: JSONEncoding.default)
 
@@ -176,7 +178,7 @@ extension UserService: TargetType {
     var headers: [String : String]? {
         switch self {
             //토큰 필요없음
-        case .mailSignup, .mailVerify, .mailDuplicate, .signup, .login, .changeMyInfo, .changePassword:
+        case .mailSignup, .mailVerify, .mailDuplicate, .signup, .login, .changePassword:
             return Header.tokenIsEmpty.header()
             
             //리프레시 토큰
@@ -184,7 +186,7 @@ extension UserService: TargetType {
             return Header.refreshToken.header()
             
             //엑세스 토큰
-        case .getMyprofile, .logout, .quitAccount, .changePasswordEmail, .sendFindEmail:
+        case .getMyprofile, .logout, .quitAccount, .changePasswordEmail, .sendFindEmail, .changeMyInfo:
             return Header.accessToken.header()
         }
     }

@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftUIFlowLayout
 import Kingfisher
 
+@available(iOS 16.0, *)
 struct PostDetail: View {
     
     @Binding var showModal: Bool

@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftUIFlowLayout
 
+@available(iOS 16.0, *)
 struct EditPostView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -78,6 +79,7 @@ struct EditPostView: View {
 
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $content)
+                    .scrollContentBackground(.hidden)
                     .font(.custom("Pretendard-Medium", size: 20))
                     .foregroundColor(.black)
                     .padding(.leading, 10)

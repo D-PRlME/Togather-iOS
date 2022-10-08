@@ -114,10 +114,10 @@ extension UserService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "user_name" : name,
+                        "name" : name,
                         "profile_image_url" : picture,
                         "introduce" : introduce,
-                        "position" : position
+                        "positions" : position
                     ],
                 encoding: JSONEncoding.default)
 

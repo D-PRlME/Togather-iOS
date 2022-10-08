@@ -13,7 +13,7 @@ struct EditInfo: View {
     @State var showAlert: Bool = false
     
     let introduceTextLimit: Int = 100
-    let positionsList = ["PM", "웹 프론트엔드", "백엔드", "안드로이드", "iOS", "디자인"]
+    let positionList: [String] = ["PM", "웹 프론트엔드", "백엔드", "안드로이드", "iOS", "디자인"]
     
     var body: some View {
         NavigationView {
@@ -110,7 +110,6 @@ struct EditInfo: View {
                                             .foregroundColor(Color(red: 0.75, green: 0.75, blue: 0.75))
                                             .padding(.leading, 15)
                                             .padding(.top, 20)
-                                        
                                     } //플레이스 홀더
                                     Spacer()
                                 }
@@ -146,7 +145,7 @@ struct EditInfo: View {
                             }
                             
                             FlowLayout(mode: .scrollable,
-                                       items: positionsList,
+                                       items: positionList,
                                        itemSpacing: 2) { index in
                                 
                                 Text(index)
@@ -154,13 +153,17 @@ struct EditInfo: View {
                                     .font(.custom("Pretendard-Medium", size: 16))
                                     .padding(.horizontal, 12)
                                     .padding(.vertical, 6)
-                                    .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                                    .background(changeMyInfoVM.positions.contains(changeMyInfoVM.PositionToEN(position: index)) ? Color(red: 0.925, green: 0.792, blue: 0.357) : Color(red: 0.905, green: 0.905, blue: 0.905))
                                     .cornerRadius(37)
                                     .padding(1)
-                                    .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                                    .background(changeMyInfoVM.positions.contains(changeMyInfoVM.PositionToEN(position: index)) ? Color("YellowStroke") : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
                                     .cornerRadius(37)
                                     .onTapGesture {
-                                        print(index)
+                                        if changeMyInfoVM.positions.contains(changeMyInfoVM.PositionToEN(position: index)) {
+                                            changeMyInfoVM.positions.removeAll { $0 == changeMyInfoVM.PositionToEN(position: index) }
+                                        } else {
+                                            changeMyInfoVM.positions.append(changeMyInfoVM.PositionToEN(position: index))
+                                        }
                                     }
                             }
                         }
@@ -214,7 +217,7 @@ struct EditInfo: View {
                         if goBack {
                             self.presentationMode.wrappedValue.dismiss()
                         } else {
-                            changeMyInfoVM.getMyInfo()
+                            changeMyInfoVM.GetMyInfo()
                         }
                     }
                     .fullScreenCover(isPresented: $goBack) {

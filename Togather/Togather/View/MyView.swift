@@ -38,7 +38,7 @@ struct MyView: View {
                             
                             Text(Account.email ?? "")
                                 .foregroundColor(.secondary)
-                                .font(.custom("Pretendard-Light", size: 15))
+                                .font(.custom("Pretendard-Medium", size: 16))
                         }
                         Spacer()
                     }

@@ -68,7 +68,7 @@ struct DeleteAccount: View {
                             .alert("안내" , isPresented: $quitAccountVM.wrongPW) {
                                 Button("확인", role: .cancel) { }
                             } message: {
-                                Text("비밀번호가 옳바르지 않습니다.")
+                                Text("비밀번호가 올바르지 않습니다.")
                             }
                         
                             .alert("안내" , isPresented: $quitAccountVM.isSucced) {

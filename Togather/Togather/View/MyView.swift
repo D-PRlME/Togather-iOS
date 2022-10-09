@@ -2,6 +2,7 @@
 import SwiftUI
 import Kingfisher
 import CarPlay
+import SwiftUIFlowLayout
 
 @available(iOS 16.0, *)
 struct MyView: View {
@@ -19,31 +20,46 @@ struct MyView: View {
             ZStack {
                 ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(alignment: .leading, spacing: 12) {
-                    HStack(spacing: 0) {
-                        KFImage.url(URL(string: Account.profileImagLink ?? ""))
-                            .placeholder {
-                                Circle().fill(Color.secondary)
-                                    .frame(width: 48, height: 48)
+                    
+                    VStack {
+                        HStack(spacing: 0) {
+                            KFImage.url(URL(string: Account.profileImagLink ?? ""))
+                                .placeholder {
+                                    Circle().fill(Color.secondary)
+                                        .frame(width: 48, height: 48)
+                                }
+                                .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 48, height: 48)
+                                .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
+                                .padding(.trailing, 8)
+                            VStack(alignment: .leading) {
+                                Text(Account.ID ?? "")
+                                    .foregroundColor(.black)
+                                    .font(.custom("Pretendard-Medium", size: 20))
+                                
+                                Text(Account.email ?? "")
+                                    .foregroundColor(.secondary)
+                                    .font(.custom("Pretendard-Medium", size: 16))
                             }
-                            .resizable()
-                            .clipShape(Circle())
-                            .frame(width: 48, height: 48)
-                            .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                            .padding(.leading, 10)
-                            .padding(.trailing, 8)
-                        VStack(alignment: .leading) {
-                            Text(Account.ID ?? "")
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Medium", size: 20))
-                            
-                            Text(Account.email ?? "")
-                                .foregroundColor(.secondary)
-                                .font(.custom("Pretendard-Medium", size: 16))
+                            Spacer()
                         }
-                        Spacer()
+                        
+                        FlowLayout(mode: .scrollable,
+                                   items: Account.positions ?? [],
+                                  itemSpacing: 2) { index in
+                            
+                            Text(index.PositionTypeChange)
+                                .foregroundColor(.white)
+                                .font(.custom("Pretendard-ExtraBold", size: 14))
+                                .padding(4)
+                                .background(Color.black)
+                                .cornerRadius(4)
+                        }
                     }
-                    .padding(.top, 28)
-                    .padding(.bottom, 12)
+                    .padding(10)
+                    
+                    Divider()
                     
                     Button {
                         print("MyView -> 계정 정보 수정 -> EditInfo")

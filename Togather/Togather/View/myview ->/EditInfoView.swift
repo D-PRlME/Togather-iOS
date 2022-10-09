@@ -153,16 +153,16 @@ struct EditInfo: View {
                                     .font(.custom("Pretendard-Medium", size: 16))
                                     .padding(.horizontal, 12)
                                     .padding(.vertical, 6)
-                                    .background(changeMyInfoVM.positions.contains(changeMyInfoVM.PositionToEN(position: index)) ? Color(red: 0.925, green: 0.792, blue: 0.357) : Color(red: 0.905, green: 0.905, blue: 0.905))
+                                    .background(changeMyInfoVM.positions.contains(index.PositionTypeChange) ? Color(red: 0.925, green: 0.792, blue: 0.357) : Color(red: 0.905, green: 0.905, blue: 0.905))
                                     .cornerRadius(37)
                                     .padding(1)
-                                    .background(changeMyInfoVM.positions.contains(changeMyInfoVM.PositionToEN(position: index)) ? Color("YellowStroke") : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                                    .background(changeMyInfoVM.positions.contains(index.PositionTypeChange) ? Color("YellowStroke") : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
                                     .cornerRadius(37)
                                     .onTapGesture {
-                                        if changeMyInfoVM.positions.contains(changeMyInfoVM.PositionToEN(position: index)) {
-                                            changeMyInfoVM.positions.removeAll { $0 == changeMyInfoVM.PositionToEN(position: index) }
+                                        if changeMyInfoVM.positions.contains(index.PositionTypeChange) {
+                                            changeMyInfoVM.positions.removeAll { $0 == index.PositionTypeChange }
                                         } else {
-                                            changeMyInfoVM.positions.append(changeMyInfoVM.PositionToEN(position: index))
+                                            changeMyInfoVM.positions.append(index.PositionTypeChange)
                                         }
                                     }
                             }

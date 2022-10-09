@@ -44,9 +44,12 @@ class SignUpViewModel: ObservableObject {
                 switch result.statusCode {
                 case 200:
                     if let data = try? JSONDecoder().decode(MyProfileModel.self, from: result.data) {
-                        Account.ID = data.name
-                        Account.email = data.email
-                        Account.profileImagLink = data.profile_image_url
+                        Account.setAccount(
+                            id: data.name,
+                            email: data.email,
+                            profileImagLink: data.profile_image_url,
+                            positions: data.positions
+                        )
                     } else {
                         print("⚠️myProfile LG docoder error")
                     }

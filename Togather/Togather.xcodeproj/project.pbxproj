@@ -13,6 +13,7 @@
 		4B320D9028E147C200BCC086 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8F28E147C200BCC086 /* TagViewModel.swift */; };
 		4B320D9728E1BA2600BCC086 /* SearchTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */; };
 		4B4C6B9028EE8635007433C2 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6B8F28EE8635007433C2 /* EditInfoView.swift */; };
+		4B4C6BAF28F2E407007433C2 /* PositionChangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BAE28F2E407007433C2 /* PositionChangeExtension.swift */; };
 		4B5FE3B828E44A9700DE6184 /* DumyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3B728E44A9700DE6184 /* DumyData.swift */; };
 		4B5FE3BE28E4862000DE6184 /* SocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */; };
 		4B5FE3C028E4865500DE6184 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3BF28E4865500DE6184 /* SocketClient.swift */; };
@@ -101,6 +102,7 @@
 		4B320D8F28E147C200BCC086 /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
 		4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagListView.swift; sourceTree = "<group>"; };
 		4B4C6B8F28EE8635007433C2 /* EditInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
+		4B4C6BAE28F2E407007433C2 /* PositionChangeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionChangeExtension.swift; sourceTree = "<group>"; };
 		4B5FE3B728E44A9700DE6184 /* DumyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumyData.swift; sourceTree = "<group>"; };
 		4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewModel.swift; sourceTree = "<group>"; };
 		4B5FE3BF28E4865500DE6184 /* SocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketClient.swift; sourceTree = "<group>"; };
@@ -226,6 +228,14 @@
 				4BC89A2B28DDAF1800189553 /* GetUserProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		4B4C6BAD28F2E3C1007433C2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4B4C6BAE28F2E407007433C2 /* PositionChangeExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		4B5FE3B928E47FF000DE6184 /* Soket */ = {
@@ -398,6 +408,7 @@
 		907EF1DE28BBBA7E008A7562 /* Togather */ = {
 			isa = PBXGroup;
 			children = (
+				4B4C6BAD28F2E3C1007433C2 /* Extension */,
 				4B5FE3B928E47FF000DE6184 /* Soket */,
 				90D1C6ED28BF9B8900B653C3 /* Font */,
 				4BE919DF28D071AB0002A268 /* ViewModels */,
@@ -635,6 +646,7 @@
 				90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */,
 				907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */,
 				4BC8992B28DA8CD800189553 /* signUpSuccessView.swift in Sources */,
+				4B4C6BAF28F2E407007433C2 /* PositionChangeExtension.swift in Sources */,
 				90D1C6E428BF6E1300B653C3 /* ShowView.swift in Sources */,
 				4B320D8E28E1293500BCC086 /* TagListView.swift in Sources */,
 				90EC086228D9D64400E34BCE /* MyViewModel.swift in Sources */,

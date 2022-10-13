@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChangePasswordEmailView: View {
-    @State var email: String = ""
+    @StateObject var changeVM = ChangePasswordToEmailViewModel()
     
     func ButtonAtivation() -> Bool {
         return true
@@ -28,7 +28,7 @@ struct ChangePasswordEmailView: View {
                         .font(.custom("Pretendard-Medium", size: 20))
                         .padding(.bottom, 18)
                     
-                    TextField("이메일", text: $email)
+                    TextField("이메일", text: $changeVM.myEmail)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)

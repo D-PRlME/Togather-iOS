@@ -165,7 +165,7 @@ struct MyView: View {
                     
                     .fullScreenCover(isPresented: $logoutVM.isSucced) {
                         NavigationView {
-                            SignInView()
+                            LoginView()
                         }
                     }
                     

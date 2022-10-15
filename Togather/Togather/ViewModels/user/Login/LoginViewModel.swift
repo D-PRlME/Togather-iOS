@@ -9,8 +9,10 @@ class LoginViewModel: ObservableObject {
     
     @Published var viewTag: Int? = nil
     @Published var showProgrees: Bool = false
+    @Published var showError: Bool = false
+    @Published var errorMessage: String = ""
     
-    func Login() {
+    func login() {
         userClient.request(.login(accountID: email, password: password)) { res in
             switch res {
             case .success(let result):
@@ -33,9 +35,30 @@ class LoginViewModel: ObservableObject {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         self.showProgrees = false
                     }
+                case 400:
+                    DispatchQueue.main.async {
+                        self.errorMessage = "올바르지 않은 아이디/비밀번호 형식입니다."
+                        self.showError = true
+                        self.showProgrees = false
+                    }
+                case 403:
+                    DispatchQueue.main.async {
+                        self.errorMessage = "올바르지 않은 비밀번호 입니다."
+                        self.showError = true
+                        self.showProgrees = false
+                    }
+                case 404:
+                    DispatchQueue.main.async {
+                        self.errorMessage = "찾을 수 없는 아이디 입니다."
+                        self.showError = true
+                        self.showProgrees = false
+                    }
                 default:
-                    print("\(result.statusCode)")
-                    self.showProgrees = false
+                    DispatchQueue.main.async {
+                        self.errorMessage = "알 수 없는 오류입니다. 문의 바랍니다!\n(code: \(result.statusCode))"
+                        self.showError = true
+                        self.showProgrees = false
+                    }
                 }
             case .failure(let err):
                 print("⛔️login error: \(err.localizedDescription)")

@@ -222,7 +222,7 @@ struct EditInfo: View {
                     }
                     .fullScreenCover(isPresented: $goBack) {
                         NavigationView {
-                            SignInView()
+                            LoginView()
                         }
                     }
                     .alert("안내", isPresented: $changeMyInfoVM.showingAlert) {

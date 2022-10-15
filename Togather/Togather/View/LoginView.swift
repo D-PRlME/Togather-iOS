@@ -2,7 +2,7 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 @available(iOS 16.0, *)
-struct SignInView: View {
+struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
@@ -56,7 +56,7 @@ struct SignInView: View {
                         loginViewModel.email = email
                         loginViewModel.password = password
                         loginViewModel.showProgrees = true
-                        loginViewModel.Login()
+                        loginViewModel.login()
                     }) {
                         if loginViewModel.showProgrees {
                             ProgressView()
@@ -114,6 +114,11 @@ struct SignInView: View {
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
+            .alert("안내", isPresented: $loginViewModel.showError) {
+                Button("확인", role: .cancel) { }
+            } message: {
+                Text(loginViewModel.errorMessage)
+            }
         }
         .navigationBarHidden(true)
     }
@@ -122,6 +127,6 @@ struct SignInView: View {
 @available(iOS 16.0, *)
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        LoginView()
     }
 }

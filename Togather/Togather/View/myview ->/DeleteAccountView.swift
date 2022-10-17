@@ -43,22 +43,22 @@ struct DeleteAccount: View {
                     }) {
                         Text("계정 삭제")
                             .font(.custom("Pretendard-Bold", size: 18))
-                            .foregroundColor(quitAccountVM.CheckPassword() ?
+                            .foregroundColor(quitAccountVM.checkPassword() ?
                                 .black : Color(red: 0.47, green: 0.47, blue: 0.47))
                             .frame(width: proxy.size.width - 32)
                             .padding(.vertical, 13)
-                            .background(quitAccountVM.CheckPassword() ?
+                            .background(quitAccountVM.checkPassword() ?
                                         Color(red: 0.996, green: 0.239, blue: 0.239) :
                                             Color(red: 0.97, green: 0.97, blue: 0.97))
                             .cornerRadius(6)
                             .padding(2)
-                            .background(quitAccountVM.CheckPassword() ? Color("RedStroke") : Color("TabBarStroke"))
+                            .background(quitAccountVM.checkPassword() ? Color("RedStroke") : Color("TabBarStroke"))
                             .cornerRadius(6)
                         
                         
                             .alert("정말 계정을 삭제하시겠습니까?", isPresented: $showAlert) {
                                 Button("진행", role: .destructive) {
-                                    quitAccountVM.DeleteAccount()
+                                    quitAccountVM.deleteAccount()
                                 }
                                 Button("취소", role: .cancel) { }
                             } message: {

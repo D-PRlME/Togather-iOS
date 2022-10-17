@@ -2,31 +2,31 @@ import Foundation
 
 class SignUpValueCheckViewModel: ObservableObject {
     
-    func CheckTotalSignUpValue(_ email: String, _ password: String, _ name: String) -> Bool {
-        if PwCheck(password) && NameCheck(name) && EmailCheck(email) {
+    func checkTotalSignUpValue(_ email: String, _ password: String, _ name: String) -> Bool {
+        if pwCheck(password) && nameCheck(name) && emailCheck(email) {
             return true
         } else {
             return false
         }
     }
     
-    func EmailValueCheck(_ email: String) -> Bool {
+    func emailValueCheck(_ email: String) -> Bool {
         if email.isEmpty == false {
-            return EmailCheck(email)
+            return emailCheck(email)
         } else {
             return true
         }
     }
     
-    func PasswordValueCheck(_ password: String) -> Bool {
+    func passwordValueCheck(_ password: String) -> Bool {
         if password.isEmpty == false {
-            return PwCheck(password)
+            return pwCheck(password)
         } else {
             return true
         }
     }
     
-    private func NameCheck(_ name: String) -> Bool {
+    private func nameCheck(_ name: String) -> Bool {
         if name.isEmpty == false {
             return true
         } else {
@@ -34,13 +34,13 @@ class SignUpValueCheckViewModel: ObservableObject {
         }
     }
     
-    private func EmailCheck(_ email: String) -> Bool {
+    private func emailCheck(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@dsm+\\.hs+\\.kr"
         let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return predicate.evaluate(with: email)
     }
     
-    private func PwCheck(_ pw: String) -> Bool {
+    private func pwCheck(_ pw: String) -> Bool {
         let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,30}"
         let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
         return predicate.evaluate(with: pw)

@@ -52,7 +52,7 @@ struct ChangePasswordVerify: View {
                     
                     
                     Button(action: {
-                        changePWToEmailVM.EmailVerify()
+                        changePWToEmailVM.emailVerify()
                     }) {
                         VStack(spacing: 0) {
                             Rectangle()
@@ -78,7 +78,7 @@ struct ChangePasswordVerify: View {
             }
             .navigationBarHidden(true)
             .onAppear {
-                changePWToEmailVM.MyProfile()
+                changePWToEmailVM.getMyProfile()
             }
             BackBtn()
         }

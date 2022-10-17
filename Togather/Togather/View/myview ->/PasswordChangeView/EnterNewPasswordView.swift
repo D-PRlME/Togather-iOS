@@ -43,7 +43,7 @@ struct EnterNewPassword: View {
                 Spacer()
                 
                 Button(action: {
-                    changePWToEmailVM.ChangePassword()
+                    changePWToEmailVM.changePassword()
                 }) {
                     VStack(spacing: 0) {
                         Rectangle()
@@ -54,14 +54,14 @@ struct EnterNewPassword: View {
                             .foregroundColor(.black)
                     }
                     .padding(.vertical, 13)
-                    .background(changePWToEmailVM.PasswordValueCheck() ? Color(red: 0.882, green: 0.678, blue: 0.004) : Color(red: 0.97, green: 0.97, blue: 0.97))
+                    .background(changePWToEmailVM.passwordValueCheck() ? Color(red: 0.882, green: 0.678, blue: 0.004) : Color(red: 0.97, green: 0.97, blue: 0.97))
                     .cornerRadius(6)
                     .padding(2)
-                    .background(changePWToEmailVM.PasswordValueCheck() ? Color(red: 0.7, green: 0.6, blue: 0.004) : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                    .background(changePWToEmailVM.passwordValueCheck() ? Color(red: 0.7, green: 0.6, blue: 0.004) : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
                     .cornerRadius(8)
                     
                 }
-                .disabled(changePWToEmailVM.PasswordValueCheck() == false)
+                .disabled(changePWToEmailVM.passwordValueCheck() == false)
                 .padding(.bottom, proxy.safeAreaInsets.bottom == 0 ? 30 : 5)
             } //Vstack
             .padding(.horizontal, 16)

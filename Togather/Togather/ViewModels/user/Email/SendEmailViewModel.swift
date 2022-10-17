@@ -6,7 +6,7 @@ class SendEmailViewModel: ObservableObject {
     
     @Published var email: String = ""
     
-    func SendEmailToUser() {
+    func sendEmailToUser() {
         userClient.request(.mailSignup(email: email)) { res in
             print("email: \(self.email)")
             switch res {

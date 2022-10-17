@@ -12,7 +12,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
     
     //MARK: - 내 프로필 조회
 
-    func MyProfile() {
+    func getMyProfile() {
         userClient.request(.getMyprofile) { res in
             switch res {
             case .success(let result):
@@ -21,7 +21,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         if let data = try? JSONDecoder().decode(MyProfileModel.self, from: result.data) {
                             self.myEmail = data.email
-                            self.SendChangePWEmail()
+                            self.sendChangePWEmail()
                         } else {
                             print("⚠️myProfile PW docoder error")
                         }
@@ -37,7 +37,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
     
     //MARK: - 비밀번호 변경 이메일 전송
 
-    func SendChangePWEmail() {
+    func sendChangePWEmail() {
         userClient.request(.sendFindEmail(email: myEmail)) { res in
             switch res {
             case .success(let result):
@@ -55,7 +55,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
     
     //MARK: - 이메일 인증
 
-    func EmailVerify() {
+    func emailVerify() {
         userClient.request(.mailVerify(email: myEmail, authCode: authCode)) { res in
             switch res {
             case .success(let result):
@@ -74,7 +74,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
     
     //MARK: - 비밀번호 변경
 
-    func ChangePassword() {
+    func changePassword() {
         userClient.request(.changePasswordEmail(newPassword: newPassword)) { res in
             switch res {
             case .success(let result):
@@ -92,7 +92,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
     }
     
     
-    func PasswordValueCheck() -> Bool {
+    func passwordValueCheck() -> Bool {
         return PwCheck(newPassword)
     }
     

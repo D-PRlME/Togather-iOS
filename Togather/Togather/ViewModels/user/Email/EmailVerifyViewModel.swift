@@ -10,7 +10,7 @@ class EmailVerifyViewModel: ObservableObject {
     @Published var accessVerify: Int?
     
     
-    func EmailVerify() {
+    func emailVerify() {
         userClient.request(.mailVerify(email: email, authCode: code)) { res in
             switch res {
             case .success(let result):

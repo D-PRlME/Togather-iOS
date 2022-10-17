@@ -13,7 +13,7 @@ class ChangeMyInfoViewModel: ObservableObject {
     //"PM", "웹 프론트엔드", "백엔드", "안드로이드", "iOS", "디자인"
     //BACKEND, FRONTEND, IOS, DESIGNER, PM, ANDROID
     
-    func GetMyInfo() {
+    func getMyInfo() {
         userClient.request(.getMyprofile) { res in
             switch res {
             case .success(let result):

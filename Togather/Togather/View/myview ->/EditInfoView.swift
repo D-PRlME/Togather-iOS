@@ -217,7 +217,7 @@ struct EditInfo: View {
                         if goBack {
                             self.presentationMode.wrappedValue.dismiss()
                         } else {
-                            changeMyInfoVM.GetMyInfo()
+                            changeMyInfoVM.getMyInfo()
                         }
                     }
                     .fullScreenCover(isPresented: $goBack) {

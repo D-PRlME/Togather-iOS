@@ -6,7 +6,7 @@ class LogoutViewModel: ObservableObject {
     
     @Published var isSucced: Bool = false
     
-    func Logout() {
+    func logout() {
         userClient.request(.logout) { res in
             switch res {
             case .success(let result):

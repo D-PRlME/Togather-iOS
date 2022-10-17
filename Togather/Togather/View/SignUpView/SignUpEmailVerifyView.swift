@@ -66,7 +66,7 @@ struct EmailVerify: View {
                     Button(action: {
                         //인증 코드 인증후 회원가입
                         emailVerifyVM.email = userEmail
-                        emailVerifyVM.EmailVerify()
+                        emailVerifyVM.emailVerify()
                     }) {
                         VStack(spacing: 0) {
                             Rectangle()
@@ -89,7 +89,7 @@ struct EmailVerify: View {
                 .padding(.bottom, 16)
                 .onAppear {
                     sendEmailVM.email = userEmail
-                    sendEmailVM.SendEmailToUser()
+                    sendEmailVM.sendEmailToUser()
                 }
                 BackBtn()
             }

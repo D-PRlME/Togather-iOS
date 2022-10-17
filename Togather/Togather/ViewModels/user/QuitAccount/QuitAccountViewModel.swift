@@ -8,7 +8,7 @@ class QuitAccountViewModel: ObservableObject {
     @Published var wrongPW: Bool = false
     @Published var isSucced: Bool = false
     
-    func DeleteAccount() {
+    func deleteAccount() {
         userClient.request(.quitAccount(password: inputPassword)) { res in
             switch res {
             case .success(let result):
@@ -31,7 +31,7 @@ class QuitAccountViewModel: ObservableObject {
         }
     }
     
-    func CheckPassword() -> Bool{
+    func checkPassword() -> Bool{
         return PwCheck(inputPassword)
     }
     

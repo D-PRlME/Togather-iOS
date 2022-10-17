@@ -154,7 +154,7 @@ struct MyView: View {
                         
                         .alert("로그아웃", isPresented: $GoLogout) {
                             Button("로그아웃", role: .destructive) {
-                                logoutVM.Logout()
+                                logoutVM.logout()
                             }
                             Button("취소", role: .cancel) { }
                         } message: {

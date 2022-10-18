@@ -3,7 +3,6 @@ import SwiftUIFlowLayout
 import SwiftUIPullToRefresh
 import Kingfisher
 
-@available(iOS 16.0, *)
 struct SearchView: View {
     @State var GoPostDetail = false
     @State var postList: [PostList] = []
@@ -166,7 +165,6 @@ struct SearchView: View {
     }
 }
 
-@available(iOS 16.0, *)
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()

@@ -1,7 +1,6 @@
 
 import SwiftUI
 
-@available(iOS 16.0, *)
 struct ShowView: View {
     
     var Number: Int
@@ -24,7 +23,6 @@ struct ShowView: View {
     }
 }
  
-@available(iOS 16.0, *)
 struct ShowView_Previews: PreviewProvider {
     static var previews: some View {
         ShowView(Number: 1)

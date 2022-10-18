@@ -20,6 +20,9 @@
 		4B4C6BC428FC3B2E007433C2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BC328FC3B2E007433C2 /* Color.swift */; };
 		4B4C6BCA28FCD239007433C2 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BC928FCD239007433C2 /* Font.swift */; };
 		4B4C6BCF28FD02DA007433C2 /* LoginTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BCE28FD02DA007433C2 /* LoginTitle.swift */; };
+		4B4C6BD428FD3424007433C2 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BD328FD3424007433C2 /* LoginTextField.swift */; };
+		4B4C6BDC28FE160C007433C2 /* LoginNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BDB28FE160C007433C2 /* LoginNavigationButton.swift */; };
+		4B4C6BDE28FE1881007433C2 /* LoginImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BDD28FE1881007433C2 /* LoginImageButton.swift */; };
 		4B5FE3B828E44A9700DE6184 /* DumyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3B728E44A9700DE6184 /* DumyData.swift */; };
 		4B5FE3BE28E4862000DE6184 /* SocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */; };
 		4B5FE3C028E4865500DE6184 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3BF28E4865500DE6184 /* SocketClient.swift */; };
@@ -115,6 +118,9 @@
 		4B4C6BC328FC3B2E007433C2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4B4C6BC928FCD239007433C2 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		4B4C6BCE28FD02DA007433C2 /* LoginTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTitle.swift; sourceTree = "<group>"; };
+		4B4C6BD328FD3424007433C2 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		4B4C6BDB28FE160C007433C2 /* LoginNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationButton.swift; sourceTree = "<group>"; };
+		4B4C6BDD28FE1881007433C2 /* LoginImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginImageButton.swift; sourceTree = "<group>"; };
 		4B5FE3B728E44A9700DE6184 /* DumyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumyData.swift; sourceTree = "<group>"; };
 		4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewModel.swift; sourceTree = "<group>"; };
 		4B5FE3BF28E4865500DE6184 /* SocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketClient.swift; sourceTree = "<group>"; };
@@ -262,18 +268,11 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		4B4C6BB628FBC032007433C2 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				4B4C6BB728FBC084007433C2 /* Login */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
 		4B4C6BB728FBC084007433C2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				4B4C6BBA28FBC0D1007433C2 /* Network */,
+				4B4C6BDA28FE15D0007433C2 /* LoginButton */,
+				4B4C6BD228FD32C5007433C2 /* LoginTextField */,
 				4B4C6BB928FBC09D007433C2 /* ViewModel */,
 				4B4C6BB828FBC099007433C2 /* View */,
 			);
@@ -296,17 +295,10 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		4B4C6BBA28FBC0D1007433C2 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		4B4C6BBB28FBC1C0007433C2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				4B4C6BB628FBC032007433C2 /* Auth */,
+				4B4C6BB728FBC084007433C2 /* Login */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -351,6 +343,23 @@
 				4B4C6BCE28FD02DA007433C2 /* LoginTitle.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		4B4C6BD228FD32C5007433C2 /* LoginTextField */ = {
+			isa = PBXGroup;
+			children = (
+				4B4C6BD328FD3424007433C2 /* LoginTextField.swift */,
+			);
+			path = LoginTextField;
+			sourceTree = "<group>";
+		};
+		4B4C6BDA28FE15D0007433C2 /* LoginButton */ = {
+			isa = PBXGroup;
+			children = (
+				4B4C6BDB28FE160C007433C2 /* LoginNavigationButton.swift */,
+				4B4C6BDD28FE1881007433C2 /* LoginImageButton.swift */,
+			);
+			path = LoginButton;
 			sourceTree = "<group>";
 		};
 		4B5FE3B928E47FF000DE6184 /* Soket */ = {
@@ -726,10 +735,12 @@
 				4B4C6BCA28FCD239007433C2 /* Font.swift in Sources */,
 				90A05CBD28D304220031E71B /* UserPostModel.swift in Sources */,
 				90C50A5728CCBE8C007EA639 /* PostDetailView.swift in Sources */,
+				4B4C6BDE28FE1881007433C2 /* LoginImageButton.swift in Sources */,
 				4B4C6BC428FC3B2E007433C2 /* Color.swift in Sources */,
 				4B5FE3BE28E4862000DE6184 /* SocketViewModel.swift in Sources */,
 				4BC8992528DA8CA000189553 /* EmailVerifyViewModel.swift in Sources */,
 				900990EF28D04EE700FD9462 /* MyPostModel.swift in Sources */,
+				4B4C6BD428FD3424007433C2 /* LoginTextField.swift in Sources */,
 				90A05CBF28D306040031E71B /* TagListModel.swift in Sources */,
 				90EC086628DAA03700E34BCE /* EditPostViewModel.swift in Sources */,
 				4BC89A3028DDAF2600189553 /* LoginViewModel.swift in Sources */,
@@ -754,6 +765,7 @@
 				4BC8991A28DA8CA000189553 /* ChangeMyInfoViewModel.swift in Sources */,
 				4B4C6BCF28FD02DA007433C2 /* LoginTitle.swift in Sources */,
 				4B4C6BC228FBD30E007433C2 /* AuthButton.swift in Sources */,
+				4B4C6BDC28FE160C007433C2 /* LoginNavigationButton.swift in Sources */,
 				4BC8992328DA8CA000189553 /* EmailDuplicateViewModel.swift in Sources */,
 				90AFD8DE28EC40E600E18B12 /* BackBtn.swift in Sources */,
 				4BC89A2C28DDAF1800189553 /* GetMyProfileViewModel.swift in Sources */,

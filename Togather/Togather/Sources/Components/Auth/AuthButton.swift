@@ -2,15 +2,18 @@ import SwiftUI
 
 struct AuthButton: View {
     @Binding var isDisable: Bool
+    @Binding var isLoading: Bool
     let text: String
     let action: () -> Void
     
     init (
         isDisable: Binding<Bool> = .constant(false),
+        isLoading: Binding<Bool> = .constant(false),
         text: String,
         action: @escaping () -> Void
     ) {
         self._isDisable = isDisable
+        self._isLoading = isLoading
         self.text = text
         self.action = action
     }
@@ -22,17 +25,23 @@ struct AuthButton: View {
                     Rectangle()
                         .frame(height: 0)
                     
-                    Text(text)
-                        .font(.custom("Pretendard-Bold", size: 18))
-                        .foregroundColor(.black)
-                        .padding(.vertical, 12)
+                    if isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                            .padding(.vertical, 13)
+                    } else {
+                        Text(text)
+                            .font(.custom("Pretendard-Bold", size: 18))
+                            .foregroundColor(.black)
+                            .padding(.vertical, 12)
+                    }
                 }
                 .background(isDisable ? Color.whiteElevated1 : Color.main)
                 .cornerRadius(6)
                 .overlay(
                     RoundedRectangle(cornerRadius: 6)
                         .stroke(style: .init(lineWidth: 2))
-                        .foregroundColor(isDisable ? Color.whiteElevated3 : Color.mainElevated)
+                        .foregroundColor(isDisable ? Color.whiteElevated3 : Color.mainDarken)
                 )
             } .disabled(isDisable)
         }
@@ -42,7 +51,7 @@ struct AuthButton: View {
 struct AuthButton_Previews: PreviewProvider {
     static var previews: some View {
         AuthButton(
-            isDisable: .constant(false),
+            isDisable: .constant(true),
             text: "로그인",
             action: { }
         )

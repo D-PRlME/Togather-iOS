@@ -2,7 +2,6 @@ import SwiftUI
 import SwiftUIFlowLayout
 import Kingfisher
 
-@available(iOS 16.0, *)
 struct EditInfo: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -92,7 +91,7 @@ struct EditInfo: View {
                         //Introduce
                         ZStack(alignment: .topLeading) {
                             TextEditor(text: $changeMyInfoVM.introduce)
-                                .scrollContentBackground(.hidden)
+//                                .scrollContentBackground(.hidden)
                                 .font(.custom("Pretendard-Medium", size: 20))
                                 .foregroundColor(.black)
                                 .padding(EdgeInsets(top: 12, leading: 10, bottom: 30, trailing: 10))
@@ -239,7 +238,6 @@ struct EditInfo: View {
     }
 }
 
-@available(iOS 16.0, *)
 struct EditInfo_Previews: PreviewProvider {
     static var previews: some View {
         EditInfo()

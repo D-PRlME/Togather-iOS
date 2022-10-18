@@ -1,7 +1,6 @@
 import SwiftUI
 import SwiftUIFlowLayout
 
-@available(iOS 16.0, *)
 struct WritingView: View {
     
     @Binding var showModal: Bool
@@ -72,7 +71,7 @@ struct WritingView: View {
 
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $postViewModel.content)
-                    .scrollContentBackground(.hidden)
+//                    .scrollContentBackground(.hidden)
                     .font(.custom("Pretendard-Medium", size: 20))
                     .foregroundColor(.black)
                     .padding(.leading, 10)
@@ -159,7 +158,6 @@ struct WritingView: View {
         .padding(.bottom, 16)    } // body
 }
 
-@available(iOS 16.0, *)
 struct Writing_Previews: PreviewProvider {
     static var previews: some View {
         WritingView(showModal: .constant(true))

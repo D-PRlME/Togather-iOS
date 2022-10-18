@@ -1,6 +1,5 @@
 import SwiftUI
 
-@available(iOS 16.0, *)
 struct SignUpView: View {
     
     @State private var emailText: String = ""
@@ -132,7 +131,6 @@ struct SignUpView: View {
     } //body
 }
 
-@available(iOS 16.0, *)
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpView()

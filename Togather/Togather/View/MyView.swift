@@ -4,7 +4,6 @@ import Kingfisher
 import CarPlay
 import SwiftUIFlowLayout
 
-@available(iOS 16.0, *)
 struct MyView: View {
     
     @State var GoEditInfoModal = false
@@ -179,7 +178,6 @@ struct MyView: View {
     }
 }
 
-@available(iOS 16.0, *)
 struct MyView_Previews: PreviewProvider {
     static var previews: some View {
         MyView()

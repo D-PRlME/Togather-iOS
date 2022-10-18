@@ -1,6 +1,5 @@
 import SwiftUI
 
-@available(iOS 16.0, *)
 struct signUpSuccess: View {
     
     @StateObject var signUpVM = SignUpViewModel()

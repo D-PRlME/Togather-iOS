@@ -9,7 +9,6 @@ var DevLanguage: [String] = ["Swift", "Java", "Kotlin", "JS", "Python", "Flutter
 var DevColor: [Color] = [.orange, .red, .purple, .yellow, .green, .blue]
 var Developer: [String] = ["홍승재", "길근우", "정승훈", "강용수", "김은오", "유찬홍"]
 
-@available(iOS 16.0, *)
 struct HomeView: View {
     
     @State var GoPostDetail = false
@@ -163,7 +162,6 @@ struct HomeView: View {
 }
 
 
-@available(iOS 16.0, *)
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()

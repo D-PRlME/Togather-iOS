@@ -1,7 +1,6 @@
 import SwiftUI
 import AVFoundation
 
-@available(iOS 16.0, *)
 struct ChangePasswordSuccess: View {
     @State var goHome: Bool = false
     
@@ -50,7 +49,6 @@ struct ChangePasswordSuccess: View {
     }
 }
 
-@available(iOS 16.0, *)
 struct ChangePasswordSuccess_Previews: PreviewProvider {
     static var previews: some View {
         ChangePasswordSuccess()

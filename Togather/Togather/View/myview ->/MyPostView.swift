@@ -2,7 +2,6 @@ import SwiftUI
 import SwiftUIFlowLayout
 import Kingfisher
 
-@available(iOS 16.0, *)
 struct MyPost: View {
     
     @State var GoPostDetail = false
@@ -110,7 +109,6 @@ struct MyPost: View {
     }
 }
 
-@available(iOS 16.0, *)
 struct MyPost_Previews: PreviewProvider {
     static var previews: some View {
         MyPost()

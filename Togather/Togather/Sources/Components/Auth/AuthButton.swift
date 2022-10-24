@@ -51,7 +51,7 @@ struct AuthButton: View {
 struct AuthButton_Previews: PreviewProvider {
     static var previews: some View {
         AuthButton(
-            isDisable: .constant(true),
+            isDisable: .constant(false),
             text: "로그인",
             action: { }
         )

@@ -6,12 +6,12 @@ struct LoginTextField: View {
     
     var body: some View {
         VStack(spacing: 12) {
-            AuthTextFiled(
+            AuthTextField(
                 placeholder: "아이디",
                 text: $id
             )
             
-            AuthTextFiled(
+            AuthTextField(
                 placeholder: "비밀번호",
                 isSecret: true,
                 text: $password

@@ -7,7 +7,7 @@ enum SocketService {
 
 extension SocketService: TargetType {
     var baseURL: URL {
-        return URL(string: "http://44.209.75.36:8081/socket.io")!
+        return URL(string: "http://3.35.113.190:8080/socket.io")!
     }
     
     var path: String {

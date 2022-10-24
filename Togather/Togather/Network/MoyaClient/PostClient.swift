@@ -17,7 +17,7 @@ enum PostService {
 
 extension PostService: TargetType {
     var baseURL: URL {
-        return URL(string: "http://44.209.75.36:8080/posts")!
+        return URL(string: "http://3.35.113.190:8080/posts")!
     }
     
     var path: String {

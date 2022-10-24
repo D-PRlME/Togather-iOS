@@ -25,6 +25,5 @@ class SendEmailViewModel: ObservableObject {
                 print("⛔️sendEmail error: \(err.localizedDescription)")
             }
         }
-        
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-class SignUpValueCheckViewModel: ObservableObject {
+class SignUpValueCheckViewModel {
     
     func checkTotalSignUpValue(_ email: String, _ password: String, _ name: String) -> Bool {
         if pwCheck(password) && nameCheck(name) && emailCheck(email) {

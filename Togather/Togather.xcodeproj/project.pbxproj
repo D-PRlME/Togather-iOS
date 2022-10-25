@@ -97,6 +97,11 @@
 		90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E728BF6E3000B653C3 /* WritingView.swift */; };
 		90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E928BF6E3D00B653C3 /* MyView.swift */; };
 		90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */; };
+		90DDB7872906CE140094DE71 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB7862906CE140094DE71 /* ChatListView.swift */; };
+		90DDB7892907807F0094DE71 /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB7882907807F0094DE71 /* ChattingView.swift */; };
+		90DDB78B29079DA90094DE71 /* OpponentChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB78A29079DA90094DE71 /* OpponentChat.swift */; };
+		90DDB78E2907B0F10094DE71 /* MyChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB78D2907B0F10094DE71 /* MyChat.swift */; };
+		90DDB7902907B14B0094DE71 /* DividingLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB78F2907B14B0094DE71 /* DividingLine.swift */; };
 		90EC085E28D9AE5A00E34BCE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */; };
 		90EC086228D9D64400E34BCE /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC086128D9D64400E34BCE /* MyViewModel.swift */; };
 		90EC086428DA9FDD00E34BCE /* EditPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC086328DA9FDD00E34BCE /* EditPostView.swift */; };
@@ -188,6 +193,11 @@
 		90D1C6E928BF6E3D00B653C3 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		90D1C70028BF9BF000B653C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90DDB7862906CE140094DE71 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		90DDB7882907807F0094DE71 /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
+		90DDB78A29079DA90094DE71 /* OpponentChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentChat.swift; sourceTree = "<group>"; };
+		90DDB78D2907B0F10094DE71 /* MyChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChat.swift; sourceTree = "<group>"; };
+		90DDB78F2907B14B0094DE71 /* DividingLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividingLine.swift; sourceTree = "<group>"; };
 		90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		90EC086128D9D64400E34BCE /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
 		90EC086328DA9FDD00E34BCE /* EditPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostView.swift; sourceTree = "<group>"; };
@@ -585,24 +595,25 @@
 			path = post;
 			sourceTree = "<group>";
 		};
-		90AFD8DA28EC408E00E18B12 /* compenent */ = {
+		90AFD8DA28EC408E00E18B12 /* component */ = {
 			isa = PBXGroup;
 			children = (
 				90AFD8DD28EC40E600E18B12 /* BackBtn.swift */,
 			);
-			path = compenent;
+			path = component;
 			sourceTree = "<group>";
 		};
 		90D1C6E028BF6D8800B653C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				4B320D8D28E1293500BCC086 /* TagListView.swift */,
-				90AFD8DA28EC408E00E18B12 /* compenent */,
+				90AFD8DA28EC408E00E18B12 /* component */,
 				4BE919CA28CEF0850002A268 /* PasswordChangeView */,
 				4BC8992628DA8CD800189553 /* SignUpView */,
 				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
 				90D1C6E328BF6E1300B653C3 /* ShowView.swift */,
 				90D1C6E528BF6E2300B653C3 /* HomeView.swift */,
+				90DDB78C2907B0B80094DE71 /* chat */,
 				90D1C6E728BF6E3000B653C3 /* WritingView.swift */,
 				90C50A5628CCBE8C007EA639 /* PostDetailView.swift */,
 				90EC086328DA9FDD00E34BCE /* EditPostView.swift */,
@@ -628,6 +639,18 @@
 				4BE1C60A28CDE9B60052AE3D /* Pretendard-Thin.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		90DDB78C2907B0B80094DE71 /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				90DDB7862906CE140094DE71 /* ChatListView.swift */,
+				90DDB7882907807F0094DE71 /* ChattingView.swift */,
+				90DDB78D2907B0F10094DE71 /* MyChat.swift */,
+				90DDB78A29079DA90094DE71 /* OpponentChat.swift */,
+				90DDB78F2907B14B0094DE71 /* DividingLine.swift */,
+			);
+			path = chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -733,6 +756,7 @@
 				4BC8991E28DA8CA000189553 /* QuitAccountViewModel.swift in Sources */,
 				4B4C6BBF28FBC46A007433C2 /* AuthTextFiled.swift in Sources */,
 				4B4C6BCA28FCD239007433C2 /* Font.swift in Sources */,
+				90DDB78E2907B0F10094DE71 /* MyChat.swift in Sources */,
 				90A05CBD28D304220031E71B /* UserPostModel.swift in Sources */,
 				90C50A5728CCBE8C007EA639 /* PostDetailView.swift in Sources */,
 				4B4C6BDE28FE1881007433C2 /* LoginImageButton.swift in Sources */,
@@ -760,9 +784,12 @@
 				900990F728D05D7400FD9462 /* UploadImageModel.swift in Sources */,
 				9039DBCD28DC9E3C00BE988C /* Github_Profile_Image.swift in Sources */,
 				906908AE28CDC49C00BBF0B7 /* DevelopersView.swift in Sources */,
+				90DDB7892907807F0094DE71 /* ChattingView.swift in Sources */,
 				4BE919CE28CEF0CF0002A268 /* EnterNewPasswordView.swift in Sources */,
+				90DDB78B29079DA90094DE71 /* OpponentChat.swift in Sources */,
 				4B320D9728E1BA2600BCC086 /* SearchTagListView.swift in Sources */,
 				4BC8991A28DA8CA000189553 /* ChangeMyInfoViewModel.swift in Sources */,
+				90DDB7902907B14B0094DE71 /* DividingLine.swift in Sources */,
 				4B4C6BCF28FD02DA007433C2 /* LoginTitle.swift in Sources */,
 				4B4C6BC228FBD30E007433C2 /* AuthButton.swift in Sources */,
 				4B4C6BDC28FE160C007433C2 /* LoginNavigationButton.swift in Sources */,
@@ -786,6 +813,7 @@
 				4BE919CC28CEF0C40002A268 /* ChangePasswordVerifyView.swift in Sources */,
 				90A05CBB28D300CD0031E71B /* UserProfileModel.swift in Sources */,
 				4B320D9028E147C200BCC086 /* TagViewModel.swift in Sources */,
+				90DDB7872906CE140094DE71 /* ChatListView.swift in Sources */,
 				4BC8991D28DA8CA000189553 /* FindPasswordEmailViewModel.swift in Sources */,
 				900990EB28D033C000FD9462 /* MyProfileModel.swift in Sources */,
 				4BC89A3328DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift in Sources */,

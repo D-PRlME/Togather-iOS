@@ -5,6 +5,7 @@ import Kingfisher
 struct PostDetail: View {
     
     @Binding var showModal: Bool
+    var postID: Int
     
     @StateObject var postDetailViewModel = PostDetailViewModel()
     
@@ -139,7 +140,7 @@ struct PostDetail: View {
                                                 .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
                                                 .cornerRadius(37)
                                         }
-                                        Button  {
+                                        Button {
                                             postDetailViewModel.delete()
                                             showModal.toggle()
                                         } label: {
@@ -167,8 +168,7 @@ struct PostDetail: View {
                 .redacted(reason: postDetailViewModel.showSkeleton ? .placeholder : [])
             }
             .onAppear {
-                print("postdetail:", UserDefaults.standard.integer(forKey: "postID"))
-                postDetailViewModel.postID = UserDefaults.standard.integer(forKey: "postID")
+                postDetailViewModel.postID = postID
                 postDetailViewModel.getPostDetail()
             }
             .navigationBarHidden(true)

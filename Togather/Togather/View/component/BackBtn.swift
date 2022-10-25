@@ -1,10 +1,3 @@
-//
-//  BackBtn.swift
-//  Togather
-//
-//  Created by 홍승재 on 2022/10/04.
-//
-
 import SwiftUI
 
 struct BackBtn: View {

@@ -13,6 +13,7 @@ extension Color {
     static let whiteElevated5 = Color("white-Elevated5")
     
     static let text = Color("text0")
+    static let text1 = Color("text1")
     
     static let error = Color("red")
 }

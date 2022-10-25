@@ -93,7 +93,8 @@ struct MyPost: View {
                             }
                             .sheet(isPresented: $GoPostDetail, content: {
                                 PostDetail(
-                                    showModal: self.$GoPostDetail
+                                    showModal: self.$GoPostDetail,
+                                    postID: data.post_id
                                 )
                             })
                         }

@@ -18,8 +18,9 @@ struct MyView: View {
         GeometryReader { proxy in
             ZStack {
                 ColorManager.BackgroundColor.ignoresSafeArea()
-                VStack(alignment: .leading, spacing: 12) {
-                    
+                VStack(alignment: .leading, spacing: 0) {
+                    Spacer()
+                        .frame(height: 28)
                     VStack {
                         HStack(spacing: 0) {
                             KFImage.url(URL(string: Account.profileImagLink ?? ""))
@@ -32,6 +33,7 @@ struct MyView: View {
                                 .frame(width: 48, height: 48)
                                 .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
                                 .padding(.trailing, 8)
+                            
                             VStack(alignment: .leading) {
                                 Text(Account.ID ?? "")
                                     .foregroundColor(.black)
@@ -43,10 +45,9 @@ struct MyView: View {
                             }
                             Spacer()
                         }
-                        
                         FlowLayout(mode: .scrollable,
                                    items: Account.positions ?? [],
-                                  itemSpacing: 2) { index in
+                                   itemSpacing: 2) { index in
                             
                             Text(index.PositionTypeChange)
                                 .foregroundColor(.white)
@@ -59,118 +60,119 @@ struct MyView: View {
                     .padding(10)
                     
                     Divider()
+                        .padding(.bottom, 12)
                     
-                    Button {
-                        print("MyView -> 계정 정보 수정 -> EditInfo")
-                        GoEditInfoModal = true
-                    } label: {
-                        HStack {
-                            Text("계정 정보 수정")
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Medium", size: 18))
-                                .padding(.leading, 12)
-                                .padding(.vertical, 14)
-                            Spacer()
-                        }
-                        .frame(width: proxy.size.width - 40)
-                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                        .cornerRadius(8)
-                    } .sheet(isPresented: self.$GoEditInfoModal) {
-                        EditInfo()
-                    }
-                    
-                    Button {
-                        GoChangePassword = true
-                    } label: {
-                        HStack {
-                            Text("비밀번호 변경")
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Medium", size: 18))
-                                .padding(.leading, 12)
-                                .padding(.vertical, 14)
-                            Spacer()
-                        }
-                        .frame(width: proxy.size.width - 40)
-                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                        .cornerRadius(8)
-                    }
-                    .fullScreenCover(isPresented: $GoChangePassword) {
-                        ChangePasswordVerify()
-                    }
-                    
-                    Button {
-                        GoMyPost = true
-                    } label: {
-                        HStack {
-                            Text("내 게시글 보기")
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Medium", size: 18))
-                                .padding(.leading, 12)
-                                .padding(.vertical, 14)
-                            Spacer()
-                        }
-                        .frame(width: proxy.size.width - 40)
-                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                        .cornerRadius(8)
-                    }
-                    .sheet(isPresented: $GoMyPost) {
-                        MyPost()
-                    }
-
-                    Button {
-                        GoDevelopers = true
-                    } label: {
-                        HStack {
-                            Text("개발자들")
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Medium", size: 18))
-                                .padding(.leading, 12)
-                                .padding(.vertical, 14)
-                            Spacer()
-                        }
-                        .frame(width: proxy.size.width - 40)
-                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                        .cornerRadius(8)
-                    }
-                    .sheet(isPresented: $GoDevelopers) {
-                        Developers()
-                    }
-                    
-                    Button {
-                        GoLogout = true
-                    } label: {
-                        HStack {
-                            Text("로그아웃")
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Medium", size: 18))
-                                .padding(.leading, 12)
-                                .padding(.vertical, 14)
-                            Spacer()
-                        }
-                        .frame(width: proxy.size.width - 40)
-                        .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                        .cornerRadius(8)
-                        
-                        .alert("로그아웃", isPresented: $GoLogout) {
-                            Button("로그아웃", role: .destructive) {
-                                logoutVM.logout()
+                    VStack(spacing: 12) {
+                        Button {
+                            print("MyView -> 계정 정보 수정 -> EditInfo")
+                            GoEditInfoModal = true
+                        } label: {
+                            HStack {
+                                Text("계정 정보 수정")
+                                    .foregroundColor(.black)
+                                    .font(.custom("Pretendard-Medium", size: 18))
+                                    .padding(.leading, 12)
+                                    .padding(.vertical, 14)
+                                Spacer()
                             }
-                            Button("취소", role: .cancel) { }
-                        } message: {
-                            Text("로그아웃 하시겠습니까?")
+                            .frame(width: proxy.size.width - 40)
+                            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                            .cornerRadius(8)
+                        } .sheet(isPresented: self.$GoEditInfoModal) {
+                            EditInfo()
                         }
                         
-                    }
-                    
-                    .fullScreenCover(isPresented: $logoutVM.isSucced) {
-                        NavigationView {
-                            LoginView()
+                        Button {
+                            GoChangePassword = true
+                        } label: {
+                            HStack {
+                                Text("비밀번호 변경")
+                                    .foregroundColor(.black)
+                                    .font(.custom("Pretendard-Medium", size: 18))
+                                    .padding(.leading, 12)
+                                    .padding(.vertical, 14)
+                                Spacer()
+                            }
+                            .frame(width: proxy.size.width - 40)
+                            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                            .cornerRadius(8)
                         }
+                        .fullScreenCover(isPresented: $GoChangePassword) {
+                            ChangePasswordVerify()
+                        }
+                        
+                        Button {
+                            GoMyPost = true
+                        } label: {
+                            HStack {
+                                Text("내 게시글 보기")
+                                    .foregroundColor(.black)
+                                    .font(.custom("Pretendard-Medium", size: 18))
+                                    .padding(.leading, 12)
+                                    .padding(.vertical, 14)
+                                Spacer()
+                            }
+                            .frame(width: proxy.size.width - 40)
+                            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                            .cornerRadius(8)
+                        }
+                        .sheet(isPresented: $GoMyPost) {
+                            MyPost()
+                        }
+                        
+                        Button {
+                            GoDevelopers = true
+                        } label: {
+                            HStack {
+                                Text("개발자들")
+                                    .foregroundColor(.black)
+                                    .font(.custom("Pretendard-Medium", size: 18))
+                                    .padding(.leading, 12)
+                                    .padding(.vertical, 14)
+                                Spacer()
+                            }
+                            .frame(width: proxy.size.width - 40)
+                            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                            .cornerRadius(8)
+                        }
+                        .sheet(isPresented: $GoDevelopers) {
+                            Developers()
+                        }
+                        
+                        Button {
+                            GoLogout = true
+                        } label: {
+                            HStack {
+                                Text("로그아웃")
+                                    .foregroundColor(.black)
+                                    .font(.custom("Pretendard-Medium", size: 18))
+                                    .padding(.leading, 12)
+                                    .padding(.vertical, 14)
+                                Spacer()
+                            }
+                            .frame(width: proxy.size.width - 40)
+                            .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                            .cornerRadius(8)
+                            
+                            .alert("로그아웃", isPresented: $GoLogout) {
+                                Button("로그아웃", role: .destructive) {
+                                    logoutVM.logout()
+                                }
+                                Button("취소", role: .cancel) { }
+                            } message: {
+                                Text("로그아웃 하시겠습니까?")
+                            }
+                            
+                        }
+                        
+                        .fullScreenCover(isPresented: $logoutVM.isSucced) {
+                            NavigationView {
+                                LoginView()
+                            }
+                        }
+                        Spacer()
                     }
-                    
-                    Spacer()
                 }
-//                .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                 .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                 .padding(.horizontal, 20)
             }

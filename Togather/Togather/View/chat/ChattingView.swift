@@ -102,14 +102,14 @@ struct ChattingView: View {
                             sendChat = ""
                         } label: {
                             Text("전송")
-                                .font(.custom("Pretendard-Bold", size: 18))
+                                .font(.mainText1m)
                                 .foregroundColor(.black)
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 8)
-                                .background(Color(red: 0.882, green: 0.678, blue: 0.004))
+                                .background(Color.main)
                                 .cornerRadius(37)
                                 .padding(2)
-                                .background(Color("YellowStroke"))
+                                .background(Color.mainDarken)
                                 .cornerRadius(37)
                         }
                     }

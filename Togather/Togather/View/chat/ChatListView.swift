@@ -2,6 +2,7 @@ import SwiftUI
 import Kingfisher
 
 struct ChatListView: View {
+    @State private var gotoChattingView: Bool = false
     let user: [String] = [
         "김성원",
         "조병진",
@@ -36,7 +37,9 @@ struct ChatListView: View {
                 VStack(spacing: 0) {
                     ScrollView {
                         ForEach(0 ..< user.count, id: \.self) { index in
-                            NavigationLink(destination: ChattingView(index: index)) {
+                            Button {
+                                gotoChattingView = true
+                            } label: {
                                 HStack(spacing: 0) {
                                     KFImage.url(URL(string: Image_url_Arr[index]))
                                         .placeholder {
@@ -67,12 +70,14 @@ struct ChatListView: View {
                                 .frame(width: proxy.size.width - 32)
                                 .cornerRadius(8)
                             }
+                            .fullScreenCover(isPresented: $gotoChattingView) {
+                                ChattingView(index: index)
+                            }
                         }
                     }
                     Spacer()
                 }
                 .padding(.top, 6)
-                .navigationBarHidden(true)
             }
         }
     }

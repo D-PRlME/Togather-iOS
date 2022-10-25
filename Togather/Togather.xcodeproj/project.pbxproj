@@ -259,6 +259,7 @@
 		4B4C6BB428FBBF24007433C2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4BA25B242907807600D065BA /* Application */,
 				4B4C6BAD28F2E3C1007433C2 /* Extension */,
 				4B4C6BBC28FBC270007433C2 /* Components */,
 				4B4C6BBB28FBC1C0007433C2 /* Scene */,
@@ -474,6 +475,15 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		4BA25B242907807600D065BA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				907EF1DF28BBBA7E008A7562 /* DrawApp.swift */,
+				907EF1E128BBBA7E008A7562 /* ContentView.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		4BC8990428DA8CA000189553 /* user */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,14 +610,12 @@
 				4B6F48E22904FC83007B1465 /* Network */,
 				4B6F48E12904FC41007B1465 /* SupportingFiles */,
 				4BC8993728DC3EFA00189553 /* Preview Content */,
-				907EF1DF28BBBA7E008A7562 /* DrawApp.swift */,
-				907EF1E128BBBA7E008A7562 /* ContentView.swift */,
 				4B4C6BB528FBBF64007433C2 /* Resources */,
 				4B4C6BB428FBBF24007433C2 /* Sources */,
 				4BE919DF28D071AB0002A268 /* ViewModels */,
 				90D1C6E028BF6D8800B653C3 /* View */,
-				4B5FE3B928E47FF000DE6184 /* Soket */,
 				4BE919D228CF65750002A268 /* Model */,
+				4B5FE3B928E47FF000DE6184 /* Soket */,
 			);
 			path = Togather;
 			sourceTree = "<group>";

@@ -5,7 +5,7 @@ class PostDetailViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var showSkeleton = true
-    @Published var postID: CLong = 0
+    @Published var postID: Int = 0
     @Published var tagName: [String] = []
     @Published var postDetail: Posts_Detail = Posts_Detail(
         title: DumyData.title,

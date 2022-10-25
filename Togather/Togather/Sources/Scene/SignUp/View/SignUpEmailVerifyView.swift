@@ -33,14 +33,21 @@ struct EmailVerify: View {
                 
                 VStack(alignment: .center, spacing: 12) {
                     Spacer()
+                    
+                    //MARK: - Title
+
                     EmailVerifyTitle(
                         email: email
                     )
                     
+                    //MARK: - TextField
+
                     EmailVerifyTextField(
                         code: $SignUpVM.code
                     )
                     
+                    //MARK: - Image
+
                     VStack(spacing: 0) {
                         Rectangle()
                             .frame(height: 50)
@@ -51,6 +58,8 @@ struct EmailVerify: View {
                     }
                     Spacer()
                         
+                    //MARK: - Button
+
                     AuthButton(
                         text: "다음",
                         action: {

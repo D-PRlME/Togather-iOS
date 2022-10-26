@@ -76,6 +76,8 @@
 		900990F128D0586C00FD9462 /* PostDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990F028D0586C00FD9462 /* PostDetailModel.swift */; };
 		900990F728D05D7400FD9462 /* UploadImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990F628D05D7400FD9462 /* UploadImageModel.swift */; };
 		9039DBCD28DC9E3C00BE988C /* Github_Profile_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9039DBCC28DC9E3C00BE988C /* Github_Profile_Image.swift */; };
+		9053BBCC2909194800D6C984 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053BBCB2909194800D6C984 /* ShowView.swift */; };
+		9053BBCE29091E1400D6C984 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053BBCD29091E1400D6C984 /* HomeView.swift */; };
 		906908AE28CDC49C00BBF0B7 /* DevelopersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906908AD28CDC49C00BBF0B7 /* DevelopersView.swift */; };
 		907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1DF28BBBA7E008A7562 /* DrawApp.swift */; };
 		907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1E128BBBA7E008A7562 /* ContentView.swift */; };
@@ -183,6 +185,8 @@
 		900990F028D0586C00FD9462 /* PostDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailModel.swift; sourceTree = "<group>"; };
 		900990F628D05D7400FD9462 /* UploadImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageModel.swift; sourceTree = "<group>"; };
 		9039DBCC28DC9E3C00BE988C /* Github_Profile_Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github_Profile_Image.swift; sourceTree = "<group>"; };
+		9053BBCB2909194800D6C984 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
+		9053BBCD29091E1400D6C984 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		906908AD28CDC49C00BBF0B7 /* DevelopersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopersView.swift; sourceTree = "<group>"; };
 		907EF1DC28BBBA7E008A7562 /* Togather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Togather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907EF1DF28BBBA7E008A7562 /* DrawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawApp.swift; sourceTree = "<group>"; };
@@ -518,6 +522,7 @@
 		4BA25B292907F8EC00D065BA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9053BBCD29091E1400D6C984 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -721,6 +726,7 @@
 				90AFD8DA28EC408E00E18B12 /* component */,
 				4BE919CA28CEF0850002A268 /* PasswordChangeView */,
 				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
+				9053BBCB2909194800D6C984 /* ShowView.swift */,
 				90DDB78C2907B0B80094DE71 /* chat */,
 				90D1C6E728BF6E3000B653C3 /* WritingView.swift */,
 				90C50A5628CCBE8C007EA639 /* PostDetailView.swift */,
@@ -878,6 +884,7 @@
 				90EC086628DAA03700E34BCE /* EditPostViewModel.swift in Sources */,
 				4BC89A3028DDAF2600189553 /* LoginViewModel.swift in Sources */,
 				4BA25B2D2907FA6300D065BA /* TagSelectList.swift in Sources */,
+				9053BBCC2909194800D6C984 /* ShowView.swift in Sources */,
 				4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */,
 				4BA25B272907930A00D065BA /* PostForm.swift in Sources */,
 				4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */,
@@ -933,6 +940,7 @@
 				4B5FE3C328E48EA900DE6184 /* SocketTest.swift in Sources */,
 				900990AA28CE3E7E00FD9462 /* LoginView.swift in Sources */,
 				4BE919D028CEF0D60002A268 /* ChangePasswordSuccessView.swift in Sources */,
+				9053BBCE29091E1400D6C984 /* HomeView.swift in Sources */,
 				4B4C6BE128FE45AC007433C2 /* SignUpTitle.swift in Sources */,
 				4B4C6BB328F44C85007433C2 /* ChangePasswordEmailView.swift in Sources */,
 				9001F5FC28D3931700EC1F23 /* HomeViewModel.swift in Sources */,

@@ -59,6 +59,7 @@ struct ChattingView: View {
                             }
                         Text(user[index])
                             .font(.custom("Pretendard-Bold", size: 24))
+                            .foregroundColor(.black)
                         Spacer()
                     }
                     .padding(.leading, 16)
@@ -97,6 +98,7 @@ struct ChattingView: View {
                             .padding(1)
                             .background(Color("TabBarStroke"))
                             .cornerRadius(6)
+                            .multilineTextAlignment(.leading)
                         Button {
                             print("보낼 채팅: \(sendChat)")
                             sendChat = ""
@@ -124,6 +126,6 @@ struct ChattingView: View {
 
 struct ChattingView_Previews: PreviewProvider {
     static var previews: some View {
-        ChattingView(index: 1)
+        ChattingView(index: 6)
     }
 }

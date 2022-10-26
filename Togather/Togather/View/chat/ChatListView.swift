@@ -36,7 +36,7 @@ struct ChatListView: View {
                 ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(spacing: 0) {
                     ScrollView {
-                        ForEach(0 ..< user.count, id: \.self) { index in
+                        ForEach(0..<user.count, id: \.self) { index in
                             Button {
                                 gotoChattingView = true
                             } label: {
@@ -69,9 +69,9 @@ struct ChatListView: View {
                                 .background(Color("white-Elevated1"))
                                 .frame(width: proxy.size.width - 32)
                                 .cornerRadius(8)
-                            }
-                            .fullScreenCover(isPresented: $gotoChattingView) {
-                                ChattingView(index: index)
+                                .fullScreenCover(isPresented: $gotoChattingView) {
+                                    ChattingView(index: index)
+                                }
                             }
                         }
                     }

@@ -101,7 +101,6 @@
 		90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E728BF6E3000B653C3 /* WritingView.swift */; };
 		90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E928BF6E3D00B653C3 /* MyView.swift */; };
 		90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */; };
-		90D8B2102908C5C30073F637 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D8B20F2908C5C30073F637 /* ShowView.swift */; };
 		90DDB7872906CE140094DE71 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB7862906CE140094DE71 /* ChatListView.swift */; };
 		90DDB7892907807F0094DE71 /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB7882907807F0094DE71 /* ChattingView.swift */; };
 		90DDB78B29079DA90094DE71 /* OpponentChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB78A29079DA90094DE71 /* OpponentChat.swift */; };
@@ -202,7 +201,6 @@
 		90D1C6E928BF6E3D00B653C3 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		90D1C70028BF9BF000B653C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90D8B20F2908C5C30073F637 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 		90DDB7862906CE140094DE71 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		90DDB7882907807F0094DE71 /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		90DDB78A29079DA90094DE71 /* OpponentChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentChat.swift; sourceTree = "<group>"; };
@@ -723,11 +721,6 @@
 				90AFD8DA28EC408E00E18B12 /* component */,
 				4BE919CA28CEF0850002A268 /* PasswordChangeView */,
 				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
-<<<<<<< Updated upstream
-=======
-				90D8B20F2908C5C30073F637 /* ShowView.swift */,
-				90D1C6E528BF6E2300B653C3 /* HomeView.swift */,
->>>>>>> Stashed changes
 				90DDB78C2907B0B80094DE71 /* chat */,
 				90D1C6E728BF6E3000B653C3 /* WritingView.swift */,
 				90C50A5628CCBE8C007EA639 /* PostDetailView.swift */,
@@ -930,7 +923,6 @@
 				4B5FE3B828E44A9700DE6184 /* DumyData.swift in Sources */,
 				4BE919CC28CEF0C40002A268 /* ChangePasswordVerifyView.swift in Sources */,
 				90A05CBB28D300CD0031E71B /* UserProfileModel.swift in Sources */,
-				90D8B2102908C5C30073F637 /* ShowView.swift in Sources */,
 				4B320D9028E147C200BCC086 /* TagViewModel.swift in Sources */,
 				90DDB7872906CE140094DE71 /* ChatListView.swift in Sources */,
 				4BC8991D28DA8CA000189553 /* FindPasswordEmailViewModel.swift in Sources */,

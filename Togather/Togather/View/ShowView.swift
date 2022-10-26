@@ -3,28 +3,28 @@ import SwiftUI
 
 struct ShowView: View {
     
-    let tabIndex: TabIndex
+    var Number: Int
     
     var body: some View {
         VStack {
-            switch tabIndex{
-            case .home :
+            switch Number {
+            case 1 :
                 HomeView()
-            case .chat:
-                ChatListView()
-            case .write :
+            case 2 :
+                HomeView()
+            case 3 :
                 SearchView()
-            case .search:
-                SearchView()
-            case .mypage:
+            case 4:
                 MyView()
+            default:
+                HomeView()
             }
         }
     }
 }
-
+ 
 struct ShowView_Previews: PreviewProvider {
     static var previews: some View {
-        ShowView(tabIndex: .home)
+        ShowView(Number: 1)
     }
 }

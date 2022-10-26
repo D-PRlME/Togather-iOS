@@ -176,8 +176,8 @@ struct PostDetail: View {
     }
 }
 
-//struct PostDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PostDetail(postID: .constant(1), showModal: .constant(true))
-//    }
-//}
+struct PostDetail_Previews: PreviewProvider {
+    static var previews: some View {
+        PostDetail(showModal: .constant(true), postID: 1)
+    }
+}

@@ -31,13 +31,20 @@ class PostDetailViewModel: ObservableObject {
                         let decoder = JSONDecoder()
                         if let data = try? decoder.decode(PostDetailModel.self, from: result.data) {
                             let title = data.title
-                            let users: Users = Users(user_id: data.user.user_id, user_name: data.user.user_name, profile_image_url: data.user.profile_image_url)
+                            let users: Users = Users(
+                                user_id: data.user.user_id,
+                                user_name: data.user.user_name,
+                                profile_image_url: data.user.profile_image_url
+                            )
                             let createdAt = data.created_at
                             let tags: [Tags] = data.tags.map {
                                 let name = $0.name
                                 let imageURL = $0.image_url
                                 
-                                return Tags(name: name, image_url: imageURL)
+                                return Tags(
+                                    name: name,
+                                    image_url: imageURL
+                                )
                             }
                             let is_mine = data.is_mine
                             let content = data.content

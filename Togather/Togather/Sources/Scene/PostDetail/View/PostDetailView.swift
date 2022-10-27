@@ -27,52 +27,35 @@ struct PostDetail: View {
                         }
                         .unredacted()
                         
-                        Text(postDetailViewModel.postDetail.title)
-                            .foregroundColor(.black)
-                            .font(.custom("Pretendard-Bold", size: 24))
-                        
-                            .padding(.top, 7)
-                        HStack(spacing: 8) {
-                            KFImage.url(URL(string: postDetailViewModel.postDetail.user.profile_image_url))
-                                .resizable()
-                                .scaledToFit()
-                                .clipShape(Circle())
-                                .frame(width: 33, height: 33)
-                                .cornerRadius(20)
-                                .padding(.horizontal, 4)
-                                .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-
-                            Text(postDetailViewModel.postDetail.user.user_name)
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Medium", size: 16))
-                            Spacer()
-                            Text(postDetailViewModel.postDetail.created_at)
-                                .foregroundColor(Color(red: 0.47, green: 0.47, blue: 0.47, opacity: 1))
-                                .font(.custom("Pretendard-Medium", size: 16))
-                        }
+                        PostInfoForm(
+                            title: postDetailViewModel.postDetail.title,
+                            imageLink: postDetailViewModel.postDetail.user.profile_image_url,
+                            userName: postDetailViewModel.postDetail.user.user_name,
+                            createdAt: postDetailViewModel.postDetail.created_at
+                        )
                         
                         Divider()
                         
                         FlowLayout(mode: .scrollable,
                                    items: postDetailViewModel.postDetail.tags,
-                                   itemSpacing: 0) {
+                                   itemSpacing: 4) {
                             Text($0.name)
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Medium", size: 16))
+                                .foregroundColor(.text)
+                                .font(.maintext2m)
                                 .padding(.horizontal, 12)
                                 .padding(.vertical, 6)
-                                .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                                .background(Color.whiteElevated1)
                                 .cornerRadius(37)
-                                .padding(1)
-                                .background(Color("TabBarStroke"))
-                                .cornerRadius(37)
-                                .padding(.trailing, 8)
-                                .padding(.bottom, 8)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 37)
+                                        .stroke(lineWidth: 1)
+                                        .foregroundColor(.whiteElevated3)
+                                )
                         }
                         
                         Text(postDetailViewModel.postDetail.content)
-                            .foregroundColor(.black)
-                            .font(.custom("Pretendard-Medium", size: 18))
+                            .foregroundColor(.text)
+                            .font(.maintext2m)
                         Spacer()
                         HStack(alignment: .bottom) {
                             HStack(spacing: 8) {
@@ -82,15 +65,17 @@ struct PostDetail: View {
                                     .padding(4)
                                 Text("연락하기")
                                     .foregroundColor(.black)
-                                    .font(.custom("Pretendard-Bold", size: 18))
+                                    .font(.maintext1b)
                             }
                             .padding(.horizontal, 16)
                             .padding(.vertical, 8)
-                            .background(Color(red: 0.882, green: 0.678, blue: 0.004))
+                            .background(Color.main)
                             .cornerRadius(37)
-                            .padding(2)
-                            .background(Color("YellowStroke"))
-                            .cornerRadius(37)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 37)
+                                    .stroke(lineWidth: 2)
+                                    .foregroundColor(.mainDarken)
+                            )
                             Spacer()
                             VStack(alignment: .trailing) {
                                 Spacer()
@@ -107,8 +92,8 @@ struct PostDetail: View {
                                 } label: {
                                     HStack(spacing: 0) {
                                         Text(String(postDetailViewModel.postDetail.like_count))
-                                            .foregroundColor(.black)
-                                            .font(.custom("Pretendard-Bold", size: 18))
+                                            .foregroundColor(.text)
+                                            .font(.maintext1m)
                                         Image(postDetailViewModel.postDetail.is_liked ? "OnHeart" : "OffHeart")
                                             .resizable()
                                             .frame(width: 20, height: 17)
@@ -116,11 +101,13 @@ struct PostDetail: View {
                                     }
                                     .padding(.horizontal, 16)
                                     .padding(.vertical, 8)
-                                    .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                                    .background(Color.whiteElevated1)
                                     .cornerRadius(37)
-                                    .padding(2)
-                                    .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
-                                    .cornerRadius(37)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 37)
+                                            .stroke(lineWidth: 2)
+                                            .foregroundColor(.whiteElevated3)
+                                    )
                                 }
                                 HStack {
                                     if postDetailViewModel.postDetail.is_mine {
@@ -130,30 +117,35 @@ struct PostDetail: View {
                                             content: $postDetailViewModel.postDetail.content,
                                             link: $postDetailViewModel.postDetail.link)) {
                                             Text("수정")
-                                                .foregroundColor(.black)
-                                                .font(.custom("Pretendard-Bold", size: 18))
+                                                    .foregroundColor(.text)
+                                                    .font(.maintext1b)
                                                 .padding(.horizontal, 16)
                                                 .padding(.vertical, 8)
-                                                .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+                                                .background(Color.whiteElevated1)
                                                 .cornerRadius(37)
-                                                .padding(2)
-                                                .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
-                                                .cornerRadius(37)
+                                                .overlay(
+                                                    RoundedRectangle(cornerRadius: 2)
+                                                        .stroke(lineWidth: 2)
+                                                        .foregroundColor(.whiteElevated3)
+                                                )
                                         }
+                                        
                                         Button {
                                             postDetailViewModel.delete()
                                             showModal.toggle()
                                         } label: {
                                             Text("삭제")
-                                                .foregroundColor(.black)
-                                                .font(.custom("Pretendard-Bold", size: 18))
+                                                .foregroundColor(.text)
+                                                .font(.maintext1b)
                                                 .padding(.horizontal, 16)
                                                 .padding(.vertical, 8)
-                                                .background(Color(red: 0.995, green: 0.238, blue: 0.238))
+                                                .background(Color.error)
                                                 .cornerRadius(37)
-                                                .padding(2)
-                                                .background(Color("RedStroke"))
-                                                .cornerRadius(37)
+                                                .overlay(
+                                                    RoundedRectangle(cornerRadius: 37)
+                                                        .stroke(lineWidth: 2)
+                                                        .foregroundColor(Color("RedStroke"))
+                                                )
                                         }
                                     }
                                 }

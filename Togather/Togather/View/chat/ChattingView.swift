@@ -104,7 +104,7 @@ struct ChattingView: View {
                             sendChat = ""
                         } label: {
                             Text("전송")
-                                .font(.mainText1m)
+                                .font(.maintext1m)
                                 .foregroundColor(.black)
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 8)

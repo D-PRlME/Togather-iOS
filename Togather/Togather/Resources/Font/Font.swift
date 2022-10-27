@@ -19,7 +19,7 @@ extension Font {
     
     //MARK: - mainText
 
-    static let mainText1m = custom("Pretendard-Medium", size: 18)
+    static let maintext1m = custom("Pretendard-Medium", size: 18)
     static let maintext1b = custom("Pretendard-Bold", size: 18)
     static let maintext2m = custom("Pretendard-Medium", size: 16)
     static let maintext2b = custom("Pretendard-Bold", size: 16)

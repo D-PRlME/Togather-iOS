@@ -2,7 +2,7 @@ import Foundation
 
 struct Posts_Detail {
     var title: String
-    let user: Users
+    var user: Users
     let created_at: String
     var tags: [Tags]
     let is_mine: Bool

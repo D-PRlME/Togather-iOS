@@ -16,5 +16,6 @@ extension Color {
     static let text1 = Color("text1")
     
     static let error = Color("red")
+    static let redDarken = Color("red-Darken")
 }
 

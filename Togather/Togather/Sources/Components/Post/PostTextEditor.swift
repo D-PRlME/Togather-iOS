@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct WritingTextEditor: View {
+struct PostTextEditor: View {
     @Binding var text: String
     var placeholder: String
     
@@ -24,6 +24,7 @@ struct WritingTextEditor: View {
                 .disableAutocorrection(true)
                 .scrollContentBackground(.hidden)
                 .font(.title3m)
+                .padding(.leading, 8)
                 .background(Color.whiteElevated1)
                 .cornerRadius(6)
                 .overlay(
@@ -31,11 +32,13 @@ struct WritingTextEditor: View {
                         .stroke(lineWidth: 1)
                         .foregroundColor(.whiteElevated3)
                 )
+                .multilineTextAlignment(.leading)
         } else {
             TextEditor(text: $text)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 .font(.title3m)
+                .padding(.leading, 8)
                 .background(Color.whiteElevated1)
                 .cornerRadius(6)
                 .overlay(
@@ -43,13 +46,14 @@ struct WritingTextEditor: View {
                         .stroke(lineWidth: 1)
                         .foregroundColor(.whiteElevated3)
                 )
+                .multilineTextAlignment(.leading)
         }
     }
 }
 
 struct WritingTextEditor_Previews: PreviewProvider {
     static var previews: some View {
-        WritingTextEditor(
+        PostTextEditor(
             text: .constant("Hello!Word!Hello!Word!Hello!Word!Hello!Word!Hello!Word!Hello!Word!Hello!Word!Hello!Word!Hello!Word!Hello!Word!Hello!Word!Hello!Word!Hd"),
             placeholder: "안녕"
         )

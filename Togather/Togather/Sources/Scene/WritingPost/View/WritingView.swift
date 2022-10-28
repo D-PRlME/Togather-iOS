@@ -27,21 +27,21 @@ struct WritingView: View {
             
             //MARK: - 제목
 
-            WritingTextField(
+            PostTextField(
                 placeholder: "제목",
                 text: $postViewModel.title
             )
             
             //MARK: - 링크
 
-            WritingTextField(
+            PostTextField(
                 placeholder: "연락받을 링크",
                 text: $postViewModel.link
             )
             
             //MARK: - 본문
 
-            WritingTextEditor(
+            PostTextEditor(
                 text: $postViewModel.content,
                 placeholder: "본문을 입력하세요"
             )
@@ -65,7 +65,7 @@ struct WritingView: View {
             //MARK: - 글쓰기 버튼
             
             HStack {
-                WritingButton(
+                PostButton(
                     title: "글쓰기",
                     backgroundColor: .main,
                     cornerColor: .mainDarken,
@@ -78,7 +78,7 @@ struct WritingView: View {
                 
                 Spacer()
                 
-                WritingButton(
+                PostButton(
                     title: "모든 태그 보기",
                     backgroundColor: .whiteElevated1,
                     cornerColor: .whiteElevated3,

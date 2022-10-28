@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct WritingTextField: View {
+struct PostTextField: View {
     var placeholder: String
     @Binding var text: String
     
@@ -17,12 +17,13 @@ struct WritingTextField: View {
                     .stroke(lineWidth: 1)
                     .foregroundColor(.whiteElevated3)
             )
+            .multilineTextAlignment(.leading)
     }
 }
 
 struct WritingTextField_Previews: PreviewProvider {
     static var previews: some View {
-        WritingTextField(
+        PostTextField(
             placeholder: "제목",
             text: .constant("")
         )

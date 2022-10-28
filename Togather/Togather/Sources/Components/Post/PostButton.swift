@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WritingButton: View {
+struct PostButton: View {
     var title: String
     var backgroundColor: Color
     var cornerColor: Color
@@ -45,7 +45,7 @@ struct WritingButton: View {
 
 struct WritingButton_Previews: PreviewProvider {
     static var previews: some View {
-        WritingButton(
+        PostButton(
             title: "글쓰기",
             backgroundColor: .main,
             cornerColor: .mainDarken,

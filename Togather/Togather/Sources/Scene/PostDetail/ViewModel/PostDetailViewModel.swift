@@ -22,7 +22,6 @@ class PostDetailViewModel: ObservableObject {
     func getPostDetail() {
         
         postClient.request(.getDetailPosts(postID: postID)) { res in
-            print("postDetail postID : \(self.postID)")
             switch res {
             case .success(let result):
                 switch result.statusCode {

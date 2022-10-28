@@ -4,6 +4,7 @@ import Kingfisher
 struct ChattingView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var sendChat: String = ""
+    @Binding var index: Int
     let user: [String] = [
         "김성원",
         "조병진",
@@ -31,7 +32,6 @@ struct ChattingView: View {
         "https://avatars.githubusercontent.com/u/102812085?v=4",
         "https://avatars.githubusercontent.com/u/80371353?v=4"
     ]
-    let index: Int
     enum whatDate {
         case month
         case time
@@ -126,6 +126,6 @@ struct ChattingView: View {
 
 struct ChattingView_Previews: PreviewProvider {
     static var previews: some View {
-        ChattingView(index: 6)
+        ChattingView(index: .constant(4))
     }
 }

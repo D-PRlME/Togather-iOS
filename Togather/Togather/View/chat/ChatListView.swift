@@ -1,8 +1,10 @@
 import SwiftUI
 import Kingfisher
+import Combine
 
 struct ChatListView: View {
     @State private var gotoChattingView: Bool = false
+    @State private var i: Int = 0
     let user: [String] = [
         "김성원",
         "조병진",
@@ -39,6 +41,7 @@ struct ChatListView: View {
                         ForEach(0..<user.count, id: \.self) { index in
                             Button {
                                 gotoChattingView = true
+                                i = index
                             } label: {
                                 HStack(spacing: 0) {
                                     KFImage.url(URL(string: Image_url_Arr[index]))
@@ -70,7 +73,7 @@ struct ChatListView: View {
                                 .frame(width: proxy.size.width - 32)
                                 .cornerRadius(8)
                                 .fullScreenCover(isPresented: $gotoChattingView) {
-                                    ChattingView(index: index)
+                                    ChattingView(index: $i)
                                 }
                             }
                         }

@@ -53,10 +53,15 @@ struct PostDetail: View {
                                 )
                         }
                         
+                        //MARK: - 본문
+
                         Text(postDetailViewModel.postDetail.content)
                             .foregroundColor(.text)
-                            .font(.maintext2m)
+                            .font(.maintext1m)
+                            .multilineTextAlignment(.leading)
                         Spacer()
+                        //MARK: - 버튼들
+
                         HStack(alignment: .bottom) {
                             HStack(spacing: 8) {
                                 Image("LinkImage")
@@ -115,38 +120,32 @@ struct PostDetail: View {
                                             tagBtnArr: $postDetailViewModel.tagName,
                                             title: $postDetailViewModel.postDetail.title,
                                             content: $postDetailViewModel.postDetail.content,
-                                            link: $postDetailViewModel.postDetail.link)) {
+                                            link: $postDetailViewModel.postDetail.link,
+                                            PostID: postID)
+                                        ) {
                                             Text("수정")
-                                                    .foregroundColor(.text)
-                                                    .font(.maintext1b)
+                                                .foregroundColor(.text)
+                                                .font(.maintext1b)
                                                 .padding(.horizontal, 16)
                                                 .padding(.vertical, 8)
                                                 .background(Color.whiteElevated1)
                                                 .cornerRadius(37)
                                                 .overlay(
-                                                    RoundedRectangle(cornerRadius: 2)
+                                                    RoundedRectangle(cornerRadius: 37)
                                                         .stroke(lineWidth: 2)
                                                         .foregroundColor(.whiteElevated3)
                                                 )
                                         }
                                         
-                                        Button {
-                                            postDetailViewModel.delete()
-                                            showModal.toggle()
-                                        } label: {
-                                            Text("삭제")
-                                                .foregroundColor(.text)
-                                                .font(.maintext1b)
-                                                .padding(.horizontal, 16)
-                                                .padding(.vertical, 8)
-                                                .background(Color.error)
-                                                .cornerRadius(37)
-                                                .overlay(
-                                                    RoundedRectangle(cornerRadius: 37)
-                                                        .stroke(lineWidth: 2)
-                                                        .foregroundColor(Color("RedStroke"))
-                                                )
-                                        }
+                                        PostButton(
+                                            title: "삭제",
+                                            backgroundColor: .error,
+                                            cornerColor: .redDarken,
+                                            action: {
+                                                postDetailViewModel.delete()
+                                                showModal.toggle()
+                                            }
+                                        )
                                     }
                                 }
                             }
@@ -161,7 +160,9 @@ struct PostDetail: View {
             }
             .onAppear {
                 postDetailViewModel.postID = postID
-                postDetailViewModel.getPostDetail()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    postDetailViewModel.getPostDetail()
+                }
             }
             .navigationBarHidden(true)
         }

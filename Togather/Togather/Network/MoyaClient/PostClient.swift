@@ -2,8 +2,8 @@ import Foundation
 import Moya
 
 enum PostService {
-    case post(title: String, content: String, tag: [String], link: String)
-    case editPost(title: String, content: String, tag: [String], link: String, postID: Int)
+    case post(title: String, content: String, tag: [String])
+    case editPost(title: String, content: String, tag: [String], postID: Int)
     case getMyPosts
     case getPosts
     case getTitlePosts(title: String)
@@ -25,7 +25,7 @@ extension PostService: TargetType {
             
         case .post:
             return ""
-        case .editPost(_, _, _, _, let postID):
+        case .editPost(_, _, _, let postID):
             return "/\(postID)"
         case .getMyPosts:
             return "/my"
@@ -63,25 +63,23 @@ extension PostService: TargetType {
     var task: Task {
         switch self {
             
-        case .post(let title, let content, let tags, let link):
+        case .post(let title, let content, let tags):
             return .requestParameters(
                 parameters:
                     [
                         "title": title,
                         "tags": tags,
                         "content": content,
-                        "link": link
                     ],
                 encoding: JSONEncoding.default)
             
-        case .editPost(let title, let content, let tags, let link, _):
+        case .editPost(let title, let content, let tags, _):
             return .requestParameters(
                 parameters:
                     [
                         "title": title,
                         "tags": tags,
                         "content": content,
-                        "link": link
                     ],
                 encoding: JSONEncoding.default)
             

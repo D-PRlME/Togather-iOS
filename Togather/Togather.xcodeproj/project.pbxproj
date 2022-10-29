@@ -363,6 +363,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4B14A871290C255D0097E838 /* TagList */ = {
+			isa = PBXGroup;
+			children = (
+				4B14A873290C28C60097E838 /* ViewModel */,
+				4B14A872290C25680097E838 /* View */,
+			);
+			path = TagList;
+			sourceTree = "<group>";
+		};
+		4B14A872290C25680097E838 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */,
+				4B320D8D28E1293500BCC086 /* TagListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B14A873290C28C60097E838 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B320D8F28E147C200BCC086 /* TagViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4B320D8428E0295300BCC086 /* QuitAccount */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +475,7 @@
 		4B4C6BBB28FBC1C0007433C2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				4B14A871290C255D0097E838 /* TagList */,
 				4B14A86D290BDA4D0097E838 /* PostEdit */,
 				4B14A863290A1CA90097E838 /* PostDetail */,
 				4B14A84A2909344E0097E838 /* WritingPost */,
@@ -769,7 +796,6 @@
 			children = (
 				90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */,
 				90EC086128D9D64400E34BCE /* MyViewModel.swift */,
-				4B320D8F28E147C200BCC086 /* TagViewModel.swift */,
 			);
 			path = post;
 			sourceTree = "<group>";
@@ -849,14 +875,12 @@
 		90D1C6E028BF6D8800B653C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4B320D8D28E1293500BCC086 /* TagListView.swift */,
 				90AFD8DA28EC408E00E18B12 /* component */,
 				4BE919CA28CEF0850002A268 /* PasswordChangeView */,
 				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
 				9053BBCB2909194800D6C984 /* ShowView.swift */,
 				90DDB78C2907B0B80094DE71 /* chat */,
 				90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */,
-				4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */,
 				90D1C6E928BF6E3D00B653C3 /* MyView.swift */,
 				908ED77228CB787900763AC9 /* myview -> */,
 			);

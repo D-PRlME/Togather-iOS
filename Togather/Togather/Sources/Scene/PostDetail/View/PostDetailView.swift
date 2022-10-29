@@ -120,7 +120,6 @@ struct PostDetail: View {
                                             tagBtnArr: $postDetailViewModel.tagName,
                                             title: $postDetailViewModel.postDetail.title,
                                             content: $postDetailViewModel.postDetail.content,
-                                            link: $postDetailViewModel.postDetail.link,
                                             PostID: postID)
                                         ) {
                                             Text("수정")

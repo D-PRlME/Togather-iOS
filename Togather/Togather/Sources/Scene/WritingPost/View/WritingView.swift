@@ -32,13 +32,6 @@ struct WritingView: View {
                 text: $postViewModel.title
             )
             
-            //MARK: - 링크
-
-            PostTextField(
-                placeholder: "연락받을 링크",
-                text: $postViewModel.link
-            )
-            
             //MARK: - 본문
 
             PostTextEditor(

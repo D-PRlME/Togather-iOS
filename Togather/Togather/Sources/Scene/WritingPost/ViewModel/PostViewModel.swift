@@ -9,7 +9,6 @@ class PostViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var content: String = ""
     @Published var tag: [String] = []
-    @Published var link: String = ""
     
     @Published var tagList: [Tag] = []
     @Published var tagListName: [String] = []
@@ -19,7 +18,7 @@ class PostViewModel: ObservableObject {
             self.tag[i] = self.tag[i].uppercased()
             self.tag[i] = self.tag[i].replacingOccurrences(of: ".", with: "_")
         }
-        postClient.request(.post(title: title, content: content, tag: tag, link: link)) { res in
+        postClient.request(.post(title: title, content: content, tag: tag)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {

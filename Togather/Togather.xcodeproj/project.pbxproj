@@ -11,6 +11,8 @@
 		4B14A8522909370B0097E838 /* PostTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A8512909370B0097E838 /* PostTextEditor.swift */; };
 		4B14A855290968160097E838 /* PostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A854290968160097E838 /* PostButton.swift */; };
 		4B14A865290A1CD50097E838 /* PostInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A864290A1CD50097E838 /* PostInfoForm.swift */; };
+		4B14A879290CEF540097E838 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A878290CEF540097E838 /* SearchTextField.swift */; };
+		4B14A87C290CF4D90097E838 /* SearchTagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A87B290CF4D90097E838 /* SearchTagLabel.swift */; };
 		4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */; };
 		4B320D8728E11A2800BCC086 /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */; };
 		4B320D8E28E1293500BCC086 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8D28E1293500BCC086 /* TagListView.swift */; };
@@ -124,6 +126,8 @@
 		4B14A8512909370B0097E838 /* PostTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextEditor.swift; sourceTree = "<group>"; };
 		4B14A854290968160097E838 /* PostButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButton.swift; sourceTree = "<group>"; };
 		4B14A864290A1CD50097E838 /* PostInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfoForm.swift; sourceTree = "<group>"; };
+		4B14A878290CEF540097E838 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		4B14A87B290CF4D90097E838 /* SearchTagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagLabel.swift; sourceTree = "<group>"; };
 		4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUDModel.swift; sourceTree = "<group>"; };
 		4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
 		4B320D8D28E1293500BCC086 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
@@ -326,6 +330,7 @@
 		4B14A86C290A41690097E838 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				900990F028D0586C00FD9462 /* PostDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +392,48 @@
 				4B320D8F28E147C200BCC086 /* TagViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B14A874290CEF020097E838 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4B14A881290CF8A30097E838 /* Model */,
+				4B14A876290CEF1D0097E838 /* ViewModel */,
+				4B14A875290CEF190097E838 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4B14A875290CEF190097E838 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B14A876290CEF1D0097E838 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B14A877290CEF2B0097E838 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4B14A878290CEF540097E838 /* SearchTextField.swift */,
+				4B14A87B290CF4D90097E838 /* SearchTagLabel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4B14A881290CF8A30097E838 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4B320D8428E0295300BCC086 /* QuitAccount */ = {
@@ -475,6 +522,7 @@
 		4B4C6BBB28FBC1C0007433C2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				4B14A874290CEF020097E838 /* Search */,
 				4B14A871290C255D0097E838 /* TagList */,
 				4B14A86D290BDA4D0097E838 /* PostEdit */,
 				4B14A863290A1CA90097E838 /* PostDetail */,
@@ -489,6 +537,7 @@
 		4B4C6BBC28FBC270007433C2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4B14A877290CEF2B0097E838 /* Search */,
 				4B14A84E2909348B0097E838 /* Post */,
 				4B14A86B290A41530097E838 /* PostDetail */,
 				4BA25B252907925F00D065BA /* Home */,
@@ -794,7 +843,6 @@
 		900990F928D0B36300FD9462 /* post */ = {
 			isa = PBXGroup;
 			children = (
-				90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */,
 				90EC086128D9D64400E34BCE /* MyViewModel.swift */,
 			);
 			path = post;
@@ -858,7 +906,6 @@
 			isa = PBXGroup;
 			children = (
 				900990EE28D04EE700FD9462 /* MyPostModel.swift */,
-				900990F028D0586C00FD9462 /* PostDetailModel.swift */,
 				4B5FE3B728E44A9700DE6184 /* DumyData.swift */,
 			);
 			path = post;
@@ -880,7 +927,6 @@
 				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
 				9053BBCB2909194800D6C984 /* ShowView.swift */,
 				90DDB78C2907B0B80094DE71 /* chat */,
-				90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */,
 				90D1C6E928BF6E3D00B653C3 /* MyView.swift */,
 				908ED77228CB787900763AC9 /* myview -> */,
 			);
@@ -1035,6 +1081,7 @@
 				9053BBCC2909194800D6C984 /* ShowView.swift in Sources */,
 				4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */,
 				4BA25B272907930A00D065BA /* PostForm.swift in Sources */,
+				4B14A87C290CF4D90097E838 /* SearchTagLabel.swift in Sources */,
 				4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */,
 				900990A828CDDBA300FD9462 /* MyPostView.swift in Sources */,
 				4BC8992028DA8CA000189553 /* SignUpValueCheckViewModel.swift in Sources */,
@@ -1050,6 +1097,7 @@
 				900990F728D05D7400FD9462 /* UploadImageModel.swift in Sources */,
 				9039DBCD28DC9E3C00BE988C /* Github_Profile_Image.swift in Sources */,
 				906908AE28CDC49C00BBF0B7 /* DevelopersView.swift in Sources */,
+				4B14A879290CEF540097E838 /* SearchTextField.swift in Sources */,
 				90DDB7892907807F0094DE71 /* ChattingView.swift in Sources */,
 				4BE919CE28CEF0CF0002A268 /* EnterNewPasswordView.swift in Sources */,
 				90DDB78B29079DA90094DE71 /* OpponentChat.swift in Sources */,

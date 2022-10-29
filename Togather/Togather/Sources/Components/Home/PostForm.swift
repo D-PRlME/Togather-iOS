@@ -4,11 +4,11 @@ import Kingfisher
 
 struct PostForm: View {
     @Binding var close: Bool
-    @State var showAlert: Bool = false
+    @State var showDetail: Bool = false
     var postData: Posts
     var body: some View {
         Button {
-            self.showAlert = true
+            self.showDetail = true
         } label: {
             VStack(alignment: .leading, spacing: 8) {
                 Text(postData.title)
@@ -73,13 +73,13 @@ struct PostForm: View {
             .cornerRadius(8)
             .padding(.vertical, 6)
             .sheet(
-                isPresented: $showAlert,
+                isPresented: $showDetail,
                 onDismiss: {
                     self.close = true
                 },
                 content: {
                     PostDetail(
-                        showModal: $showAlert,
+                        showModal: $showDetail,
                         postID: postData.post_id
                     )
                 }

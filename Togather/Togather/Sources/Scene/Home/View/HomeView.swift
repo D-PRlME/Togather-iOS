@@ -39,6 +39,7 @@ struct HomeView: View {
                                 .padding(.horizontal, 14)
                             }
                         }
+                        .padding(.top, 10)
                     }
                     .padding(.top, 12)
                     .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
@@ -57,6 +58,7 @@ struct HomeView: View {
                         }
                     }
                 }
+                .padding(.top, 10)
             }
         }
     }

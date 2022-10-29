@@ -8,6 +8,7 @@ enum TabIndex {
 struct TabBarView: View {
     @State var tabIndex = TabIndex.home
     @State var showModal = false
+    let paddingValue: CGFloat = UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 0 : 40
     var body: some View {
         GeometryReader { proxy in
             VStack(spacing: 0) {
@@ -16,12 +17,16 @@ struct TabBarView: View {
                     TabView(selection: $tabIndex) {
                         HomeView()
                             .tag(TabIndex.home)
+                            .padding(.top, paddingValue)
                         ChatListView()
                             .tag(TabIndex.chat)
+                            .padding(.top, paddingValue)
                         SearchView()
                             .tag(TabIndex.search)
+                            .padding(.top, paddingValue)
                         MyView()
                             .tag(TabIndex.mypage)
+                            .padding(.top, paddingValue)
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
                     ZStack {

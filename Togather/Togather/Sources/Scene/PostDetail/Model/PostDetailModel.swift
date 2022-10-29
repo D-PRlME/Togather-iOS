@@ -7,7 +7,6 @@ struct Posts_Detail {
     var tags: [Tags]
     let is_mine: Bool
     var content: String
-    var link: String
     var like_count: Int
     var is_liked: Bool
     
@@ -19,7 +18,6 @@ struct Posts_Detail {
         tags: [Tags],
         is_mine: Bool,
         content: String,
-        link: String,
         like_count: Int,
         is_liked: Bool
     ){
@@ -29,7 +27,6 @@ struct Posts_Detail {
         self.tags = tags
         self.is_mine = is_mine
         self.content = content
-        self.link = link
         self.like_count = like_count
         self.is_liked = is_liked
     }
@@ -41,7 +38,7 @@ struct PostDetailModel: Codable {
     let user: User
     let tags: [Tag]
     let is_mine, is_liked: Bool
-    let content, link: String
+    let content: String
     let like_count: Int
 }
 

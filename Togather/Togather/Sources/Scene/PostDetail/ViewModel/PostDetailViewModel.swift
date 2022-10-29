@@ -14,7 +14,6 @@ class PostDetailViewModel: ObservableObject {
         tags: [],
         is_mine: false,
         content: DumyData.content,
-        link: "",
         like_count: 0,
         is_liked: false
     )
@@ -47,7 +46,6 @@ class PostDetailViewModel: ObservableObject {
                             }
                             let is_mine = data.is_mine
                             let content = data.content
-                            let link = data.link
                             let like_count = data.like_count
                             let is_liked = data.is_liked
                             
@@ -58,7 +56,6 @@ class PostDetailViewModel: ObservableObject {
                                 tags: tags,
                                 is_mine: is_mine,
                                 content: content,
-                                link: link,
                                 like_count: like_count,
                                 is_liked: is_liked
                             )

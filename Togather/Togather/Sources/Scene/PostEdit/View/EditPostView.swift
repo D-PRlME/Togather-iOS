@@ -7,7 +7,6 @@ struct EditPostView: View {
     @Binding var tagBtnArr: [String]
     @Binding var title: String
     @Binding var content: String
-    @Binding var link: String
     var PostID: Int
     
     @State var goTags: Bool = false
@@ -35,14 +34,6 @@ struct EditPostView: View {
                 text: $title
             )
             
-            //MARK: - 링크
-
-            // 나중에 링크 없어지면 삭제
-            PostTextField(
-                placeholder: "연락받을 링크",
-                text: $link
-            )
-            
             //MARK: - 본문
 
             PostTextEditor(
@@ -63,11 +54,6 @@ struct EditPostView: View {
                     .padding(.vertical, 6)
                     .background(Color.whiteElevated5)
                     .cornerRadius(37)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 37)
-                            .stroke(lineWidth: 1)
-                            .foregroundColor(.whiteElevated4)
-                    )
             }
             
             //MARK: - 글쓰기 버튼
@@ -80,7 +66,6 @@ struct EditPostView: View {
                     action: {
                         editPostViewModel.title = title
                         editPostViewModel.content = content
-                        editPostViewModel.link = link
                         editPostViewModel.postID = PostID
                         editPostViewModel.tag = tagBtnArr
                         
@@ -116,7 +101,6 @@ struct EditPostView_Preview: PreviewProvider {
             tagBtnArr: .constant(["Swift", "Backend"]),
             title: .constant("제목이져"),
             content: .constant("내용이죠"),
-            link: .constant("링크이구요"),
             PostID: 1
         )
     }

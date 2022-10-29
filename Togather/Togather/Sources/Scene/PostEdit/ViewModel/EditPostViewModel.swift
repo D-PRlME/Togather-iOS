@@ -16,7 +16,7 @@ class EditPostViewModel: ObservableObject {
             self.tag[i] = self.tag[i].uppercased()
             self.tag[i] = self.tag[i].replacingOccurrences(of: ".", with: "_")
         }
-        postClient.request(.editPost(title: title, content: content, tag: tag, link: link, postID: postID)) { res in
+        postClient.request(.editPost(title: title, content: content, tag: tag, postID: postID)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {

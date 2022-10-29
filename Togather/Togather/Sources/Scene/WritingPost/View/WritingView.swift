@@ -85,7 +85,8 @@ struct WritingView: View {
             }
         } //Vstack
         .padding(.horizontal, 16)
-        .padding(.bottom, 16)    } // body
+        .padding(.bottom, 16)
+    } // body
 }
 
 struct Writing_Previews: PreviewProvider {

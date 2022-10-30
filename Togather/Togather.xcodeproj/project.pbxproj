@@ -91,6 +91,7 @@
 		909118C8290A14FA00C80B42 /* ChatListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909118C7290A14FA00C80B42 /* ChatListModel.swift */; };
 		909118CA290A187C00C80B42 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909118C9290A187B00C80B42 /* ImagePicker.swift */; };
 		909118CE290A3D7D00C80B42 /* ImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909118CD290A3D7D00C80B42 /* ImageClient.swift */; };
+		909118D0290E70E300C80B42 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909118CF290E70E300C80B42 /* ShowView.swift */; };
 		90A05CAD28D0B78C0031E71B /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CAC28D0B78C0031E71B /* PostViewModel.swift */; };
 		90A05CBB28D300CD0031E71B /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CBA28D300CD0031E71B /* UserProfileModel.swift */; };
 		90A05CBD28D304220031E71B /* UserPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CBC28D304220031E71B /* UserPostModel.swift */; };
@@ -209,6 +210,7 @@
 		909118C7290A14FA00C80B42 /* ChatListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListModel.swift; sourceTree = "<group>"; };
 		909118C9290A187B00C80B42 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		909118CD290A3D7D00C80B42 /* ImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClient.swift; sourceTree = "<group>"; };
+		909118CF290E70E300C80B42 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 		90A05CAC28D0B78C0031E71B /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		90A05CBA28D300CD0031E71B /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		90A05CBC28D304220031E71B /* UserPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostModel.swift; sourceTree = "<group>"; };
@@ -948,6 +950,7 @@
 				90AFD8DA28EC408E00E18B12 /* component */,
 				4BE919CA28CEF0850002A268 /* PasswordChangeView */,
 				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
+				909118CF290E70E300C80B42 /* ShowView.swift */,
 				90DDB78C2907B0B80094DE71 /* chat */,
 				90D1C6E928BF6E3D00B653C3 /* MyView.swift */,
 				908ED77228CB787900763AC9 /* myview -> */,
@@ -1128,6 +1131,7 @@
 				4BC8991A28DA8CA000189553 /* ChangeMyInfoViewModel.swift in Sources */,
 				90DDB7902907B14B0094DE71 /* DividingLine.swift in Sources */,
 				4B4C6BCF28FD02DA007433C2 /* LoginTitle.swift in Sources */,
+				909118D0290E70E300C80B42 /* ShowView.swift in Sources */,
 				4B14A8522909370B0097E838 /* PostTextEditor.swift in Sources */,
 				4B4C6BC228FBD30E007433C2 /* AuthButton.swift in Sources */,
 				4B4C6BDC28FE160C007433C2 /* LoginNavigationButton.swift in Sources */,

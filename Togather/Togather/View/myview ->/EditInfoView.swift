@@ -10,6 +10,8 @@ struct EditInfo: View {
     @State var goBack: Bool = false
     @State var alertMessage: String = ""
     @State var showAlert: Bool = false
+    @State private var showImagePicker: Bool = false
+    @State private var selectedImage: UIImage?
     
     let introduceTextLimit: Int = 100
     let positionList: [String] = ["PM", "웹 프론트엔드", "백엔드", "안드로이드", "iOS", "디자인"]
@@ -41,16 +43,26 @@ struct EditInfo: View {
                                 .frame(width: 48, height: 48)
                                 .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
                                 .padding(.leading, 10)
-                            Text("이미지 변경")
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Bold", size: 18))
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 8)
-                                .background(Color(red: 0.882, green: 0.678, blue: 0.004))
-                                .cornerRadius(37)
-                                .padding(2)
-                                .background(Color("YellowStroke"))
-                                .cornerRadius(37)
+                            Button  {
+                                self.showImagePicker.toggle()
+                            } label: {
+                                Text("이미지 변경")
+                                    .foregroundColor(.black)
+                                    .font(.custom("Pretendard-Bold", size: 18))
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 8)
+                                    .background(Color(red: 0.882, green: 0.678, blue: 0.004))
+                                    .cornerRadius(37)
+                                    .padding(2)
+                                    .background(Color("YellowStroke"))
+                                    .cornerRadius(37)
+                            }
+                            .sheet(isPresented: $showImagePicker) {
+                                ImagePicker(image: $selectedImage)
+                            }
+                            .onChange(of: selectedImage) { newValue in
+//                                changeMyInfoVM.
+                            }
                             Spacer()
                         }
                         .padding(.top, 26)

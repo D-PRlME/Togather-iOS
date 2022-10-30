@@ -92,6 +92,8 @@
 		909118CA290A187C00C80B42 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909118C9290A187B00C80B42 /* ImagePicker.swift */; };
 		909118CE290A3D7D00C80B42 /* ImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909118CD290A3D7D00C80B42 /* ImageClient.swift */; };
 		909118D0290E70E300C80B42 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909118CF290E70E300C80B42 /* ShowView.swift */; };
+		909118D7290EB23300C80B42 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909118D6290EB23300C80B42 /* TabBarItem.swift */; };
+		909118D9290EB94300C80B42 /* SearchModalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909118D8290EB94300C80B42 /* SearchModalButton.swift */; };
 		90A05CAD28D0B78C0031E71B /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CAC28D0B78C0031E71B /* PostViewModel.swift */; };
 		90A05CBB28D300CD0031E71B /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CBA28D300CD0031E71B /* UserProfileModel.swift */; };
 		90A05CBD28D304220031E71B /* UserPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A05CBC28D304220031E71B /* UserPostModel.swift */; };
@@ -211,6 +213,8 @@
 		909118C9290A187B00C80B42 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		909118CD290A3D7D00C80B42 /* ImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClient.swift; sourceTree = "<group>"; };
 		909118CF290E70E300C80B42 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
+		909118D6290EB23300C80B42 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		909118D8290EB94300C80B42 /* SearchModalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModalButton.swift; sourceTree = "<group>"; };
 		90A05CAC28D0B78C0031E71B /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		90A05CBA28D300CD0031E71B /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		90A05CBC28D304220031E71B /* UserPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostModel.swift; sourceTree = "<group>"; };
@@ -344,7 +348,6 @@
 		4B14A86D290BDA4D0097E838 /* PostEdit */ = {
 			isa = PBXGroup;
 			children = (
-				4B14A870290BDA630097E838 /* Model */,
 				4B14A86F290BDA590097E838 /* ViewModel */,
 				4B14A86E290BDA570097E838 /* View */,
 			);
@@ -365,13 +368,6 @@
 				90EC086528DAA03700E34BCE /* EditPostViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		4B14A870290BDA630097E838 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4B14A871290C255D0097E838 /* TagList */ = {
@@ -403,7 +399,6 @@
 		4B14A874290CEF020097E838 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				4B14A881290CF8A30097E838 /* Model */,
 				4B14A876290CEF1D0097E838 /* ViewModel */,
 				4B14A875290CEF190097E838 /* View */,
 			);
@@ -433,13 +428,6 @@
 				4B14A87B290CF4D90097E838 /* SearchTagLabel.swift */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		4B14A881290CF8A30097E838 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4B320D8428E0295300BCC086 /* QuitAccount */ = {
@@ -528,6 +516,7 @@
 		4B4C6BBB28FBC1C0007433C2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				909118D1290EB04200C80B42 /* TabBar */,
 				4B14A874290CEF020097E838 /* Search */,
 				4B14A871290C255D0097E838 /* TagList */,
 				4B14A86D290BDA4D0097E838 /* PostEdit */,
@@ -543,6 +532,7 @@
 		4B4C6BBC28FBC270007433C2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				909118D3290EB21300C80B42 /* TabBar */,
 				4B14A877290CEF2B0097E838 /* Search */,
 				4B14A84E2909348B0097E838 /* Post */,
 				4B14A86B290A41530097E838 /* PostDetail */,
@@ -916,6 +906,32 @@
 			path = chat;
 			sourceTree = "<group>";
 		};
+		909118D1290EB04200C80B42 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				909118D2290EB04800C80B42 /* View */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		909118D2290EB04800C80B42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
+				909118CF290E70E300C80B42 /* ShowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		909118D3290EB21300C80B42 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				909118D6290EB23300C80B42 /* TabBarItem.swift */,
+				909118D8290EB94300C80B42 /* SearchModalButton.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		90A05CB828D2FFDF0031E71B /* user */ = {
 			isa = PBXGroup;
 			children = (
@@ -949,8 +965,6 @@
 			children = (
 				90AFD8DA28EC408E00E18B12 /* component */,
 				4BE919CA28CEF0850002A268 /* PasswordChangeView */,
-				90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */,
-				909118CF290E70E300C80B42 /* ShowView.swift */,
 				90DDB78C2907B0B80094DE71 /* chat */,
 				90D1C6E928BF6E3D00B653C3 /* MyView.swift */,
 				908ED77228CB787900763AC9 /* myview -> */,
@@ -1118,6 +1132,7 @@
 				900990F128D0586C00FD9462 /* PostDetailModel.swift in Sources */,
 				4BC8992428DA8CA000189553 /* SendEmailViewModel.swift in Sources */,
 				90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */,
+				909118D7290EB23300C80B42 /* TabBarItem.swift in Sources */,
 				90EC086428DA9FDD00E34BCE /* EditPostView.swift in Sources */,
 				900990F728D05D7400FD9462 /* UploadImageModel.swift in Sources */,
 				9039DBCD28DC9E3C00BE988C /* Github_Profile_Image.swift in Sources */,
@@ -1134,6 +1149,7 @@
 				909118D0290E70E300C80B42 /* ShowView.swift in Sources */,
 				4B14A8522909370B0097E838 /* PostTextEditor.swift in Sources */,
 				4B4C6BC228FBD30E007433C2 /* AuthButton.swift in Sources */,
+				909118D9290EB94300C80B42 /* SearchModalButton.swift in Sources */,
 				4B4C6BDC28FE160C007433C2 /* LoginNavigationButton.swift in Sources */,
 				4BC8992328DA8CA000189553 /* EmailDuplicateViewModel.swift in Sources */,
 				90AFD8DE28EC40E600E18B12 /* BackBtn.swift in Sources */,

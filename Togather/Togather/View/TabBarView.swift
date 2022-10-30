@@ -14,21 +14,8 @@ struct TabBarView: View {
             VStack(spacing: 0) {
                 Spacer()
                 ZStack(alignment: .bottom) {
-                    TabView(selection: $tabIndex) {
-                        HomeView()
-                            .tag(TabIndex.home)
-                            .padding(.top, paddingValue)
-                        ChatListView()
-                            .tag(TabIndex.chat)
-                            .padding(.top, paddingValue)
-                        SearchView()
-                            .tag(TabIndex.search)
-                            .padding(.top, paddingValue)
-                        MyView()
-                            .tag(TabIndex.mypage)
-                            .padding(.top, paddingValue)
-                    }
-                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    ShowView(tabIndex: tabIndex)
+                        .padding(.top, paddingValue)
                     ZStack {
                         VStack(spacing: 0) {
                             Rectangle()

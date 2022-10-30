@@ -1,5 +1,7 @@
 import Foundation
+import SwiftUI
 import Moya
+import Alamofire
 
 class ChangeMyInfoViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
@@ -52,4 +54,56 @@ class ChangeMyInfoViewModel: ObservableObject {
             }
         }
     }
+    /*
+    func updateProfileImage(_ image : UIImage){
+        
+        let imageData = image.jpegData(compressionQuality: 1)!
+        let url = ""
+        
+        upload(image: imageData, to: url)
+        
+    }//end of function
+    func upload(image: Data, to url: String) {
+        
+        let headers: HTTPHeaders = [
+            "Content-type": "multipart/form-data"
+        ]
+        AF.upload(multipartFormData: { multiPart in
+            for (key, value) in params {
+                if let temp = value as? String {
+                    multiPart.append(temp.data(using: .utf8)!, withName: key)
+                }
+                if let temp = value as? Int {
+                    multiPart.append("\(temp)".data(using: .utf8)!, withName: key)
+                }
+                if let temp = value as? NSArray {
+                    temp.forEach({ element in
+                        let keyObj = key + "[]"
+                        if let string = element as? String {
+                            multiPart.append(string.data(using: .utf8)!, withName: keyObj)
+                        } else
+                        if let num = element as? Int {
+                            let value = "\(num)"
+                            multiPart.append(value.data(using: .utf8)!, withName: keyObj)
+                        }
+                    })
+                }
+            }
+            multiPart.append(image, withName: "newsletter_image", fileName: "\(self.tfTitle.text ?? "")_logo.png", mimeType: "image/jpeg")
+        }, to: url
+                  , headers: headers)
+        .uploadProgress(queue: .main, closure: { progress in
+            //Current upload progress of file
+            print("Upload Progress: \(progress.fractionCompleted)")
+        })
+        .responseJSON(completionHandler: { data in
+            switch data.result{
+            case .success(_):
+                    print("=== upload 성공 ===")
+            case .failure(let error):
+                print(error.errorDescription ?? "error")
+            }
+        })
+    }
+     */
 }

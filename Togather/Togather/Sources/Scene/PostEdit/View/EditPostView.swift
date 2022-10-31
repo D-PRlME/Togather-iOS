@@ -7,9 +7,9 @@ struct EditPostView: View {
     @Binding var tagBtnArr: [String]
     @Binding var title: String
     @Binding var content: String
-    var PostID: Int
+    let PostID: Int
     
-    @State var goTags: Bool = false
+    @State private var goTags: Bool = false
     @StateObject var editPostViewModel = EditPostViewModel()
     
     var body: some View {

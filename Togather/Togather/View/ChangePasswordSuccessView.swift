@@ -2,7 +2,7 @@ import SwiftUI
 import AVFoundation
 
 struct ChangePasswordSuccess: View {
-    @State var goHome: Bool = false
+    @State private var goHome: Bool = false
     
     var body: some View {
         GeometryReader { proxy in

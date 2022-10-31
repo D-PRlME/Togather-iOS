@@ -7,7 +7,7 @@ import SwiftUIPullToRefresh
 
 struct HomeView: View {
     
-    @State var isClose: Bool = false
+    @State private var isClose: Bool = false
 
     @StateObject var homeViewModel = HomeViewModel()
     let animation = Animation

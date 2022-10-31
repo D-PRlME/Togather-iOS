@@ -4,8 +4,8 @@ import Kingfisher
 
 struct PostForm: View {
     @Binding var close: Bool
-    @State var showDetail: Bool = false
-    var postData: Posts
+    @State private var showDetail: Bool = false
+    let postData: Posts
     var body: some View {
         Button {
             self.showDetail = true

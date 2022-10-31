@@ -4,14 +4,14 @@ import SwiftUIPullToRefresh
 import Kingfisher
 
 struct SearchView: View {
-    @State var GoPostDetail = false
-    @State var postList: [PostList] = []
+    @State private var GoPostDetail = false
+    @State private var postList: [PostList] = []
     
-    @State var tagBtnValue: String = ""
-    @State var stringTagList: [String] = []
-    @State var goTagList: Bool = false
+    @State private var tagBtnValue: String = ""
+    @State private var stringTagList: [String] = []
+    @State private var goTagList: Bool = false
     
-    @State var isClose: Bool = false
+    @State private var isClose: Bool = false
     
     @StateObject var searchViewModel = SearchViewModel()
     

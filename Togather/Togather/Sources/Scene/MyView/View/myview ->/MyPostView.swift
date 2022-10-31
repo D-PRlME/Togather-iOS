@@ -4,7 +4,7 @@ import Kingfisher
 
 struct MyPost: View {
     
-    @State var GoPostDetail = false
+    @State private var GoPostDetail = false
     
     @StateObject var myPageViewModel = MyViewModel()
     

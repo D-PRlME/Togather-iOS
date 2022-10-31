@@ -5,8 +5,8 @@ struct WritingView: View {
     
     @Binding var showModal: Bool
 
-    @State var tagBtnArr: [String] = []
-    @State var goTags: Bool = false
+    @State private var tagBtnArr: [String] = []
+    @State private var goTags: Bool = false
     
     @StateObject var postViewModel = PostViewModel()
     

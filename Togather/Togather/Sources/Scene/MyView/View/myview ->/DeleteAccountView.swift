@@ -5,9 +5,9 @@ struct DeleteAccount: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @State var SamePW = false
-    @State var password = ""
-    @State var showAlert = false
+    @State private var SamePW = false
+    @State private var password = ""
+    @State private var showAlert = false
     
     @Binding var goSignView: Bool
     

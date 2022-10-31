@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email = ""
-    @State var password = ""
+    @State private var email = ""
+    @State private var password = ""
     
     @StateObject var loginViewModel = LoginViewModel()
 

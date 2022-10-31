@@ -6,16 +6,18 @@ enum TabIndex {
 }
 
 struct TabBarView: View {
-    @State var tabIndex = TabIndex.home
-    @State var showModal = false
-    let paddingValue: CGFloat = UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 0 : 40
+    @State private var tabIndex = TabIndex.home
+    @State private var showModal = false
+    func safeAreaValue(_ _true: CGFloat, _ _false: CGFloat) -> CGFloat {
+        return UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? _true : _false
+    }
     var body: some View {
         GeometryReader { proxy in
             VStack(spacing: 0) {
                 Spacer()
                 ZStack(alignment: .bottom) {
                     ShowView(tabIndex: tabIndex)
-                        .padding(.top, paddingValue)
+                        .padding(.top, safeAreaValue(0, 40))
                     ZStack {
                         VStack(spacing: 0) {
                             Rectangle()
@@ -23,7 +25,7 @@ struct TabBarView: View {
                                 .frame(width: proxy.size.width, height: 1)
                             Rectangle()
                                 .foregroundColor(Color("TabBarFill"))
-                                .frame(width: proxy.size.width, height: UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+                                .frame(width: proxy.size.width, height: safeAreaValue(86, 106))
                         }
                         HStack(alignment: .top, spacing: 0) {
                             TabBarItem(tabIndex: $tabIndex,
@@ -42,7 +44,7 @@ struct TabBarView: View {
                                        thisValue: .mypage,
                                        proxy: proxy)
                         }
-                        .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 25)
+                        .padding(.bottom, safeAreaValue(5, 25))
                     }
                 }
             }

@@ -7,9 +7,9 @@ struct EditInfo: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @StateObject var changeMyInfoVM = ChangeMyInfoViewModel()
-    @State var goBack: Bool = false
-    @State var alertMessage: String = ""
-    @State var showAlert: Bool = false
+    @State private var goBack: Bool = false
+    @State private var alertMessage: String = ""
+    @State private var showAlert: Bool = false
     @State private var showImagePicker: Bool = false
     @State private var selectedImage: UIImage?
     

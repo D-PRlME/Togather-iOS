@@ -6,11 +6,11 @@ import SwiftUIFlowLayout
 
 struct MyView: View {
     
-    @State var GoEditInfoModal = false
-    @State var GoMyPost = false
-    @State var GoDevelopers = false
-    @State var GoChangePassword = false
-    @State var GoLogout = false
+    @State private var GoEditInfoModal = false
+    @State private var GoMyPost = false
+    @State private var GoDevelopers = false
+    @State private var GoChangePassword = false
+    @State private var GoLogout = false
     
     @StateObject var logoutVM = LogoutViewModel()
     

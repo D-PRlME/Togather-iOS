@@ -2,10 +2,11 @@ import SwiftUI
 import Kingfisher
 
 struct PostInfoForm: View {
-    var title: String
-    var imageLink: String
-    var userName: String
-    var createdAt: String
+    let title: String
+    let imageLink: String
+    let userName: String
+    let createdAt: String
+    let userID: Int
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -15,14 +16,15 @@ struct PostInfoForm: View {
                 .padding(.top, 7)
             
             HStack(spacing: 8) {
-                KFImage.url(URL(string: imageLink))
-                    .resizable()
-                    .scaledToFill()
-                    .clipShape(Circle())
-                    .frame(width: 33, height: 33)
-                    .cornerRadius(20)
-                    .overlay(Circle().stroke().foregroundColor(.whiteElevated3))
-
+                NavigationLink (destination: UserProfileView(userID: userID)) {
+                    KFImage.url(URL(string: imageLink))
+                        .resizable()
+                        .scaledToFill()
+                        .clipShape(Circle())
+                        .frame(width: 33, height: 33)
+                        .cornerRadius(20)
+                        .overlay(Circle().stroke().foregroundColor(.whiteElevated3))
+                }
                 Text(userName)
                     .foregroundColor(.text)
                     .font(.maintext2m)
@@ -41,7 +43,8 @@ struct PostInfoForm_Previews: PreviewProvider {
             title: "제목",
             imageLink: "",
             userName: "조병진",
-            createdAt: "2022-10-32 / 5"
+            createdAt: "2022-10-32 / 5",
+            userID: 0
         )
     }
 }

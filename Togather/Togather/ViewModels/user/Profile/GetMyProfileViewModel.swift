@@ -16,7 +16,7 @@ class GetMyProfileViewModel: ObservableObject {
                 case 200:
                     DispatchQueue.main.async {
                         let decoder = JSONDecoder()
-                        if let data = try? decoder.decode(MyProfileModel.self, from: result.data) {
+                        if let data = try? decoder.decode(ProfileModel.self, from: result.data) {
                             self.myID = data.name
                             self.myEmail = data.email
                             self.myProfilImageLink = data.profile_image_url

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct PostButton: View {
-    var title: String
-    var backgroundColor: Color
-    var cornerColor: Color
-    var action: () -> Void
+    let title: String
+    let backgroundColor: Color
+    let cornerColor: Color
+    let action: () -> Void
     
     init(
         title: String,

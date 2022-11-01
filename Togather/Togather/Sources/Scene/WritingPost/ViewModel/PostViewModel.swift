@@ -5,7 +5,6 @@ import SwiftUI
 class PostViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
     
-    
     @Published var title: String = ""
     @Published var content: String = ""
     @Published var tag: [String] = []

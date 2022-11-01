@@ -20,6 +20,7 @@ enum UserService {
     case changeMyInfo(name: String, picture: String, introduce: String, position: [String])
     case changePassword(oldPassword: String, newPassword: String)
     case getMyprofile
+    case getUserProfile(userID: Int)
     
     //비밀번호 변경
     case sendFindEmail(email: String)
@@ -60,6 +61,8 @@ extension UserService: TargetType {
             return "/mail"
         case .changePasswordEmail:
             return "/password"
+        case .getUserProfile(userID: let userID):
+            return "/\(userID)"
         }
     }
     
@@ -72,7 +75,7 @@ extension UserService: TargetType {
             return .put
         case .changeMyInfo, .changePassword:
             return .patch
-        case .getMyprofile:
+        case .getMyprofile, .getUserProfile:
             return .get
         case .logout, .quitAccount:
             return .delete
@@ -82,7 +85,7 @@ extension UserService: TargetType {
     var task: Task {
         switch self {
             
-        case .tokenReissue, .getMyprofile, .logout:
+        case .tokenReissue, .getMyprofile, .logout, .getUserProfile:
             return .requestPlain
             
         case .mailDuplicate(let email):
@@ -186,7 +189,7 @@ extension UserService: TargetType {
             return Header.refreshToken.header()
             
             //엑세스 토큰
-        case .getMyprofile, .logout, .quitAccount, .changePasswordEmail, .sendFindEmail, .changeMyInfo:
+        case .getMyprofile, .logout, .quitAccount, .changePasswordEmail, .sendFindEmail, .changeMyInfo, .getUserProfile:
             return Header.accessToken.header()
         }
     }

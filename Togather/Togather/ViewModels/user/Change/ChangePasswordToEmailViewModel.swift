@@ -19,7 +19,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
                 switch result.statusCode {
                 case 200:
                     DispatchQueue.main.async {
-                        if let data = try? JSONDecoder().decode(MyProfileModel.self, from: result.data) {
+                        if let data = try? JSONDecoder().decode(ProfileModel.self, from: result.data) {
                             self.myEmail = data.email
                             self.sendChangePWEmail()
                         } else {

@@ -72,7 +72,7 @@ class LoginViewModel: ObservableObject {
             case .success(let result):
                 switch result.statusCode {
                 case 200:
-                    if let data = try? JSONDecoder().decode(MyProfileModel.self, from: result.data) {
+                    if let data = try? JSONDecoder().decode(ProfileModel.self, from: result.data) {
                         Account.setAccount(
                             id: data.name,
                             email: data.email,

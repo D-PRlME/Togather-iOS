@@ -48,7 +48,6 @@ struct PostForm: View {
                         .frame(width: 33, height: 33)
                         .padding(.horizontal, 4)
                         .overlay(Circle().stroke(lineWidth: 1).foregroundColor(.whiteElevated3))
-                    
                     Text(postData.users.user_name)
                         .foregroundColor(.black)
                         .font(.maintext2m)

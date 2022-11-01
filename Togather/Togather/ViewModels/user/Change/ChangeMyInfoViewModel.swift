@@ -5,12 +5,14 @@ import Alamofire
 
 class ChangeMyInfoViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
+    let imageClient = MoyaProvider<ImageClient>()
     
     @Published var name: String = Account.ID ?? ""
-    @Published var profileImageLink: String = Account.profileImagLink ?? ""
+    @Published var profileImageLink: String = Account.profileImageLink ?? ""
     @Published var introduce: String = ""
     @Published var positions: [String] = Account.positions ?? []
     @Published var showingAlert: Bool = false
+    @Published var image: UIImage? = UIImage()
     
     //"PM", "웹 프론트엔드", "백엔드", "안드로이드", "iOS", "디자인"
     //BACKEND, FRONTEND, IOS, DESIGNER, PM, ANDROID
@@ -23,6 +25,7 @@ class ChangeMyInfoViewModel: ObservableObject {
                 case 200:
                     if let data = try? JSONDecoder().decode(ProfileModel.self, from: result.data) {
                         self.introduce = data.introduce
+                        self.profileImageLink = data.profile_image_url
                         print("성공적으로 프로필을 가져옴")
                     } else {
                         print("⚠️getMyInfo docoder error")
@@ -44,6 +47,7 @@ class ChangeMyInfoViewModel: ObservableObject {
                 case 204:
                     Account.ID = self.name
                     Account.positions = self.positions
+                    Account.profileImageLink = self.profileImageLink
                     self.showingAlert = true
                     print("성공적으로 프로필을 수정함")
                 default:
@@ -54,56 +58,27 @@ class ChangeMyInfoViewModel: ObservableObject {
             }
         }
     }
-    /*
-    func updateProfileImage(_ image : UIImage){
-        
-        let imageData = image.jpegData(compressionQuality: 1)!
-        let url = ""
-        
-        upload(image: imageData, to: url)
-        
-    }//end of function
-    func upload(image: Data, to url: String) {
-        
-        let headers: HTTPHeaders = [
-            "Content-type": "multipart/form-data"
-        ]
-        AF.upload(multipartFormData: { multiPart in
-            for (key, value) in params {
-                if let temp = value as? String {
-                    multiPart.append(temp.data(using: .utf8)!, withName: key)
+    func updateProfileImage() {
+        print("작동: updateProfileImage")
+        imageClient.request(.postImage([image!.jpegData(compressionQuality: 0.0) ?? Data()])) { res in
+            switch res {
+            case .success(let result) :
+                switch result.statusCode {
+                case 201:
+                    if let data = try? JSONDecoder().decode(UploadImageModel.self, from: result.data) {
+                        Account.profileImageLink = data.images_url.first ?? ""
+                        self.profileImageLink = data.images_url.first ?? ""
+                        print("profile url:", self.profileImageLink)
+                        print("profile upload 성공")
+                    } else {
+                        print("⚠️image upload docoder error")
+                    }
+                default:
+                    print(result.statusCode)
                 }
-                if let temp = value as? Int {
-                    multiPart.append("\(temp)".data(using: .utf8)!, withName: key)
-                }
-                if let temp = value as? NSArray {
-                    temp.forEach({ element in
-                        let keyObj = key + "[]"
-                        if let string = element as? String {
-                            multiPart.append(string.data(using: .utf8)!, withName: keyObj)
-                        } else
-                        if let num = element as? Int {
-                            let value = "\(num)"
-                            multiPart.append(value.data(using: .utf8)!, withName: keyObj)
-                        }
-                    })
-                }
-            }
-            multiPart.append(image, withName: "newsletter_image", fileName: "\(self.tfTitle.text ?? "")_logo.png", mimeType: "image/jpeg")
-        }, to: url
-                  , headers: headers)
-        .uploadProgress(queue: .main, closure: { progress in
-            //Current upload progress of file
-            print("Upload Progress: \(progress.fractionCompleted)")
-        })
-        .responseJSON(completionHandler: { data in
-            switch data.result{
-            case .success(_):
-                    print("=== upload 성공 ===")
             case .failure(let error):
-                print(error.errorDescription ?? "error")
+                print("⛔️image upload Error: \(error.localizedDescription)")
             }
-        })
+        }
     }
-     */
 }

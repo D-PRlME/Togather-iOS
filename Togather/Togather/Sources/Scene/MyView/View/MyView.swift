@@ -23,7 +23,7 @@ struct MyView: View {
                         .frame(height: 28)
                     VStack {
                         HStack(spacing: 0) {
-                            KFImage.url(URL(string: Account.profileImagLink ?? ""))
+                            KFImage.url(URL(string: Account.profileImageLink ?? ""))
                                 .placeholder {
                                     Circle().fill(Color.whiteElevated3)
                                         .frame(width: 48, height: 48)

@@ -3,7 +3,7 @@ import Foundation
 import Moya
 
 enum ImageClient {
-    case postImage(_ image: Data)
+    case postImage(_ images: [Data])
 }
 
 extension ImageClient: TargetType {
@@ -27,14 +27,16 @@ extension ImageClient: TargetType {
 
     var task: Moya.Task {
         switch self {
-        case .postImage(let image):
+        case .postImage(let images):
             var multiformData = [MultipartFormData]()
-            multiformData.append(.init(
-                provider: .data(image),
-                name: "image",
-                fileName: ".jpg",
-                mimeType: "/jpg"
-            ))
+            for image in images {
+                multiformData.append(.init(
+                    provider: .data(image),
+                    name: "images",
+                    fileName: "images.jpg",
+                    mimeType: "images/jpg"
+                ))
+            }
             return .uploadMultipart(multiformData)
         }
     }

@@ -33,7 +33,7 @@ struct EditInfo: View {
                                 }
                         }
                         HStack(spacing: 12) {
-                            KFImage.url(URL(string: Account.profileImagLink ?? "이메일"))
+                            KFImage.url(URL(string: changeMyInfoVM.profileImageLink))
                                 .placeholder {
                                     Circle().fill(Color.secondary)
                                         .frame(width: 48, height: 48)
@@ -58,10 +58,12 @@ struct EditInfo: View {
                                     .cornerRadius(37)
                             }
                             .sheet(isPresented: $showImagePicker) {
-                                ImagePicker(image: $selectedImage)
+                                ImagePicker(image: $changeMyInfoVM.image)
                             }
-                            .onChange(of: selectedImage) { newValue in
-//                                changeMyInfoVM.
+                            .onChange(of: changeMyInfoVM.image ?? UIImage()) { newValue in
+                                changeMyInfoVM.image = newValue
+                                changeMyInfoVM.updateProfileImage()
+                                print("hello")
                             }
                             Spacer()
                         }
@@ -103,7 +105,6 @@ struct EditInfo: View {
                         //Introduce
                         ZStack(alignment: .topLeading) {
                             TextEditor(text: $changeMyInfoVM.introduce)
-//                                .scrollContentBackground(.hidden)
                                 .font(.custom("Pretendard-Medium", size: 20))
                                 .foregroundColor(.black)
                                 .padding(EdgeInsets(top: 12, leading: 10, bottom: 30, trailing: 10))

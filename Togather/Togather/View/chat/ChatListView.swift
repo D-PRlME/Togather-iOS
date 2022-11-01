@@ -1,6 +1,5 @@
 import SwiftUI
 import Kingfisher
-import Combine
 
 struct ChatListView: View {
     @State private var gotoChattingView: Bool = false

@@ -15,7 +15,6 @@ struct EditPostView: View {
     var body: some View {
         VStack(alignment: .leading) {
             //MARK: - 취소버튼
-
             HStack {
                 Spacer()
                 Image("CloseBtn")

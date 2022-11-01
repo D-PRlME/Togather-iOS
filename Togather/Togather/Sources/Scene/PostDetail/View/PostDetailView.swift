@@ -5,9 +5,8 @@ import Kingfisher
 struct PostDetail: View {
     
     @Binding var showModal: Bool
-    var postID: Int
-    
     @StateObject var postDetailViewModel = PostDetailViewModel()
+    let postID: Int
     
     var body: some View {
         NavigationView {
@@ -31,7 +30,8 @@ struct PostDetail: View {
                             title: postDetailViewModel.postDetail.title,
                             imageLink: postDetailViewModel.postDetail.user.profile_image_url,
                             userName: postDetailViewModel.postDetail.user.user_name,
-                            createdAt: postDetailViewModel.postDetail.created_at
+                            createdAt: postDetailViewModel.postDetail.created_at,
+                            userID: postDetailViewModel.postDetail.user.user_id
                         )
                         
                         Divider()

@@ -6,41 +6,45 @@ struct Developers: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    var developers: [String] = [
+    let developers: [String] = [
         "김성원",
         "조병진",
         "김상구",
         "김은빈",
         "홍승재",
         "정승훈",
-        "심미진"
+        "심미진",
+        "장지성"
     ]
-    var stack: [String] = [
+    let stack: [String] = [
         "백엔드",
         "iOS",
         "디자인",
         "백엔드",
         "iOS",
         "Android",
+        "웹 프론트엔드",
         "웹 프론트엔드"
     ]
-    var githubID: [String] = [
+    let githubID: [String] = [
         "lilseongwon",
         "BJCHO0501",
         "MONOTYPEEE",
         "rlaisqls",
         "HongSJae",
         "Tmdhoon2",
-        "azure-553"
+        "azure-553",
+        "jisoung"
     ]
-    var Image_url_Arr: [String] = [
+    let Image_url_Arr: [String] = [
         "https://avatars.githubusercontent.com/u/102791105?v=4",
         "https://avatars.githubusercontent.com/u/80248855?v=4",
         "https://avatars.githubusercontent.com/u/76112135?v=4",
         "https://avatars.githubusercontent.com/u/81006587?v=4",
         "https://avatars.githubusercontent.com/u/102791216?v=4",
         "https://avatars.githubusercontent.com/u/102812085?v=4",
-        "https://avatars.githubusercontent.com/u/80371353?v=4"
+        "https://avatars.githubusercontent.com/u/80371353?v=4",
+        "https://avatars.githubusercontent.com/u/101026873?v=4"
     ]
     
     let columns = [

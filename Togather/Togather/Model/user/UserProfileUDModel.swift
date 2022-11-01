@@ -27,16 +27,16 @@ struct Account {
         }
     }
     
-    static var _profileImagLink: String?
-    static var profileImagLink: String? {
+    static var _profileImageLink: String?
+    static var profileImageLink: String? {
         get {
-            _profileImagLink = UserDefaults.standard.string(forKey: "Account.User.ProfileImagLink")
-            return _profileImagLink
+            _profileImageLink = UserDefaults.standard.string(forKey: "Account.User.ProfileImagLink")
+            return _profileImageLink
         }
         
         set(newProfileImagLink) {
             UserDefaults.standard.set(newProfileImagLink, forKey: "Account.User.ProfileImagLink")
-            _profileImagLink = newProfileImagLink
+            _profileImageLink = newProfileImagLink
         }
     }
     
@@ -56,14 +56,14 @@ struct Account {
     static func deleteAccount() {
         self.ID = nil
         self.email = nil
-        self.profileImagLink = nil
+        self.profileImageLink = nil
         self.positions = nil
     }
     
     static func setAccount(id: String?, email: String?, profileImagLink: String?, positions: [String]?) {
         self.ID = id
         self.email = email
-        self.profileImagLink = profileImagLink
+        self.profileImageLink = profileImagLink
         self.positions = positions
     }
 }

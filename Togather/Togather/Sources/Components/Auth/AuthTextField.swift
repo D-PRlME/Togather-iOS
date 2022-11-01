@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct AuthTextField: View {
-    let placeholder: String
-    let isSecret: Bool
     @State private var isShow = true
     @Binding var text: String
-    var message: String
     @Binding var isError: Bool
+    let placeholder: String
+    let isSecret: Bool
+    let message: String
     
     init(
         placeholder: String,

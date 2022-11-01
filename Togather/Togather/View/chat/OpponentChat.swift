@@ -28,6 +28,7 @@ struct OpponentChat: View {
                     .padding(.bottom, 4)
                     .padding(.leading, 4)
                 Text(chatContent)
+                    .multilineTextAlignment(.leading)
                     .foregroundColor(.black)
                     .font(.custom("Pretendard-Medium", size: 18))
                     .padding(.horizontal, 16)

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SearchTagLabel: View {
-    var tag: String
+    let tag: String
     var body: some View {
         if tag != "" {
             Text(tag)

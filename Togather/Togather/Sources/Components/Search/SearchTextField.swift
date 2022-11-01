@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct SearchTextField: View {
-    var placeholder: String
+    let placeholder: String
     @Binding var text: String
-    var action: () -> Void
+    let action: () -> Void
     
     var body: some View {
         HStack {

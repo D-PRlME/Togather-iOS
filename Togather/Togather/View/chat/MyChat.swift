@@ -6,6 +6,7 @@ struct MyChat: View {
         HStack {
             Spacer()
             Text(content)
+                .multilineTextAlignment(.leading)
                 .foregroundColor(.black)
                 .font(.custom("Pretendard-Medium", size: 18))
                 .padding(.horizontal, 16)

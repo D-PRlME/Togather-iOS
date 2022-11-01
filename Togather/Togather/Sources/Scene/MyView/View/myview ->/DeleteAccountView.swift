@@ -85,7 +85,7 @@ struct DeleteAccount: View {
                 .padding(.horizontal, 16)
                 VStack {
                     HStack(spacing: 8) {
-                        KFImage.url(URL(string: Account.profileImagLink ?? ""))
+                        KFImage.url(URL(string: Account.profileImageLink ?? ""))
                             .placeholder {
                                 Circle().fill(Color.secondary)
                                     .frame(width: 48, height: 48)

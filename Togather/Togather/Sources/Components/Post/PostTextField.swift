@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PostTextField: View {
-    var placeholder: String
+    let placeholder: String
     @Binding var text: String
     
     var body: some View {

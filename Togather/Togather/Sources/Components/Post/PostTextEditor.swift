@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PostTextEditor: View {
     @Binding var text: String
-    var placeholder: String
+    let placeholder: String
     
     init(
         text: Binding<String>,

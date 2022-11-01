@@ -12,7 +12,8 @@ struct ChatListView: View {
         "김은빈",
         "홍승재",
         "정승훈",
-        "심미진"
+        "심미진",
+        "장지성"
     ]
     let lastChat: [String] = [
         "스프린트가 아닌 사이클링",
@@ -21,7 +22,8 @@ struct ChatListView: View {
         "난 백준 플레 ㅋ",
         "Hi! I'm studying SWIFT🔥",
         "Android is power",
-        "새우가 주연인 드라마는 대하드라마 엌ㅋㅋㅋㅋㅋㅋㅋㅋ"
+        "새우가 주연인 드라마는 대하드라마 엌ㅋㅋㅋㅋㅋㅋㅋㅋ",
+        "프론트 나보다 못하면 접자 들들들아~"
     ]
     let Image_url_Arr: [String] = [
         "https://avatars.githubusercontent.com/u/102791105?v=4",
@@ -30,7 +32,8 @@ struct ChatListView: View {
         "https://avatars.githubusercontent.com/u/81006587?v=4",
         "https://avatars.githubusercontent.com/u/102791216?v=4",
         "https://avatars.githubusercontent.com/u/102812085?v=4",
-        "https://avatars.githubusercontent.com/u/80371353?v=4"
+        "https://avatars.githubusercontent.com/u/80371353?v=4",
+        "https://avatars.githubusercontent.com/u/101026873?v=4"
     ]
     var body: some View {
         GeometryReader { proxy in

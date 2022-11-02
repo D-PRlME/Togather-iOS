@@ -11,6 +11,7 @@ struct MyView: View {
     @State private var GoDevelopers = false
     @State private var GoChangePassword = false
     @State private var GoLogout = false
+    @State private var profileImageLink = Account.profileImageLink ?? ""
     
     @StateObject var logoutVM = LogoutViewModel()
     
@@ -23,7 +24,7 @@ struct MyView: View {
                         .frame(height: 28)
                     VStack {
                         HStack(spacing: 0) {
-                            KFImage.url(URL(string: Account.profileImageLink ?? ""))
+                            KFImage.url(URL(string: profileImageLink))
                                 .placeholder {
                                     Circle().fill(Color.whiteElevated3)
                                         .frame(width: 48, height: 48)
@@ -128,6 +129,11 @@ struct MyView: View {
                 }
                 .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
                 .padding(.horizontal, 20)
+                .onChange(of: GoEditInfoModal) { newValue in
+                    if !newValue {
+                        profileImageLink = Account.profileImageLink ?? ""
+                    }
+                }
             }
         }
     }

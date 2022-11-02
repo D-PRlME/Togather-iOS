@@ -2,8 +2,10 @@ import SwiftUI
 import Kingfisher
 
 struct ChatListView: View {
+    @StateObject var chattingListViewModel = ChattingListViewModel()
     @State private var gotoChattingView: Bool = false
     @State private var i: Int = 0
+    /*
     let user: [String] = [
         "김성원",
         "조병진",
@@ -34,19 +36,20 @@ struct ChatListView: View {
         "https://avatars.githubusercontent.com/u/80371353?v=4",
         "https://avatars.githubusercontent.com/u/101026873?v=4"
     ]
+    */
     var body: some View {
         GeometryReader { proxy in
             ZStack {
                 ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(spacing: 0) {
                     ScrollView {
-                        ForEach(0..<user.count, id: \.self) { index in
+                        ForEach(0..<chattingListViewModel.chattingList.count, id: \.self) { index in
                             Button {
                                 gotoChattingView = true
                                 i = index
                             } label: {
                                 HStack(spacing: 0) {
-                                    KFImage.url(URL(string: Image_url_Arr[index]))
+                                    KFImage.url(URL(string: chattingListViewModel.chattingList[index].room_logo_image))
                                         .placeholder {
                                             Circle()
                                                 .fill(Color.secondary)
@@ -61,10 +64,10 @@ struct ChatListView: View {
                                         .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
                                         .padding(8)
                                     VStack(alignment: .leading, spacing: 0) {
-                                        Text(user[index])
+                                        Text(chattingListViewModel.chattingList[index].room_name)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Bold", size: 20))
-                                        Text(lastChat[index])
+                                        Text(chattingListViewModel.chattingList[index].last_chat.last_message)
                                             .foregroundColor(.black)
                                             .font(.custom("Pretendard-Medium", size: 18))
                                             .lineLimit(1)
@@ -84,6 +87,9 @@ struct ChatListView: View {
                 }
                 .padding(.top, 6)
             }
+        }
+        .onAppear() {
+            chattingListViewModel.fetchChatList()
         }
     }
 }

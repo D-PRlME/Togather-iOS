@@ -66,7 +66,6 @@ class ChangeMyInfoViewModel: ObservableObject {
                 switch result.statusCode {
                 case 201:
                     if let data = try? JSONDecoder().decode(UploadImageModel.self, from: result.data) {
-                        Account.profileImageLink = data.images_url.first ?? ""
                         self.profileImageLink = data.images_url.first ?? ""
                         print("profile url:", self.profileImageLink)
                         print("profile upload 성공")

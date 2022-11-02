@@ -115,6 +115,8 @@
 		90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6EB28BF7C8E00B653C3 /* SearchView.swift */; };
 		90D9B8292910DBE800F381F9 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9B8282910DBE800F381F9 /* UserProfileView.swift */; };
 		90D9B82B2910E45300F381F9 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9B82A2910E45300F381F9 /* ProfileModel.swift */; };
+		90D9B82D2911311700F381F9 /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9B82C2911311700F381F9 /* ChatClient.swift */; };
+		90D9B82F2911340E00F381F9 /* ChattingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9B82E2911340E00F381F9 /* ChattingListViewModel.swift */; };
 		90DDB7872906CE140094DE71 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB7862906CE140094DE71 /* ChatListView.swift */; };
 		90DDB7892907807F0094DE71 /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB7882907807F0094DE71 /* ChattingView.swift */; };
 		90DDB78B29079DA90094DE71 /* OpponentChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB78A29079DA90094DE71 /* OpponentChat.swift */; };
@@ -229,6 +231,8 @@
 		90D1C70028BF9BF000B653C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90D9B8282910DBE800F381F9 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		90D9B82A2910E45300F381F9 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		90D9B82C2911311700F381F9 /* ChatClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
+		90D9B82E2911340E00F381F9 /* ChattingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListViewModel.swift; sourceTree = "<group>"; };
 		90DDB7862906CE140094DE71 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		90DDB7882907807F0094DE71 /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		90DDB78A29079DA90094DE71 /* OpponentChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentChat.swift; sourceTree = "<group>"; };
@@ -719,6 +723,7 @@
 			children = (
 				4BC8992D28DA8D0700189553 /* UserClient.swift */,
 				4B7F0AA928BEE25900BBA52D /* PostClient.swift */,
+				90D9B82C2911311700F381F9 /* ChatClient.swift */,
 				4B5FE3BF28E4865500DE6184 /* SocketClient.swift */,
 				909118CD290A3D7D00C80B42 /* ImageClient.swift */,
 			);
@@ -920,6 +925,7 @@
 		909118C5290A14BA00C80B42 /* chat */ = {
 			isa = PBXGroup;
 			children = (
+				90D9B82E2911340E00F381F9 /* ChattingListViewModel.swift */,
 			);
 			path = chat;
 			sourceTree = "<group>";
@@ -1130,6 +1136,7 @@
 				4B4C6BBF28FBC46A007433C2 /* AuthTextField.swift in Sources */,
 				4B4C6BCA28FCD239007433C2 /* Font.swift in Sources */,
 				90DDB78E2907B0F10094DE71 /* MyChat.swift in Sources */,
+				90D9B82F2911340E00F381F9 /* ChattingListViewModel.swift in Sources */,
 				90A05CBD28D304220031E71B /* UserPostModel.swift in Sources */,
 				90C50A5728CCBE8C007EA639 /* PostDetailView.swift in Sources */,
 				909118CA290A187C00C80B42 /* ImagePicker.swift in Sources */,
@@ -1216,6 +1223,7 @@
 				4B4C6BB328F44C85007433C2 /* ChangePasswordEmailView.swift in Sources */,
 				9001F5FC28D3931700EC1F23 /* HomeViewModel.swift in Sources */,
 				4BC8992C28DA8CD800189553 /* SignUpView.swift in Sources */,
+				90D9B82D2911311700F381F9 /* ChatClient.swift in Sources */,
 				90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */,
 				4B4C6B9028EE8635007433C2 /* EditInfoView.swift in Sources */,
 				4B4C6BF728FE949A007433C2 /* EmailVerifyTextField.swift in Sources */,

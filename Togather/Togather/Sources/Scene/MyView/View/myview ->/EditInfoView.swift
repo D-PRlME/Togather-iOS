@@ -11,7 +11,6 @@ struct EditInfo: View {
     @State private var alertMessage: String = ""
     @State private var showAlert: Bool = false
     @State private var showImagePicker: Bool = false
-    @State private var selectedImage: UIImage?
     
     let introduceTextLimit: Int = 100
     let positionList: [String] = ["PM", "웹 프론트엔드", "백엔드", "안드로이드", "iOS", "디자인"]
@@ -63,7 +62,6 @@ struct EditInfo: View {
                             .onChange(of: changeMyInfoVM.image ?? UIImage()) { newValue in
                                 changeMyInfoVM.image = newValue
                                 changeMyInfoVM.updateProfileImage()
-                                print("hello")
                             }
                             Spacer()
                         }

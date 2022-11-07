@@ -28,12 +28,12 @@ struct AuthButton: View {
                     if isLoading {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                            .padding(.vertical, 13)
+                            .padding(.vertical, 14)
                     } else {
                         Text(text)
-                            .font(.custom("Pretendard-Bold", size: 18))
-                            .foregroundColor(.black)
-                            .padding(.vertical, 12)
+                            .font(.maintext1b)
+                            .foregroundColor(.text)
+                            .padding(.vertical, 13)
                     }
                 }
                 .background(isDisable ? Color.whiteElevated1 : Color.main)
@@ -52,6 +52,7 @@ struct AuthButton_Previews: PreviewProvider {
     static var previews: some View {
         AuthButton(
             isDisable: .constant(false),
+            isLoading: .constant(false),
             text: "로그인",
             action: { }
         )

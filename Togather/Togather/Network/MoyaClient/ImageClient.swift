@@ -8,7 +8,7 @@ enum ImageClient {
 
 extension ImageClient: TargetType {
     var baseURL: URL {
-        return URL(string: "http://3.35.113.190:8080/images")!
+        return URL(string: "http://52.55.240.35:8080/images")!
     }
     
     var path: String {

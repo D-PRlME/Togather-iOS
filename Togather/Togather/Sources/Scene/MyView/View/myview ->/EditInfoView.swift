@@ -58,9 +58,6 @@ struct EditInfo: View {
                             .sheet(isPresented: $showImagePicker) {
                                 ImagePicker(image: $changeMyInfoVM.image)
                             }
-                            .onChange(of: selectedImage) { newValue in
-//                                changeMyInfoVM.
-                            }
                             Spacer()
                         }
                         .padding(.top, 26)

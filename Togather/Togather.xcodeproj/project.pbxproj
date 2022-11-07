@@ -20,6 +20,7 @@
 		4B25488A291879CD00E62EA7 /* EditInfoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B254889291879CD00E62EA7 /* EditInfoTextField.swift */; };
 		4B25488C29187A2400E62EA7 /* EditInfoTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25488B29187A2400E62EA7 /* EditInfoTextEditor.swift */; };
 		4B2548922918F39400E62EA7 /* DeleteAcountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2548912918F39400E62EA7 /* DeleteAcountButton.swift */; };
+		4B2548972919117500E62EA7 /* ChattingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2548962919117500E62EA7 /* ChattingListViewModel.swift */; };
 		4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */; };
 		4B320D8728E11A2800BCC086 /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */; };
 		4B320D8E28E1293500BCC086 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8D28E1293500BCC086 /* TagListView.swift */; };
@@ -143,6 +144,7 @@
 		4B254889291879CD00E62EA7 /* EditInfoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoTextField.swift; sourceTree = "<group>"; };
 		4B25488B29187A2400E62EA7 /* EditInfoTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoTextEditor.swift; sourceTree = "<group>"; };
 		4B2548912918F39400E62EA7 /* DeleteAcountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAcountButton.swift; sourceTree = "<group>"; };
+		4B2548962919117500E62EA7 /* ChattingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListViewModel.swift; sourceTree = "<group>"; };
 		4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUDModel.swift; sourceTree = "<group>"; };
 		4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
 		4B320D8D28E1293500BCC086 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 		4B6F48E12904FC41007B1465 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4BC8993728DC3EFA00189553 /* Preview Content */,
 				90D1C70028BF9BF000B653C3 /* Info.plist */,
 			);
 			path = SupportingFiles;
@@ -866,6 +869,7 @@
 			children = (
 				4BC8990428DA8CA000189553 /* user */,
 				900990F928D0B36300FD9462 /* post */,
+				4B2548962919117500E62EA7 /* ChattingListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -899,7 +903,6 @@
 			children = (
 				4B6F48E22904FC83007B1465 /* Network */,
 				4B6F48E12904FC41007B1465 /* SupportingFiles */,
-				4BC8993728DC3EFA00189553 /* Preview Content */,
 				4B4C6BB528FBBF64007433C2 /* Resources */,
 				4B4C6BB428FBBF24007433C2 /* Sources */,
 				4BE919DF28D071AB0002A268 /* ViewModels */,
@@ -913,8 +916,8 @@
 		908ED77228CB787900763AC9 /* myview -> */ = {
 			isa = PBXGroup;
 			children = (
-				4B4C6B8F28EE8635007433C2 /* EditInfoView.swift */,
 				909118C9290A187B00C80B42 /* ImagePicker.swift */,
+				4B4C6B8F28EE8635007433C2 /* EditInfoView.swift */,
 				90C50A5228CC8254007EA639 /* DeleteAccountView.swift */,
 				900990A728CDDBA300FD9462 /* MyPostView.swift */,
 				906908AD28CDC49C00BBF0B7 /* DevelopersView.swift */,
@@ -1144,6 +1147,7 @@
 				4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */,
 				4B1D95C1290FBF23001FAF2E /* ChangePasswordTitle.swift in Sources */,
 				4BA25B272907930A00D065BA /* PostForm.swift in Sources */,
+				4B2548972919117500E62EA7 /* ChattingListViewModel.swift in Sources */,
 				4B14A87C290CF4D90097E838 /* SearchTagLabel.swift in Sources */,
 				4B202AD0290F63800076E26C /* MyViewButton.swift in Sources */,
 				4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */,
@@ -1351,7 +1355,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Togather/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Togather/SupportingFiles/Preview Content\"";
 				DEVELOPMENT_TEAM = 63UM6H56P2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1386,7 +1390,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Togather/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Togather/SupportingFiles/Preview Content\"";
 				DEVELOPMENT_TEAM = 63UM6H56P2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

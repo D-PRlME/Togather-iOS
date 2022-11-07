@@ -8,9 +8,11 @@ struct EnterNewPassword: View {
         GeometryReader { proxy in
             VStack(alignment: .leading, spacing: 0) {
                 NavigationLink(destination: ChangePasswordSuccess(), tag: 1, selection: $changePWToEmailVM.goSucced) { EmptyView() }
+                
+                Spacer()
+                    .frame(height: proxy.size.height / 6)
                 Text("비밀번호 변경")
                     .font(.custom("Pretendard-Bold", size: 32))
-                    .padding(.top, proxy.size.height / 6)
                     .padding(.bottom, 12)
                 
                 Text("바꿀 새 비밀번호를 입력해 주세요")

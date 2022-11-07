@@ -13,7 +13,13 @@
 		4B14A865290A1CD50097E838 /* PostInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A864290A1CD50097E838 /* PostInfoForm.swift */; };
 		4B14A879290CEF540097E838 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A878290CEF540097E838 /* SearchTextField.swift */; };
 		4B14A87C290CF4D90097E838 /* SearchTagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A87B290CF4D90097E838 /* SearchTagLabel.swift */; };
+		4B1D95C1290FBF23001FAF2E /* ChangePasswordTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1D95C0290FBF23001FAF2E /* ChangePasswordTitle.swift */; };
+		4B1D95C3290FDE96001FAF2E /* ChangePasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1D95C2290FDE96001FAF2E /* ChangePasswordTextField.swift */; };
+		4B1D95C62910E45D001FAF2E /* ChangePasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1D95C52910E45D001FAF2E /* ChangePasswordButton.swift */; };
 		4B202AD0290F63800076E26C /* MyViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B202ACF290F63800076E26C /* MyViewButton.swift */; };
+		4B25488A291879CD00E62EA7 /* EditInfoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B254889291879CD00E62EA7 /* EditInfoTextField.swift */; };
+		4B25488C29187A2400E62EA7 /* EditInfoTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25488B29187A2400E62EA7 /* EditInfoTextEditor.swift */; };
+		4B2548922918F39400E62EA7 /* DeleteAcountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2548912918F39400E62EA7 /* DeleteAcountButton.swift */; };
 		4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */; };
 		4B320D8728E11A2800BCC086 /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */; };
 		4B320D8E28E1293500BCC086 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8D28E1293500BCC086 /* TagListView.swift */; };
@@ -44,20 +50,15 @@
 		4BA25B2D2907FA6300D065BA /* TagSelectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA25B2C2907FA6300D065BA /* TagSelectList.swift */; };
 		4BC8991828DA8CA000189553 /* TokenAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */; };
 		4BC8991A28DA8CA000189553 /* ChangeMyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8990928DA8CA000189553 /* ChangeMyInfoViewModel.swift */; };
-		4BC8991D28DA8CA000189553 /* FindPasswordEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8990C28DA8CA000189553 /* FindPasswordEmailViewModel.swift */; };
 		4BC8991E28DA8CA000189553 /* QuitAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8990D28DA8CA000189553 /* QuitAccountViewModel.swift */; };
 		4BC8991F28DA8CA000189553 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8990F28DA8CA000189553 /* SignUpViewModel.swift */; };
 		4BC8992028DA8CA000189553 /* SignUpValueCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8991028DA8CA000189553 /* SignUpValueCheckViewModel.swift */; };
-		4BC8992328DA8CA000189553 /* EmailDuplicateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8991528DA8CA000189553 /* EmailDuplicateViewModel.swift */; };
-		4BC8992428DA8CA000189553 /* SendEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8991628DA8CA000189553 /* SendEmailViewModel.swift */; };
-		4BC8992528DA8CA000189553 /* EmailVerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8991728DA8CA000189553 /* EmailVerifyViewModel.swift */; };
 		4BC8992A28DA8CD800189553 /* SignUpEmailVerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8992728DA8CD800189553 /* SignUpEmailVerifyView.swift */; };
 		4BC8992B28DA8CD800189553 /* signUpSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8992828DA8CD800189553 /* signUpSuccessView.swift */; };
 		4BC8992C28DA8CD800189553 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8992928DA8CD800189553 /* SignUpView.swift */; };
 		4BC8992E28DA8D0700189553 /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8992D28DA8D0700189553 /* UserClient.swift */; };
 		4BC8993128DA973000189553 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8993028DA973000189553 /* MoyaLoggerPlugin.swift */; };
 		4BC8993628DC3E7400189553 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC8993528DC3E7400189553 /* Preview Assets.xcassets */; };
-		4BC89A2C28DDAF1800189553 /* GetMyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC89A2A28DDAF1800189553 /* GetMyProfileViewModel.swift */; };
 		4BC89A2D28DDAF1800189553 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC89A2B28DDAF1800189553 /* UserProfileViewModel.swift */; };
 		4BC89A3028DDAF2600189553 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC89A2E28DDAF2600189553 /* LoginViewModel.swift */; };
 		4BC89A3328DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC89A3228DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift */; };
@@ -116,7 +117,6 @@
 		90D9B8292910DBE800F381F9 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9B8282910DBE800F381F9 /* UserProfileView.swift */; };
 		90D9B82B2910E45300F381F9 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9B82A2910E45300F381F9 /* ProfileModel.swift */; };
 		90D9B82D2911311700F381F9 /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9B82C2911311700F381F9 /* ChatClient.swift */; };
-		90D9B82F2911340E00F381F9 /* ChattingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9B82E2911340E00F381F9 /* ChattingListViewModel.swift */; };
 		90DDB7872906CE140094DE71 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB7862906CE140094DE71 /* ChatListView.swift */; };
 		90DDB7892907807F0094DE71 /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB7882907807F0094DE71 /* ChattingView.swift */; };
 		90DDB78B29079DA90094DE71 /* OpponentChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB78A29079DA90094DE71 /* OpponentChat.swift */; };
@@ -136,7 +136,13 @@
 		4B14A864290A1CD50097E838 /* PostInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfoForm.swift; sourceTree = "<group>"; };
 		4B14A878290CEF540097E838 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		4B14A87B290CF4D90097E838 /* SearchTagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagLabel.swift; sourceTree = "<group>"; };
+		4B1D95C0290FBF23001FAF2E /* ChangePasswordTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordTitle.swift; sourceTree = "<group>"; };
+		4B1D95C2290FDE96001FAF2E /* ChangePasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordTextField.swift; sourceTree = "<group>"; };
+		4B1D95C52910E45D001FAF2E /* ChangePasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordButton.swift; sourceTree = "<group>"; };
 		4B202ACF290F63800076E26C /* MyViewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewButton.swift; sourceTree = "<group>"; };
+		4B254889291879CD00E62EA7 /* EditInfoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoTextField.swift; sourceTree = "<group>"; };
+		4B25488B29187A2400E62EA7 /* EditInfoTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoTextEditor.swift; sourceTree = "<group>"; };
+		4B2548912918F39400E62EA7 /* DeleteAcountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAcountButton.swift; sourceTree = "<group>"; };
 		4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUDModel.swift; sourceTree = "<group>"; };
 		4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
 		4B320D8D28E1293500BCC086 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
@@ -167,20 +173,15 @@
 		4BA25B2C2907FA6300D065BA /* TagSelectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSelectList.swift; sourceTree = "<group>"; };
 		4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAuthViewModel.swift; sourceTree = "<group>"; };
 		4BC8990928DA8CA000189553 /* ChangeMyInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeMyInfoViewModel.swift; sourceTree = "<group>"; };
-		4BC8990C28DA8CA000189553 /* FindPasswordEmailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordEmailViewModel.swift; sourceTree = "<group>"; };
 		4BC8990D28DA8CA000189553 /* QuitAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuitAccountViewModel.swift; sourceTree = "<group>"; };
 		4BC8990F28DA8CA000189553 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		4BC8991028DA8CA000189553 /* SignUpValueCheckViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpValueCheckViewModel.swift; sourceTree = "<group>"; };
-		4BC8991528DA8CA000189553 /* EmailDuplicateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailDuplicateViewModel.swift; sourceTree = "<group>"; };
-		4BC8991628DA8CA000189553 /* SendEmailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailViewModel.swift; sourceTree = "<group>"; };
-		4BC8991728DA8CA000189553 /* EmailVerifyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerifyViewModel.swift; sourceTree = "<group>"; };
 		4BC8992728DA8CD800189553 /* SignUpEmailVerifyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpEmailVerifyView.swift; sourceTree = "<group>"; };
 		4BC8992828DA8CD800189553 /* signUpSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpSuccessView.swift; sourceTree = "<group>"; };
 		4BC8992928DA8CD800189553 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4BC8992D28DA8D0700189553 /* UserClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
 		4BC8993028DA973000189553 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
 		4BC8993528DC3E7400189553 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4BC89A2A28DDAF1800189553 /* GetMyProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMyProfileViewModel.swift; sourceTree = "<group>"; };
 		4BC89A2B28DDAF1800189553 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		4BC89A2E28DDAF2600189553 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		4BC89A3228DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordToEmailViewModel.swift; sourceTree = "<group>"; };
@@ -232,7 +233,6 @@
 		90D9B8282910DBE800F381F9 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		90D9B82A2910E45300F381F9 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		90D9B82C2911311700F381F9 /* ChatClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
-		90D9B82E2911340E00F381F9 /* ChattingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListViewModel.swift; sourceTree = "<group>"; };
 		90DDB7862906CE140094DE71 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		90DDB7882907807F0094DE71 /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		90DDB78A29079DA90094DE71 /* OpponentChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentChat.swift; sourceTree = "<group>"; };
@@ -437,6 +437,16 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		4B1D95BF290FBEF2001FAF2E /* ChagePassword */ = {
+			isa = PBXGroup;
+			children = (
+				4B1D95C0290FBF23001FAF2E /* ChangePasswordTitle.swift */,
+				4B1D95C2290FDE96001FAF2E /* ChangePasswordTextField.swift */,
+				4B1D95C52910E45D001FAF2E /* ChangePasswordButton.swift */,
+			);
+			path = ChagePassword;
+			sourceTree = "<group>";
+		};
 		4B202ACD290F63430076E26C /* MyView */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +459,9 @@
 		4B202ACE290F636D0076E26C /* MyView */ = {
 			isa = PBXGroup;
 			children = (
+				4B25488E2918F24D00E62EA7 /* DeleteAccount */,
+				4B254888291879A900E62EA7 /* EditInfo */,
+				4B1D95BF290FBEF2001FAF2E /* ChagePassword */,
 				4B202ACF290F63800076E26C /* MyViewButton.swift */,
 			);
 			path = MyView;
@@ -466,11 +479,31 @@
 		4B202AD2290F65490076E26C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4B2548942918F96200E62EA7 /* Logout */,
+				4B2548932918F95900E62EA7 /* QuitAccount */,
+				4BC8990828DA8CA000189553 /* EditInfo */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		4B320D8428E0295300BCC086 /* QuitAccount */ = {
+		4B254888291879A900E62EA7 /* EditInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4B254889291879CD00E62EA7 /* EditInfoTextField.swift */,
+				4B25488B29187A2400E62EA7 /* EditInfoTextEditor.swift */,
+			);
+			path = EditInfo;
+			sourceTree = "<group>";
+		};
+		4B25488E2918F24D00E62EA7 /* DeleteAccount */ = {
+			isa = PBXGroup;
+			children = (
+				4B2548912918F39400E62EA7 /* DeleteAcountButton.swift */,
+			);
+			path = DeleteAccount;
+			sourceTree = "<group>";
+		};
+		4B2548932918F95900E62EA7 /* QuitAccount */ = {
 			isa = PBXGroup;
 			children = (
 				4BC8990D28DA8CA000189553 /* QuitAccountViewModel.swift */,
@@ -478,21 +511,12 @@
 			path = QuitAccount;
 			sourceTree = "<group>";
 		};
-		4B320D8928E1288500BCC086 /* Logout */ = {
+		4B2548942918F96200E62EA7 /* Logout */ = {
 			isa = PBXGroup;
 			children = (
 				4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */,
 			);
 			path = Logout;
-			sourceTree = "<group>";
-		};
-		4B320D8A28E128B700BCC086 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				4BC89A2A28DDAF1800189553 /* GetMyProfileViewModel.swift */,
-				4BC89A2B28DDAF1800189553 /* UserProfileViewModel.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 		4B4C6BAD28F2E3C1007433C2 /* Extension */ = {
@@ -793,42 +817,19 @@
 		4BC8990428DA8CA000189553 /* user */ = {
 			isa = PBXGroup;
 			children = (
-				4BC8990C28DA8CA000189553 /* FindPasswordEmailViewModel.swift */,
-				4B320D8928E1288500BCC086 /* Logout */,
-				4B320D8428E0295300BCC086 /* QuitAccount */,
-				4BC8991428DA8CA000189553 /* Email */,
-				4BC8990828DA8CA000189553 /* Change */,
-				4BC8990528DA8CA000189553 /* Token */,
-				4B320D8A28E128B700BCC086 /* Profile */,
+				4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */,
+				4BC89A2B28DDAF1800189553 /* UserProfileViewModel.swift */,
+				4BC89A3228DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
 		};
-		4BC8990528DA8CA000189553 /* Token */ = {
+		4BC8990828DA8CA000189553 /* EditInfo */ = {
 			isa = PBXGroup;
 			children = (
-				4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */,
-			);
-			path = Token;
-			sourceTree = "<group>";
-		};
-		4BC8990828DA8CA000189553 /* Change */ = {
-			isa = PBXGroup;
-			children = (
-				4BC89A3228DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift */,
 				4BC8990928DA8CA000189553 /* ChangeMyInfoViewModel.swift */,
 			);
-			path = Change;
-			sourceTree = "<group>";
-		};
-		4BC8991428DA8CA000189553 /* Email */ = {
-			isa = PBXGroup;
-			children = (
-				4BC8991528DA8CA000189553 /* EmailDuplicateViewModel.swift */,
-				4BC8991628DA8CA000189553 /* SendEmailViewModel.swift */,
-				4BC8991728DA8CA000189553 /* EmailVerifyViewModel.swift */,
-			);
-			path = Email;
+			path = EditInfo;
 			sourceTree = "<group>";
 		};
 		4BC8992F28DA96F300189553 /* Plugin */ = {
@@ -863,7 +864,6 @@
 		4BE919DF28D071AB0002A268 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				909118C5290A14BA00C80B42 /* chat */,
 				4BC8990428DA8CA000189553 /* user */,
 				900990F928D0B36300FD9462 /* post */,
 			);
@@ -920,14 +920,6 @@
 				906908AD28CDC49C00BBF0B7 /* DevelopersView.swift */,
 			);
 			path = "myview ->";
-			sourceTree = "<group>";
-		};
-		909118C5290A14BA00C80B42 /* chat */ = {
-			isa = PBXGroup;
-			children = (
-				90D9B82E2911340E00F381F9 /* ChattingListViewModel.swift */,
-			);
-			path = chat;
 			sourceTree = "<group>";
 		};
 		909118C6290A14DC00C80B42 /* chat */ = {
@@ -1136,14 +1128,12 @@
 				4B4C6BBF28FBC46A007433C2 /* AuthTextField.swift in Sources */,
 				4B4C6BCA28FCD239007433C2 /* Font.swift in Sources */,
 				90DDB78E2907B0F10094DE71 /* MyChat.swift in Sources */,
-				90D9B82F2911340E00F381F9 /* ChattingListViewModel.swift in Sources */,
 				90A05CBD28D304220031E71B /* UserPostModel.swift in Sources */,
 				90C50A5728CCBE8C007EA639 /* PostDetailView.swift in Sources */,
 				909118CA290A187C00C80B42 /* ImagePicker.swift in Sources */,
 				4B4C6BDE28FE1881007433C2 /* LoginImageButton.swift in Sources */,
 				4B4C6BC428FC3B2E007433C2 /* Color.swift in Sources */,
 				4B5FE3BE28E4862000DE6184 /* SocketViewModel.swift in Sources */,
-				4BC8992528DA8CA000189553 /* EmailVerifyViewModel.swift in Sources */,
 				900990EF28D04EE700FD9462 /* MyPostModel.swift in Sources */,
 				4B4C6BD428FD3424007433C2 /* LoginTextField.swift in Sources */,
 				4B4C6BEB28FE486C007433C2 /* SignUpTextField.swift in Sources */,
@@ -1152,6 +1142,7 @@
 				4BC89A3028DDAF2600189553 /* LoginViewModel.swift in Sources */,
 				4BA25B2D2907FA6300D065BA /* TagSelectList.swift in Sources */,
 				4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */,
+				4B1D95C1290FBF23001FAF2E /* ChangePasswordTitle.swift in Sources */,
 				4BA25B272907930A00D065BA /* PostForm.swift in Sources */,
 				4B14A87C290CF4D90097E838 /* SearchTagLabel.swift in Sources */,
 				4B202AD0290F63800076E26C /* MyViewButton.swift in Sources */,
@@ -1164,7 +1155,6 @@
 				4BC89A2D28DDAF1800189553 /* UserProfileViewModel.swift in Sources */,
 				4BE919D728CF678A0002A268 /* ErrorModel.swift in Sources */,
 				900990F128D0586C00FD9462 /* PostDetailModel.swift in Sources */,
-				4BC8992428DA8CA000189553 /* SendEmailViewModel.swift in Sources */,
 				90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */,
 				909118D7290EB23300C80B42 /* TabBarItem.swift in Sources */,
 				90EC086428DA9FDD00E34BCE /* EditPostView.swift in Sources */,
@@ -1186,10 +1176,8 @@
 				4B4C6BC228FBD30E007433C2 /* AuthButton.swift in Sources */,
 				909118D9290EB94300C80B42 /* SearchModalButton.swift in Sources */,
 				4B4C6BDC28FE160C007433C2 /* LoginNavigationButton.swift in Sources */,
-				4BC8992328DA8CA000189553 /* EmailDuplicateViewModel.swift in Sources */,
 				90AFD8DE28EC40E600E18B12 /* BackBtn.swift in Sources */,
 				4B14A865290A1CD50097E838 /* PostInfoForm.swift in Sources */,
-				4BC89A2C28DDAF1800189553 /* GetMyProfileViewModel.swift in Sources */,
 				4BC8991F28DA8CA000189553 /* SignUpViewModel.swift in Sources */,
 				4B320D8728E11A2800BCC086 /* LogoutViewModel.swift in Sources */,
 				4BC8991828DA8CA000189553 /* TokenAuthViewModel.swift in Sources */,
@@ -1199,6 +1187,7 @@
 				90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */,
 				907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */,
 				4BC8992B28DA8CD800189553 /* signUpSuccessView.swift in Sources */,
+				4B2548922918F39400E62EA7 /* DeleteAcountButton.swift in Sources */,
 				4B4C6BAF28F2E407007433C2 /* String+PositionTypeChange.swift in Sources */,
 				4B320D8E28E1293500BCC086 /* TagListView.swift in Sources */,
 				909118C8290A14FA00C80B42 /* ChatListModel.swift in Sources */,
@@ -1206,9 +1195,9 @@
 				4BE919D428CF65880002A268 /* TokenModel.swift in Sources */,
 				4B5FE3B828E44A9700DE6184 /* DumyData.swift in Sources */,
 				4BE919CC28CEF0C40002A268 /* ChangePasswordVerifyView.swift in Sources */,
+				4B1D95C62910E45D001FAF2E /* ChangePasswordButton.swift in Sources */,
 				4B320D9028E147C200BCC086 /* TagViewModel.swift in Sources */,
 				90DDB7872906CE140094DE71 /* ChatListView.swift in Sources */,
-				4BC8991D28DA8CA000189553 /* FindPasswordEmailViewModel.swift in Sources */,
 				4BC89A3328DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift in Sources */,
 				4B14A850290934A30097E838 /* PostTextField.swift in Sources */,
 				4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */,
@@ -1225,8 +1214,11 @@
 				4BC8992C28DA8CD800189553 /* SignUpView.swift in Sources */,
 				90D9B82D2911311700F381F9 /* ChatClient.swift in Sources */,
 				90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */,
+				4B25488C29187A2400E62EA7 /* EditInfoTextEditor.swift in Sources */,
 				4B4C6B9028EE8635007433C2 /* EditInfoView.swift in Sources */,
+				4B1D95C3290FDE96001FAF2E /* ChangePasswordTextField.swift in Sources */,
 				4B4C6BF728FE949A007433C2 /* EmailVerifyTextField.swift in Sources */,
+				4B25488A291879CD00E62EA7 /* EditInfoTextField.swift in Sources */,
 				4B5FE3C028E4865500DE6184 /* SocketClient.swift in Sources */,
 				907EF1E028BBBA7E008A7562 /* DrawApp.swift in Sources */,
 				90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */,

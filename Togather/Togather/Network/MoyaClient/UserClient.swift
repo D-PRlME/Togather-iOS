@@ -29,7 +29,7 @@ enum UserService {
 
 extension UserService: TargetType {
     var baseURL: URL {
-        return URL(string: "http://3.35.113.190:8080/users")!
+        return URL(string: "http://52.55.240.35:8080/users")!
     }
     
     var path: String {

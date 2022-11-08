@@ -41,25 +41,19 @@ struct EditInfo: View {
                                 .clipShape(Circle())
                                 .frame(width: 48, height: 48)
                                 .overlay(Circle().stroke().foregroundColor(.whiteElevated3))
-                            Button  {
-                                self.showImagePicker.toggle()
-                            } label: {
-                                Text("이미지 변경")
-                                    .foregroundColor(.black)
-                                    .font(.custom("Pretendard-Bold", size: 18))
-                                    .padding(.horizontal, 16)
-                                    .padding(.vertical, 8)
-                                    .background(Color(red: 0.882, green: 0.678, blue: 0.004))
-                                    .cornerRadius(37)
-                                    .padding(2)
-                                    .background(Color("YellowStroke"))
-                                    .cornerRadius(37)
-                            }
+                            
+                            PostButton(
+                                title: "이미지 변경",
+                                backgroundColor: .main,
+                                cornerColor: .mainDarken,
+                                action: {
+                                    self.showImagePicker.toggle()
+                                }
+                            )
                             .sheet(isPresented: $showImagePicker) {
                                 ImagePicker(image: $changeMyInfoVM.image)
                             }
-                            .onChange(of: changeMyInfoVM.image ?? UIImage()) { newValue in
-                                changeMyInfoVM.image = newValue
+                            .onChange(of: changeMyInfoVM.image) { _ in
                                 changeMyInfoVM.updateProfileImage()
                             }
                             Spacer()
@@ -94,48 +88,10 @@ struct EditInfo: View {
                     
                         
                         //Introduce
-                        ZStack(alignment: .topLeading) {
-                            TextEditor(text: $changeMyInfoVM.introduce)
-//                                .scrollContentBackground(.hidden)
-                                .font(.custom("Pretendard-Medium", size: 20))
-                                .foregroundColor(.black)
-                                .padding(EdgeInsets(top: 12, leading: 10, bottom: 30, trailing: 10))
-                                .background(Color(red: 0.97, green: 0.97, blue: 0.97))
-                                .cornerRadius(5)
-                                .padding(1)
-                                .background(Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
-                                .cornerRadius(6)
-                            
-                            VStack {
-                                HStack {
-                                    if(changeMyInfoVM.introduce.count <= 0) {
-                                        Text("소개")
-                                            .font(.custom("Pretendard-Medium", size: 20))
-                                            .foregroundColor(Color(red: 0.75, green: 0.75, blue: 0.75))
-                                            .padding(.leading, 15)
-                                            .padding(.top, 20)
-                                    } //플레이스 홀더
-                                    Spacer()
-                                }
-                                
-                                Spacer()
-                                
-                                HStack {
-                                    Spacer()
-                                    
-                                    Text("\(changeMyInfoVM.introduce.count)/\(introduceTextLimit)")
-                                        .font(.custom("Pretendard-Medium", size: 20))
-                                        .foregroundColor(changeMyInfoVM.introduce.count < introduceTextLimit ? Color(red: 0.75, green: 0.75, blue: 0.75) : .red)
-                                        .padding(.trailing, 10)
-                                        .padding(.bottom, 5)
-                                }
-                            }
-                        }
-                        .onChange(of: changeMyInfoVM.introduce) { newValue in
-                            if(newValue.count > introduceTextLimit) {
-                                changeMyInfoVM.introduce.removeLast()
-                            }
-                        }
+                        EditInfoTextEditor(
+                            text: $changeMyInfoVM.introduce,
+                            placeholder: "자기소계"
+                        )
                         .frame(minHeight: 48, maxHeight: 48 * 3)
                         .padding(.vertical, 8)
                         
@@ -153,7 +109,7 @@ struct EditInfo: View {
                                        itemSpacing: 2) { index in
                                 
                                 Text(index)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(.text)
                                     .font(.maintext2m)
                                     .padding(.horizontal, 12)
                                     .padding(.vertical, 6)
@@ -191,7 +147,7 @@ struct EditInfo: View {
                             Spacer()
                             NavigationLink(destination: DeleteAccount(goSignView: $goBack)) {
                                 Text("계정 삭제")
-                                    .foregroundColor(.black)
+                                    .foregroundColor(.text)
                                     .font(.maintext1b)
                                     .padding(.horizontal, 16)
                                     .padding(.vertical, 8)

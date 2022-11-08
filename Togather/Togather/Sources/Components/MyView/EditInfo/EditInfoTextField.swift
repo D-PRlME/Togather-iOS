@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+
 struct EditInfoTextField: View {
     let placeholder: String
     @Binding var text: String

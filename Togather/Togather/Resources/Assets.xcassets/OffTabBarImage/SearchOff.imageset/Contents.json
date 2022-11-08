@@ -1,12 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "iconSearch_Deselected@1X.png",
+      "filename" : "SearchOff.svg",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

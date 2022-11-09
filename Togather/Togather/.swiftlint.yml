@@ -1,0 +1,11 @@
+disabled_rules:
+
+  - line_length
+  - trailing_newline
+  - vertical_whitespace
+  - trailing_whitespace
+  - orphaned_doc_comment
+  - nesting
+  - comment_spacing
+  - trailing_comma
+  - leading_whitespace

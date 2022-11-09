@@ -2,60 +2,73 @@ import Foundation
 
 // MARK: - UserPostModel
 struct UserPostModel: Codable {
-    let post_list: [PostList]
+    enum CodingKeys: String, CodingKey {
+        case postList = "post_list"
+    }
+    let postList: [PostList]
 }
 
 // MARK: - PostList
 struct PostList: Codable {
-    let post_id: Int
+    enum CodingKeys: String, CodingKey {
+        case postID = "post_id"
+        case title, user, tags
+        case createdAt = "created_at"
+        case likeCount = "like_count"
+    }
+    let postID: Int
     let title: String
     let user: User
     let tags: [Tag]
-    let created_at: String
-    let like_count: Int
+    let createdAt: String
+    let likeCount: Int
 }
 // MARK: - User
 struct User: Codable {
-    let user_id: Int
-    let user_name: String
-    let profile_image_url: String
+    enum CodingKeys: String, CodingKey {
+        case userID = "user_id"
+        case userName = "user_name"
+        case profileImageUrl = "profile_image_url"
+    }
+    let userID: Int
+    let userName: String
+    let profileImageUrl: String
 }
 
-//
 struct Posts {
-    let post_id: Int
+    let postID: Int
     let title: String
     let users: Users
     let tags: [Tags]
-    let created_at: String
-    let like_count: Int
+    let createdAt: String
+    let likeCount: Int
     
     init(
-        post_id: Int,
+        postID: Int,
         title: String,
         users: Users,
         tags: [Tags],
-        created_at: String,
-        like_count: Int
-    ){
-        self.post_id = post_id
+        createdAt: String,
+        likeCount: Int
+    ) {
+        self.postID = postID
         self.title = title
         self.users = users
-        self.created_at = created_at
+        self.createdAt = createdAt
         self.tags = tags
-        self.like_count = like_count
+        self.likeCount = likeCount
     }
 }
 
 struct Tags: Hashable {
     let name: String
-    let image_url: String
+    let imageUrl: String
 }
 
 struct Users {
-    let user_id: Int
-    let user_name: String
-    let profile_image_url: String
+    let userID: Int
+    let userName: String
+    let profileImageUrl: String
 }
 
 /*

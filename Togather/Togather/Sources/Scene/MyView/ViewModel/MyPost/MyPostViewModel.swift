@@ -17,26 +17,26 @@ class MyPostViewModel: ObservableObject {
                         let decoder = JSONDecoder()
                         if let data = try? decoder.decode(MyViewUserPostModel.self, from: result.data) {
                             
-                            self.postList = data.post_list.map { index in
-                                let postID = index.post_id
+                            self.postList = data.postList.map { index in
+                                let postID = index.postID
                                 let title = index.title
-                                let users: Users = Users(user_id: index.user.user_id, user_name: index.user.user_name, profile_image_url: index.user.profile_image_url)
-                                let createdAt = index.created_at
+                                let users: Users = Users(userID: index.user.userID, userName: index.user.userName, profileImageUrl: index.user.profileImageUrl)
+                                let createdAt = index.createdAt
                                 let tags: [Tags] = index.tags.map {
                                     let name = $0.name
-                                    let imageURL = $0.image_url
+                                    let imageURL = $0.imageUrl
                                     
-                                    return Tags(name: name, image_url: imageURL)
+                                    return Tags(name: name, imageUrl: imageURL)
                                 }
-                                let like_count = index.like_count
+                                let likeCount = index.likeCount
                                 
                                 return Posts(
-                                    post_id: postID,
+                                    postID: postID,
                                     title: title,
                                     users: users,
                                     tags: tags,
-                                    created_at: createdAt,
-                                    like_count: like_count
+                                    createdAt: createdAt,
+                                    likeCount: likeCount
                                 )
                             }
                         } else {

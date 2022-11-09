@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 class UserProfileViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var userID: Int = 0
     @Published var userName: String = ""
@@ -12,7 +12,7 @@ class UserProfileViewModel: ObservableObject {
     @Published var userPositions: [String] = []
     
     func getUserProfile() {
-        UserClient.request(.getUserProfile(userID: userID)) { res in
+        userClient.request(.getUserProfile(userID: userID)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {
@@ -21,7 +21,7 @@ class UserProfileViewModel: ObservableObject {
                     if let data = try? decoder.decode(UserProfileModel.self, from: result.data) {
                         self.userName = data.name
                         self.userEmail = data.email
-                        self.userProfileImageURL = data.profile_image_url
+                        self.userProfileImageURL = data.profileImageUrl
                         self.userIntroduce = data.introduce
                         self.userPositions = data.positions
                     } else {

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct signUpSuccess: View {
+struct SignUpSuccess: View {
     
     @StateObject var signUpVM = SignUpViewModel()
     
@@ -17,7 +17,7 @@ struct signUpSuccess: View {
             ) { EmptyView() }
             VStack(alignment: .leading) {
                 
-                //MARK: - Title
+                // MARK: - Title
 
                 Text("가입이\n완료되었어요")
                     .font(.custom("Pretendard-Bold", size: 32))
@@ -30,7 +30,7 @@ struct signUpSuccess: View {
                         .position(x: imageProxy.frame(in: .local).midX, y: imageProxy.frame(in: .local).midY)
                 }
                 
-                //MARK: - Button
+                // MARK: - Button
 
                 AuthButton(
                     text: "다음",
@@ -50,9 +50,9 @@ struct signUpSuccess: View {
     }
 }
 
-struct signUpSuccess_Previews: PreviewProvider {
+struct SignUpSuccess_Previews: PreviewProvider {
     static var previews: some View {
-        signUpSuccess(
+        SignUpSuccess(
             email: .constant("dsffsf"),
             password: .constant("safsd"),
             name: .constant("fasfd")

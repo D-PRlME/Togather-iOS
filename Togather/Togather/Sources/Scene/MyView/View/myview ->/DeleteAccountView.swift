@@ -4,9 +4,6 @@ import Kingfisher
 struct DeleteAccount: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
-    @State private var SamePW = false
-    @State private var password = ""
     @State private var showAlert = false
     
     @Binding var goSignView: Bool
@@ -38,9 +35,9 @@ struct DeleteAccount: View {
                         .font(.custom("Pretendard-Medium", size: 18))
                     Spacer()
                     
-                    Button(action: {
+                    Button {
                         showAlert = true
-                    }) {
+                    } label: {
                         Text("계정 삭제")
                             .font(.custom("Pretendard-Bold", size: 18))
                             .foregroundColor(quitAccountVM.checkPassword() ?
@@ -65,13 +62,13 @@ struct DeleteAccount: View {
                                 Text("모든 입력한 정보, 작성한 글이 서버에서 삭제되며 이 작업은 되돌릴 수 없습니다.")
                             }
                         
-                            .alert("안내" , isPresented: $quitAccountVM.wrongPW) {
+                            .alert("안내", isPresented: $quitAccountVM.wrongPW) {
                                 Button("확인", role: .cancel) { }
                             } message: {
                                 Text("비밀번호가 올바르지 않습니다.")
                             }
                         
-                            .alert("안내" , isPresented: $quitAccountVM.isSucced) {
+                            .alert("안내", isPresented: $quitAccountVM.isSucced) {
                                 Button("확인", role: .cancel) {
                                     self.presentationMode.wrappedValue.dismiss()
                                     goSignView = true
@@ -94,7 +91,7 @@ struct DeleteAccount: View {
                             .clipShape(Circle())
                             .frame(width: 48, height: 48)
                             .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                        Text(Account.ID ?? "")
+                        Text(Account.identifier ?? "")
                             .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 20))
                     }

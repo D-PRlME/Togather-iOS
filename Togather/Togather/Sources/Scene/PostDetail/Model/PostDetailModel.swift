@@ -1,45 +1,50 @@
 import Foundation
 
-struct Posts_Detail {
+struct PostsDetail {
     var title: String
     let user: Users
-    let created_at: String
+    let createdAt: String
     let tags: [Tags]
-    let is_mine: Bool
+    let isMine: Bool
     var content: String
-    var like_count: Int
-    var is_liked: Bool
-    
-    
+    var likeCount: Int
+    var isLiked: Bool
     init(
         title: String,
         user: Users,
-        created_at: String,
+        createdAt: String,
         tags: [Tags],
-        is_mine: Bool,
+        isMine: Bool,
         content: String,
-        like_count: Int,
-        is_liked: Bool
-    ){
+        likeCount: Int,
+        isLiked: Bool
+    ) {
         self.title = title
         self.user = user
-        self.created_at = created_at
+        self.createdAt = createdAt
         self.tags = tags
-        self.is_mine = is_mine
+        self.isMine = isMine
         self.content = content
-        self.like_count = like_count
-        self.is_liked = is_liked
+        self.likeCount = likeCount
+        self.isLiked = isLiked
     }
 }
 
 // MARK: - PostDetailModel
 struct PostDetailModel: Codable {
-    let title, created_at: String
+    enum CodingKeys: String, CodingKey {
+        case title, user, tags, content
+        case createdAt = "created_at"
+        case isMine = "is_mine"
+        case isLiked = "is_liked"
+        case likeCount = "like_count"
+    } 
+    let title, createdAt: String
     let user: User
     let tags: [Tag]
-    let is_mine, is_liked: Bool
+    let isMine, isLiked: Bool
     let content: String
-    let like_count: Int
+    let likeCount: Int
 }
 
 /*

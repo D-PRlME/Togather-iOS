@@ -17,7 +17,7 @@ final class SocketViewModel: ObservableObject {
     init() {
         socket = self.manager.defaultSocket
         socket.on(clientEvent: .connect) { (data, ack) in
-            print("서버에 연결되었습니다.")
+            print("서버에 연결되었습니다. \(data), \(ack)")
         }
     }
     
@@ -33,7 +33,7 @@ final class SocketViewModel: ObservableObject {
         socket.on("error") { (dataArrya, ack) in
             print("에러 타입: \(type(of: dataArrya))")
             
-            print("에러: \(dataArrya)")
+            print("에러: \(dataArrya), \(ack)")
 //            let data = dataArrya[0] as! NSDictionary
 //            print(data["code"] as! String)
         }
@@ -43,14 +43,14 @@ final class SocketViewModel: ObservableObject {
         socket.on("chat") { (dataArrya, ack) in
             print("chat 타입: \(type(of: dataArrya))")
             
-            print("chat: \(dataArrya)")
+            print("chat: \(dataArrya), \(ack)")
 //            let data = dataArrya[0] as! NSDictionary
 //            print(data["code"] as! String)
         }
     }
     
     func onRoom() {
-        socket.emit("join", ["is_join_room" : true, "room_id" : 1])
+        socket.emit("join", ["is_join_room": true, "room_id": 1])
     }
 
 }

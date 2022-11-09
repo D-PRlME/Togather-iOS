@@ -12,7 +12,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
     @Published var goEnterPW: Int?
     @Published var goSucced: Int?
     
-    //MARK: - 내 프로필 조회
+    // MARK: - 내 프로필 조회
 
     func getMyProfile() {
         userClient.request(.getMyprofile) { res in
@@ -37,7 +37,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
         }
     }
     
-    //MARK: - 비밀번호 변경 이메일 전송
+    // MARK: - 비밀번호 변경 이메일 전송
 
     func sendChangePWEmail() {
         userClient.request(.sendFindEmail(email: myEmail)) { res in
@@ -62,7 +62,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
         }
     }
     
-    //MARK: - 이메일 인증
+    // MARK: - 이메일 인증
 
     func emailVerify() {
         userClient.request(.mailVerify(email: myEmail, authCode: authCode)) { res in
@@ -85,7 +85,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
         }
     }
     
-    //MARK: - 비밀번호 변경
+    // MARK: - 비밀번호 변경
 
     func changePassword() {
         userClient.request(.changePasswordEmail(newPassword: newPassword)) { res in
@@ -106,12 +106,12 @@ class ChangePasswordToEmailViewModel: ObservableObject {
     
     
     func passwordValueCheck() -> Bool {
-        return PwCheck(newPassword)
+        return pwCheck(newPassword)
     }
     
-    private func PwCheck(_ pw: String) -> Bool {
+    private func pwCheck(_ password: String) -> Bool {
         let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,30}"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
-        return predicate.evaluate(with: pw)
+        let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
+        return predicate.evaluate(with: password)
     }
 }

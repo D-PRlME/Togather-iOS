@@ -31,7 +31,7 @@ extension SocketService: TargetType {
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         switch self {
         case .socketConuet:
             return Header.accessToken.header()

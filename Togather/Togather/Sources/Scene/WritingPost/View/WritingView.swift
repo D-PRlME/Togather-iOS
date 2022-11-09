@@ -12,7 +12,7 @@ struct WritingView: View {
     
     var body: some View {
         VStack {
-            //MARK: - 취소버튼
+            // MARK: - 취소버튼
 
             HStack {
                 Spacer()
@@ -25,14 +25,14 @@ struct WritingView: View {
                     }
             }
             
-            //MARK: - 제목
+            // MARK: - 제목
 
             PostTextField(
                 placeholder: "제목",
                 text: $postViewModel.title
             )
             
-            //MARK: - 본문
+            // MARK: - 본문
 
             PostTextEditor(
                 text: $postViewModel.content,
@@ -55,7 +55,7 @@ struct WritingView: View {
                     .cornerRadius(37)
             }
             
-            //MARK: - 글쓰기 버튼
+            // MARK: - 글쓰기 버튼
             
             HStack {
                 PostButton(

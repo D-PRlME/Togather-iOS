@@ -3,29 +3,29 @@ import ReactiveSwift
 
 
 struct Token {
-    static var _accessToken: String?
+    static var localAccessToken: String?
     static var accessToken: String? {
         get {
-            _accessToken =  UserDefaults.standard.string(forKey: "acccess_token")
-            return _accessToken
+            localAccessToken =  UserDefaults.standard.string(forKey: "acccess_token")
+            return localAccessToken
         }
         
         set(newToken) {
             UserDefaults.standard.set(newToken, forKey: "acccess_token")
-            _accessToken = newToken
+            localAccessToken = newToken
         }
     }
     
-    static var _refreshToken: String?
+    static var localRefreshToken: String?
     static var refreshToken: String? {
         get {
-            _refreshToken = UserDefaults.standard.string(forKey: "refresh_token")
-            return _refreshToken
+            localRefreshToken = UserDefaults.standard.string(forKey: "refresh_token")
+            return localRefreshToken
         }
         
         set(newToken) {
             UserDefaults.standard.set(newToken, forKey: "refresh_token")
-            _refreshToken = newToken
+            localRefreshToken = newToken
         }
     }
     
@@ -38,24 +38,24 @@ struct Token {
 enum Header {
     case refreshToken, accessToken, tokenIsEmpty, socket
     
-    func header() -> [String : String]? {
+    func header() -> [String: String]? {
         guard let token = Token.accessToken else {
-            return ["Content-Type" : "application/json"]
+            return ["Content-Type": "application/json"]
         }
         
         guard let refreshToken = Token.refreshToken else {
-            return ["Content-Type" : "application/json"]
+            return ["Content-Type": "application/json"]
         }
         
         switch self {
         case .refreshToken:
-            return ["X-Refresh-Token" : refreshToken, "Content-Type" : "application/json"]
+            return ["X-Refresh-Token": refreshToken, "Content-Type": "application/json"]
         case .accessToken:
-            return ["Authorization" : "Bearer " + token, "Content-Type" : "application/json"]
+            return ["Authorization": "Bearer " + token, "Content-Type": "application/json"]
         case .tokenIsEmpty:
-            return ["Content-Type" : "application/json"]
+            return ["Content-Type": "application/json"]
         case .socket:
-            return ["Authorization" : "Bearer " + token]
+            return ["Authorization": "Bearer " + token]
         }
     }
 }

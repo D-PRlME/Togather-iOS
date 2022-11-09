@@ -18,7 +18,7 @@ class UserProfileViewModel: ObservableObject {
                 switch result.statusCode {
                 case 200:
                     let decoder = JSONDecoder()
-                    if let data = try? decoder.decode(ProfileModel.self, from: result.data) {
+                    if let data = try? decoder.decode(UserProfileModel.self, from: result.data) {
                         self.userName = data.name
                         self.userEmail = data.email
                         self.userProfileImageURL = data.profile_image_url

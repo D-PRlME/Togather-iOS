@@ -26,6 +26,9 @@
 		4B320D8E28E1293500BCC086 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8D28E1293500BCC086 /* TagListView.swift */; };
 		4B320D9028E147C200BCC086 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8F28E147C200BCC086 /* TagViewModel.swift */; };
 		4B320D9728E1BA2600BCC086 /* SearchTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */; };
+		4B3FB523291B476900E9BE51 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB522291B476900E9BE51 /* UserProfileModel.swift */; };
+		4B3FB526291B55AA00E9BE51 /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB525291B55AA00E9BE51 /* ChangePasswordModel.swift */; };
+		4B3FB529291B55F500E9BE51 /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB528291B55F500E9BE51 /* MyViewModel.swift */; };
 		4B4C6B9028EE8635007433C2 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6B8F28EE8635007433C2 /* EditInfoView.swift */; };
 		4B4C6BAF28F2E407007433C2 /* String+PositionTypeChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BAE28F2E407007433C2 /* String+PositionTypeChange.swift */; };
 		4B4C6BB328F44C85007433C2 /* ChangePasswordEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BB228F44C85007433C2 /* ChangePasswordEmailView.swift */; };
@@ -124,7 +127,7 @@
 		90DDB78E2907B0F10094DE71 /* MyChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB78D2907B0F10094DE71 /* MyChat.swift */; };
 		90DDB7902907B14B0094DE71 /* DividingLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB78F2907B14B0094DE71 /* DividingLine.swift */; };
 		90EC085E28D9AE5A00E34BCE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */; };
-		90EC086228D9D64400E34BCE /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC086128D9D64400E34BCE /* MyViewModel.swift */; };
+		90EC086228D9D64400E34BCE /* MyPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC086128D9D64400E34BCE /* MyPostViewModel.swift */; };
 		90EC086428DA9FDD00E34BCE /* EditPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC086328DA9FDD00E34BCE /* EditPostView.swift */; };
 		90EC086628DAA03700E34BCE /* EditPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EC086528DAA03700E34BCE /* EditPostViewModel.swift */; };
 		90FCBE0F28D4C12700E0A9E3 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FCBE0E28D4C12700E0A9E3 /* PostDetailViewModel.swift */; };
@@ -150,6 +153,9 @@
 		4B320D8D28E1293500BCC086 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		4B320D8F28E147C200BCC086 /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
 		4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagListView.swift; sourceTree = "<group>"; };
+		4B3FB522291B476900E9BE51 /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
+		4B3FB525291B55AA00E9BE51 /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
+		4B3FB528291B55F500E9BE51 /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
 		4B4C6B8F28EE8635007433C2 /* EditInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
 		4B4C6BAE28F2E407007433C2 /* String+PositionTypeChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PositionTypeChange.swift"; sourceTree = "<group>"; };
 		4B4C6BB228F44C85007433C2 /* ChangePasswordEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordEmailView.swift; sourceTree = "<group>"; };
@@ -241,7 +247,7 @@
 		90DDB78D2907B0F10094DE71 /* MyChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChat.swift; sourceTree = "<group>"; };
 		90DDB78F2907B14B0094DE71 /* DividingLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividingLine.swift; sourceTree = "<group>"; };
 		90EC085D28D9AE5A00E34BCE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		90EC086128D9D64400E34BCE /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
+		90EC086128D9D64400E34BCE /* MyPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewModel.swift; sourceTree = "<group>"; };
 		90EC086328DA9FDD00E34BCE /* EditPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostView.swift; sourceTree = "<group>"; };
 		90EC086528DAA03700E34BCE /* EditPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewModel.swift; sourceTree = "<group>"; };
 		90FCBE0E28D4C12700E0A9E3 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
@@ -325,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				90C50A5628CCBE8C007EA639 /* PostDetailView.swift */,
-				90D9B8282910DBE800F381F9 /* UserProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 		4B202ACD290F63430076E26C /* MyView */ = {
 			isa = PBXGroup;
 			children = (
+				4B3FB527291B55EB00E9BE51 /* Model */,
 				4B202AD2290F65490076E26C /* ViewModel */,
 				4B202AD1290F65440076E26C /* View */,
 			);
@@ -481,6 +487,7 @@
 		4B202AD2290F65490076E26C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4B3FB51E291B460600E9BE51 /* MyPost */,
 				4B2548942918F96200E62EA7 /* Logout */,
 				4B2548932918F95900E62EA7 /* QuitAccount */,
 				4BC8990828DA8CA000189553 /* EditInfo */,
@@ -519,6 +526,147 @@
 				4B320D8628E11A2800BCC086 /* LogoutViewModel.swift */,
 			);
 			path = Logout;
+			sourceTree = "<group>";
+		};
+		4B3FB513291B1E7A00E9BE51 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				4B3FB524291B558A00E9BE51 /* Model */,
+				4B3FB515291B1EF400E9BE51 /* ViewModel */,
+				4B3FB514291B1E8E00E9BE51 /* View */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		4B3FB514291B1E8E00E9BE51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B4C6BB228F44C85007433C2 /* ChangePasswordEmailView.swift */,
+				4BE919CB28CEF0C40002A268 /* ChangePasswordVerifyView.swift */,
+				4BE919CD28CEF0CE0002A268 /* EnterNewPasswordView.swift */,
+				4BE919CF28CEF0D60002A268 /* ChangePasswordSuccessView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B3FB515291B1EF400E9BE51 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4BC89A3228DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B3FB516291B451700E9BE51 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		4B3FB517291B457600E9BE51 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				4B3FB521291B471700E9BE51 /* Model */,
+				4B3FB51A291B45A200E9BE51 /* ViewModel */,
+				4B3FB518291B459600E9BE51 /* View */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		4B3FB518291B459600E9BE51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90D9B8282910DBE800F381F9 /* UserProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B3FB51A291B45A200E9BE51 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4BC89A2B28DDAF1800189553 /* UserProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B3FB51B291B45C100E9BE51 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4B3FB520291B46FE00E9BE51 /* Model */,
+				4B3FB51D291B45DB00E9BE51 /* ViewModel */,
+				4B3FB51C291B45CB00E9BE51 /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		4B3FB51C291B45CB00E9BE51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90DDB7862906CE140094DE71 /* ChatListView.swift */,
+				90DDB7882907807F0094DE71 /* ChattingView.swift */,
+				90DDB78D2907B0F10094DE71 /* MyChat.swift */,
+				90DDB78A29079DA90094DE71 /* OpponentChat.swift */,
+				90DDB78F2907B14B0094DE71 /* DividingLine.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B3FB51D291B45DB00E9BE51 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B2548962919117500E62EA7 /* ChattingListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B3FB51E291B460600E9BE51 /* MyPost */ = {
+			isa = PBXGroup;
+			children = (
+				90EC086128D9D64400E34BCE /* MyPostViewModel.swift */,
+			);
+			path = MyPost;
+			sourceTree = "<group>";
+		};
+		4B3FB51F291B466700E9BE51 /* BackButton */ = {
+			isa = PBXGroup;
+			children = (
+				90AFD8DD28EC40E600E18B12 /* BackBtn.swift */,
+			);
+			path = BackButton;
+			sourceTree = "<group>";
+		};
+		4B3FB520291B46FE00E9BE51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				909118C7290A14FA00C80B42 /* ChatListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B3FB521291B471700E9BE51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B3FB522291B476900E9BE51 /* UserProfileModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B3FB524291B558A00E9BE51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B3FB525291B55AA00E9BE51 /* ChangePasswordModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B3FB527291B55EB00E9BE51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B3FB528291B55F500E9BE51 /* MyViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4B4C6BAD28F2E3C1007433C2 /* Extension */ = {
@@ -582,6 +730,9 @@
 		4B4C6BBB28FBC1C0007433C2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				4B3FB51B291B45C100E9BE51 /* Chat */,
+				4B3FB517291B457600E9BE51 /* UserProfile */,
+				4B3FB513291B1E7A00E9BE51 /* ChangePassword */,
 				4B202ACD290F63430076E26C /* MyView */,
 				909118D1290EB04200C80B42 /* TabBar */,
 				4B14A874290CEF020097E838 /* Search */,
@@ -599,6 +750,7 @@
 		4B4C6BBC28FBC270007433C2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4B3FB51F291B466700E9BE51 /* BackButton */,
 				4B202ACE290F636D0076E26C /* MyView */,
 				909118D3290EB21300C80B42 /* TabBar */,
 				4B14A877290CEF2B0097E838 /* Search */,
@@ -738,6 +890,7 @@
 		4B6F48E22904FC83007B1465 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				4B3FB516291B451700E9BE51 /* Token */,
 				4B7F0AAB28BEF0B700BBA52D /* Header */,
 				4B7F0AA628BEE22700BBA52D /* MoyaClient */,
 				4BC8992F28DA96F300189553 /* Plugin */,
@@ -817,16 +970,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		4BC8990428DA8CA000189553 /* user */ = {
-			isa = PBXGroup;
-			children = (
-				4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */,
-				4BC89A2B28DDAF1800189553 /* UserProfileViewModel.swift */,
-				4BC89A3228DDAF8F00189553 /* ChangePasswordToEmailViewModel.swift */,
-			);
-			path = user;
-			sourceTree = "<group>";
-		};
 		4BC8990828DA8CA000189553 /* EditInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -864,24 +1007,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		4BE919DF28D071AB0002A268 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				4BC8990428DA8CA000189553 /* user */,
-				900990F928D0B36300FD9462 /* post */,
-				4B2548962919117500E62EA7 /* ChattingListViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		900990F928D0B36300FD9462 /* post */ = {
-			isa = PBXGroup;
-			children = (
-				90EC086128D9D64400E34BCE /* MyViewModel.swift */,
-			);
-			path = post;
-			sourceTree = "<group>";
-		};
 		907EF1D328BBBA7E008A7562 = {
 			isa = PBXGroup;
 			children = (
@@ -905,8 +1030,6 @@
 				4B6F48E12904FC41007B1465 /* SupportingFiles */,
 				4B4C6BB528FBBF64007433C2 /* Resources */,
 				4B4C6BB428FBBF24007433C2 /* Sources */,
-				4BE919DF28D071AB0002A268 /* ViewModels */,
-				90D1C6E028BF6D8800B653C3 /* View */,
 				4BE919D228CF65750002A268 /* Model */,
 				4B5FE3B928E47FF000DE6184 /* Soket */,
 			);
@@ -928,7 +1051,6 @@
 		909118C6290A14DC00C80B42 /* chat */ = {
 			isa = PBXGroup;
 			children = (
-				909118C7290A14FA00C80B42 /* ChatListModel.swift */,
 			);
 			path = chat;
 			sourceTree = "<group>";
@@ -963,8 +1085,8 @@
 			isa = PBXGroup;
 			children = (
 				4BE919D328CF65880002A268 /* TokenModel.swift */,
-				90D9B82A2910E45300F381F9 /* ProfileModel.swift */,
 				4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */,
+				90D9B82A2910E45300F381F9 /* ProfileModel.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -976,27 +1098,6 @@
 				4B5FE3B728E44A9700DE6184 /* DumyData.swift */,
 			);
 			path = post;
-			sourceTree = "<group>";
-		};
-		90AFD8DA28EC408E00E18B12 /* component */ = {
-			isa = PBXGroup;
-			children = (
-				90AFD8DD28EC40E600E18B12 /* BackBtn.swift */,
-			);
-			path = component;
-			sourceTree = "<group>";
-		};
-		90D1C6E028BF6D8800B653C3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4B4C6BB228F44C85007433C2 /* ChangePasswordEmailView.swift */,
-				4BE919CB28CEF0C40002A268 /* ChangePasswordVerifyView.swift */,
-				4BE919CD28CEF0CE0002A268 /* EnterNewPasswordView.swift */,
-				4BE919CF28CEF0D60002A268 /* ChangePasswordSuccessView.swift */,
-				90AFD8DA28EC408E00E18B12 /* component */,
-				90DDB78C2907B0B80094DE71 /* chat */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		90D1C6ED28BF9B8900B653C3 /* Fonts */ = {
@@ -1013,18 +1114,6 @@
 				4BE1C60A28CDE9B60052AE3D /* Pretendard-Thin.otf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		90DDB78C2907B0B80094DE71 /* chat */ = {
-			isa = PBXGroup;
-			children = (
-				90DDB7862906CE140094DE71 /* ChatListView.swift */,
-				90DDB7882907807F0094DE71 /* ChattingView.swift */,
-				90DDB78D2907B0F10094DE71 /* MyChat.swift */,
-				90DDB78A29079DA90094DE71 /* OpponentChat.swift */,
-				90DDB78F2907B14B0094DE71 /* DividingLine.swift */,
-			);
-			path = chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1171,6 +1260,7 @@
 				90DDB78B29079DA90094DE71 /* OpponentChat.swift in Sources */,
 				4B14A855290968160097E838 /* PostButton.swift in Sources */,
 				4B320D9728E1BA2600BCC086 /* SearchTagListView.swift in Sources */,
+				4B3FB523291B476900E9BE51 /* UserProfileModel.swift in Sources */,
 				4BC8991A28DA8CA000189553 /* ChangeMyInfoViewModel.swift in Sources */,
 				90DDB7902907B14B0094DE71 /* DividingLine.swift in Sources */,
 				4B4C6BCF28FD02DA007433C2 /* LoginTitle.swift in Sources */,
@@ -1184,6 +1274,7 @@
 				4B14A865290A1CD50097E838 /* PostInfoForm.swift in Sources */,
 				4BC8991F28DA8CA000189553 /* SignUpViewModel.swift in Sources */,
 				4B320D8728E11A2800BCC086 /* LogoutViewModel.swift in Sources */,
+				4B3FB529291B55F500E9BE51 /* MyViewModel.swift in Sources */,
 				4BC8991828DA8CA000189553 /* TokenAuthViewModel.swift in Sources */,
 				4B4C6BF328FE9255007433C2 /* EmailVerifyTitle.swift in Sources */,
 				90A05CAD28D0B78C0031E71B /* PostViewModel.swift in Sources */,
@@ -1195,7 +1286,7 @@
 				4B4C6BAF28F2E407007433C2 /* String+PositionTypeChange.swift in Sources */,
 				4B320D8E28E1293500BCC086 /* TagListView.swift in Sources */,
 				909118C8290A14FA00C80B42 /* ChatListModel.swift in Sources */,
-				90EC086228D9D64400E34BCE /* MyViewModel.swift in Sources */,
+				90EC086228D9D64400E34BCE /* MyPostViewModel.swift in Sources */,
 				4BE919D428CF65880002A268 /* TokenModel.swift in Sources */,
 				4B5FE3B828E44A9700DE6184 /* DumyData.swift in Sources */,
 				4BE919CC28CEF0C40002A268 /* ChangePasswordVerifyView.swift in Sources */,
@@ -1208,6 +1299,7 @@
 				4BC8992E28DA8D0700189553 /* UserClient.swift in Sources */,
 				4B5FE3C328E48EA900DE6184 /* SocketTest.swift in Sources */,
 				900990AA28CE3E7E00FD9462 /* LoginView.swift in Sources */,
+				4B3FB526291B55AA00E9BE51 /* ChangePasswordModel.swift in Sources */,
 				4BE919D028CEF0D60002A268 /* ChangePasswordSuccessView.swift in Sources */,
 				9053BBCE29091E1400D6C984 /* HomeView.swift in Sources */,
 				90D9B82B2910E45300F381F9 /* ProfileModel.swift in Sources */,

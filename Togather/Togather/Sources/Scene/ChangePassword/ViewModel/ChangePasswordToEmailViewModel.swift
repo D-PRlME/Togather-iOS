@@ -21,7 +21,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
                 switch result.statusCode {
                 case 200:
                     DispatchQueue.main.async {
-                        if let data = try? JSONDecoder().decode(ProfileModel.self, from: result.data) {
+                        if let data = try? JSONDecoder().decode(ChangePasswordModel.self, from: result.data) {
                             self.myEmail = data.email
                             self.sendChangePWEmail()
                         } else {
@@ -73,7 +73,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
                     self.isError = false
                     self.goEnterPW = 1
                     print("✅인증 성공")
-                case 401:
+                case 400:
                     self.isError = true
                     self.errorMessage = "올바르지 않은 인증코드 입니다."
                 default:

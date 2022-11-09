@@ -17,6 +17,9 @@ struct MyView: View {
     
     var body: some View {
         GeometryReader { proxy in
+            NavigationLink(destination: ChangePasswordVerify(), isActive: $GoChangePassword) {
+                EmptyView()
+            }// 비밀번호 변경은 navigationLink로 넘겨야함
             ZStack {
                 ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(alignment: .leading, spacing: 0) {
@@ -80,9 +83,6 @@ struct MyView: View {
                                 GoChangePassword = true
                             }
                         )
-                        .fullScreenCover(isPresented: $GoChangePassword) {
-                            ChangePasswordVerify()
-                        }
                         
                         MyViewButton(
                             text: "내 게시글 보기",

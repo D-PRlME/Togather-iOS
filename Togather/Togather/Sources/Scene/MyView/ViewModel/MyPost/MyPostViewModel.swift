@@ -2,7 +2,7 @@ import Foundation
 import Moya
 import SwiftUI
 
-class MyViewModel: ObservableObject {
+class MyPostViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var postList: [Posts] = []
@@ -15,7 +15,7 @@ class MyViewModel: ObservableObject {
                 case 200...206:
                     DispatchQueue.main.async {
                         let decoder = JSONDecoder()
-                        if let data = try? decoder.decode(UserPostModel.self, from: result.data) {
+                        if let data = try? decoder.decode(MyViewUserPostModel.self, from: result.data) {
                             
                             self.postList = data.post_list.map { index in
                                 let postID = index.post_id

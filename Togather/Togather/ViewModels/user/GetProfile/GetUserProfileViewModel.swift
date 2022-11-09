@@ -2,14 +2,14 @@ import Foundation
 import Moya
 
 class GetUserProfileViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     @Published var userID: String = ""
     @Published var userEmail: String = ""
     @Published var userProfilImageLink: String = ""
     
     func signUpClient() {
-        UserClient.request(.getMyprofile) { res in
+        userClient.request(.getMyprofile) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {

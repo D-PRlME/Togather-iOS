@@ -7,7 +7,7 @@ struct UserProfileView: View {
     @StateObject var userProfileViewModel = UserProfileViewModel()
     var body: some View {
         ZStack {
-            VStack(alignment: .leading,spacing: 0) {
+            VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: 12) {
                     KFImage.url(URL(string: userProfileViewModel.userProfileImageURL))
                         .placeholder {
@@ -61,7 +61,7 @@ struct UserProfileView: View {
             BackBtn()
                 .padding(.top, 10)
         }
-        .onAppear() {
+        .onAppear {
             userProfileViewModel.userID = self.userID
             userProfileViewModel.getUserProfile()
         }

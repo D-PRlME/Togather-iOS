@@ -2,18 +2,28 @@ import Foundation
 
 // MARK: - MyPostModel
 struct MyPostModel: Codable {
-    let post_list: [MyPostList]
+    private enum CodingKeys: String, CodingKey {
+        case postList = "post_list"
+    }
+    let postList: [MyPostList]
 }
 
 // MARK: - PostList
 struct MyPostList: Codable {
-    let post_id: Int
+    private enum CodingKeys: String, CodingKey {
+        case postID = "post_id"
+        case title, user, tags
+        case createdAt = "created_at"
+        case isComplete = "is_complete"
+        case likeCount = "like_count"
+    }
+    let postID: Int
     let title: String
     let user: User
-    let created_at: String
+    let createdAt: String
     let tags: [Tag]
-    let is_complete: Bool
-    let like_count: Int
+    let isComplete: Bool
+    let likeCount: Int
 }
 /*
  {

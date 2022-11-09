@@ -2,5 +2,8 @@ import Foundation
 
 // MARK: - UserPostModel
 struct MyViewUserPostModel: Codable {
-    let post_list: [PostList]
+    enum CodingKeys: String, CodingKey {
+        case postList = "post_list"
+    }
+    let postList: [PostList]
 }

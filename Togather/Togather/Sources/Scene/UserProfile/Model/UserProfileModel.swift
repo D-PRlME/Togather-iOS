@@ -2,9 +2,13 @@ import Foundation
 
 // MARK: - MyProfileModel (내 프로필 조회)
 struct UserProfileModel: Codable {
+    enum CodingKeys: String, CodingKey {
+        case name, email, introduce, positions
+        case profileImageUrl = "profile_image_url"
+    }
     let name: String
     let email: String
-    let profile_image_url: String
+    let profileImageUrl: String
     let introduce: String
     let positions: [String]
 }

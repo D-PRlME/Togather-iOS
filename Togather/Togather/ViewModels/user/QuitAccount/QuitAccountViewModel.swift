@@ -31,13 +31,13 @@ class QuitAccountViewModel: ObservableObject {
         }
     }
     
-    func checkPassword() -> Bool{
-        return PwCheck(inputPassword)
+    func checkPassword() -> Bool {
+        return pwCheck(inputPassword)
     }
     
-    private func PwCheck(_ pw: String) -> Bool {
+    private func pwCheck(_ password: String) -> Bool {
         let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,30}"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
-        return predicate.evaluate(with: pw)
+        let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
+        return predicate.evaluate(with: password)
     }
 }

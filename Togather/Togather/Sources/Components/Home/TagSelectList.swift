@@ -10,7 +10,7 @@ struct TagSelectList: View {
                 HStack {
                     ForEach(tags, id: \.self) { index in
                         VStack {
-                            KFImage.url(URL(string: index.image_url))
+                            KFImage.url(URL(string: index.imageUrl))
                                 .placeholder {
                                     Circle().fill(Color.whiteElevated3)
                                         .frame(width: 56, height: 56)
@@ -42,7 +42,7 @@ struct TagSelectList: View {
 struct TagSelectList_Previews: PreviewProvider {
     static var previews: some View {
         TagSelectList(
-            tags: .constant([Tags(name: "SpringBoot", image_url: "https://wouldyou1214.s3.amazonaws.com/SPRING.png"), Tags(name: "MySQL", image_url: "https://wouldyou1214.s3.amazonaws.com/MySQL.png"), Tags(name: "Node.js", image_url: "https://wouldyou1214.s3.amazonaws.com/Node.js.pn")])
+            tags: .constant([Tags(name: "SpringBoot", imageUrl: "https://wouldyou1214.s3.amazonaws.com/SPRING.png"), Tags(name: "MySQL", imageUrl: "https://wouldyou1214.s3.amazonaws.com/MySQL.png"), Tags(name: "Node.js", imageUrl: "https://wouldyou1214.s3.amazonaws.com/Node.js.pn")])
         )
     }
 }

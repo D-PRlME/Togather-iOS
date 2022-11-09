@@ -7,7 +7,7 @@ class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     
-    @Published var viewTag: Int? = nil
+    @Published var viewTag: Int?
     @Published var showProgrees: Bool = false
     @Published var showError: Bool = false
     @Published var errorMessage: String = ""
@@ -21,11 +21,11 @@ class LoginViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         let decoder = JSONDecoder()
                         if let data = try? decoder.decode(TokenModel.self, from: result.data) {
-                            Token.accessToken = data.access_token
-                            Token.refreshToken = data.refresh_token
+                            Token.accessToken = data.accessToken
+                            Token.refreshToken = data.refreshToken
                             self.getMyProFile()
                             print("✅로그인 성공")
-                            print("🔊\(data.expired_at)")
+                            print("🔊\(data.expiredAt)")
                             self.viewTag = 1
                         } else {
                             print("⚠️login docoder error")
@@ -76,7 +76,7 @@ class LoginViewModel: ObservableObject {
                         Account.setAccount(
                             id: data.name,
                             email: data.email,
-                            profileImagLink: data.profile_image_url,
+                            profileImagLink: data.profileImageUrl,
                             positions: data.positions
                         )
                     } else {

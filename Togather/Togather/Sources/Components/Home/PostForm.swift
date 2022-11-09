@@ -36,8 +36,8 @@ struct PostForm: View {
                 
                 Divider()
                 
-                HStack() {
-                    KFImage.url(URL(string: postData.users.profile_image_url))
+                HStack {
+                    KFImage.url(URL(string: postData.users.profileImageUrl))
                         .placeholder {
                             Circle()
                                 .fill(Color.whiteElevated2)
@@ -48,20 +48,20 @@ struct PostForm: View {
                         .frame(width: 33, height: 33)
                         .padding(.horizontal, 4)
                         .overlay(Circle().stroke(lineWidth: 1).foregroundColor(.whiteElevated3))
-                    Text(postData.users.user_name)
+                    Text(postData.users.userName)
                         .foregroundColor(.black)
                         .font(.maintext2m)
                     Spacer()
                     Image("GrayHeart")
                         .resizable()
                         .frame(width: 16, height: 13)
-                    Text(String(postData.like_count))
+                    Text(String(postData.likeCount))
                         .foregroundColor(.whiteElevated4)
                         .font(.maintext2m)
                     Image("SeperateBar")
                         .resizable()
                         .frame(width: 1, height: 15)
-                    Text(postData.created_at)
+                    Text(postData.createdAt)
                         .foregroundColor(.whiteElevated4)
                         .font(.maintext2m)
                 }
@@ -79,7 +79,7 @@ struct PostForm: View {
                 content: {
                     PostDetail(
                         showModal: $showDetail,
-                        postID: postData.post_id
+                        postID: postData.postID
                     )
                 }
             )

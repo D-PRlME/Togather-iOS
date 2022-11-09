@@ -7,14 +7,14 @@ struct EditPostView: View {
     @Binding var tagBtnArr: [String]
     @Binding var title: String
     @Binding var content: String
-    let PostID: Int
+    let postID: Int
     
     @State private var goTags: Bool = false
     @StateObject var editPostViewModel = EditPostViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
-            //MARK: - 취소버튼
+            // MARK: - 취소버튼
             HStack {
                 Spacer()
                 Image("CloseBtn")
@@ -26,21 +26,21 @@ struct EditPostView: View {
                     }
             }
             
-            //MARK: - 제목
+            // MARK: - 제목
 
             PostTextField(
                 placeholder: "제목",
                 text: $title
             )
             
-            //MARK: - 본문
+            // MARK: - 본문
 
             PostTextEditor(
                 text: $content,
                 placeholder: "본문을 입력하세요"
             )
             
-            //MARK: - 테그
+            // MARK: - 테그
 
             FlowLayout(mode: .scrollable,
                        items: tagBtnArr,
@@ -55,7 +55,7 @@ struct EditPostView: View {
                     .cornerRadius(37)
             }
             
-            //MARK: - 글쓰기 버튼
+            // MARK: - 글쓰기 버튼
             
             HStack {
                 PostButton(
@@ -65,7 +65,7 @@ struct EditPostView: View {
                     action: {
                         editPostViewModel.title = title
                         editPostViewModel.content = content
-                        editPostViewModel.postID = PostID
+                        editPostViewModel.postID = postID
                         editPostViewModel.tag = tagBtnArr
                         
                         editPostViewModel.edit()
@@ -94,13 +94,13 @@ struct EditPostView: View {
 }
 
 
-struct EditPostView_Preview: PreviewProvider {
+struct EditPostViewPreview: PreviewProvider {
     static var previews: some View {
         EditPostView(
             tagBtnArr: .constant(["Swift", "Backend"]),
             title: .constant("제목이져"),
             content: .constant("내용이죠"),
-            PostID: 1
+            postID: 1
         )
     }
 }

@@ -36,13 +36,13 @@ class SignUpValueCheckViewModel {
     
     private func emailCheck(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@dsm+\\.hs+\\.kr"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return predicate.evaluate(with: email)
     }
     
-    private func pwCheck(_ pw: String) -> Bool {
+    private func pwCheck(_ password: String) -> Bool {
         let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,30}"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
-        return predicate.evaluate(with: pw)
+        let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
+        return predicate.evaluate(with: password)
     }
 }

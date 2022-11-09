@@ -7,15 +7,15 @@ class PostDetailViewModel: ObservableObject {
     @Published var showSkeleton = true
     @Published var postID: Int = 0
     @Published var tagName: [String] = []
-    @Published var postDetail: Posts_Detail = Posts_Detail(
+    @Published var postDetail: PostsDetail = PostsDetail(
         title: DumyData.title,
-        user: Users(user_id: 0, user_name: DumyData.name, profile_image_url: ""),
-        created_at: DumyData.time,
+        user: Users(userID: 0, userName: DumyData.name, profileImageUrl: ""),
+        createdAt: DumyData.time,
         tags: [],
-        is_mine: false,
+        isMine: false,
         content: DumyData.content,
-        like_count: 0,
-        is_liked: false
+        likeCount: 0,
+        isLiked: false
     )
     
     func getPostDetail() {
@@ -29,49 +29,40 @@ class PostDetailViewModel: ObservableObject {
                         if let data = try? decoder.decode(PostDetailModel.self, from: result.data) {
                             let title = data.title
                             let users: Users = Users(
-                                user_id: data.user.user_id,
-                                user_name: data.user.user_name,
-                                profile_image_url: data.user.profile_image_url
+                                userID: data.user.userID,
+                                userName: data.user.userName,
+                                profileImageUrl: data.user.profileImageUrl
                             )
-                            let createdAt = data.created_at
+                            let createdAt = data.createdAt
                             let tags: [Tags] = data.tags.map {
                                 let name = $0.name
-                                let imageURL = $0.image_url
-                                
+                                let imageURL = $0.imageUrl
                                 return Tags(
                                     name: name,
-                                    image_url: imageURL
+                                    imageUrl: imageURL
                                 )
                             }
-                            let is_mine = data.is_mine
+                            let isMine = data.isMine
                             let content = data.content
-                            let like_count = data.like_count
-                            let is_liked = data.is_liked
-                            
-                            self.postDetail = Posts_Detail(
+                            let likeCount = data.likeCount
+                            let isLiked = data.isLiked
+                            self.postDetail = PostsDetail(
                                 title: title,
                                 user: users,
-                                created_at: createdAt,
+                                createdAt: createdAt,
                                 tags: tags,
-                                is_mine: is_mine,
+                                isMine: isMine,
                                 content: content,
-                                like_count: like_count,
-                                is_liked: is_liked
+                                likeCount: likeCount,
+                                isLiked: isLiked
                             )
-                            self.tagName = tags.map {
-                                $0.name
-                            }
-                            
-                        } else {
-                            print("⚠️post detail docoder error")
-                        }
+                            self.tagName = tags.map { $0.name }
+                        } else { print("⚠️post detail docoder error") }
                         self.showSkeleton = false
                     }
-                default:
-                    print(result.statusCode)
+                default: print(result.statusCode)
                 }
-            case .failure(let err):
-                print("⛔️post error: \(err.localizedDescription)")
+            case .failure(let err): print("⛔️post error: \(err.localizedDescription)")
             }
         }
     }

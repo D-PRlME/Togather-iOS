@@ -3,7 +3,7 @@ import Foundation
 extension String {
     //"PM", "웹 프론트엔드", "백엔드", "안드로이드", "iOS", "디자인"
     //BACKEND, FRONTEND, IOS, DESIGNER, PM, ANDROID
-    var PositionTypeChange: String {
+    var positionTypeChange: String {
         switch self {
         //KR -> EN
         case "PM": return "PM"

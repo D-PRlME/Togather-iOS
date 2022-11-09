@@ -2,11 +2,11 @@ import SwiftUI
 
 extension Font {
     
-    //MARK: - typography
+    // MARK: - typography
     
     static let typography = custom("Pretendard-Bold", size: 40)
     
-    //MARK: - title
+    // MARK: - title
 
     static let titleXLm = custom("Pretendard-Medium", size: 32)
     static let titleXLb = custom("Pretendard-Bold", size: 32)
@@ -17,14 +17,14 @@ extension Font {
     static let title3m = custom("Pretendard-Medium", size: 20)
     static let title3b = custom("Pretendard-Bold", size: 20)
     
-    //MARK: - mainText
+    // MARK: - mainText
 
     static let maintext1m = custom("Pretendard-Medium", size: 18)
     static let maintext1b = custom("Pretendard-Bold", size: 18)
     static let maintext2m = custom("Pretendard-Medium", size: 16)
     static let maintext2b = custom("Pretendard-Bold", size: 16)
     
-    //MARK: - indicator
+    // MARK: - indicator
 
     static let indicator = custom("Pretendard-Bold", size: 14)
 }

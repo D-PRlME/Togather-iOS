@@ -8,7 +8,7 @@ class EmailDuplicateViewModel: ObservableObject {
     @Published var showingAlert: Bool = false
     @Published var alertMessage: String = ""
     
-    @Published var viewTag: Int? = nil
+    @Published var viewTag: Int?
     
     
     func emailDuplicate() {

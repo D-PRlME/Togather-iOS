@@ -7,8 +7,12 @@ struct TagListModel: Codable {
 
 // MARK: - Tag
 struct Tag: Codable {
+    enum CodingKeys: String, CodingKey {
+        case name
+        case imageUrl = "image_url"
+    }
     let name: String
-    let image_url: String
+    let imageUrl: String
 }
 
 /*

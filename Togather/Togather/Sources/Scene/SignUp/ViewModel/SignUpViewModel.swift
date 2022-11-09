@@ -91,11 +91,11 @@ class SignUpViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         let decoder = JSONDecoder()
                         if let data = try? decoder.decode(TokenModel.self, from: result.data) {
-                            Token.accessToken = data.access_token
-                            Token.refreshToken = data.refresh_token
+                            Token.accessToken = data.accessToken
+                            Token.refreshToken = data.refreshToken
                             self.isSuccess = 3
                             self.getMyProFile()
-                            print("🔊\(data.expired_at)")
+                            print("🔊\(data.expiredAt)")
                         } else {
                             print("⚠️signup docoder error")
                         }
@@ -120,7 +120,7 @@ class SignUpViewModel: ObservableObject {
                         Account.setAccount(
                             id: data.name,
                             email: data.email,
-                            profileImagLink: data.profile_image_url,
+                            profileImagLink: data.profileImageUrl,
                             positions: data.positions
                         )
                     } else {

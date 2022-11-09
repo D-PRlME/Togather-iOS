@@ -25,7 +25,7 @@ struct ChattingView: View {
         "새우가 주연인 드라마는 대하드라마 엌ㅋㅋㅋㅋㅋㅋㅋㅋ",
         "프론트 나보다 못하면 접자 들들들아~"
     ]
-    let Image_url_Arr: [String] = [
+    let imageUrlArr: [String] = [
         "https://avatars.githubusercontent.com/u/102791105?v=4",
         "https://avatars.githubusercontent.com/u/80248855?v=4",
         "https://avatars.githubusercontent.com/u/76112135?v=4",
@@ -36,95 +36,93 @@ struct ChattingView: View {
         "https://avatars.githubusercontent.com/u/101026873?v=4"
     ]
    
-    enum whatDate {
+    enum WhatDate {
         case month
         case time
     }
-    func nowDate(what: whatDate) -> String {
-        let formatter_year = DateFormatter()
+    func nowDate(what: WhatDate) -> String {
+        let formatterYear = DateFormatter()
         switch what {
-        case .month: formatter_year.dateFormat = "MM월 dd일"
-        case .time: formatter_year.dateFormat = "HH:mm"
+        case .month: formatterYear.dateFormat = "MM월 dd일"
+        case .time: formatterYear.dateFormat = "HH:mm"
         }
-        let current_year_string = formatter_year.string(from: Date())
-        return current_year_string
+        let currentYearString = formatterYear.string(from: Date())
+        return currentYearString
     }
     var body: some View {
-        GeometryReader { proxy in
-            ZStack(alignment: .top) {
-                ColorManager.BackgroundColor.ignoresSafeArea()
-                VStack(spacing: 0) {
-                    HStack(spacing: 8) {
-                        Image("back")
-                            .resizable()
-                            .frame(width: 28, height: 28)
-                            .onTapGesture {
-                                dismiss()
-                            }
-                        Text(user[index])
-                            .font(.custom("Pretendard-Bold", size: 24))
-                            .foregroundColor(.black)
-                        Spacer()
-                    }
-                    .padding(.leading, 16)
-                    .padding(.vertical, 13)
-                    .background(Color("white-Elevated1"))
-                    ScrollView {
-                        VStack(spacing: 12) {
-                            Spacer()
-                                .frame(height: 30)
-                            OpponentChat(
-                                image_url: Image_url_Arr[index],
-                                user: user[index],
-                                chatContent: chatContent[index],
-                                date: nowDate(what: .time)
-                            )
-                            MyChat(
-                                content: "진짜 넌 나가죽어라"
-                            )
-                            DividingLine(
-                                when: nowDate(what: .month)
-                            )
-                            OpponentChat(
-                                image_url: Image_url_Arr[index],
-                                user: user[index],
-                                chatContent: "이거진짜살자각인듯",
-                                date: nowDate(what: .time)
-                            )
+        ZStack(alignment: .top) {
+            ColorManager.BackgroundColor.ignoresSafeArea()
+            VStack(spacing: 0) {
+                HStack(spacing: 8) {
+                    Image("back")
+                        .resizable()
+                        .frame(width: 28, height: 28)
+                        .onTapGesture {
+                            dismiss()
                         }
-                    }
-                    .padding(.horizontal, 16)
-                    HStack(spacing: 8) {
-                        TextField("채팅", text: $sendChat)
-                            .padding(12)
-                            .background(Color("white-Elevated1"))
-                            .cornerRadius(6)
-                            .padding(1)
-                            .background(Color("TabBarStroke"))
-                            .cornerRadius(6)
-                            .multilineTextAlignment(.leading)
-                        Button {
-                            print("보낼 채팅: \(sendChat)")
-                            sendChat = ""
-                        } label: {
-                            Text("전송")
-                                .font(.maintext1m)
-                                .foregroundColor(.black)
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 8)
-                                .background(Color.main)
-                                .cornerRadius(37)
-                                .padding(2)
-                                .background(Color.mainDarken)
-                                .cornerRadius(37)
-                        }
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 16)
+                    Text(user[index])
+                        .font(.custom("Pretendard-Bold", size: 24))
+                        .foregroundColor(.black)
+                    Spacer()
                 }
+                .padding(.leading, 16)
+                .padding(.vertical, 13)
+                .background(Color("white-Elevated1"))
+                ScrollView {
+                    VStack(spacing: 12) {
+                        Spacer()
+                            .frame(height: 30)
+                        OpponentChat(
+                            imageUrl: imageUrlArr[index],
+                            user: user[index],
+                            chatContent: chatContent[index],
+                            date: nowDate(what: .time)
+                        )
+                        MyChat(
+                            content: "진짜 넌 나가죽어라"
+                        )
+                        DividingLine(
+                            when: nowDate(what: .month)
+                        )
+                        OpponentChat(
+                            imageUrl: imageUrlArr[index],
+                            user: user[index],
+                            chatContent: "이거진짜살자각인듯",
+                            date: nowDate(what: .time)
+                        )
+                    }
+                }
+                .padding(.horizontal, 16)
+                HStack(spacing: 8) {
+                    TextField("채팅", text: $sendChat)
+                        .padding(12)
+                        .background(Color("white-Elevated1"))
+                        .cornerRadius(6)
+                        .padding(1)
+                        .background(Color("TabBarStroke"))
+                        .cornerRadius(6)
+                        .multilineTextAlignment(.leading)
+                    Button {
+                        print("보낼 채팅: \(sendChat)")
+                        sendChat = ""
+                    } label: {
+                        Text("전송")
+                            .font(.maintext1m)
+                            .foregroundColor(.black)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(Color.main)
+                            .cornerRadius(37)
+                            .padding(2)
+                            .background(Color.mainDarken)
+                            .cornerRadius(37)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 16)
             }
-            .navigationBarHidden(true)
         }
+        .navigationBarHidden(true)
     }
 }
 

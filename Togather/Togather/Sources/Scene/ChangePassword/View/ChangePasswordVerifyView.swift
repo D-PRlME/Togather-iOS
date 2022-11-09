@@ -4,7 +4,7 @@ struct ChangePasswordVerify: View {
     
     @StateObject var changePWToEmailVM = ChangePasswordToEmailViewModel()
     
-    private func ButtonAtivation() -> Bool {
+    private func buttonAtivation() -> Bool {
         if changePWToEmailVM.authCode.count == 6 {
             return true
         } else {
@@ -42,7 +42,7 @@ struct ChangePasswordVerify: View {
                     }
                     
                     ChangePasswordButton(
-                        isDisable: .constant(!ButtonAtivation()),
+                        isDisable: .constant(!buttonAtivation()),
                         title: "다음",
                         action: {
                             changePWToEmailVM.emailVerify()

@@ -7,9 +7,9 @@ class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     
-    @Published var viewTag: Int? = nil
+    @Published var viewTag: Int?
     
-    func Login() {
+    func login() {
         userClient.request(.login(accountID: email, password: password)) { res in
             switch res {
             case .success(let result):

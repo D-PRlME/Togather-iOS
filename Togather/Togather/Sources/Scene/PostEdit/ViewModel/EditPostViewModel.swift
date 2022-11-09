@@ -12,9 +12,9 @@ class EditPostViewModel: ObservableObject {
     @Published var postID: Int = 0
     
     func edit() {
-        for i in 0..<tag.count {
-            self.tag[i] = self.tag[i].uppercased()
-            self.tag[i] = self.tag[i].replacingOccurrences(of: ".", with: "_")
+        for index in 0..<tag.count {
+            self.tag[index] = self.tag[index].uppercased()
+            self.tag[index] = self.tag[index].replacingOccurrences(of: ".", with: "_")
         }
         postClient.request(.editPost(title: title, content: content, tag: tag, postID: postID)) { res in
             switch res {

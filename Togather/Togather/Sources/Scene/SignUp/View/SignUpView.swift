@@ -10,52 +10,50 @@ struct SignUpView: View {
     
     let signUpValueCheckVM = SignUpValueCheckViewModel()
     
-    //MARK: - body
+    // MARK: - body
     
     var body: some View {
-        GeometryReader { proxy in
+        ZStack {
             NavigationLink(
                 destination:
                     EmailVerify(
-                    email: $emailText,
-                    password: $passwordText,
-                    name: $nameText
-                ),
+                        email: $emailText,
+                        password: $passwordText,
+                        name: $nameText
+                    ),
                 tag: 1,
                 selection: $signUpVM.isSuccess
             ) { EmptyView() }
-            ZStack {
-                VStack(alignment: .leading, spacing: 0) {
-                    Spacer()
-                    SignUpTitle()
-                        .padding(.bottom, 50)
-                    
-                    //MARK: - textFileds
-                    SignUpTextField(
-                        email: $emailText,
-                        password: $passwordText,
-                        name: $nameText,
-                        emailError: .constant(!signUpValueCheckVM.emailValueCheck(emailText)),
-                        passwordError: .constant(!signUpValueCheckVM.passwordValueCheck(passwordText))
-                    )
-                    Spacer()
-                    
-                    //MARK: - 다음 버튼
-                    
-                    AuthButton(
-                        isDisable: .constant(!signUpValueCheckVM.checkTotalSignUpValue(emailText, passwordText, nameText)),
-                        text: "다음",
-                        action: {
-                            signUpVM.email = emailText
-                            signUpVM.emailDuplicate()
-                        }
-                    )
-                } //Vstack
-                .padding(.horizontal, 16)
-                .padding(.bottom, 16)
+            VStack(alignment: .leading, spacing: 0) {
+                Spacer()
+                SignUpTitle()
+                    .padding(.bottom, 50)
                 
-                BackBtn()
-            }
+                // MARK: - textFileds
+                SignUpTextField(
+                    email: $emailText,
+                    password: $passwordText,
+                    name: $nameText,
+                    emailError: .constant(!signUpValueCheckVM.emailValueCheck(emailText)),
+                    passwordError: .constant(!signUpValueCheckVM.passwordValueCheck(passwordText))
+                )
+                Spacer()
+                
+                // MARK: - 다음 버튼
+                
+                AuthButton(
+                    isDisable: .constant(!signUpValueCheckVM.checkTotalSignUpValue(emailText, passwordText, nameText)),
+                    text: "다음",
+                    action: {
+                        signUpVM.email = emailText
+                        signUpVM.emailDuplicate()
+                    }
+                )
+            } //Vstack
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
+            
+            BackBtn()
         }
         .navigationBarHidden(true)
         

@@ -2,10 +2,10 @@ import Foundation
 import Moya
 
 class TokenAuthViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     func tokenReissueClient() {
-        UserClient.request(.tokenReissue) { res in
+        userClient.request(.tokenReissue) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {
@@ -13,10 +13,10 @@ class TokenAuthViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         let decoder = JSONDecoder()
                         if let data = try? decoder.decode(TokenModel.self, from: result.data) {
-                            Token.accessToken = data.access_token
-                            Token.refreshToken = data.refresh_token
+                            Token.accessToken = data.accessToken
+                            Token.refreshToken = data.refreshToken
                             print("token 재발급")
-                            print("🔊\(data.expired_at)")
+                            print("🔊\(data.expiredAt)")
                         } else {
                             print("⚠️tokenAuth docoder error")
                         }

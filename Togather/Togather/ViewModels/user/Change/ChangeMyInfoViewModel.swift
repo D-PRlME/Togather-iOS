@@ -62,7 +62,7 @@ class ChangeMyInfoViewModel: ObservableObject {
         print("작동: updateProfileImage")
         imageClient.request(.postImage([image!.jpegData(compressionQuality: 0.0) ?? Data()])) { res in
             switch res {
-            case .success(let result) :
+            case .success(let result):
                 switch result.statusCode {
                 case 201:
                     if let data = try? JSONDecoder().decode(UploadImageModel.self, from: result.data) {

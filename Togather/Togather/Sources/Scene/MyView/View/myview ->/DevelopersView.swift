@@ -36,7 +36,7 @@ struct Developers: View {
         "azure-553",
         "jisoung"
     ]
-    let Image_url_Arr: [String] = [
+    let imageUrlArr: [String] = [
         "https://avatars.githubusercontent.com/u/102791105?v=4",
         "https://avatars.githubusercontent.com/u/80248855?v=4",
         "https://avatars.githubusercontent.com/u/76112135?v=4",
@@ -53,90 +53,85 @@ struct Developers: View {
     ]
     
     var body: some View {
-        GeometryReader { proxy in
-            ZStack {
-                ColorManager.BackgroundColor.ignoresSafeArea()
-                VStack {
-                    HStack {
-                        Spacer()
-                        Image("CloseBtn")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding(.top, 16)
-                            .onTapGesture {
-                                self.presentationMode.wrappedValue.dismiss()
-                            }
-                    }
-                    ScrollView(.vertical, showsIndicators: false) {
-                        HStack {
-                            Text("개발자들")
-                                .foregroundColor(.black)
-                                .font(.custom("Pretendard-Bold", size: 28))
-                                .padding(.top, 40)
-                            Spacer()
+        ZStack {
+            ColorManager.BackgroundColor.ignoresSafeArea()
+            VStack {
+                HStack {
+                    Spacer()
+                    Image("CloseBtn")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding(.top, 16)
+                        .onTapGesture {
+                            self.presentationMode.wrappedValue.dismiss()
                         }
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            ForEach(0..<developers.count, id: \.self) { i in
-                                ZStack{
-                                    VStack(spacing: 8) {
-                                        HStack(spacing: 0) {
-                                            KFImage.url(URL(string: Image_url_Arr[i]))
-                                                .placeholder {
-                                                    Circle().fill(Color.secondary)
-                                                        .frame(width: 56, height: 56)
-                                                        .opacity(0.1)
-                                                }
-                                                .resizable()
-                                                .clipShape(Circle())
-                                                .frame(width: 62, height: 62)
-                                            Spacer()
-                                            Text(developers[i])
-                                                .foregroundColor(.black)
-                                                .font(.custom("Pretendard-Bold", size: 24))
-                                                .padding(.trailing, 8)
-                                        }
-                                        HStack {
-                                            Text(stack[i])
-                                                .foregroundColor(.black)
-                                                .font(.custom("Pretendard-Medium", size: 16))
-                                                .padding(.horizontal, 12)
-                                                .padding(.vertical, 6)
-                                                .background(Color(red: 0.905, green: 0.905, blue: 0.905))
-                                                .cornerRadius(37)
-                                                .padding(1)
-                                                .background(Color("TabBarStroke"))
-                                                .cornerRadius(37)
-                                            Spacer()
-                                        }
-                                        
-                                        Link(destination: URL(string: "https://github.com/" + githubID[i])!) {
-                                            HStack(spacing: 0) {
-                                                Image("LinkImage")
-                                                    .resizable()
-                                                    .frame(width: 12, height: 12)
-                                                    .padding(4)
-                                                Text("Github")
-                                                    .foregroundColor(.black)
-                                                    .font(.custom("Pretendard-Medium", size: 18))
-                                                    .underline()
-                                                Spacer()
+                }
+                ScrollView(.vertical, showsIndicators: false) {
+                    HStack {
+                        Text("개발자들")
+                            .foregroundColor(.black)
+                            .font(.custom("Pretendard-Bold", size: 28))
+                            .padding(.top, 40)
+                        Spacer()
+                    }
+                    LazyVGrid(columns: columns, spacing: 12) {
+                        ForEach(0..<developers.count, id: \.self) { index in
+                            ZStack {
+                                VStack(spacing: 8) {
+                                    HStack(spacing: 0) {
+                                        KFImage.url(URL(string: imageUrlArr[index]))
+                                            .placeholder {
+                                                Circle().fill(Color.secondary)
+                                                    .frame(width: 56, height: 56)
+                                                    .opacity(0.1)
                                             }
+                                            .resizable()
+                                            .clipShape(Circle())
+                                            .frame(width: 62, height: 62)
+                                        Spacer()
+                                        Text(developers[index])
+                                            .foregroundColor(.black)
+                                            .font(.custom("Pretendard-Bold", size: 24))
+                                            .padding(.trailing, 8)
+                                    }
+                                    HStack {
+                                        Text(stack[index])
+                                            .foregroundColor(.black)
+                                            .font(.custom("Pretendard-Medium", size: 16))
+                                            .padding(.horizontal, 12)
+                                            .padding(.vertical, 6)
+                                            .background(Color(red: 0.905, green: 0.905, blue: 0.905))
+                                            .cornerRadius(37)
+                                            .padding(1)
+                                            .background(Color("TabBarStroke"))
+                                            .cornerRadius(37)
+                                        Spacer()
+                                    }
+                                    
+                                    Link(destination: URL(string: "https://github.com/" + githubID[index])!) {
+                                        HStack(spacing: 0) {
+                                            Image("LinkImage")
+                                                .resizable()
+                                                .frame(width: 12, height: 12)
+                                                .padding(4)
+                                            Text("Github")
+                                                .foregroundColor(.black)
+                                                .font(.custom("Pretendard-Medium", size: 18))
+                                                .underline()
+                                            Spacer()
                                         }
                                     }
                                 }
-                                .padding(12)
-                                .background(Color("TabBarFill"))
-                                .cornerRadius(8)
                             }
+                            .padding(12)
+                            .background(Color("TabBarFill"))
+                            .cornerRadius(8)
                         }
                     }
-                    Spacer()
                 }
-                .padding(.horizontal, 16)
+                Spacer()
             }
-        }
-        .onAppear() {
-            
+            .padding(.horizontal, 16)
         }
     }
 }

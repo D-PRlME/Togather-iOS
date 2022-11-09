@@ -48,7 +48,7 @@ extension PostService: TargetType {
     var method: Moya.Method {
         switch self {
             
-        case .post, .like :
+        case .post, .like:
             return .post
         case .getMyPosts, .getPosts, .getDetailPosts, .getTag, .getTitlePosts, .getTagPosts:
             return .get
@@ -87,23 +87,23 @@ extension PostService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "title" : title,
-                        "sort" : "id,desc"
+                        "title": title,
+                        "sort": "id,desc"
                     ],
                 encoding: URLEncoding.queryString)
         case .getTagPosts(tag: let tag):
             return .requestParameters(
                 parameters:
                     [
-                        "tag" : tag,
-                        "sort" : "id,desc"
+                        "tag": tag,
+                        "sort": "id,desc"
                     ],
                 encoding: URLEncoding.queryString)
         case .getPosts, .getMyPosts:
             return .requestParameters(
                 parameters:
                     [
-                        "sort" : "id,desc"
+                        "sort": "id,desc"
                     ],
                 encoding: URLEncoding.queryString)
             
@@ -113,7 +113,7 @@ extension PostService: TargetType {
     }
     
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         switch self {
         case .getMyPosts, .getPosts, .getDetailPosts, .post, .editPost, .deletePost, .getTag, .getTitlePosts, .getTagPosts, .like, .dislike:
             return Header.accessToken.header()

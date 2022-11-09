@@ -27,7 +27,7 @@ class ChattingListViewModel: ObservableObject {
                             return ChattingList(
                                 room_id: roomID,
                                 room_type: roomType,
-                                room_logo_image:roomImageURL,
+                                room_logo_image: roomImageURL,
                                 room_name: name,
                                 last_chat: lastChat,
                                 is_read: isRead

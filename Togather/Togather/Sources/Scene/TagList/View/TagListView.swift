@@ -33,7 +33,7 @@ struct TagListView: View {
                     Button {
                         DispatchQueue.main.async {
                             if tagLists.contains(data.name) {
-                                self.tagLists.removeAll{ $0 == data.name }
+                                self.tagLists.removeAll { $0 == data.name }
                             } else {
                                 self.tagLists.append(data.name)
                             }
@@ -41,7 +41,7 @@ struct TagListView: View {
                     } label: {
                         HStack {
                             KFImage(
-                                URL(string: "\(data.image_url)")!
+                                URL(string: "\(data.imageUrl)")!
                             )
                             .placeholder {
                                 Rectangle()
@@ -76,7 +76,7 @@ struct TagListView: View {
             .listStyle(.inset)
         }
         .onAppear {
-            tagVM.GstTagDatas()
+            tagVM.getTagDatas()
         }
     }
 }

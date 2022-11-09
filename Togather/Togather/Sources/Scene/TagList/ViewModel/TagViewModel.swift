@@ -6,7 +6,7 @@ class TagViewModel: ObservableObject {
     
     @Published var tagValues: [Tags] = []
     
-    func GstTagDatas() {
+    func getTagDatas() {
         postClient.request(.getTag) { res in
             switch res {
             case .success(let result):
@@ -16,9 +16,9 @@ class TagViewModel: ObservableObject {
                         if let data = try? JSONDecoder().decode(TagListModel.self, from: result.data) {
                             self.tagValues = data.tags.map {
                                 let name = $0.name
-                                let link = $0.image_url
+                                let link = $0.imageUrl
                                 
-                                return Tags(name: name, image_url: link)
+                                return Tags(name: name, imageUrl: link)
                             }
                         } else {
                             print("⚠️tag Error handling")

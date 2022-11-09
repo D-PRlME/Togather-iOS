@@ -4,7 +4,6 @@ import SwiftUIPullToRefresh
 import Kingfisher
 
 struct SearchView: View {
-    @State private var GoPostDetail = false
     @State private var postList: [PostList] = []
     
     @State private var tagBtnValue: String = ""
@@ -17,7 +16,7 @@ struct SearchView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            ZStack() {
+            ZStack {
                 ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
@@ -62,7 +61,7 @@ struct SearchView: View {
                     )
                     
                     ScrollView(showsIndicators: false) {
-                        ForEach(searchViewModel.postList, id: \.post_id) { data in
+                        ForEach(searchViewModel.postList, id: \.postID) { data in
                             PostForm(
                                 close: $isClose,
                                 postData: data

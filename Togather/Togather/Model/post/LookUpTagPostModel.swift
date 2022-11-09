@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - LookUpTagPostModel (태그 게시글 목록 조회)
 struct LookUpTagPostModel: Codable {
-    let title:String
+    let title: String
     let userName: String
     let tags: [String]
     let createAt: String

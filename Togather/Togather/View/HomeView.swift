@@ -5,14 +5,10 @@ import Kingfisher
 import Moya
 import SwiftUIPullToRefresh
 
-var DevLanguage: [String] = ["Swift", "Java", "Kotlin", "JS", "Python", "Flutter"]
-var DevColor: [Color] = [.orange, .red, .purple, .yellow, .green, .blue]
-var Developer: [String] = ["홍승재", "길근우", "정승훈", "강용수", "김은오", "유찬홍"]
-
 struct HomeView: View {
     
-    @State var GoPostDetail = false
-    @State var GoSearch = false
+    @State var goPostDetail = false
+    @State var goSearch = false
 
     @StateObject var homeViewModel = HomeViewModel()
     let animation = Animation
@@ -21,17 +17,16 @@ struct HomeView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            ZStack() {
+            ZStack {
                 ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(spacing: 0) {
                     
-                    RefreshableScrollView(onRefresh: { done in
+                    RefreshableScrollView { done in
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             homeViewModel.post()
                             homeViewModel.GetTagList()
                             done()
-                        }
-                    }) {
+                        }) context: {
                         VStack(spacing: 0) {
                             ScrollView(.horizontal, showsIndicators: true) {
                                 HStack {
@@ -53,20 +48,20 @@ struct HomeView: View {
                                                 .padding(.bottom, 9)
                                         }
                                         .onTapGesture {
-                                            GoSearch = true
+                                            goSearch = true
                                             print(index.name)
                                         }
                                     }
                                 }
-                                .padding(.horizontal,  8)
+                                .padding(.horizontal, 8)
                             }
                             Rectangle()
                                 .foregroundColor(Color("TabBarStroke"))
                                 .frame(width: proxy.size.width, height: 1)
                             ForEach(homeViewModel.postList, id: \.post_id) { data in
                                 Button {
-                                    GoPostDetail = true
-                                    print("homeview :",data.post_id)
+                                    goPostDetail = true
+                                    print("homeview :", data.post_id)
                                     UserDefaults.standard.set(data.post_id, forKey: "postID")
                                 } label: {
                                     VStack(alignment: .leading, spacing: 8) {
@@ -134,11 +129,11 @@ struct HomeView: View {
                                     .padding(.vertical, 6)
 //                                    .animation(.linear)
                                 }
-                                .sheet(isPresented: $GoPostDetail, content: {
+                                .sheet(isPresented: $goPostDetail, content: {
                                     PostDetail(
-                                        showModal: self.$GoPostDetail
+                                        showModal: self.$goPostDetail
                                     )
-                                    .onDisappear() {
+                                    .onDisappear {
                                         homeViewModel.post()
                                     }
                                 })
@@ -148,7 +143,7 @@ struct HomeView: View {
                     }
                     .padding(.top, 8)
                     .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
-                    .onAppear() {
+                    .onAppear {
                         DispatchQueue.global().async {
                             homeViewModel.GetTagList()
                             homeViewModel.post()

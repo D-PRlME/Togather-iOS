@@ -16,7 +16,7 @@ struct PostInfoForm: View {
                 .padding(.top, 7)
             
             HStack(spacing: 8) {
-                NavigationLink (destination: UserProfileView(userID: userID)) {
+                NavigationLink(destination: UserProfileView(userID: userID)) {
                     KFImage.url(URL(string: imageLink))
                         .resizable()
                         .scaledToFill()

@@ -41,7 +41,7 @@ struct SearchTagListView: View {
                 } label: {
                     HStack {
                         KFImage(
-                            URL(string: "\(data.image_url)")!
+                            URL(string: "\(data.imageUrl)")!
                         )
                         .placeholder {
                             Rectangle()
@@ -75,7 +75,7 @@ struct SearchTagListView: View {
         }
         .listStyle(.inset)
         .onAppear {
-            tagVM.GstTagDatas()
+            tagVM.getTagDatas()
         }
     }
 }

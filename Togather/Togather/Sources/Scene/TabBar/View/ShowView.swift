@@ -7,12 +7,12 @@ struct ShowView: View {
     
     var body: some View {
         VStack {
-            switch tabIndex{
-            case .home :
+            switch tabIndex {
+            case .home:
                 HomeView()
             case .chat:
                 ChatListView()
-            case .write :
+            case .write:
                 SearchView()
             case .search:
                 SearchView()

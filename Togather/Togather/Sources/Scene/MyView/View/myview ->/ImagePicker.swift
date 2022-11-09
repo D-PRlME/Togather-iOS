@@ -15,7 +15,7 @@ struct ImagePicker: UIViewControllerRepresentable {
         init(photoPicker: ImagePicker) {
             self.photoPicker = photoPicker
         }
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             if let image = info[.editedImage] as? UIImage {
                 guard let data = image.jpegData(compressionQuality: 0.1), let compressedImage = UIImage(data: data) else {
                     return

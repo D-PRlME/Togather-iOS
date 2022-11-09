@@ -3,8 +3,8 @@ import SwiftUIFlowLayout
 import Kingfisher
 import Moya
 
-struct HomeVIew_List_Content: View {
-    @Binding var GoPostDetail: Bool
+struct HomeViewListContent: View {
+    @Binding var goPostDetail: Bool
     
     @Binding var postList: [PostList]
     
@@ -35,15 +35,15 @@ struct HomeVIew_List_Content: View {
                             }
                         }
                     }
-                    .padding(.horizontal,  8)
+                    .padding(.horizontal, 8)
                 }
                 Rectangle()
                     .foregroundColor(Color("TabBarStroke"))
                     .frame(width: proxy.size.width, height: 1)
                 ForEach(homeViewModel.postList, id: \.post_id) { data in
                     Button {
-                        GoPostDetail = true
-                        print("homeview :",data.post_id)
+                        goPostDetail = true
+                        print("homeview :", data.post_id)
                         UserDefaults.standard.set(data.post_id, forKey: "postID")
                     } label: {
                         VStack(alignment: .leading, spacing: 8) {
@@ -98,9 +98,9 @@ struct HomeVIew_List_Content: View {
                         .cornerRadius(8)
                     }
                     .buttonStyle(.plain)
-                    .sheet(isPresented: $GoPostDetail, content: {
+                    .sheet(isPresented: $goPostDetail, content: {
                         PostDetail(
-                            showModal: self.$GoPostDetail
+                            showModal: self.$goPostDetail
                         )
                     })
                     
@@ -111,7 +111,7 @@ struct HomeVIew_List_Content: View {
             }
             .listRowInsets(EdgeInsets())
         }
-        .onAppear() {
+        .onAppear {
 //            UITableView.appearance().separatorStyle = .none
             homeViewModel.post()
             homeViewModel.GetTagList()

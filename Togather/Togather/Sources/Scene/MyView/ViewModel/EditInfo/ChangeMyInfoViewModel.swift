@@ -5,7 +5,7 @@ import Alamofire
 
 class ChangeMyInfoViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    let imageClient = MoyaProvider<ImageClient>()
+    let imageClient = MoyaProvider<ImageClient>(plugins: [MoyaLoggerPlugin()])
     
     @Published var name: String = Account.ID ?? ""
     @Published var profileImageLink: String = Account.profileImageLink ?? ""
@@ -58,6 +58,7 @@ class ChangeMyInfoViewModel: ObservableObject {
             }
         }
     }
+    
     func updateProfileImage() {
         print("작동: updateProfileImage")
         imageClient.request(.postImage([image!.jpegData(compressionQuality: 0.0) ?? Data()])) { res in
@@ -67,6 +68,7 @@ class ChangeMyInfoViewModel: ObservableObject {
                 case 201:
                     if let data = try? JSONDecoder().decode(UploadImageModel.self, from: result.data) {
                         self.profileImageLink = data.images_url.first ?? ""
+                        Account.profileImageLink = data.images_url.first ?? ""
                         print("profile url:", self.profileImageLink)
                         print("profile upload 성공")
                     } else {

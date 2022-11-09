@@ -2,46 +2,66 @@ import Foundation
 
 // MARK: - ChatListModel
 struct ChatListModel: Codable {
-    let room_list: [RoomList]
+    let roomList: [RoomList]
+
+    enum CodingKeys: String, CodingKey {
+        case roomList = "room_list"
+    }
 }
 
 // MARK: - RoomList
 struct RoomList: Codable {
-    let room_id: Int
-    let room_type, room_logo_image, room_name: String
-    let last_chat: LastChat
-    let is_read: Bool
+    let roomID: Int
+    let roomName: String
+    let roomLogoImage: String
+    let roomType: String
+    let isRead: Bool
+    let lastChat: LastChat
+
+    enum CodingKeys: String, CodingKey {
+        case roomID = "room_id"
+        case roomName = "room_name"
+        case roomLogoImage = "room_logo_image"
+        case roomType = "room_type"
+        case isRead = "is_read"
+        case lastChat = "last_chat"
+    }
 }
 
 // MARK: - LastChat
 struct LastChat: Codable {
-    let last_message, last_sent_at: String
+    let lastMessage, lastSentAt: String
+
+    enum CodingKeys: String, CodingKey {
+        case lastMessage = "last_message"
+        case lastSentAt = "last_sent_at"
+    }
 }
 
 struct ChattingList {
-    let room_id: Int
-    let room_type, room_logo_image, room_name: String
-    let last_chat: LastChatting
-    let is_read: Bool
+    let roomID: Int
+    let roomType, roomLogoImage, roomName: String
+    let lastChat: LastChatting
+    let isRead: Bool
     init(
-        room_id: Int,
-        room_type: String,
-        room_logo_image: String,
-        room_name: String,
-        last_chat: LastChatting,
-        is_read: Bool
+        roomID: Int,
+        roomType: String,
+        roomLogoImage: String,
+        roomName: String,
+        lastChat: LastChatting,
+        isRead: Bool
     ) {
-        self.room_id = room_id
-        self.room_type = room_type
-        self.room_logo_image = room_logo_image
-        self.room_name = room_name
-        self.last_chat = last_chat
-        self.is_read = is_read
+        self.roomID = roomID
+        self.roomType = roomType
+        self.roomLogoImage = roomLogoImage
+        self.roomName = roomName
+        self.lastChat = lastChat
+        self.isRead = isRead
     }
 }
 
 struct LastChatting {
-    let last_message, last_sent_at: String
+    let lastMessage, lastSentAt: String
 }
 /*
 {

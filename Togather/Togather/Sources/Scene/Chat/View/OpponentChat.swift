@@ -2,13 +2,13 @@ import SwiftUI
 import Kingfisher
 
 struct OpponentChat: View {
-    let image_url: String
+    let imageUrl: String
     let user: String
     let chatContent: String
     let date: String
     var body: some View {
         HStack(alignment: .bottom, spacing: 4) {
-            KFImage.url(URL(string: image_url))
+            KFImage.url(URL(string: imageUrl))
                 .placeholder {
                     Circle()
                         .fill(Color.secondary)
@@ -49,7 +49,7 @@ struct OpponentChat: View {
 
 struct OpponentChat_Previews: PreviewProvider {
     static var previews: some View {
-        OpponentChat(image_url: "https://avatars.githubusercontent.com/u/102791216?v=4",
+        OpponentChat(imageUrl: "https://avatars.githubusercontent.com/u/102791216?v=4",
                      user: "Reswo._.", chatContent: "helloWorld", date: "오전 7:22")
     }
 }

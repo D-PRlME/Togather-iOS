@@ -15,9 +15,9 @@ class MyPostViewModel: ObservableObject {
     @Published var tagListName: [String] = []
     
     func post() {
-        for i in 0..<self.tag.count {
-            self.tag[i] = self.tag[i].uppercased()
-            self.tag[i] = self.tag[i].replacingOccurrences(of: ".", with: "_")
+        for index in 0..<self.tag.count {
+            self.tag[index] = self.tag[index].uppercased()
+            self.tag[index] = self.tag[index].replacingOccurrences(of: ".", with: "_")
         }
         print(self.tag)
         postClient.request(.post(title: title, content: content, tag: tag, link: link)) { res in
@@ -41,7 +41,7 @@ class MyPostViewModel: ObservableObject {
             }
         }
     }
-    func GetTagList() {
+    func getTagList() {
         postClient.request(.getTag) { res in
             switch res {
             case .success(let result):
@@ -50,8 +50,8 @@ class MyPostViewModel: ObservableObject {
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(TagListModel.self, from: result.data) {
                         self.tagList = data.tags
-                        for i in 0..<self.tagList.count {
-                            self.tagListName.append(self.tagList[i].name)
+                        for index in 0..<self.tagList.count {
+                            self.tagListName.append(self.tagList[index].name)
                         }
                     } else {
                         print("⚠️login docoder error")

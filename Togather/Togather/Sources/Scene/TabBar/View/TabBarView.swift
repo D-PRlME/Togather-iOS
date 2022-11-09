@@ -8,8 +8,8 @@ enum TabIndex {
 struct TabBarView: View {
     @State private var tabIndex = TabIndex.home
     @State private var showModal = false
-    func safeAreaValue(_ _true: CGFloat, _ _false: CGFloat) -> CGFloat {
-        return UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? _true : _false
+    func safeAreaValue(_ first: CGFloat, _ rear: CGFloat) -> CGFloat {
+        return UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? first : rear
     }
     var body: some View {
         GeometryReader { proxy in

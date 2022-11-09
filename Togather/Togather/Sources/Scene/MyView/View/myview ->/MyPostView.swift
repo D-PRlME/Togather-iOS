@@ -7,7 +7,7 @@ struct MyPost: View {
     @State private var GoPostDetail = false
     @State private var isClose: Bool = false
     
-    @StateObject var myPageViewModel = MyViewModel()
+    @StateObject var myPageViewModel = MyPostViewModel()
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     

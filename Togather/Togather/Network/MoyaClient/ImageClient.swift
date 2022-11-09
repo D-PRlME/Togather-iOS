@@ -41,7 +41,7 @@ extension ImageClient: TargetType {
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         switch self {
         case .postImage:
             return Header.accessToken.header()

@@ -92,7 +92,7 @@ extension UserService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "email" : email
+                        "email": email
                     ],
                 encoding: JSONEncoding.default)
             
@@ -100,7 +100,7 @@ extension UserService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "email" : email
+                        "email": email
                     ],
                 encoding: JSONEncoding.default)
             
@@ -108,8 +108,8 @@ extension UserService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "email" : email,
-                        "auth_code" : authCode
+                        "email": email,
+                        "auth_code": authCode
                     ],
                 encoding: JSONEncoding.default)
             
@@ -117,10 +117,10 @@ extension UserService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "name" : name,
-                        "profile_image_url" : picture,
-                        "introduce" : introduce,
-                        "positions" : position
+                        "name": name,
+                        "profile_image_url": picture,
+                        "introduce": introduce,
+                        "positions": position
                     ],
                 encoding: JSONEncoding.default)
 
@@ -128,17 +128,17 @@ extension UserService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "old_password" : oldPassword,
-                        "new_password" : newPassword
+                        "old_password": oldPassword,
+                        "new_password": newPassword
                     ],
                 encoding: JSONEncoding.default)
             
-        case .login(let ID, let PW):
+        case .login(let identify, let password):
             return .requestParameters(
                 parameters:
                     [
-                        "email" : ID,
-                        "password" : PW
+                        "email": identify,
+                        "password": password
                     ],
                 encoding: JSONEncoding.default)
             
@@ -146,9 +146,9 @@ extension UserService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "password" : password,
-                        "name" : name,
-                        "email" : email
+                        "password": password,
+                        "name": name,
+                        "email": email
                     ],
                 encoding: JSONEncoding.default)
             
@@ -156,7 +156,7 @@ extension UserService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "email" : email
+                        "email": email
                     ],
                 encoding: JSONEncoding.default)
             
@@ -164,21 +164,21 @@ extension UserService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "new_password" : newPassword
+                        "new_password": newPassword
                     ],
                 encoding: JSONEncoding.default)
             
-        case .quitAccount(let pw):
+        case .quitAccount(let password):
             return .requestParameters(
                 parameters:
                     [
-                        "password" : pw
+                        "password": password
                     ],
                 encoding: JSONEncoding.default)
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         switch self {
             //토큰 필요없음
         case .mailSignup, .mailVerify, .mailDuplicate, .signup, .login, .changePassword:

@@ -2,10 +2,10 @@ import Foundation
 import Moya
 
 class TokenAuthViewModel: ObservableObject {
-    let UserClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
+    let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     
     func tokenReissueClient() {
-        UserClient.request(.tokenReissue) { res in
+        userClient.request(.tokenReissue) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {

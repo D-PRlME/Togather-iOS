@@ -3,7 +3,7 @@ import SwiftUI
 struct ChangePasswordEmailView: View {
     @StateObject var changeVM = ChangePasswordToEmailViewModel()
     
-    func ButtonAtivation() -> Bool {
+    func buttonAtivation() -> Bool {
         return true
     }
     
@@ -30,7 +30,7 @@ struct ChangePasswordEmailView: View {
                     Spacer()
                     
                     AuthButton(
-                        isDisable: .constant(ButtonAtivation()),
+                        isDisable: .constant(buttonAtivation()),
                         text: "다음",
                         action: {
                             

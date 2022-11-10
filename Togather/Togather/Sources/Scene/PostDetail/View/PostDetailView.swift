@@ -62,24 +62,26 @@ struct PostDetail: View {
                     // MARK: - 버튼들
                     
                     HStack(alignment: .bottom) {
-                        HStack(spacing: 8) {
-                            Image("LinkImage")
-                                .resizable()
-                                .frame(width: 12, height: 12)
-                                .padding(4)
-                            Text("연락하기")
-                                .foregroundColor(.black)
-                                .font(.maintext1b)
+                        if !postDetailViewModel.postDetail.isMine {
+                            HStack(spacing: 8) {
+                                Image("LinkImage")
+                                    .resizable()
+                                    .frame(width: 12, height: 12)
+                                    .padding(4)
+                                Text("연락하기")
+                                    .foregroundColor(.black)
+                                    .font(.maintext1b)
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(Color.main)
+                            .cornerRadius(37)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 37)
+                                    .stroke(lineWidth: 2)
+                                    .foregroundColor(.mainDarken)
+                            )
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .background(Color.main)
-                        .cornerRadius(37)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 37)
-                                .stroke(lineWidth: 2)
-                                .foregroundColor(.mainDarken)
-                        )
                         Spacer()
                         VStack(alignment: .trailing) {
                             Spacer()

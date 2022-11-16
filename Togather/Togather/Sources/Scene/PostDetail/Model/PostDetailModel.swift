@@ -38,7 +38,7 @@ struct PostDetailModel: Codable {
         case isMine = "is_mine"
         case isLiked = "is_liked"
         case likeCount = "like_count"
-    } 
+    }
     let title, createdAt: String
     let user: User
     let tags: [Tag]

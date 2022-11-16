@@ -3,9 +3,7 @@ import Alamofire
 import Kingfisher
 
 struct Developers: View {
-    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     let developers: [String] = [
         "김성원",
         "조병진",
@@ -46,12 +44,10 @@ struct Developers: View {
         "https://avatars.githubusercontent.com/u/80371353?v=4",
         "https://avatars.githubusercontent.com/u/101026873?v=4"
     ]
-    
     let columns = [
         GridItem(.flexible(), spacing: 12),
         GridItem(.flexible(), spacing: 12)
     ]
-    
     var body: some View {
         ZStack {
             ColorManager.BackgroundColor.ignoresSafeArea()
@@ -107,7 +103,6 @@ struct Developers: View {
                                             .cornerRadius(37)
                                         Spacer()
                                     }
-                                    
                                     Link(destination: URL(string: "https://github.com/" + githubID[index])!) {
                                         HStack(spacing: 0) {
                                             Image("LinkImage")

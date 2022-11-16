@@ -6,14 +6,12 @@ import Alamofire
 class ChangeMyInfoViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     let imageClient = MoyaProvider<ImageClient>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var name: String = Account.identifier ?? ""
     @Published var profileImageLink: String = Account.profileImageLink ?? ""
     @Published var introduce: String = ""
     @Published var positions: [String] = Account.positions ?? []
     @Published var showingAlert: Bool = false
     @Published var image: UIImage? = UIImage()
-    
     func getMyInfo() {
         userClient.request(.getMyprofile) { res in
             switch res {
@@ -35,7 +33,6 @@ class ChangeMyInfoViewModel: ObservableObject {
             }
         }
     }
-    
     func changeMyInfo() {
         userClient.request(.changeMyInfo(name: name, picture: profileImageLink, introduce: introduce, position: positions)) { res in
             switch res {
@@ -55,7 +52,6 @@ class ChangeMyInfoViewModel: ObservableObject {
             }
         }
     }
-    
     func updateProfileImage() {
         print("작동: updateProfileImage")
         imageClient.request(.postImage([image!.jpegData(compressionQuality: 0.0) ?? Data()])) { res in

@@ -3,13 +3,10 @@ import SwiftUI
 struct ImagePicker: UIViewControllerRepresentable {
     @StateObject var changeMyInfoVM = ChangeMyInfoViewModel()
     @Binding var image: UIImage?
-    
     private let controller = UIImagePickerController()
-    
     func makeCoordinator() -> Coordinator {
         return Coordinator(photoPicker: self)
     }
-    
     final class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         let photoPicker: ImagePicker
         init(photoPicker: ImagePicker) {
@@ -26,7 +23,6 @@ struct ImagePicker: UIViewControllerRepresentable {
             picker.dismiss(animated: true)
         }
     }
-    
     func makeUIViewController(context: Context) -> some UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
@@ -34,7 +30,5 @@ struct ImagePicker: UIViewControllerRepresentable {
         return picker
     }
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        
     }
-    
 }

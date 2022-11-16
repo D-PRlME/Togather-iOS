@@ -1,9 +1,8 @@
 import SwiftUI
 
 struct EditInfoTextField: View {
-    let placeholder: String
     @Binding var text: String
-    
+    let placeholder: String
     var body: some View {
         TextField(placeholder, text: $text)
             .autocapitalization(.none)
@@ -24,8 +23,7 @@ struct EditInfoTextField: View {
 struct EditInfoTextField_Previews: PreviewProvider {
     static var previews: some View {
         EditInfoTextField(
-            placeholder: "제목",
-            text: .constant("")
+            text: .constant(""), placeholder: "제목"
         )
     }
 }

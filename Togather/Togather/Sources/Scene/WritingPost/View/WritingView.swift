@@ -2,14 +2,10 @@ import SwiftUI
 import SwiftUIFlowLayout
 
 struct WritingView: View {
-    
     @Binding var showModal: Bool
-
     @State private var tagBtnArr: [String] = []
     @State private var goTags: Bool = false
-    
     @StateObject var postViewModel = PostViewModel()
-    
     var body: some View {
         VStack {
             // MARK: - 취소버튼
@@ -24,25 +20,21 @@ struct WritingView: View {
                         self.showModal.toggle()
                     }
             }
-            
             // MARK: - 제목
 
             PostTextField(
                 placeholder: "제목",
                 text: $postViewModel.title
             )
-            
             // MARK: - 본문
 
             PostTextEditor(
                 text: $postViewModel.content,
                 placeholder: "본문을 입력하세요"
             )
-            
             FlowLayout(mode: .scrollable,
                        items: tagBtnArr,
                        itemSpacing: 2) { index in
-                
                 Text(index)
                     .foregroundColor(.white)
                     .font(.maintext2m)
@@ -54,9 +46,7 @@ struct WritingView: View {
                     .background(Color.whiteElevated4)
                     .cornerRadius(37)
             }
-            
             // MARK: - 글쓰기 버튼
-            
             HStack {
                 PostButton(
                     title: "글쓰기",
@@ -68,9 +58,7 @@ struct WritingView: View {
                         showModal = false
                     }
                 )
-                
                 Spacer()
-                
                 PostButton(
                     title: "모든 태그 보기",
                     backgroundColor: .whiteElevated1,
@@ -83,7 +71,7 @@ struct WritingView: View {
                     TagListView(goBack: $goTags, tagLists: $tagBtnArr)
                 }
             }
-        } //Vstack
+        } // Vstack
         .padding(.horizontal, 16)
         .padding(.bottom, 16)
     } // body

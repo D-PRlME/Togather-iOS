@@ -7,7 +7,6 @@ struct AuthTextField: View {
     let placeholder: String
     let isSecret: Bool
     let message: String
-    
     init(
         placeholder: String,
         isSecret: Bool = false,
@@ -21,7 +20,6 @@ struct AuthTextField: View {
         self.message = message
         self._isError = isError
     }
-    
     var body: some View {
         VStack(spacing: 0) {
             ZStack(alignment: .trailing) {
@@ -54,7 +52,6 @@ struct AuthTextField: View {
                         .stroke(style: .init(lineWidth: 1))
                         .foregroundColor(isError ? .error : .whiteElevated3)
                 )
-                
                 if isSecret {
                     Button {
                         self.isShow.toggle()

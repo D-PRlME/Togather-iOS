@@ -3,7 +3,6 @@ import AVFoundation
 
 struct ChangePasswordSuccess: View {
     @State private var goHome: Bool = false
-    
     var body: some View {
         GeometryReader { proxy in
             VStack(alignment: .leading) {
@@ -13,14 +12,12 @@ struct ChangePasswordSuccess: View {
                     title: "비밀번호가\n변경되었어요",
                     subTitle: ""
                 )
-                
                 GeometryReader { imageProxy in
                     Image("GreenCheck")
                         .resizable()
                         .frame(width: 150, height: 150)
                         .position(x: imageProxy.frame(in: .local).midX, y: imageProxy.frame(in: .local).midY)
                 }
-                
                 ChangePasswordButton(
                     isDisable: .constant(false),
                     title: "다음",

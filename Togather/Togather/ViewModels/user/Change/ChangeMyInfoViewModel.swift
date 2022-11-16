@@ -6,17 +6,12 @@ import Alamofire
 class ChangeMyInfoViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     let imageClient = MoyaProvider<ImageClient>()
-    
     @Published var name: String = Account.ID ?? ""
     @Published var profileImageLink: String = Account.profileImageLink ?? ""
     @Published var introduce: String = ""
     @Published var positions: [String] = Account.positions ?? []
     @Published var showingAlert: Bool = false
     @Published var image: UIImage? = UIImage()
-    
-    //"PM", "웹 프론트엔드", "백엔드", "안드로이드", "iOS", "디자인"
-    //BACKEND, FRONTEND, IOS, DESIGNER, PM, ANDROID
-    
     func getMyInfo() {
         userClient.request(.getMyprofile) { res in
             switch res {
@@ -38,7 +33,6 @@ class ChangeMyInfoViewModel: ObservableObject {
             }
         }
     }
-    
     func changeMyInfo() {
         userClient.request(.changeMyInfo(name: name, picture: profileImageLink, introduce: introduce, position: positions)) { res in
             switch res {

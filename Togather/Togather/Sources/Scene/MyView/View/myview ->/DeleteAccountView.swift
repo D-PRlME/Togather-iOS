@@ -2,14 +2,10 @@ import SwiftUI
 import Kingfisher
 
 struct DeleteAccount: View {
-    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var showAlert = false
-    
     @Binding var goSignView: Bool
-    
     @StateObject var quitAccountVM = QuitAccountViewModel()
-    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -34,7 +30,6 @@ struct DeleteAccount: View {
                         .foregroundColor(.black)
                         .font(.custom("Pretendard-Medium", size: 18))
                     Spacer()
-                    
                     Button {
                         showAlert = true
                     } label: {
@@ -51,8 +46,6 @@ struct DeleteAccount: View {
                             .padding(2)
                             .background(quitAccountVM.checkPassword() ? Color("RedStroke") : Color("TabBarStroke"))
                             .cornerRadius(6)
-                        
-                        
                             .alert("정말 계정을 삭제하시겠습니까?", isPresented: $showAlert) {
                                 Button("진행", role: .destructive) {
                                     quitAccountVM.deleteAccount()
@@ -61,13 +54,11 @@ struct DeleteAccount: View {
                             } message: {
                                 Text("모든 입력한 정보, 작성한 글이 서버에서 삭제되며 이 작업은 되돌릴 수 없습니다.")
                             }
-                        
                             .alert("안내", isPresented: $quitAccountVM.wrongPW) {
                                 Button("확인", role: .cancel) { }
                             } message: {
                                 Text("비밀번호가 올바르지 않습니다.")
                             }
-                        
                             .alert("안내", isPresented: $quitAccountVM.isSucced) {
                                 Button("확인", role: .cancel) {
                                     self.presentationMode.wrappedValue.dismiss()
@@ -76,7 +67,6 @@ struct DeleteAccount: View {
                             } message: {
                                 Text("계정이 성공적으로 삭제되었습다.")
                             }
-                        
                     }
                 }
                 .padding(.horizontal, 16)
@@ -115,8 +105,8 @@ struct DeleteAccount: View {
     }
 }
 
-//struct DeleteAccount_Previews: PreviewProvider {
+// struct DeleteAccount_Previews: PreviewProvider {
 //    static var previews: some View {
 //        DeleteAccount(.constant(true))
 //    }
-//}
+// }

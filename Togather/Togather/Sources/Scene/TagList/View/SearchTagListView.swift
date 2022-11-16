@@ -3,13 +3,10 @@ import Kingfisher
 
 struct SearchTagListView: View {
     @StateObject var tagVM = TagViewModel()
-    
     @Binding var goBack: Bool
     @Binding var tagBtnValue: String
-    
     var body: some View {
         VStack {
-            
             HStack {
                 Spacer()
                 Image("CloseBtn")
@@ -20,17 +17,14 @@ struct SearchTagListView: View {
                         self.goBack = false
                     }
             }
-            
             HStack {
                 Text("모든 태그 보기")
                     .font(.title1b)
                     .foregroundColor(.text)
                     .padding(.horizontal, 16)
-                
                 Spacer()
             }
-            
-            //list
+            // list
             List(tagVM.tagValues, id: \.self) { data in
                 Button {
                     if tagBtnValue == data.name {
@@ -65,7 +59,6 @@ struct SearchTagListView: View {
                                 )
                                 .opacity(tagBtnValue == data.name ? 1 : 0)
                         )
-                        
                         Text("\(data.name)")
                             .font(.title3m)
                             .foregroundColor(.text)

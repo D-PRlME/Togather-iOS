@@ -6,7 +6,6 @@ struct ChangePasswordTextField: View {
     @Binding var text: String
     @Binding var isError: Bool
     @Binding var indicatorMassage: String
-    
     init(
         placeholder: String,
         keybordType: UIKeyboardType,

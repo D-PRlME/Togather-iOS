@@ -1,9 +1,7 @@
 import SwiftUI
 
 struct EnterNewPassword: View {
-    
     @StateObject var changePWToEmailVM = ChangePasswordToEmailViewModel()
-    
     var body: some View {
         GeometryReader { proxy in
             NavigationLink(destination: ChangePasswordSuccess(), tag: 1, selection: $changePWToEmailVM.goSucced) { EmptyView() }
@@ -14,7 +12,6 @@ struct EnterNewPassword: View {
                     title: "비밀번호 변경",
                     subTitle: "바꿀 새 비밀번호를 입력해 주세요"
                 )
-                
                 VStack {
                     AuthTextField(
                         placeholder: "비밀번호",
@@ -23,7 +20,6 @@ struct EnterNewPassword: View {
                         message: changePWToEmailVM.errorMessage,
                         isError: $changePWToEmailVM.isError
                     )
-                    
                     if !changePWToEmailVM.isError {
                         HStack {
                             Text("8자리 이상, 숫자, 영어 소문자, 특수문자를 포함해야 합니다")
@@ -34,9 +30,7 @@ struct EnterNewPassword: View {
                         }
                     }
                 }
-                
                 Spacer()
-                
                 ChangePasswordButton(
                     isDisable: .constant(!changePWToEmailVM.passwordValueCheck()),
                     title: "다음",
@@ -45,7 +39,7 @@ struct EnterNewPassword: View {
                     }
                 )
                 .padding(.bottom, proxy.safeAreaInsets.bottom == 0 ? 30 : 5)
-            } //Vstack
+            } // Vstack
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         }

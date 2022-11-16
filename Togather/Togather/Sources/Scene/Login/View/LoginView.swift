@@ -3,9 +3,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
-    
     @StateObject var loginViewModel = LoginViewModel()
-    
     var body: some View {
         ZStack {
             ColorManager.BackgroundColor.ignoresSafeArea()
@@ -13,12 +11,10 @@ struct LoginView: View {
             VStack(alignment: .leading, spacing: 12) {
                 Spacer()
                 LoginTitle()
-                
                 LoginTextField(
                     id: $loginViewModel.email,
                     password: $loginViewModel.password
                 )
-                
                 AuthButton(
                     isLoading: $loginViewModel.showProgrees,
                     text: "로그인",
@@ -27,7 +23,6 @@ struct LoginView: View {
                         loginViewModel.login()
                     }
                 )
-                
                 LoginNavigationButton()
                 Spacer()
                 LoginImageButton()

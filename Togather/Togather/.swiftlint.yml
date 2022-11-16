@@ -1,11 +1,5 @@
-disabled_rules:
+disabled_rules: # Default Rules에서 비활성화할 규칙
 
   - line_length
-  - trailing_newline
-  - vertical_whitespace
-  - trailing_whitespace
   - orphaned_doc_comment
   - nesting
-  - comment_spacing
-  - trailing_comma
-  - leading_whitespace

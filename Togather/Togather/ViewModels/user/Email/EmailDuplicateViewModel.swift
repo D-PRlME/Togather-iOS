@@ -3,14 +3,10 @@ import Moya
 
 class EmailDuplicateViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var email: String = ""
     @Published var showingAlert: Bool = false
     @Published var alertMessage: String = ""
-    
     @Published var viewTag: Int?
-    
-    
     func emailDuplicate() {
         userClient.request(.mailDuplicate(email: email)) { res in
             switch res {
@@ -35,5 +31,4 @@ class EmailDuplicateViewModel: ObservableObject {
             }
         }
     }
-    
 }

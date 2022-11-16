@@ -2,11 +2,9 @@ import SwiftUI
 
 struct ChangePasswordEmailView: View {
     @StateObject var changeVM = ChangePasswordToEmailViewModel()
-    
     func buttonAtivation() -> Bool {
         return true
     }
-    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -18,7 +16,6 @@ struct ChangePasswordEmailView: View {
                         title: "비밀번호 변경",
                         subTitle: "인증번호를 받기 위한 이메일 주소가 필요합니다"
                     )
-                    
                     ChangePasswordTextField(
                         placeholder: "이메일",
                         keybordType: .emailAddress,
@@ -26,18 +23,16 @@ struct ChangePasswordEmailView: View {
                         isError: $changeVM.isError,
                         indicatorMassage: $changeVM.errorMessage
                     )
-                    
                     Spacer()
-                    
                     AuthButton(
                         isDisable: .constant(buttonAtivation()),
                         text: "다음",
                         action: {
-                            
+                            print("여기 뭔가 이상해..")
                         }
                     )
                     .padding(.bottom, proxy.safeAreaInsets.bottom == 0 ? 30 : 5)
-                } //Vstack
+                } // Vstack
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
             }

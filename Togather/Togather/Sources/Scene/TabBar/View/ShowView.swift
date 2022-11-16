@@ -1,10 +1,6 @@
-
 import SwiftUI
-
 struct ShowView: View {
-    
     let tabIndex: TabIndex
-    
     var body: some View {
         VStack {
             switch tabIndex {

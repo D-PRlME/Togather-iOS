@@ -3,13 +3,9 @@ import Moya
 
 class EmailVerifyViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var email: String = ""
     @Published var code: String = ""
-    
     @Published var accessVerify: Int?
-    
-    
     func emailVerify() {
         userClient.request(.mailVerify(email: email, authCode: code)) { res in
             switch res {

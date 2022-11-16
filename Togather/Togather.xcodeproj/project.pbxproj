@@ -29,7 +29,6 @@
 		4B3FB523291B476900E9BE51 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB522291B476900E9BE51 /* UserProfileModel.swift */; };
 		4B3FB526291B55AA00E9BE51 /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB525291B55AA00E9BE51 /* ChangePasswordModel.swift */; };
 		4B3FB529291B55F500E9BE51 /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB528291B55F500E9BE51 /* MyViewModel.swift */; };
-		4B3FB52C291D048600E9BE51 /* SocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB52B291D048600E9BE51 /* SocketView.swift */; };
 		4B4C6B9028EE8635007433C2 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6B8F28EE8635007433C2 /* EditInfoView.swift */; };
 		4B4C6BAF28F2E407007433C2 /* String+PositionTypeChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BAE28F2E407007433C2 /* String+PositionTypeChange.swift */; };
 		4B4C6BB328F44C85007433C2 /* ChangePasswordEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BB228F44C85007433C2 /* ChangePasswordEmailView.swift */; };
@@ -114,6 +113,7 @@
 		90C8C08D28DDC1620083577B /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08C28DDC1620083577B /* SwiftUIPullToRefresh */; };
 		90C8C09028DDC1800083577B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08F28DDC1800083577B /* Kingfisher */; };
 		90C8C09328DDC1940083577B /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C09228DDC1940083577B /* SocketIO */; };
+		90CF12AE2924F0CD003B26ED /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 90CF12AD2924F0CD003B26ED /* .swiftlint.yml */; };
 		90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */; };
 		90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E728BF6E3000B653C3 /* WritingView.swift */; };
 		90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E928BF6E3D00B653C3 /* MyView.swift */; };
@@ -156,7 +156,6 @@
 		4B3FB522291B476900E9BE51 /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		4B3FB525291B55AA00E9BE51 /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
 		4B3FB528291B55F500E9BE51 /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
-		4B3FB52B291D048600E9BE51 /* SocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketView.swift; sourceTree = "<group>"; };
 		4B4C6B8F28EE8635007433C2 /* EditInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
 		4B4C6BAE28F2E407007433C2 /* String+PositionTypeChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PositionTypeChange.swift"; sourceTree = "<group>"; };
 		4B4C6BB228F44C85007433C2 /* ChangePasswordEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordEmailView.swift; sourceTree = "<group>"; };
@@ -233,6 +232,7 @@
 		90AFD8DD28EC40E600E18B12 /* BackBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBtn.swift; sourceTree = "<group>"; };
 		90C50A5228CC8254007EA639 /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
 		90C50A5628CCBE8C007EA639 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		90CF12AD2924F0CD003B26ED /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		90D1C6E728BF6E3000B653C3 /* WritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
 		90D1C6E928BF6E3D00B653C3 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
@@ -673,7 +673,6 @@
 			isa = PBXGroup;
 			children = (
 				4B5FE3C228E48EA900DE6184 /* SocketTest.swift */,
-				4B3FB52B291D048600E9BE51 /* SocketView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1048,6 +1047,7 @@
 				4B4C6BB428FBBF24007433C2 /* Sources */,
 				4BE919D228CF65750002A268 /* Model */,
 				4B5FE3B928E47FF000DE6184 /* Soket */,
+				90CF12AD2924F0CD003B26ED /* .swiftlint.yml */,
 			);
 			path = Togather;
 			sourceTree = "<group>";
@@ -1211,6 +1211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90CF12AE2924F0CD003B26ED /* .swiftlint.yml in Resources */,
 				4BE1C61428CDE9B60052AE3D /* Pretendard-Light.otf in Resources */,
 				908ED77128CA5A4600763AC9 /* Launch Screen.storyboard in Resources */,
 				4BE1C61328CDE9B60052AE3D /* Pretendard-Thin.otf in Resources */,
@@ -1286,7 +1287,6 @@
 				4BC89A2D28DDAF1800189553 /* UserProfileViewModel.swift in Sources */,
 				4BE919D728CF678A0002A268 /* ErrorModel.swift in Sources */,
 				900990F128D0586C00FD9462 /* PostDetailModel.swift in Sources */,
-				4B3FB52C291D048600E9BE51 /* SocketView.swift in Sources */,
 				90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */,
 				909118D7290EB23300C80B42 /* TabBarItem.swift in Sources */,
 				90EC086428DA9FDD00E34BCE /* EditPostView.swift in Sources */,

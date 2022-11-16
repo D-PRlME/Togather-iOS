@@ -5,7 +5,6 @@ struct AuthButton: View {
     @Binding var isLoading: Bool
     let text: String
     let action: () -> Void
-    
     init (
         isDisable: Binding<Bool> = .constant(false),
         isLoading: Binding<Bool> = .constant(false),
@@ -17,14 +16,12 @@ struct AuthButton: View {
         self.text = text
         self.action = action
     }
-    
     var body: some View {
         VStack {
             Button(action: action) {
                 VStack(spacing: 0) {
                     Rectangle()
                         .frame(height: 0)
-                    
                     if isLoading {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: .white))

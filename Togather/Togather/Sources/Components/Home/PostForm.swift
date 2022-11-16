@@ -16,7 +16,6 @@ struct PostForm: View {
                     .font(.title2b)
                     .multilineTextAlignment(.leading)
                     .padding(.leading, 5)
-                
                 FlowLayout(mode: .scrollable,
                            items: postData.tags,
                            itemSpacing: 3) {
@@ -33,9 +32,7 @@ struct PostForm: View {
                                 .foregroundColor(.whiteElevated3)
                         )
                 }
-                
                 Divider()
-                
                 HStack {
                     KFImage.url(URL(string: postData.users.profileImageUrl))
                         .placeholder {
@@ -65,7 +62,6 @@ struct PostForm: View {
                         .foregroundColor(.whiteElevated4)
                         .font(.maintext2m)
                 }
-                
             }
             .padding(12)
             .background(Color.whiteElevated1)
@@ -86,10 +82,3 @@ struct PostForm: View {
         }
     }
 }
-
-
-//struct PostForm_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PostForm()
-//    }
-//}

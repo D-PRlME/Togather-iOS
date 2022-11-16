@@ -7,14 +7,12 @@ struct PostInfoForm: View {
     let userName: String
     let createdAt: String
     let userID: Int
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
                 .foregroundColor(.black)
                 .font(.title2b)
                 .padding(.top, 7)
-            
             HStack(spacing: 8) {
                 NavigationLink(destination: UserProfileView(userID: userID)) {
                     KFImage.url(URL(string: imageLink))

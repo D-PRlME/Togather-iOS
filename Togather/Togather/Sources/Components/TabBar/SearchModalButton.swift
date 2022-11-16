@@ -27,9 +27,3 @@ struct SearchModalButton: View {
         .buttonStyle(.plain)
     }
 }
-
-//struct SearchModalButton_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchModalButton()
-//    }
-//}

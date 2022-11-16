@@ -11,7 +11,6 @@ extension ChatService: TargetType {
     var baseURL: URL {
         return URL(string: "http://52.55.240.35:8080/chats")!
     }
-    
     var path: String {
         switch self {
         case .fetchChatList, .creatIndividualChat:
@@ -28,15 +27,12 @@ extension ChatService: TargetType {
             return .post
         }
     }
-    
     var task: Task {
         switch self {
         case .fetchChat, .creatIndividualChat, .fetchChatList:
             return .requestPlain
         }
     }
-    
-    
     var headers: [String: String]? {
         switch self {
         case .fetchChat, .creatIndividualChat, .fetchChatList:

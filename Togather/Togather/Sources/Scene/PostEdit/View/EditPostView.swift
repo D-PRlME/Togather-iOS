@@ -8,10 +8,8 @@ struct EditPostView: View {
     @Binding var title: String
     @Binding var content: String
     let postID: Int
-    
     @State private var goTags: Bool = false
     @StateObject var editPostViewModel = EditPostViewModel()
-    
     var body: some View {
         VStack(alignment: .leading) {
             // MARK: - 취소버튼
@@ -25,27 +23,23 @@ struct EditPostView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }
             }
-            
             // MARK: - 제목
 
             PostTextField(
                 placeholder: "제목",
                 text: $title
             )
-            
             // MARK: - 본문
 
             PostTextEditor(
                 text: $content,
                 placeholder: "본문을 입력하세요"
             )
-            
             // MARK: - 테그
 
             FlowLayout(mode: .scrollable,
                        items: tagBtnArr,
                        itemSpacing: 4) { index in
-                
                 Text(index)
                     .foregroundColor(.white0)
                     .font(.maintext2m)
@@ -54,9 +48,7 @@ struct EditPostView: View {
                     .background(Color.whiteElevated5)
                     .cornerRadius(37)
             }
-            
             // MARK: - 글쓰기 버튼
-            
             HStack {
                 PostButton(
                     title: "저장",
@@ -67,14 +59,11 @@ struct EditPostView: View {
                         editPostViewModel.content = content
                         editPostViewModel.postID = postID
                         editPostViewModel.tag = tagBtnArr
-                        
                         editPostViewModel.edit()
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 )
-                
                 Spacer()
-                
                 PostButton(
                     title: "모든 태그 보기",
                     backgroundColor: .whiteElevated1,
@@ -87,12 +76,11 @@ struct EditPostView: View {
                     TagListView(goBack: $goTags, tagLists: $tagBtnArr)
                 }
             }
-        } //Vstack
+        } // Vstack
         .padding([.horizontal, .bottom], 16)
         .navigationBarHidden(true)
     } // body
 }
-
 
 struct EditPostViewPreview: PreviewProvider {
     static var previews: some View {

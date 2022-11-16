@@ -3,9 +3,7 @@ import Moya
 
 class ChattingListViewModel: ObservableObject {
     let chatClient = MoyaProvider<ChatService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var chattingList: [ChattingList] = []
-    
     func fetchChatList() {
         chatClient.request(.fetchChatList) { res in
             switch res {

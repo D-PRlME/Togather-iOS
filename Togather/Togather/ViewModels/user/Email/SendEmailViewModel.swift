@@ -3,9 +3,7 @@ import Moya
 
 class SendEmailViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var email: String = ""
-    
     func sendEmailToUser() {
         userClient.request(.mailSignup(email: email)) { res in
             print("email: \(self.email)")

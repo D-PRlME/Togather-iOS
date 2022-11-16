@@ -10,7 +10,6 @@ import SwiftUI
 struct EditInfoTextEditor: View {
     @Binding var text: String
     let placeholder: String
-    
     init(
         text: Binding<String>,
         placeholder: String
@@ -23,7 +22,6 @@ struct EditInfoTextEditor: View {
             return
         }
     }
-    
     var body: some View {
         if #available(iOS 16.0, *) {
             TextEditor(text: $text)

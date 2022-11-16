@@ -12,7 +12,6 @@ struct PostButton: View {
     let backgroundColor: Color
     let cornerColor: Color
     let action: () -> Void
-    
     init(
         title: String,
         backgroundColor: Color,
@@ -24,7 +23,6 @@ struct PostButton: View {
         self.cornerColor = cornerColor
         self.action = action
     }
-    
     var body: some View {
         Button(action: action) {
             Text(title)

@@ -3,9 +3,7 @@ import Moya
 
 class LogoutViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var isSucced: Bool = false
-    
     func logout() {
         userClient.request(.logout) { res in
             switch res {

@@ -1,13 +1,10 @@
 import SwiftUI
 
 struct EmailVerify: View {
-    
     @Binding var email: String
     @Binding var password: String
     @Binding var name: String
-    
     @StateObject var signUpVM = SignUpViewModel()
-    
     var body: some View {
         ZStack {
             NavigationLink(
@@ -20,25 +17,17 @@ struct EmailVerify: View {
                 tag: 2,
                 selection: $signUpVM.isSuccess
             ) { EmptyView() }
-            
-            
             VStack(alignment: .center, spacing: 12) {
                 Spacer()
-                
                 // MARK: - Title
-                
                 EmailVerifyTitle(
                     email: email
                 )
-                
                 // MARK: - TextField
-                
                 EmailVerifyTextField(
                     code: $signUpVM.code
                 )
-                
                 // MARK: - Image
-                
                 VStack(spacing: 0) {
                     Rectangle()
                         .frame(height: 50)
@@ -48,16 +37,14 @@ struct EmailVerify: View {
                         .frame(width: 150, height: 150)
                 }
                 Spacer()
-                
                 // MARK: - Button
-                
                 AuthButton(
                     text: "다음",
                     action: {
                         signUpVM.emailVerify()
                     }
                 )
-            } //Vstack
+            } // Vstack
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
             .onAppear {

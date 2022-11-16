@@ -3,9 +3,7 @@ import Moya
 
 class TagViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var tagValues: [Tags] = []
-    
     func getTagDatas() {
         postClient.request(.getTag) { res in
             switch res {
@@ -17,14 +15,12 @@ class TagViewModel: ObservableObject {
                             self.tagValues = data.tags.map {
                                 let name = $0.name
                                 let link = $0.imageUrl
-                                
                                 return Tags(name: name, imageUrl: link)
                             }
                         } else {
                             print("⚠️tag Error handling")
                         }
                     }
-                    
                 default:
                     print("\(result.statusCode)")
                 }

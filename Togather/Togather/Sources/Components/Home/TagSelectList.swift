@@ -3,7 +3,6 @@ import Kingfisher
 
 struct TagSelectList: View {
     @Binding var tags: [Tags]
-    
     var body: some View {
         VStack(spacing: 0) {
             ScrollView(.horizontal, showsIndicators: true) {
@@ -19,7 +18,6 @@ struct TagSelectList: View {
                                 .frame(width: 56, height: 56)
                                 .cornerRadius(20)
                                 .padding(.horizontal, 4)
-                            
                             Text(index.name)
                                 .foregroundColor(.black)
                                 .font(.maintext2b)

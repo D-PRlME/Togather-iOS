@@ -5,13 +5,9 @@ import Moya
 
 struct HomeViewListContent: View {
     @Binding var goPostDetail: Bool
-    
     @Binding var postList: [PostList]
-    
     var proxy: GeometryProxy
-    
     @StateObject var homeViewModel = HomeViewModel()
-    
     var body: some View {
         List(selection: header, content: Text("")) {
             VStack {
@@ -83,7 +79,6 @@ struct HomeViewListContent: View {
                                     .cornerRadius(20)
                                     .padding(.horizontal, 4)
                                     .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                                
                                 Text(data.users.user_name)
                                     .foregroundColor(.black)
                                     .font(.custom("Pretendard-Medium", size: 16))
@@ -103,7 +98,6 @@ struct HomeViewListContent: View {
                             showModal: self.$goPostDetail
                         )
                     })
-                    
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
@@ -112,7 +106,6 @@ struct HomeViewListContent: View {
             .listRowInsets(EdgeInsets())
         }
         .onAppear {
-//            UITableView.appearance().separatorStyle = .none
             homeViewModel.post()
             homeViewModel.GetTagList()
             UITableView.appearance().backgroundColor = .clear
@@ -129,9 +122,3 @@ struct HomeViewListContent: View {
         .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
     }
 }
-
-//struct HomeVIew_List_Content_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeVIew_List_Content(GoPostDetail: .constant(false), postList: .con, proxy: <#GeometryProxy#>)
-//    }
-//}

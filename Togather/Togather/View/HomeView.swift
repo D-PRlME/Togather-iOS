@@ -1,4 +1,3 @@
-
 import SwiftUI
 import SwiftUIFlowLayout
 import Kingfisher
@@ -6,21 +5,17 @@ import Moya
 import SwiftUIPullToRefresh
 
 struct HomeView: View {
-    
     @State var goPostDetail = false
     @State var goSearch = false
-
     @StateObject var homeViewModel = HomeViewModel()
     let animation = Animation
         .linear
         .repeatForever(autoreverses: false)
-    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
                 ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(spacing: 0) {
-                    
                     RefreshableScrollView { done in
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             homeViewModel.post()
@@ -102,8 +97,11 @@ struct HomeView: View {
                                                 .frame(width: 33, height: 33)
                                                 .cornerRadius(20)
                                                 .padding(.horizontal, 4)
-                                                .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
-                                            
+                                                .overlay(
+                                                    Circle()
+                                                        .stroke()
+                                                        .foregroundColor(Color("TabBarStroke"))
+                                                )
                                             Text(data.users.user_name)
                                                 .foregroundColor(.black)
                                                 .font(.custom("Pretendard-Medium", size: 16))
@@ -155,7 +153,6 @@ struct HomeView: View {
         }
     }
 }
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

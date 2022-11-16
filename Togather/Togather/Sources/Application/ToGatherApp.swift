@@ -4,8 +4,8 @@ import SwiftUI
 struct DrawApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            SocketTest()
+            ContentView()
+//            SocketTest()
         }
     }
 }

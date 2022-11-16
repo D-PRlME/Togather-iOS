@@ -1,4 +1,3 @@
-
 import SwiftUI
 import SwiftUIFlowLayout
 import Kingfisher
@@ -6,14 +5,11 @@ import Moya
 import SwiftUIPullToRefresh
 
 struct HomeView: View {
-    
     @State private var isClose: Bool = false
-    
     @StateObject var homeViewModel = HomeViewModel()
     let animation = Animation
         .linear
         .repeatForever(autoreverses: false)
-    
     var body: some View {
         ZStack {
             ColorManager.BackgroundColor.ignoresSafeArea()
@@ -29,7 +25,6 @@ struct HomeView: View {
                         TagSelectList(
                             tags: $homeViewModel.tagList
                         )
-                        
                         ForEach(homeViewModel.postList, id: \.postID) { data in
                             PostForm(
                                 close: $isClose,
@@ -60,7 +55,6 @@ struct HomeView: View {
         }
     }
 }
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

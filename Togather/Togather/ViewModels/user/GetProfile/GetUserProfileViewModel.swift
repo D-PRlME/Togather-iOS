@@ -3,11 +3,9 @@ import Moya
 
 class GetUserProfileViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var userID: String = ""
     @Published var userEmail: String = ""
     @Published var userProfilImageLink: String = ""
-    
     func signUpClient() {
         userClient.request(.getMyprofile) { res in
             switch res {
@@ -25,7 +23,6 @@ class GetUserProfileViewModel: ObservableObject {
                 default:
                     print(result.statusCode)
                 }
-                
             case .failure(let err):
                 print("⛔️getUserProfile Error: \(err.localizedDescription)")
             }

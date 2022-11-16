@@ -5,7 +5,6 @@ struct ChangePasswordButton: View {
     @Binding var isDisable: Bool
     var title: String
     var action: () -> Void
-    
     init(
         isDisable: Binding<Bool>,
         title: String,
@@ -15,13 +14,11 @@ struct ChangePasswordButton: View {
         self.title = title
         self.action = action
     }
-    
     var body: some View {
         Button(action: action) {
             VStack(spacing: 0) {
                 Rectangle()
                     .frame(height: 0)
-                
                 Text(title)
                     .font(.maintext1b)
                     .foregroundColor(.text)

@@ -35,7 +35,6 @@ struct ChattingView: View {
         "https://avatars.githubusercontent.com/u/80371353?v=4",
         "https://avatars.githubusercontent.com/u/101026873?v=4"
     ]
-   
     enum WhatDate {
         case month
         case time

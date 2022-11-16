@@ -3,11 +3,9 @@ import SwiftUIFlowLayout
 import Kingfisher
 
 struct PostDetail: View {
-    
     @Binding var showModal: Bool
     @StateObject var postDetailViewModel = PostDetailViewModel()
     let postID: Int
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -24,7 +22,6 @@ struct PostDetail: View {
                             }
                     }
                     .unredacted()
-                    
                     PostInfoForm(
                         title: postDetailViewModel.postDetail.title,
                         imageLink: postDetailViewModel.postDetail.user.profileImageUrl,
@@ -32,9 +29,7 @@ struct PostDetail: View {
                         createdAt: postDetailViewModel.postDetail.createdAt,
                         userID: postDetailViewModel.postDetail.user.userID
                     )
-                    
                     Divider()
-                    
                     FlowLayout(mode: .scrollable,
                                items: postDetailViewModel.postDetail.tags,
                                itemSpacing: 4) {
@@ -51,16 +46,13 @@ struct PostDetail: View {
                                     .foregroundColor(.whiteElevated3)
                             )
                     }
-                    
                     // MARK: - 본문
-                    
                     Text(postDetailViewModel.postDetail.content)
                         .foregroundColor(.text)
                         .font(.maintext1m)
                         .multilineTextAlignment(.leading)
                     Spacer()
                     // MARK: - 버튼들
-                    
                     HStack(alignment: .bottom) {
                         if !postDetailViewModel.postDetail.isMine {
                             HStack(spacing: 8) {
@@ -136,7 +128,6 @@ struct PostDetail: View {
                                                     .foregroundColor(.whiteElevated3)
                                             )
                                     }
-                                    
                                     PostButton(
                                         title: "삭제",
                                         backgroundColor: .error,

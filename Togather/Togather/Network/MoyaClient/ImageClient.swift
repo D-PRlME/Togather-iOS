@@ -10,14 +10,12 @@ extension ImageClient: TargetType {
     var baseURL: URL {
         return URL(string: "http://52.55.240.35:8080/images")!
     }
-    
     var path: String {
         switch self {
         case .postImage:
             return ""
         }
     }
-    
     var method: Moya.Method {
         switch self {
         case .postImage:
@@ -40,7 +38,6 @@ extension ImageClient: TargetType {
             return .uploadMultipart(multiformData)
         }
     }
-    
     var headers: [String: String]? {
         switch self {
         case .postImage:

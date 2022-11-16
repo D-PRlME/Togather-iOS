@@ -3,16 +3,13 @@ import Moya
 
 class SignUpViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var code: String = ""
     @Published var isSuccess: Int?
-    
     @Published var showError: Bool = false
     @Published var errorMessage: String = ""
-    
     func emailDuplicate() {
         userClient.request(.mailDuplicate(email: email)) { res in
             switch res {
@@ -37,7 +34,6 @@ class SignUpViewModel: ObservableObject {
             }
         }
     }
-    
     func sendEmailToUser() {
         userClient.request(.mailSignup(email: email)) { res in
             print("email: \(self.email)")
@@ -58,7 +54,6 @@ class SignUpViewModel: ObservableObject {
             }
         }
     }
-    
     func emailVerify() {
         userClient.request(.mailVerify(email: email, authCode: code)) { res in
             switch res {
@@ -81,7 +76,6 @@ class SignUpViewModel: ObservableObject {
             }
         }
     }
-    
     func signUpClient() {
         userClient.request(.signup(password: password, email: email, name: name)) { res in
             switch res {
@@ -103,13 +97,11 @@ class SignUpViewModel: ObservableObject {
                 default:
                     print(result.statusCode)
                 }
-                
             case .failure(let err):
                 print("⛔️signup Error: \(err.localizedDescription)")
             }
         }
     }
-    
     private func getMyProFile() {
         userClient.request(.getMyprofile) { res in
             switch res {

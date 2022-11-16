@@ -3,18 +3,14 @@ import SwiftUIFlowLayout
 import Kingfisher
 
 struct EditInfo: View {
-    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     @StateObject var changeMyInfoVM = ChangeMyInfoViewModel()
     @State private var goBack: Bool = false
     @State private var alertMessage: String = ""
     @State private var showAlert: Bool = false
     @State private var showImagePicker: Bool = false
-    
     let introduceTextLimit: Int = 100
     let positionList: [String] = ["PM", "웹 프론트엔드", "백엔드", "안드로이드", "iOS", "디자인"]
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -40,7 +36,6 @@ struct EditInfo: View {
                             .clipShape(Circle())
                             .frame(width: 48, height: 48)
                             .overlay(Circle().stroke().foregroundColor(.whiteElevated3))
-                        
                         PostButton(
                             title: "이미지 변경",
                             backgroundColor: .main,
@@ -58,24 +53,18 @@ struct EditInfo: View {
                         Spacer()
                     }
                     .padding(.top, 26)
-                    
-                    
-                    //ID
+                    // ID
                     EditInfoTextField(
-                        placeholder: "이름",
-                        text: $changeMyInfoVM.name
+                        text: $changeMyInfoVM.name, placeholder: "이름"
                     )
                     .padding(.top, 12)
-                    
-                    //Email
+                    // Email
                     VStack(alignment: .leading, spacing: 0) {
                         Rectangle()
                             .frame(height: 0)
-                        
                         Text(Account.email ?? "")
                             .font(.title3m)
                             .foregroundColor(.whiteElevated4)
-                        
                     }
                     .padding(12)
                     .background(Color(red: 0.97, green: 0.97, blue: 0.97))
@@ -84,29 +73,23 @@ struct EditInfo: View {
                     .background(Color.whiteElevated3)
                     .cornerRadius(6)
                     .padding(.top, 8)
-                    
-                    
-                    //Introduce
+                    // Introduce
                     EditInfoTextEditor(
                         text: $changeMyInfoVM.introduce,
                         placeholder: "자기소계"
                     )
                     .frame(minHeight: 48, maxHeight: 48 * 3)
                     .padding(.vertical, 8)
-                    
                     VStack {
                         HStack {
                             Text("내 포지션")
                                 .font(.indicator)
                                 .foregroundColor(.whiteElevated4)
-                            
                             Spacer()
                         }
-                        
                         FlowLayout(mode: .scrollable,
                                    items: positionList,
                                    itemSpacing: 2) { index in
-                            
                             Text(index)
                                 .foregroundColor(.text)
                                 .font(.maintext2m)
@@ -126,7 +109,6 @@ struct EditInfo: View {
                                 }
                         }
                     }
-                    
                     Spacer()
                     HStack {
                         PostButton(
@@ -142,7 +124,6 @@ struct EditInfo: View {
                                 }
                             }
                         )
-                        
                         Spacer()
                         NavigationLink(destination: DeleteAccount(goSignView: $goBack)) {
                             Text("계정 삭제")

@@ -3,10 +3,8 @@ import Kingfisher
 
 struct TagListView: View {
     @StateObject var tagVM = TagViewModel()
-    
     @Binding var goBack: Bool
     @Binding var tagLists: [String]
-    
     var body: some View {
         VStack {
             HStack {
@@ -19,7 +17,6 @@ struct TagListView: View {
                         self.goBack = false
                     }
             }
-            
             HStack {
                 Text("모든 태그 보기")
                     .font(.title1b)
@@ -27,7 +24,6 @@ struct TagListView: View {
                     .padding(.horizontal, 16)
                 Spacer()
             }
-            
             List {
                 ForEach(tagVM.tagValues, id: \.self) { data in
                     Button {
@@ -65,7 +61,6 @@ struct TagListView: View {
                                     )
                                     .opacity(tagLists.contains(data.name) ? 1 : 0)
                             )
-                            
                             Text("\(data.name)")
                                 .font(.title3m)
                                 .foregroundColor(.text)

@@ -1,7 +1,6 @@
 import Foundation
 
 class SignUpValueCheckViewModel {
-    
     func checkTotalSignUpValue(_ email: String, _ password: String, _ name: String) -> Bool {
         if pwCheck(password) && nameCheck(name) && emailCheck(email) {
             return true
@@ -9,7 +8,6 @@ class SignUpValueCheckViewModel {
             return false
         }
     }
-    
     func emailValueCheck(_ email: String) -> Bool {
         if email.isEmpty == false {
             return emailCheck(email)
@@ -17,7 +15,6 @@ class SignUpValueCheckViewModel {
             return true
         }
     }
-    
     func passwordValueCheck(_ password: String) -> Bool {
         if password.isEmpty == false {
             return pwCheck(password)
@@ -25,7 +22,6 @@ class SignUpValueCheckViewModel {
             return true
         }
     }
-    
     private func nameCheck(_ name: String) -> Bool {
         if name.isEmpty == false {
             return true
@@ -33,13 +29,11 @@ class SignUpValueCheckViewModel {
             return false
         }
     }
-    
     private func emailCheck(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@dsm+\\.hs+\\.kr"
         let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return predicate.evaluate(with: email)
     }
-    
     private func pwCheck(_ password: String) -> Bool {
         let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,30}"
         let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)

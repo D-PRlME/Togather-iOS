@@ -4,13 +4,11 @@ import SwiftUI
 
 class EditPostViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var title: String = ""
     @Published var content: String = ""
     @Published var tag: [String] = []
     @Published var link: String = ""
     @Published var postID: Int = 0
-    
     func edit() {
         for index in 0..<tag.count {
             self.tag[index] = self.tag[index].uppercased()
@@ -31,5 +29,3 @@ class EditPostViewModel: ObservableObject {
         }
     }
 }
-
-

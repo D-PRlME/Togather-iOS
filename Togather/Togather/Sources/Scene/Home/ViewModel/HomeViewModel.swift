@@ -3,12 +3,9 @@ import Moya
 
 class HomeViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var postList: [Posts] = []
-    
     @Published var postID: [Int] = []
     @Published var tagList: [Tags] = []
-    
     func post() {
         postClient.request(.getPosts) { res in
             switch res {
@@ -26,11 +23,9 @@ class HomeViewModel: ObservableObject {
                                 let tags: [Tags] = index.tags.map {
                                     let name = $0.name
                                     let imageURL = $0.imageUrl
-                                    
                                     return Tags(name: name, imageUrl: imageURL)
                                 }
                                 let likeCount = index.likeCount
-                                
                                 return Posts(
                                     postID: postID,
                                     title: title,
@@ -64,7 +59,6 @@ class HomeViewModel: ObservableObject {
                             self.tagList = data.tags.map { index in
                                 let name = index.name
                                 let imageURL = index.imageUrl
-                                
                                 return Tags(name: name, imageUrl: imageURL)
                             }
                         } else {
@@ -80,4 +74,3 @@ class HomeViewModel: ObservableObject {
         }
     }
 }
-

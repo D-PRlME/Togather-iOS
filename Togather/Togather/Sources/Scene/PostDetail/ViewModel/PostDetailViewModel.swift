@@ -3,7 +3,6 @@ import Moya
 
 class PostDetailViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var showSkeleton = true
     @Published var postID: Int = 0
     @Published var tagName: [String] = []
@@ -17,7 +16,6 @@ class PostDetailViewModel: ObservableObject {
         likeCount: 0,
         isLiked: false
     )
-    
     func getPostDetail() {
         postClient.request(.getDetailPosts(postID: postID)) { res in
             switch res {
@@ -66,7 +64,6 @@ class PostDetailViewModel: ObservableObject {
             }
         }
     }
-    
     func like() {
         postClient.request(.like(postID: postID)) { res in
             switch res {
@@ -82,7 +79,6 @@ class PostDetailViewModel: ObservableObject {
             }
         }
     }
-    
     func dislike() {
         postClient.request(.dislike(postID: postID)) { res in
             switch res {
@@ -98,7 +94,6 @@ class PostDetailViewModel: ObservableObject {
             }
         }
     }
-    
     func delete() {
         postClient.request(.deletePost(postID: postID)) { res in
             switch res {
@@ -115,4 +110,3 @@ class PostDetailViewModel: ObservableObject {
         }
     }
 }
-

@@ -65,9 +65,3 @@ struct TabBarItem: View {
         .buttonStyle(.plain)
     }
 }
-
-//struct TabBarItem_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TabBarItem(tabIndex: .constant(.home), proxy: <#GeometryProxy#>)
-//    }
-//}

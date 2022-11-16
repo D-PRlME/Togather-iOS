@@ -3,11 +3,9 @@ import Moya
 
 class QuitAccountViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var inputPassword: String = ""
     @Published var wrongPW: Bool = false
     @Published var isSucced: Bool = false
-    
     func deleteAccount() {
         userClient.request(.quitAccount(password: inputPassword)) { res in
             switch res {
@@ -24,17 +22,14 @@ class QuitAccountViewModel: ObservableObject {
                 default:
                     print(result.statusCode)
                 }
-                
             case .failure(let err):
                 print("⛔️quitAccount Error: \(err.localizedDescription)")
             }
         }
     }
-    
     func checkPassword() -> Bool {
         return pwCheck(inputPassword)
     }
-    
     private func pwCheck(_ password: String) -> Bool {
         let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,30}"
         let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)

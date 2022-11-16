@@ -3,7 +3,6 @@ import Moya
 
 class LogoutViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     func signUpClient() {
         userClient.request(.logout) { res in
             switch res {

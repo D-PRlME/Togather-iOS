@@ -19,10 +19,8 @@ extension PostService: TargetType {
     var baseURL: URL {
         return URL(string: "http://52.55.240.35:8080/posts")!
     }
-    
     var path: String {
         switch self {
-            
         case .post:
             return ""
         case .editPost(_, _, _, let postID):
@@ -47,7 +45,6 @@ extension PostService: TargetType {
     }
     var method: Moya.Method {
         switch self {
-            
         case .post, .like:
             return .post
         case .getMyPosts, .getPosts, .getDetailPosts, .getTag, .getTitlePosts, .getTagPosts:
@@ -58,31 +55,26 @@ extension PostService: TargetType {
             return .delete
         }
     }
-    
-    
     var task: Task {
         switch self {
-            
         case .post(let title, let content, let tags):
             return .requestParameters(
                 parameters:
                     [
                         "title": title,
                         "tags": tags,
-                        "content": content,
+                        "content": content
                     ],
                 encoding: JSONEncoding.default)
-            
         case .editPost(let title, let content, let tags, _):
             return .requestParameters(
                 parameters:
                     [
                         "title": title,
                         "tags": tags,
-                        "content": content,
+                        "content": content
                     ],
                 encoding: JSONEncoding.default)
-            
         case .getTitlePosts(title: let title):
             return .requestParameters(
                 parameters:
@@ -106,13 +98,10 @@ extension PostService: TargetType {
                         "sort": "id,desc"
                     ],
                 encoding: URLEncoding.queryString)
-            
         case .getDetailPosts, .deletePost, .getTag, .like, .dislike:
             return .requestPlain
         }
     }
-    
-    
     var headers: [String: String]? {
         switch self {
         case .getMyPosts, .getPosts, .getDetailPosts, .post, .editPost, .deletePost, .getTag, .getTitlePosts, .getTagPosts, .like, .dislike:

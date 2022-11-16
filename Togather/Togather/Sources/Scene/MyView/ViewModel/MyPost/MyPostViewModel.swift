@@ -4,9 +4,7 @@ import SwiftUI
 
 class MyPostViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var postList: [Posts] = []
-    
     func post() {
         postClient.request(.getMyPosts) { res in
             switch res {
@@ -16,7 +14,6 @@ class MyPostViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         let decoder = JSONDecoder()
                         if let data = try? decoder.decode(MyViewUserPostModel.self, from: result.data) {
-                            
                             self.postList = data.postList.map { index in
                                 let postID = index.postID
                                 let title = index.title
@@ -25,11 +22,9 @@ class MyPostViewModel: ObservableObject {
                                 let tags: [Tags] = index.tags.map {
                                     let name = $0.name
                                     let imageURL = $0.imageUrl
-                                    
                                     return Tags(name: name, imageUrl: imageURL)
                                 }
                                 let likeCount = index.likeCount
-                                
                                 return Posts(
                                     postID: postID,
                                     title: title,
@@ -43,7 +38,6 @@ class MyPostViewModel: ObservableObject {
                             print("⚠️post docoder error")
                         }
                     }
-                    
                 default:
                     print(result.statusCode)
                 }
@@ -53,5 +47,3 @@ class MyPostViewModel: ObservableObject {
         }
     }
 }
-
-

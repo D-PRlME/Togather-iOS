@@ -3,12 +3,9 @@ import Moya
 
 class LoginViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var email: String = ""
     @Published var password: String = ""
-    
     @Published var viewTag: Int?
-    
     func login() {
         userClient.request(.login(accountID: email, password: password)) { res in
             switch res {
@@ -17,10 +14,8 @@ class LoginViewModel: ObservableObject {
                 case 200...201:
                     let decoder = JSONDecoder()
                     if let data = try? decoder.decode(TokenModel.self, from: result.data) {
-                        
                         Token.accessToken = data.access_token
                         Token.refreshToken = data.refresh_token
-                        
                         print("✅로그인 성공")
                         print("🔊\(data.expired_at)")
                         self.viewTag = 1

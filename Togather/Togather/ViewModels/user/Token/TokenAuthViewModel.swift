@@ -3,7 +3,6 @@ import Moya
 
 class TokenAuthViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     func tokenReissueClient() {
         userClient.request(.tokenReissue) { res in
             switch res {
@@ -26,7 +25,6 @@ class TokenAuthViewModel: ObservableObject {
                 default:
                     print("\(result.statusCode)")
                 }
-                
             case .failure(let err):
                 print("⛔️tokenAuth Error: \(err.localizedDescription)")
             }

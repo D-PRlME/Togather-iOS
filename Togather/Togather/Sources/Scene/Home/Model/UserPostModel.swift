@@ -42,7 +42,6 @@ struct Posts {
     let tags: [Tags]
     let createdAt: String
     let likeCount: Int
-    
     init(
         postID: Int,
         title: String,

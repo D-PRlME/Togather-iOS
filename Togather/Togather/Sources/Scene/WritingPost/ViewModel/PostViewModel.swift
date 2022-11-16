@@ -4,14 +4,11 @@ import SwiftUI
 
 class PostViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var title: String = ""
     @Published var content: String = ""
     @Published var tag: [String] = []
-    
     @Published var tagList: [Tag] = []
     @Published var tagListName: [String] = []
-    
     func post() {
         for index in 0..<self.tag.count {
             self.tag[index] = self.tag[index].uppercased()

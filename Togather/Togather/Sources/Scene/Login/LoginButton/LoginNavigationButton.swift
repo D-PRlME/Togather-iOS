@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct LoginNavigationButton: View {
@@ -14,7 +13,6 @@ struct LoginNavigationButton: View {
                         .foregroundColor(.whiteElevated4)
                 }
             }.frame(height: 48)
-            
             NavigationLink {
                 SignUpView()
             } label: {

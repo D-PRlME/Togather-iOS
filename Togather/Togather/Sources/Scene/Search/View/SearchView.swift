@@ -5,15 +5,11 @@ import Kingfisher
 
 struct SearchView: View {
     @State private var postList: [PostList] = []
-    
     @State private var tagBtnValue: String = ""
     @State private var stringTagList: [String] = []
     @State private var goTagList: Bool = false
-    
     @State private var isClose: Bool = false
-    
     @StateObject var searchViewModel = SearchViewModel()
-    
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -30,10 +26,8 @@ struct SearchView: View {
                         )
                         .padding(.top, 11)
                         .padding(.bottom, 16)
-                        
                         SearchTagLabel(tag: tagBtnValue)
                             .padding(.bottom, 8)
-                        
                         PostButton(
                             title: "모든 태그 보기",
                             backgroundColor: .main,
@@ -59,7 +53,6 @@ struct SearchView: View {
                             SearchTagListView(goBack: $goTagList, tagBtnValue: $tagBtnValue)
                         }
                     )
-                    
                     ScrollView(showsIndicators: false) {
                         ForEach(searchViewModel.postList, id: \.postID) { data in
                             PostForm(

@@ -3,7 +3,6 @@ import SwiftUI
 struct ChangePasswordTitle: View {
     var title: String
     var subTitle: String
-    
     init(
         title: String,
         subTitle: String
@@ -16,7 +15,6 @@ struct ChangePasswordTitle: View {
             Text(title)
                 .font(.titleXLb)
                 .padding(.bottom, 10)
-            
             Text(subTitle)
                 .font(.title3m)
                 .padding(.bottom, 18)

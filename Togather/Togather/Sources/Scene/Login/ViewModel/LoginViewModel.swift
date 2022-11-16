@@ -3,15 +3,12 @@ import Moya
 
 class LoginViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var email: String = ""
     @Published var password: String = ""
-    
     @Published var viewTag: Int?
     @Published var showProgrees: Bool = false
     @Published var showError: Bool = false
     @Published var errorMessage: String = ""
-    
     func login() {
         userClient.request(.login(accountID: email, password: password)) { res in
             switch res {
@@ -31,7 +28,6 @@ class LoginViewModel: ObservableObject {
                             print("⚠️login docoder error")
                         }
                     }
-                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         self.showProgrees = false
                     }
@@ -65,7 +61,6 @@ class LoginViewModel: ObservableObject {
             }
         }
     }
-    
     func getMyProFile() {
         userClient.request(.getMyprofile) { res in
             switch res {
@@ -90,5 +85,4 @@ class LoginViewModel: ObservableObject {
             }
         }
     }
-    
 }

@@ -1,7 +1,6 @@
 import Foundation
 import ReactiveSwift
 
-
 struct Token {
     static var localAccessToken: String?
     static var accessToken: String? {
@@ -9,26 +8,22 @@ struct Token {
             localAccessToken =  UserDefaults.standard.string(forKey: "acccess_token")
             return localAccessToken
         }
-        
         set(newToken) {
             UserDefaults.standard.set(newToken, forKey: "acccess_token")
             localAccessToken = newToken
         }
     }
-    
     static var localRefreshToken: String?
     static var refreshToken: String? {
         get {
             localRefreshToken = UserDefaults.standard.string(forKey: "refresh_token")
             return localRefreshToken
         }
-        
         set(newToken) {
             UserDefaults.standard.set(newToken, forKey: "refresh_token")
             localRefreshToken = newToken
         }
     }
-    
     static func removeToken() {
         self.refreshToken = nil
         self.accessToken = nil
@@ -37,16 +32,13 @@ struct Token {
 
 enum Header {
     case refreshToken, accessToken, tokenIsEmpty, socket
-    
     func header() -> [String: String]? {
         guard let token = Token.accessToken else {
             return ["Content-Type": "application/json"]
         }
-        
         guard let refreshToken = Token.refreshToken else {
             return ["Content-Type": "application/json"]
         }
-        
         switch self {
         case .refreshToken:
             return ["X-Refresh-Token": refreshToken, "Content-Type": "application/json"]

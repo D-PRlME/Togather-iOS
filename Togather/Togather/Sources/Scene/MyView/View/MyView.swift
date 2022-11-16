@@ -1,20 +1,16 @@
-
 import SwiftUI
 import Kingfisher
 import CarPlay
 import SwiftUIFlowLayout
 
 struct MyView: View {
-    
     @State private var goEditInfoModal = false
     @State private var goMyPost = false
     @State private var goDevelopers = false
     @State private var goChangePassword = false
     @State private var goLogout = false
     @State private var profileImageLink = Account.profileImageLink ?? ""
-    
     @StateObject var logoutVM = LogoutViewModel()
-    
     var body: some View {
         ZStack {
             NavigationLink(destination: ChangePasswordVerify(), isActive: $goChangePassword) {
@@ -36,12 +32,10 @@ struct MyView: View {
                             .frame(width: 48, height: 48)
                             .overlay(Circle().stroke().foregroundColor(.whiteElevated3))
                             .padding(.trailing, 8)
-                        
                         VStack(alignment: .leading) {
                             Text(Account.identifier ?? "")
                                 .foregroundColor(.text)
                                 .font(.title3b)
-                            
                             Text(Account.email ?? "")
                                 .foregroundColor(.whiteElevated4)
                                 .font(.maintext2m)
@@ -51,7 +45,6 @@ struct MyView: View {
                     FlowLayout(mode: .scrollable,
                                items: Account.positions ?? [],
                                itemSpacing: 2) { index in
-                        
                         Text(index.positionTypeChange)
                             .foregroundColor(.white0)
                             .font(.indicator)
@@ -61,10 +54,8 @@ struct MyView: View {
                     }
                 }
                 .padding(10)
-                
                 Divider()
                     .padding(.bottom, 12)
-                
                 VStack(spacing: 12) {
                     MyViewButton(
                         text: "계정 정보 수정",
@@ -75,14 +66,12 @@ struct MyView: View {
                     .sheet(isPresented: self.$goEditInfoModal) {
                         EditInfo()
                     }
-                    
                     MyViewButton(
                         text: "비밀번호 변경",
                         action: {
                             goChangePassword = true
                         }
                     )
-                    
                     MyViewButton(
                         text: "내 게시글 보기",
                         action: {
@@ -92,7 +81,6 @@ struct MyView: View {
                     .sheet(isPresented: $goMyPost) {
                         MyPost()
                     }
-                    
                     MyViewButton(
                         text: "개발자들",
                         action: {
@@ -102,7 +90,6 @@ struct MyView: View {
                     .sheet(isPresented: $goDevelopers) {
                         Developers()
                     }
-                    
                     MyViewButton(
                         text: "로그아웃",
                         action: {
@@ -117,7 +104,6 @@ struct MyView: View {
                     } message: {
                         Text("로그아웃 하시겠습니까?")
                     }
-                    
                     .fullScreenCover(isPresented: $logoutVM.isSucced) {
                         NavigationView {
                             LoginView()

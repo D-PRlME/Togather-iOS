@@ -4,7 +4,6 @@ struct SearchTextField: View {
     let placeholder: String
     @Binding var text: String
     let action: () -> Void
-    
     var body: some View {
         HStack {
             TextField(placeholder, text: $text)
@@ -12,7 +11,6 @@ struct SearchTextField: View {
                 .disableAutocorrection(true)
                 .font(.title3m)
                 .multilineTextAlignment(.leading)
-            
             Image("SearchOff")
                 .resizable()
                 .frame(width: 28, height: 28)

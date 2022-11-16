@@ -3,13 +3,11 @@ import Moya
 
 class ChangePasswordToEmailViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    
     @Published var myEmail: String = ""
     @Published var authCode: String = ""
     @Published var newPassword: String = ""
     @Published var goEnterPW: Int?
     @Published var goSucced: Int?
-    
     // MARK: - 내 프로필 조회
 
     func getMyProfile() {
@@ -34,7 +32,6 @@ class ChangePasswordToEmailViewModel: ObservableObject {
             }
         }
     }
-    
     // MARK: - 비밀번호 변경 이메일 전송
 
     func sendChangePWEmail() {
@@ -52,7 +49,6 @@ class ChangePasswordToEmailViewModel: ObservableObject {
             }
         }
     }
-    
     // MARK: - 이메일 인증
 
     func emailVerify() {
@@ -71,7 +67,6 @@ class ChangePasswordToEmailViewModel: ObservableObject {
             }
         }
     }
-    
     // MARK: - 비밀번호 변경
 
     func changePassword() {
@@ -90,12 +85,9 @@ class ChangePasswordToEmailViewModel: ObservableObject {
             }
         }
     }
-    
-    
     func passwordValueCheck() -> Bool {
         return pwCheck(newPassword)
     }
-    
     private func pwCheck(_ password: String) -> Bool {
         let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,30}"
         let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)

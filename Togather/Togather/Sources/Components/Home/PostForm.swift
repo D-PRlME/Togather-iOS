@@ -73,7 +73,7 @@ struct PostForm: View {
                     self.close = true
                 },
                 content: {
-                    PostDetail(
+                    PostDetailView(
                         showModal: $showDetail,
                         postID: postData.postID
                     )

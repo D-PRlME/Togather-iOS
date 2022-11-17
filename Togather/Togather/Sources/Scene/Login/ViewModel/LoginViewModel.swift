@@ -1,5 +1,6 @@
 import Foundation
 import Moya
+import SwiftKeychainWrapper
 
 class LoginViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
@@ -23,6 +24,9 @@ class LoginViewModel: ObservableObject {
                             self.getMyProFile()
                             print("✅로그인 성공")
                             print("🔊\(data.expiredAt)")
+                            KeychainWrapper.standard.set(true, forKey: "auto")
+                            KeychainWrapper.standard.set(self.email, forKey: "id")
+                            KeychainWrapper.standard.set(self.password, forKey: "pw")
                             self.viewTag = 1
                         } else {
                             print("⚠️login docoder error")

@@ -1,26 +1,27 @@
 import Foundation
 import ReactiveSwift
+import SwiftKeychainWrapper
 
 struct Token {
     static var localAccessToken: String?
     static var accessToken: String? {
         get {
-            localAccessToken =  UserDefaults.standard.string(forKey: "acccess_token")
+            localAccessToken =  KeychainWrapper.standard.string(forKey: "acccess_token")
             return localAccessToken
         }
         set(newToken) {
-            UserDefaults.standard.set(newToken, forKey: "acccess_token")
+            KeychainWrapper.standard.set(newToken ?? "nil", forKey: "acccess_token")
             localAccessToken = newToken
         }
     }
     static var localRefreshToken: String?
     static var refreshToken: String? {
         get {
-            localRefreshToken = UserDefaults.standard.string(forKey: "refresh_token")
+            localRefreshToken = KeychainWrapper.standard.string(forKey: "refresh_token")
             return localRefreshToken
         }
         set(newToken) {
-            UserDefaults.standard.set(newToken, forKey: "refresh_token")
+            KeychainWrapper.standard.set(newToken ?? "nil", forKey: "refresh_token")
             localRefreshToken = newToken
         }
     }

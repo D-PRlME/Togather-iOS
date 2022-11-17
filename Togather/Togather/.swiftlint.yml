@@ -3,3 +3,4 @@ disabled_rules: # Default Rules에서 비활성화할 규칙
   - line_length
   - orphaned_doc_comment
   - nesting
+  - function_body_length

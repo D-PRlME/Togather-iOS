@@ -114,6 +114,8 @@
 		90C8C09028DDC1800083577B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08F28DDC1800083577B /* Kingfisher */; };
 		90C8C09328DDC1940083577B /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C09228DDC1940083577B /* SocketIO */; };
 		90CF12AE2924F0CD003B26ED /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 90CF12AD2924F0CD003B26ED /* .swiftlint.yml */; };
+		90CF12B1292527E3003B26ED /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 90CF12B0292527E3003B26ED /* SwiftKeychainWrapper */; };
+		90CF12B32925BD14003B26ED /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12B22925BD14003B26ED /* ContentViewModel.swift */; };
 		90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */; };
 		90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E728BF6E3000B653C3 /* WritingView.swift */; };
 		90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E928BF6E3D00B653C3 /* MyView.swift */; };
@@ -233,6 +235,7 @@
 		90C50A5228CC8254007EA639 /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
 		90C50A5628CCBE8C007EA639 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		90CF12AD2924F0CD003B26ED /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		90CF12B22925BD14003B26ED /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		90D1C6E728BF6E3000B653C3 /* WritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
 		90D1C6E928BF6E3D00B653C3 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
@@ -260,6 +263,7 @@
 			files = (
 				90C8C08728DDC12D0083577B /* RxMoya in Frameworks */,
 				90C8C08128DDC12D0083577B /* CombineMoya in Frameworks */,
+				90CF12B1292527E3003B26ED /* SwiftKeychainWrapper in Frameworks */,
 				90C8C08A28DDC1450083577B /* SwiftUIFlowLayout in Frameworks */,
 				90C8C08528DDC12D0083577B /* ReactiveMoya in Frameworks */,
 				90C8C09028DDC1800083577B /* Kingfisher in Frameworks */,
@@ -939,6 +943,7 @@
 			children = (
 				907EF1DF28BBBA7E008A7562 /* ToGatherApp.swift */,
 				907EF1E128BBBA7E008A7562 /* ContentView.swift */,
+				90CF12B22925BD14003B26ED /* ContentViewModel.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -1159,6 +1164,7 @@
 				90C8C08C28DDC1620083577B /* SwiftUIPullToRefresh */,
 				90C8C08F28DDC1800083577B /* Kingfisher */,
 				90C8C09228DDC1940083577B /* SocketIO */,
+				90CF12B0292527E3003B26ED /* SwiftKeychainWrapper */,
 			);
 			productName = Draw;
 			productReference = 907EF1DC28BBBA7E008A7562 /* Togather.app */;
@@ -1196,6 +1202,7 @@
 				90C8C08B28DDC1620083577B /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */,
 				90C8C08E28DDC1800083577B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				90C8C09128DDC1940083577B /* XCRemoteSwiftPackageReference "socket" */,
+				90CF12AF292527E3003B26ED /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 907EF1DD28BBBA7E008A7562 /* Products */;
 			projectDirPath = "";
@@ -1299,6 +1306,7 @@
 				4B14A855290968160097E838 /* PostButton.swift in Sources */,
 				4B320D9728E1BA2600BCC086 /* SearchTagListView.swift in Sources */,
 				4B3FB523291B476900E9BE51 /* UserProfileModel.swift in Sources */,
+				90CF12B32925BD14003B26ED /* ContentViewModel.swift in Sources */,
 				4BC8991A28DA8CA000189553 /* ChangeMyInfoViewModel.swift in Sources */,
 				90DDB7902907B14B0094DE71 /* DividingLine.swift in Sources */,
 				4B4C6BCF28FD02DA007433C2 /* LoginTitle.swift in Sources */,
@@ -1618,6 +1626,14 @@
 				kind = branch;
 			};
 		};
+		90CF12AF292527E3003B26ED /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1665,6 +1681,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90C8C09128DDC1940083577B /* XCRemoteSwiftPackageReference "socket" */;
 			productName = SocketIO;
+		};
+		90CF12B0292527E3003B26ED /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90CF12AF292527E3003B26ED /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

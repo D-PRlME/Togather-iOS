@@ -1,5 +1,6 @@
 import Foundation
 import Moya
+import SwiftKeychainWrapper
 
 class LogoutViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
@@ -12,6 +13,9 @@ class LogoutViewModel: ObservableObject {
                 case 204:
                     Account.deleteAccount()
                     Token.removeToken()
+                    KeychainWrapper.standard.removeObject(forKey: "auto")
+                    KeychainWrapper.standard.removeObject(forKey: "id")
+                    KeychainWrapper.standard.removeObject(forKey: "pw")
                     self.isSucced = true
                     print("로그아웃")
                 default:

@@ -47,7 +47,7 @@ struct DeleteAccount: View {
                             .background(quitAccountVM.checkPassword() ? Color("RedStroke") : Color("TabBarStroke"))
                             .cornerRadius(6)
                             .alert("정말 계정을 삭제하시겠습니까?", isPresented: $showAlert) {
-                                Button("진행", role: .destructive) {
+                                Button("탈퇴", role: .destructive) {
                                     quitAccountVM.deleteAccount()
                                 }
                                 Button("취소", role: .cancel) { }

@@ -2,9 +2,10 @@ import SwiftUI
 import SwiftUIFlowLayout
 import Kingfisher
 
-struct PostDetail: View {
+struct PostDetailView: View {
     @Binding var showModal: Bool
     @StateObject var postDetailViewModel = PostDetailViewModel()
+    @State private var showingAlert = false
     let postID: Int
     var body: some View {
         NavigationView {
@@ -133,8 +134,7 @@ struct PostDetail: View {
                                         backgroundColor: .error,
                                         cornerColor: .redDarken,
                                         action: {
-                                            postDetailViewModel.delete()
-                                            showModal.toggle()
+                                            showingAlert.toggle()
                                         }
                                     )
                                 }
@@ -146,6 +146,15 @@ struct PostDetail: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
+            }
+            .alert("게시물 삭제", isPresented: $showingAlert) {
+                Button("삭제", role: .destructive) {
+                    postDetailViewModel.delete()
+                    showModal.toggle()
+                }
+                Button("취소", role: .cancel) { }
+            } message: {
+                Text("정말로 삭제하시겠습니까?")
             }
             .redacted(reason: postDetailViewModel.showSkeleton ? .placeholder : [])
             .onAppear {
@@ -161,6 +170,6 @@ struct PostDetail: View {
 
 struct PostDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetail(showModal: .constant(true), postID: 1)
+        PostDetailView(showModal: .constant(true), postID: 1)
     }
 }

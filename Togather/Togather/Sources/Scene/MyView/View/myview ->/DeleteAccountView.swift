@@ -5,11 +5,11 @@ struct DeleteAccount: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var showAlert = false
     @Binding var goSignView: Bool
-    @StateObject var quitAccountVM = QuitAccountViewModel()
+    @StateObject var quitAccountViewModel = QuitAccountViewModel()
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                NavigationLink(destination: Text("View #2"), isActive: $quitAccountVM.isSucced) { EmptyView() }
+                NavigationLink(destination: Text("View #2"), isActive: $quitAccountViewModel.isSucced) { EmptyView() }
                 ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
@@ -35,31 +35,31 @@ struct DeleteAccount: View {
                     } label: {
                         Text("계정 삭제")
                             .font(.custom("Pretendard-Bold", size: 18))
-                            .foregroundColor(quitAccountVM.checkPassword() ?
+                            .foregroundColor(quitAccountViewModel.checkPassword() ?
                                 .black : Color(red: 0.47, green: 0.47, blue: 0.47))
                             .frame(width: proxy.size.width - 32)
                             .padding(.vertical, 13)
-                            .background(quitAccountVM.checkPassword() ?
+                            .background(quitAccountViewModel.checkPassword() ?
                                         Color(red: 0.996, green: 0.239, blue: 0.239) :
                                             Color(red: 0.97, green: 0.97, blue: 0.97))
                             .cornerRadius(6)
                             .padding(2)
-                            .background(quitAccountVM.checkPassword() ? Color("RedStroke") : Color("TabBarStroke"))
+                            .background(quitAccountViewModel.checkPassword() ? Color("RedStroke") : Color("TabBarStroke"))
                             .cornerRadius(6)
                             .alert("정말 계정을 삭제하시겠습니까?", isPresented: $showAlert) {
                                 Button("탈퇴", role: .destructive) {
-                                    quitAccountVM.deleteAccount()
+                                    quitAccountViewModel.deleteAccount()
                                 }
                                 Button("취소", role: .cancel) { }
                             } message: {
                                 Text("모든 입력한 정보, 작성한 글이 서버에서 삭제되며 이 작업은 되돌릴 수 없습니다.")
                             }
-                            .alert("안내", isPresented: $quitAccountVM.wrongPW) {
+                            .alert("안내", isPresented: $quitAccountViewModel.wrongPW) {
                                 Button("확인", role: .cancel) { }
                             } message: {
                                 Text("비밀번호가 올바르지 않습니다.")
                             }
-                            .alert("안내", isPresented: $quitAccountVM.isSucced) {
+                            .alert("안내", isPresented: $quitAccountViewModel.isSucced) {
                                 Button("확인", role: .cancel) {
                                     self.presentationMode.wrappedValue.dismiss()
                                     goSignView = true
@@ -85,7 +85,7 @@ struct DeleteAccount: View {
                             .foregroundColor(.black)
                             .font(.custom("Pretendard-Medium", size: 20))
                     }
-                    SecureField("비밀번호", text: $quitAccountVM.inputPassword)
+                    SecureField("비밀번호", text: $quitAccountViewModel.inputPassword)
                         .font(.custom("Pretendard-Medium", size: 20))
                         .foregroundColor(.black)
                         .padding(.leading, 12)

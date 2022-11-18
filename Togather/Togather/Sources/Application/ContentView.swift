@@ -7,26 +7,41 @@ struct ColorManager {
 
 struct ContentView: View {
     @ObservedObject var contentViewModel = ContentViewModel()
-    @State private var changeTag: Int?
     private func autoLogin() {
         if KeychainWrapper.standard.bool(forKey: "auto") == true {
             contentViewModel.email = KeychainWrapper.standard.string(forKey: "id")!
             contentViewModel.password = KeychainWrapper.standard.string(forKey: "pw")!
-            contentViewModel.login()
-            changeTag = 1
+            contentViewModel.autoLogin()
         } else {
-            changeTag = 2
+            contentViewModel.justLogin()
         }
     }
     var body: some View {
-        NavigationView {
-            ZStack {
-                NavigationLink(destination: TabBarView().navigationBarHidden(true), tag: 1, selection: $changeTag) { EmptyView() }
-                NavigationLink(destination: LoginView().navigationBarHidden(true), tag: 2, selection: $changeTag) { EmptyView() }
+        ZStack {
+            Image("LOGO")
+                .resizable()
+                .frame(width: 148, height: 148)
+            VStack {
+                Spacer()
+                Text("ToGather")
+                    .foregroundColor(Color(white: 0, opacity: 0.5))
+                    .font(.title2b)
+                    .padding(.bottom, 40)
             }
-            .onAppear {
-                autoLogin()
+        }
+        .ignoresSafeArea()
+        .fullScreenCover(isPresented: $contentViewModel.fullScreenToTabBarView, content: {
+            NavigationView {
+                TabBarView()
             }
+        })
+        .fullScreenCover(isPresented: $contentViewModel.fullScreenToLoginView, content: {
+            NavigationView {
+                LoginView()
+            }
+        })
+        .onAppear {
+            autoLogin()
         }
     }
 }

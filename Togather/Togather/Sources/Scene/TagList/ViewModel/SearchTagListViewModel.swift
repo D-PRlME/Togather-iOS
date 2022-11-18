@@ -1,7 +1,7 @@
 import Foundation
 import Moya
 
-class TagViewModel: ObservableObject {
+class SearchTagListViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
     @Published var tagValues: [Tags] = []
     func getTagDatas() {

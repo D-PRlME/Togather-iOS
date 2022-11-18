@@ -2,7 +2,7 @@ import Foundation
 import Moya
 import SwiftUI
 
-class PostViewModel: ObservableObject {
+class WritingViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
     @Published var title: String = ""
     @Published var content: String = ""

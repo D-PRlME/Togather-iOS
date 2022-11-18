@@ -3,7 +3,7 @@ import SwiftUI
 import Moya
 import Alamofire
 
-class ChangeMyInfoViewModel: ObservableObject {
+class EditInfoViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     let imageClient = MoyaProvider<ImageClient>(plugins: [MoyaLoggerPlugin()])
     @Published var name: String = Account.identifier ?? ""

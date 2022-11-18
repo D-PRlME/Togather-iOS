@@ -2,7 +2,7 @@ import Foundation
 import Moya
 import SwiftKeychainWrapper
 
-class LogoutViewModel: ObservableObject {
+class MyViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     @Published var isSucced: Bool = false
     func logout() {

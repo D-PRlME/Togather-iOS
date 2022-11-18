@@ -1,7 +1,7 @@
 import Foundation
 import Moya
 
-class ChattingListViewModel: ObservableObject {
+class ChatListViewModel: ObservableObject {
     let chatClient = MoyaProvider<ChatService>(plugins: [MoyaLoggerPlugin()])
     @Published var chattingList: [ChattingList] = []
     func fetchChatList() {

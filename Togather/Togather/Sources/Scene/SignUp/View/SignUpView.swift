@@ -1,23 +1,22 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @StateObject var signUpViewModel = SignUpViewModel()
     @State private var emailText: String = ""
     @State private var passwordText: String = ""
     @State private var nameText: String = ""
-    @StateObject var signUpVM = SignUpViewModel()
-    let signUpValueCheckVM = SignUpValueCheckViewModel()
     // MARK: - body
     var body: some View {
         ZStack {
             NavigationLink(
                 destination:
-                    EmailVerify(
+                    SignUpEmailVerifyView(
                         email: $emailText,
                         password: $passwordText,
                         name: $nameText
                     ),
                 tag: 1,
-                selection: $signUpVM.isSuccess
+                selection: $signUpViewModel.isSuccess
             ) { EmptyView() }
             VStack(alignment: .leading, spacing: 0) {
                 Spacer()
@@ -28,17 +27,17 @@ struct SignUpView: View {
                     email: $emailText,
                     password: $passwordText,
                     name: $nameText,
-                    emailError: .constant(!signUpValueCheckVM.emailValueCheck(emailText)),
-                    passwordError: .constant(!signUpValueCheckVM.passwordValueCheck(passwordText))
+                    emailError: .constant(!signUpViewModel.emailValueCheck(emailText)),
+                    passwordError: .constant(!signUpViewModel.passwordValueCheck(passwordText))
                 )
                 Spacer()
                 // MARK: - 다음 버튼
                 AuthButton(
-                    isDisable: .constant(!signUpValueCheckVM.checkTotalSignUpValue(emailText, passwordText, nameText)),
+                    isDisable: .constant(!signUpViewModel.checkTotalSignUpValue(emailText, passwordText, nameText)),
                     text: "다음",
                     action: {
-                        signUpVM.email = emailText
-                        signUpVM.emailDuplicate()
+                        signUpViewModel.email = emailText
+                        signUpViewModel.emailDuplicate()
                     }
                 )
             } // Vstack
@@ -47,10 +46,10 @@ struct SignUpView: View {
             BackBtn()
         }
         .navigationBarHidden(true)
-        .alert("안내", isPresented: $signUpVM.showError) {
+        .alert("안내", isPresented: $signUpViewModel.showError) {
             Button("확인", role: .cancel) { }
         } message: {
-            Text(signUpVM.errorMessage)
+            Text(signUpViewModel.errorMessage)
         }
     } // body
 }

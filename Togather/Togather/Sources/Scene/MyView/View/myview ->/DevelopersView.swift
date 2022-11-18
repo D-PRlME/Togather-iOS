@@ -4,7 +4,7 @@ import Kingfisher
 
 struct Developers: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    let developers: [String] = [
+    private let developers: [String] = [
         "김성원",
         "조병진",
         "김상구",
@@ -14,7 +14,7 @@ struct Developers: View {
         "심미진",
         "장지성"
     ]
-    let stack: [String] = [
+    private let stack: [String] = [
         "백엔드",
         "iOS",
         "디자인",
@@ -24,7 +24,7 @@ struct Developers: View {
         "웹 프론트엔드",
         "웹 프론트엔드"
     ]
-    let githubID: [String] = [
+    private let githubID: [String] = [
         "lilseongwon",
         "BJCHO0501",
         "MONOTYPEEE",
@@ -34,7 +34,7 @@ struct Developers: View {
         "azure-553",
         "jisoung"
     ]
-    let imageUrlArr: [String] = [
+    private let imageUrlArr: [String] = [
         "https://avatars.githubusercontent.com/u/102791105?v=4",
         "https://avatars.githubusercontent.com/u/80248855?v=4",
         "https://avatars.githubusercontent.com/u/76112135?v=4",
@@ -44,7 +44,7 @@ struct Developers: View {
         "https://avatars.githubusercontent.com/u/80371353?v=4",
         "https://avatars.githubusercontent.com/u/101026873?v=4"
     ]
-    let columns = [
+    private let columns = [
         GridItem(.flexible(), spacing: 12),
         GridItem(.flexible(), spacing: 12)
     ]

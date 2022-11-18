@@ -2,7 +2,7 @@ import SwiftUI
 import Kingfisher
 
 struct TagListView: View {
-    @StateObject var tagVM = TagViewModel()
+    @StateObject var tagListViewModel = TagListViewModel()
     @Binding var goBack: Bool
     @Binding var tagLists: [String]
     var body: some View {
@@ -25,7 +25,7 @@ struct TagListView: View {
                 Spacer()
             }
             List {
-                ForEach(tagVM.tagValues, id: \.self) { data in
+                ForEach(tagListViewModel.tagValues, id: \.self) { data in
                     Button {
                         DispatchQueue.main.async {
                             if tagLists.contains(data.name) {
@@ -71,7 +71,7 @@ struct TagListView: View {
             .listStyle(.inset)
         }
         .onAppear {
-            tagVM.getTagDatas()
+            tagListViewModel.getTagDatas()
         }
     }
 }

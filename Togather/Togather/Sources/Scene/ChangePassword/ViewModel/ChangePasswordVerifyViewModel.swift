@@ -1,17 +1,22 @@
 import Foundation
 import Moya
+import SwiftKeychainWrapper
+import Combine
 
-class ChangePasswordToEmailViewModel: ObservableObject {
+class ChangePasswordVerifyViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    @Published var myEmail: String = ""
     @Published var authCode: String = ""
-    @Published var newPassword: String = ""
+    @Published var myEmail: String = ""
     @Published var isError: Bool = false
     @Published var errorMessage: String = ""
     @Published var goEnterPW: Int?
-    @Published var goSucced: Int?
+    @Published var timer: Int = 300
+    init() {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: self.timer >= 0) { _ in
+            self.timer -= 1
+        }
+    }
     // MARK: - 내 프로필 조회
-
     func getMyProfile() {
         userClient.request(.getMyprofile) { res in
             switch res {
@@ -60,7 +65,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
     }
     // MARK: - 이메일 인증
 
-    func emailVerify() {
+    func emailVerify() {//
         userClient.request(.mailVerify(email: myEmail, authCode: authCode)) { res in
             switch res {
             case .success(let result):
@@ -79,31 +84,5 @@ class ChangePasswordToEmailViewModel: ObservableObject {
                 print("⛔️emailVerify Error: \(err.localizedDescription)")
             }
         }
-    }
-    // MARK: - 비밀번호 변경
-
-    func changePassword() {
-        userClient.request(.changePasswordEmail(newPassword: newPassword)) { res in
-            switch res {
-            case .success(let result):
-                switch result.statusCode {
-                case 204:
-                    print("✅비번 변경 성공")
-                    self.goSucced = 1
-                default:
-                    print(result.statusCode)
-                }
-            case .failure(let err):
-                print("⛔️changePasswordEmail Error: \(err.localizedDescription)")
-            }
-        }
-    }
-    func passwordValueCheck() -> Bool {
-        return pwCheck(newPassword)
-    }
-    private func pwCheck(_ password: String) -> Bool {
-        let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,30}"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
-        return predicate.evaluate(with: password)
     }
 }

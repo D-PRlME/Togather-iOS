@@ -1,10 +1,3 @@
-//
-//  SignUpTextField.swift
-//  Togather
-//
-//  Created by 조병진 on 2022/10/18.
-//
-
 import SwiftUI
 
 struct SignUpTextField: View {

@@ -6,8 +6,12 @@ class ContentViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     @Published var email: String = ""
     @Published var password: String = ""
-    @Published var viewTag: Int?
-    func login() {
+    @Published var fullScreenToLoginView: Bool = false
+    @Published var fullScreenToTabBarView: Bool = false
+    func justLogin() {
+        fullScreenToLoginView.toggle()
+    }
+    func autoLogin() {
         userClient.request(.login(accountID: email, password: password)) { res in
             switch res {
             case .success(let result):
@@ -21,16 +25,19 @@ class ContentViewModel: ObservableObject {
                             self.getMyProFile()
                             print("✅자동로그인 성공")
                             print("🔊\(data.expiredAt)")
-                            self.viewTag = 1
+                            self.fullScreenToTabBarView.toggle()
                         } else {
                             print("⚠️login docoder error")
+                            self.justLogin()
                         }
                     }
                 default:
                     print("자동로그인 실패")
+                    self.justLogin()
                 }
             case .failure(let err):
                 print("⛔️autologin error: \(err.localizedDescription)")
+                self.justLogin()
             }
         }
     }

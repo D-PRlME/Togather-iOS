@@ -36,7 +36,7 @@ struct HomeView: View {
                     .padding(.top, 10)
                 }
                 .padding(.top, 12)
-                .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+                .padding(.bottom, getSafeAreaBot() ? 86 : 106)
                 .onAppear {
                     DispatchQueue.global().async {
                         homeViewModel.getTagList()

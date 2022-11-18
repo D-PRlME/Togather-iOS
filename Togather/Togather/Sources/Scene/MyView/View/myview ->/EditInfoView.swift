@@ -2,9 +2,9 @@ import SwiftUI
 import SwiftUIFlowLayout
 import Kingfisher
 
-struct EditInfo: View {
+struct EditInfoView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @StateObject var changeMyInfoVM = ChangeMyInfoViewModel()
+    @StateObject var editInfoViewModel = EditInfoViewModel()
     @State private var goBack: Bool = false
     @State private var alertMessage: String = ""
     @State private var showAlert: Bool = false
@@ -27,7 +27,7 @@ struct EditInfo: View {
                             }
                     }
                     HStack(spacing: 12) {
-                        KFImage.url(URL(string: changeMyInfoVM.profileImageLink))
+                        KFImage.url(URL(string: editInfoViewModel.profileImageLink))
                             .placeholder {
                                 Circle().fill(Color.whiteElevated3)
                                     .frame(width: 48, height: 48)
@@ -45,17 +45,17 @@ struct EditInfo: View {
                             }
                         )
                         .sheet(isPresented: $showImagePicker) {
-                            ImagePicker(image: $changeMyInfoVM.image)
+                            ImagePicker(image: $editInfoViewModel.image)
                         }
-                        .onChange(of: changeMyInfoVM.image) { _ in
-                            changeMyInfoVM.updateProfileImage()
+                        .onChange(of: editInfoViewModel.image) { _ in
+                            editInfoViewModel.updateProfileImage()
                         }
                         Spacer()
                     }
                     .padding(.top, 26)
                     // ID
                     EditInfoTextField(
-                        text: $changeMyInfoVM.name, placeholder: "이름"
+                        text: $editInfoViewModel.name, placeholder: "이름"
                     )
                     .padding(.top, 12)
                     // Email
@@ -75,7 +75,7 @@ struct EditInfo: View {
                     .padding(.top, 8)
                     // Introduce
                     EditInfoTextEditor(
-                        text: $changeMyInfoVM.introduce,
+                        text: $editInfoViewModel.introduce,
                         placeholder: "자기소계"
                     )
                     .frame(minHeight: 48, maxHeight: 48 * 3)
@@ -95,16 +95,16 @@ struct EditInfo: View {
                                 .font(.maintext2m)
                                 .padding(.horizontal, 12)
                                 .padding(.vertical, 6)
-                                .background(changeMyInfoVM.positions.contains(index.positionTypeChange) ? Color(red: 0.925, green: 0.792, blue: 0.357) : Color(red: 0.905, green: 0.905, blue: 0.905))
+                                .background(editInfoViewModel.positions.contains(index.positionTypeChange) ? Color(red: 0.925, green: 0.792, blue: 0.357) : Color(red: 0.905, green: 0.905, blue: 0.905))
                                 .cornerRadius(37)
                                 .padding(1)
-                                .background(changeMyInfoVM.positions.contains(index.positionTypeChange) ? Color("YellowStroke") : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                                .background(editInfoViewModel.positions.contains(index.positionTypeChange) ? Color("YellowStroke") : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
                                 .cornerRadius(37)
                                 .onTapGesture {
-                                    if changeMyInfoVM.positions.contains(index.positionTypeChange) {
-                                        changeMyInfoVM.positions.removeAll { $0 == index.positionTypeChange }
+                                    if editInfoViewModel.positions.contains(index.positionTypeChange) {
+                                        editInfoViewModel.positions.removeAll { $0 == index.positionTypeChange }
                                     } else {
-                                        changeMyInfoVM.positions.append(index.positionTypeChange)
+                                        editInfoViewModel.positions.append(index.positionTypeChange)
                                     }
                                 }
                         }
@@ -116,8 +116,8 @@ struct EditInfo: View {
                             backgroundColor: .main,
                             cornerColor: .mainDarken,
                             action: {
-                                if changeMyInfoVM.introduce.count <= introduceTextLimit {
-                                    changeMyInfoVM.changeMyInfo()
+                                if editInfoViewModel.introduce.count <= introduceTextLimit {
+                                    editInfoViewModel.changeMyInfo()
                                 } else {
                                     alertMessage = "소개 글자수는 100자 이하입니다."
                                     showAlert = true
@@ -151,7 +151,7 @@ struct EditInfo: View {
                     if goBack {
                         self.presentationMode.wrappedValue.dismiss()
                     } else {
-                        changeMyInfoVM.getMyInfo()
+                        editInfoViewModel.getMyInfo()
                     }
                 }
                 .fullScreenCover(isPresented: $goBack) {
@@ -159,7 +159,7 @@ struct EditInfo: View {
                         LoginView()
                     }
                 }
-                .alert("안내", isPresented: $changeMyInfoVM.showingAlert) {
+                .alert("안내", isPresented: $editInfoViewModel.showingAlert) {
                     Button("확인", role: .cancel) {
                         self.presentationMode.wrappedValue.dismiss()
                     }
@@ -174,6 +174,6 @@ struct EditInfo: View {
 
 struct EditInfo_Previews: PreviewProvider {
     static var previews: some View {
-        EditInfo()
+        EditInfoView()
     }
 }

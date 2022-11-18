@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftUIFlowLayout
 import Kingfisher
 
-struct MyPost: View {
+struct MyPostView: View {
     @State private var isClose: Bool = false
     @StateObject var myPageViewModel = MyPostViewModel()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -55,6 +55,6 @@ struct MyPost: View {
 
 struct MyPost_Previews: PreviewProvider {
     static var previews: some View {
-        MyPost()
+        MyPostView()
     }
 }

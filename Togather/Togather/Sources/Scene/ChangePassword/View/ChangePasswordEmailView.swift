@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct ChangePasswordEmailView: View {
-    @StateObject var changeVM = ChangePasswordToEmailViewModel()
+    @StateObject var changePasswordEmailViewModel = ChangePasswordEmailViewModel()
     func buttonAtivation() -> Bool {
         return true
     }
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-//                NavigationLink(destination: EnterNewPassword(), tag: 1, selection: $changePWToEmailVM.goEnterPW) { EmptyView() }
+//                NavigationLink(destination: EnterNewPassword(), tag: 1, selection: $changePWToEmailViewModel.goEnterPW) { EmptyView() }
                 VStack(alignment: .leading, spacing: 0) {
                     Spacer()
                         .frame(height: proxy.size.height / 5)
@@ -19,9 +19,9 @@ struct ChangePasswordEmailView: View {
                     ChangePasswordTextField(
                         placeholder: "이메일",
                         keybordType: .emailAddress,
-                        text: $changeVM.myEmail,
-                        isError: $changeVM.isError,
-                        indicatorMassage: $changeVM.errorMessage
+                        text: $changePasswordEmailViewModel.myEmail,
+                        isError: $changePasswordEmailViewModel.isError,
+                        indicatorMassage: $changePasswordEmailViewModel.errorMessage
                     )
                     Spacer()
                     AuthButton(

@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
-    @StateObject var changeMyInfoVM = ChangeMyInfoViewModel()
     @Binding var image: UIImage?
     private let controller = UIImagePickerController()
     func makeCoordinator() -> Coordinator {
@@ -18,7 +17,6 @@ struct ImagePicker: UIViewControllerRepresentable {
                     return
                 }
                 photoPicker.image = compressedImage
-                print("선택한 이미지: \(String(describing: photoPicker.image))")
             }
             picker.dismiss(animated: true)
         }

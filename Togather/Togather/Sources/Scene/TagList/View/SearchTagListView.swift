@@ -2,7 +2,7 @@ import SwiftUI
 import Kingfisher
 
 struct SearchTagListView: View {
-    @StateObject var tagVM = TagViewModel()
+    @StateObject var searchTagListViewModel = SearchTagListViewModel()
     @Binding var goBack: Bool
     @Binding var tagBtnValue: String
     var body: some View {
@@ -25,7 +25,7 @@ struct SearchTagListView: View {
                 Spacer()
             }
             // list
-            List(tagVM.tagValues, id: \.self) { data in
+            List(searchTagListViewModel.tagValues, id: \.self) { data in
                 Button {
                     if tagBtnValue == data.name {
                         tagBtnValue = ""
@@ -68,7 +68,7 @@ struct SearchTagListView: View {
         }
         .listStyle(.inset)
         .onAppear {
-            tagVM.getTagDatas()
+            searchTagListViewModel.getTagDatas()
         }
     }
 }

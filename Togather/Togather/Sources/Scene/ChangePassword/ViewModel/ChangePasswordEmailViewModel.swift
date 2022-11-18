@@ -1,7 +1,9 @@
 import Foundation
 import Moya
+import SwiftKeychainWrapper
+import Combine
 
-class ChangePasswordToEmailViewModel: ObservableObject {
+class ChangePasswordEmailViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
     @Published var myEmail: String = ""
     @Published var authCode: String = ""
@@ -11,7 +13,6 @@ class ChangePasswordToEmailViewModel: ObservableObject {
     @Published var goEnterPW: Int?
     @Published var goSucced: Int?
     // MARK: - 내 프로필 조회
-
     func getMyProfile() {
         userClient.request(.getMyprofile) { res in
             switch res {
@@ -90,6 +91,7 @@ class ChangePasswordToEmailViewModel: ObservableObject {
                 case 204:
                     print("✅비번 변경 성공")
                     self.goSucced = 1
+                    KeychainWrapper.standard.set(self.newPassword, forKey: "pw")
                 default:
                     print(result.statusCode)
                 }

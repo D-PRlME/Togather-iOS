@@ -5,7 +5,7 @@ struct WritingView: View {
     @Binding var showModal: Bool
     @State private var tagBtnArr: [String] = []
     @State private var goTags: Bool = false
-    @StateObject var postViewModel = PostViewModel()
+    @StateObject var writingViewModel = WritingViewModel()
     var body: some View {
         VStack {
             // MARK: - 취소버튼
@@ -24,12 +24,12 @@ struct WritingView: View {
 
             PostTextField(
                 placeholder: "제목",
-                text: $postViewModel.title
+                text: $writingViewModel.title
             )
             // MARK: - 본문
 
             PostTextEditor(
-                text: $postViewModel.content,
+                text: $writingViewModel.content,
                 placeholder: "본문을 입력하세요"
             )
             FlowLayout(mode: .scrollable,
@@ -53,8 +53,8 @@ struct WritingView: View {
                     backgroundColor: .main,
                     cornerColor: .mainDarken,
                     action: {
-                        postViewModel.tag = self.tagBtnArr
-                        postViewModel.post()
+                        writingViewModel.tag = self.tagBtnArr
+                        writingViewModel.post()
                         showModal = false
                     }
                 )

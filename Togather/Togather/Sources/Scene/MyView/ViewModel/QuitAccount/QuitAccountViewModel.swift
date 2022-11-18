@@ -1,5 +1,6 @@
 import Foundation
 import Moya
+import SwiftKeychainWrapper
 
 class QuitAccountViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
@@ -15,6 +16,9 @@ class QuitAccountViewModel: ObservableObject {
                     print("회원탈퇴(계정 삭제)")
                     Account.deleteAccount()
                     Token.removeToken()
+                    KeychainWrapper.standard.removeObject(forKey: "auto")
+                    KeychainWrapper.standard.removeObject(forKey: "id")
+                    KeychainWrapper.standard.removeObject(forKey: "pw")
                     self.isSucced = true
                 case 403:
                     print("올바르지 않은 비밀번호")

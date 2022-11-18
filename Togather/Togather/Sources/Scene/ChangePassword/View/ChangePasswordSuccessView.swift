@@ -1,7 +1,7 @@
 import SwiftUI
 import AVFoundation
 
-struct ChangePasswordSuccess: View {
+struct ChangePasswordSuccessView: View {
     @State private var goHome: Bool = false
     var body: some View {
         GeometryReader { proxy in
@@ -37,8 +37,8 @@ struct ChangePasswordSuccess: View {
     }
 }
 
-struct ChangePasswordSuccess_Previews: PreviewProvider {
+struct ChangePasswordSuccessView_Previews: PreviewProvider {
     static var previews: some View {
-        ChangePasswordSuccess()
+        ChangePasswordSuccessView()
     }
 }

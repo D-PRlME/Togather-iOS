@@ -4,16 +4,16 @@ import CarPlay
 import SwiftUIFlowLayout
 
 struct MyView: View {
+    @StateObject var myViewModel = MyViewModel()
     @State private var goEditInfoModal = false
     @State private var goMyPost = false
     @State private var goDevelopers = false
     @State private var goChangePassword = false
     @State private var goLogout = false
     @State private var profileImageLink = Account.profileImageLink ?? ""
-    @StateObject var logoutVM = LogoutViewModel()
     var body: some View {
         ZStack {
-            NavigationLink(destination: ChangePasswordVerify(), isActive: $goChangePassword) {
+            NavigationLink(destination: ChangePasswordVerifyView(), isActive: $goChangePassword) {
                 EmptyView()
             }// 비밀번호 변경은 navigationLink로 넘겨야함
             ColorManager.BackgroundColor.ignoresSafeArea()
@@ -64,7 +64,7 @@ struct MyView: View {
                         }
                     )
                     .sheet(isPresented: self.$goEditInfoModal) {
-                        EditInfo()
+                        EditInfoView()
                     }
                     MyViewButton(
                         text: "비밀번호 변경",
@@ -79,7 +79,7 @@ struct MyView: View {
                         }
                     )
                     .sheet(isPresented: $goMyPost) {
-                        MyPost()
+                        MyPostView()
                     }
                     MyViewButton(
                         text: "개발자들",
@@ -98,13 +98,13 @@ struct MyView: View {
                     )
                     .alert("로그아웃", isPresented: $goLogout) {
                         Button("로그아웃", role: .destructive) {
-                            logoutVM.logout()
+                            myViewModel.logout()
                         }
                         Button("취소", role: .cancel) { }
                     } message: {
                         Text("로그아웃 하시겠습니까?")
                     }
-                    .fullScreenCover(isPresented: $logoutVM.isSucced) {
+                    .fullScreenCover(isPresented: $myViewModel.isSucced) {
                         NavigationView {
                             LoginView()
                         }
@@ -112,7 +112,7 @@ struct MyView: View {
                     Spacer()
                 }
             }
-            .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 86 : 106)
+            .padding(.bottom, getSafeAreaBot() ? 86 : 106)
             .padding(.horizontal, 20)
             .onChange(of: goEditInfoModal) { newValue in
                 if !newValue {

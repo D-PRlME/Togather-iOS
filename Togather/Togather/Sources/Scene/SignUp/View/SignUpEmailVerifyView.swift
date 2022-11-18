@@ -1,31 +1,32 @@
 import SwiftUI
 
-struct EmailVerify: View {
+struct SignUpEmailVerifyView: View {
     @Binding var email: String
     @Binding var password: String
     @Binding var name: String
-    @StateObject var signUpVM = SignUpViewModel()
+    @StateObject var signUpEmailVerifyViewModel = SignUpEmailVerifyViewModel()
     var body: some View {
         ZStack {
             NavigationLink(
                 destination:
-                    SignUpSuccess(
+                    SignUpSuccessView(
                         email: $email,
                         password: $password,
                         name: $name
                     ),
                 tag: 2,
-                selection: $signUpVM.isSuccess
+                selection: $signUpEmailVerifyViewModel.isSuccess
             ) { EmptyView() }
             VStack(alignment: .center, spacing: 12) {
                 Spacer()
                 // MARK: - Title
                 EmailVerifyTitle(
-                    email: email
+                    email: email,
+                    second: $signUpEmailVerifyViewModel.timer
                 )
                 // MARK: - TextField
                 EmailVerifyTextField(
-                    code: $signUpVM.code
+                    code: $signUpEmailVerifyViewModel.code
                 )
                 // MARK: - Image
                 VStack(spacing: 0) {
@@ -41,15 +42,15 @@ struct EmailVerify: View {
                 AuthButton(
                     text: "다음",
                     action: {
-                        signUpVM.emailVerify()
+                        signUpEmailVerifyViewModel.emailVerify()
                     }
                 )
             } // Vstack
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
             .onAppear {
-                signUpVM.email = email
-                signUpVM.sendEmailToUser()
+                signUpEmailVerifyViewModel.email = email
+                signUpEmailVerifyViewModel.sendEmailToUser()
             }
             BackBtn()
         }
@@ -59,7 +60,7 @@ struct EmailVerify: View {
 
 struct EmailVerify_Previews: PreviewProvider {
     static var previews: some View {
-        EmailVerify(
+        SignUpEmailVerifyView(
             email: .constant("bj"),
             password: .constant("dd"),
             name: .constant("조병진")

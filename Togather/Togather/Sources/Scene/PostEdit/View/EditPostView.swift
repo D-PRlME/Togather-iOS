@@ -3,13 +3,12 @@ import SwiftUIFlowLayout
 
 struct EditPostView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
     @Binding var tagBtnArr: [String]
     @Binding var title: String
     @Binding var content: String
-    let postID: Int
     @State private var goTags: Bool = false
     @StateObject var editPostViewModel = EditPostViewModel()
+    let postID: Int
     var body: some View {
         VStack(alignment: .leading) {
             // MARK: - 취소버튼

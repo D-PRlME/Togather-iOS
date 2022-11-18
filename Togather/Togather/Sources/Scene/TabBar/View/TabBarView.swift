@@ -4,19 +4,26 @@ enum TabIndex {
     case home, chat, write, mypage, search
 }
 
+func getSafeAreaBot() -> Bool {
+    let keyWindow = UIApplication.shared.connectedScenes
+        .filter({$0.activationState == .foregroundActive})
+        .map({$0 as? UIWindowScene})
+        .compactMap({$0})
+        .first?.windows
+        .filter({$0.isKeyWindow}).first
+    return (keyWindow?.safeAreaInsets.bottom) == 0
+}
+
 struct TabBarView: View {
     @State private var tabIndex = TabIndex.home
     @State private var showModal = false
-    func safeAreaValue(_ first: CGFloat, _ rear: CGFloat) -> CGFloat {
-        return UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? first : rear
-    }
     var body: some View {
         GeometryReader { proxy in
             VStack(spacing: 0) {
                 Spacer()
                 ZStack(alignment: .bottom) {
                     ShowView(tabIndex: tabIndex)
-                        .padding(.top, safeAreaValue(0, 40))
+                        .padding(.top, getSafeAreaBot() ? 0 : 40)
                     ZStack {
                         VStack(spacing: 0) {
                             Rectangle()
@@ -24,7 +31,7 @@ struct TabBarView: View {
                                 .frame(width: proxy.size.width, height: 1)
                             Rectangle()
                                 .foregroundColor(Color("TabBarFill"))
-                                .frame(width: proxy.size.width, height: safeAreaValue(86, 106))
+                                .frame(width: proxy.size.width, height: getSafeAreaBot() ? 86 : 106)
                         }
                         HStack(alignment: .top, spacing: 0) {
                             TabBarItem(tabIndex: $tabIndex,
@@ -43,7 +50,7 @@ struct TabBarView: View {
                                        thisValue: .mypage,
                                        proxy: proxy)
                         }
-                        .padding(.bottom, safeAreaValue(5, 25))
+                        .padding(.bottom, getSafeAreaBot() ? 5 : 25)
                     }
                 }
             }

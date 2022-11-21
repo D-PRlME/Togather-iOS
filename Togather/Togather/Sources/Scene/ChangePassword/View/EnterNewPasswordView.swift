@@ -14,7 +14,14 @@ struct EnterNewPasswordView: View {
                 )
                 VStack {
                     AuthTextField(
-                        placeholder: "비밀번호",
+                        placeholder: "기존 비밀번호",
+                        isSecret: true,
+                        text: $enterNewPasswordViewModel.oldPassword,
+                        message: enterNewPasswordViewModel.errorMessage,
+                        isError: $enterNewPasswordViewModel.isError
+                    )
+                    AuthTextField(
+                        placeholder: "새 비밀번호",
                         isSecret: true,
                         text: $enterNewPasswordViewModel.newPassword,
                         message: enterNewPasswordViewModel.errorMessage,

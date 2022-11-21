@@ -120,6 +120,11 @@
 		90CF12BB29275679003B26ED /* SearchTagListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12BA29275679003B26ED /* SearchTagListViewModel.swift */; };
 		90CF12BD292757DA003B26ED /* SignUpEmailVerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12BC292757DA003B26ED /* SignUpEmailVerifyViewModel.swift */; };
 		90CF12BF292757E2003B26ED /* SignUpSuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12BE292757E2003B26ED /* SignUpSuccessViewModel.swift */; };
+		90CF12C5292B4B44003B26ED /* EmailVerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12C4292B4B44003B26ED /* EmailVerifyView.swift */; };
+		90CF12C7292B4B50003B26ED /* EmailVerifyVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12C6292B4B50003B26ED /* EmailVerifyVIewModel.swift */; };
+		90CF12C9292B4F9B003B26ED /* ChangeLostPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12C8292B4F9B003B26ED /* ChangeLostPasswordView.swift */; };
+		90CF12CB292BA431003B26ED /* ChangeLostPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12CA292BA431003B26ED /* ChangeLostPasswordViewModel.swift */; };
+		90CF12CD292BA4D1003B26ED /* ChangePasswordEmailSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12CC292BA4D1003B26ED /* ChangePasswordEmailSuccessView.swift */; };
 		90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */; };
 		90D1C6E828BF6E3000B653C3 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E728BF6E3000B653C3 /* WritingView.swift */; };
 		90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1C6E928BF6E3D00B653C3 /* MyView.swift */; };
@@ -244,6 +249,11 @@
 		90CF12BA29275679003B26ED /* SearchTagListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagListViewModel.swift; sourceTree = "<group>"; };
 		90CF12BC292757DA003B26ED /* SignUpEmailVerifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailVerifyViewModel.swift; sourceTree = "<group>"; };
 		90CF12BE292757E2003B26ED /* SignUpSuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessViewModel.swift; sourceTree = "<group>"; };
+		90CF12C4292B4B44003B26ED /* EmailVerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyView.swift; sourceTree = "<group>"; };
+		90CF12C6292B4B50003B26ED /* EmailVerifyVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyVIewModel.swift; sourceTree = "<group>"; };
+		90CF12C8292B4F9B003B26ED /* ChangeLostPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLostPasswordView.swift; sourceTree = "<group>"; };
+		90CF12CA292BA431003B26ED /* ChangeLostPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLostPasswordViewModel.swift; sourceTree = "<group>"; };
+		90CF12CC292BA4D1003B26ED /* ChangePasswordEmailSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordEmailSuccessView.swift; sourceTree = "<group>"; };
 		90D1C6E128BF6DBA00B653C3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		90D1C6E728BF6E3000B653C3 /* WritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
 		90D1C6E928BF6E3D00B653C3 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
@@ -554,7 +564,7 @@
 		4B3FB514291B1E8E00E9BE51 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4B4C6BB228F44C85007433C2 /* ChangePasswordEmailView.swift */,
+				90CF12C0292B3B3D003B26ED /* idontknowPW */,
 				4BE919CB28CEF0C40002A268 /* ChangePasswordVerifyView.swift */,
 				4BE919CD28CEF0CE0002A268 /* EnterNewPasswordView.swift */,
 				4BE919CF28CEF0D60002A268 /* ChangePasswordSuccessView.swift */,
@@ -565,7 +575,6 @@
 		4B3FB515291B1EF400E9BE51 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4BC89A3228DDAF8F00189553 /* ChangePasswordEmailViewModel.swift */,
 				90CF12B429272016003B26ED /* ChangePasswordVerifyViewModel.swift */,
 				90CF12B629272022003B26ED /* EnterNewPasswordViewModel.swift */,
 			);
@@ -764,6 +773,7 @@
 				4B3FB51B291B45C100E9BE51 /* Chat */,
 				4B3FB517291B457600E9BE51 /* UserProfile */,
 				4B3FB513291B1E7A00E9BE51 /* ChangePassword */,
+				90CF12C1292B3F2D003B26ED /* LoginChangePassword */,
 				4B202ACD290F63430076E26C /* MyView */,
 				909118D1290EB04200C80B42 /* TabBar */,
 				4B14A874290CEF020097E838 /* Search */,
@@ -1133,6 +1143,43 @@
 			path = post;
 			sourceTree = "<group>";
 		};
+		90CF12C0292B3B3D003B26ED /* idontknowPW */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = idontknowPW;
+			sourceTree = "<group>";
+		};
+		90CF12C1292B3F2D003B26ED /* LoginChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				90CF12C2292B3F5B003B26ED /* ViewModel */,
+				90CF12C3292B3F60003B26ED /* VIew */,
+			);
+			path = LoginChangePassword;
+			sourceTree = "<group>";
+		};
+		90CF12C2292B3F5B003B26ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4BC89A3228DDAF8F00189553 /* ChangePasswordEmailViewModel.swift */,
+				90CF12C6292B4B50003B26ED /* EmailVerifyVIewModel.swift */,
+				90CF12CA292BA431003B26ED /* ChangeLostPasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90CF12C3292B3F60003B26ED /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				4B4C6BB228F44C85007433C2 /* ChangePasswordEmailView.swift */,
+				90CF12C4292B4B44003B26ED /* EmailVerifyView.swift */,
+				90CF12C8292B4F9B003B26ED /* ChangeLostPasswordView.swift */,
+				90CF12CC292BA4D1003B26ED /* ChangePasswordEmailSuccessView.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
 		90D1C6ED28BF9B8900B653C3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1305,6 +1352,7 @@
 				4BC89A2D28DDAF1800189553 /* UserProfileViewModel.swift in Sources */,
 				4BE919D728CF678A0002A268 /* ErrorModel.swift in Sources */,
 				90CF12BD292757DA003B26ED /* SignUpEmailVerifyViewModel.swift in Sources */,
+				90CF12C7292B4B50003B26ED /* EmailVerifyVIewModel.swift in Sources */,
 				900990F128D0586C00FD9462 /* PostDetailModel.swift in Sources */,
 				90D1C6EA28BF6E3D00B653C3 /* MyView.swift in Sources */,
 				909118D7290EB23300C80B42 /* TabBarItem.swift in Sources */,
@@ -1314,6 +1362,7 @@
 				906908AE28CDC49C00BBF0B7 /* DevelopersView.swift in Sources */,
 				4B14A879290CEF540097E838 /* SearchTextField.swift in Sources */,
 				90DDB7892907807F0094DE71 /* ChattingView.swift in Sources */,
+				90CF12CB292BA431003B26ED /* ChangeLostPasswordViewModel.swift in Sources */,
 				4BE919CE28CEF0CF0002A268 /* EnterNewPasswordView.swift in Sources */,
 				90DDB78B29079DA90094DE71 /* OpponentChat.swift in Sources */,
 				4B14A855290968160097E838 /* PostButton.swift in Sources */,
@@ -1356,7 +1405,9 @@
 				4B14A850290934A30097E838 /* PostTextField.swift in Sources */,
 				4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */,
 				4BC8992E28DA8D0700189553 /* UserClient.swift in Sources */,
+				90CF12CD292BA4D1003B26ED /* ChangePasswordEmailSuccessView.swift in Sources */,
 				4B5FE3C328E48EA900DE6184 /* SocketTest.swift in Sources */,
+				90CF12C9292B4F9B003B26ED /* ChangeLostPasswordView.swift in Sources */,
 				900990AA28CE3E7E00FD9462 /* LoginView.swift in Sources */,
 				4B3FB526291B55AA00E9BE51 /* ChangePasswordModel.swift in Sources */,
 				4BE919D028CEF0D60002A268 /* ChangePasswordSuccessView.swift in Sources */,
@@ -1370,6 +1421,7 @@
 				90CF12BB29275679003B26ED /* SearchTagListViewModel.swift in Sources */,
 				4BC8992C28DA8CD800189553 /* SignUpView.swift in Sources */,
 				90D9B82D2911311700F381F9 /* ChatClient.swift in Sources */,
+				90CF12C5292B4B44003B26ED /* EmailVerifyView.swift in Sources */,
 				90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */,
 				4B25488C29187A2400E62EA7 /* EditInfoTextEditor.swift in Sources */,
 				4B4C6B9028EE8635007433C2 /* EditInfoView.swift in Sources */,

@@ -30,7 +30,9 @@ struct ChangePasswordEmailSuccessView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
             .fullScreenCover(isPresented: $goLogin) {
-                LoginView()
+                NavigationView {
+                    LoginView()
+                }
             }
         }
         .navigationBarHidden(true)

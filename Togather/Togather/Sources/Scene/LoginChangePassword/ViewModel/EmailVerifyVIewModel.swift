@@ -18,7 +18,7 @@ class EmailVerifyVIewModel: ObservableObject {
     }
     // MARK: - 이메일 인증
 
-    func emailVerify() {//
+    func emailVerify() {
         userClient.request(.mailVerify(email: myEmail, authCode: authCode)) { res in
             switch res {
             case .success(let result):

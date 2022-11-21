@@ -3,24 +3,23 @@ import Moya
 import SwiftKeychainWrapper
 import Combine
 
-class EnterNewPasswordViewModel: ObservableObject {
+class ChangeLostPasswordViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
-    @Published var oldPassword: String = ""
     @Published var newPassword: String = ""
+    @Published var email: String = ""
     @Published var isError: Bool = false
     @Published var errorMessage: String = ""
     @Published var goSucced: Int?
     // MARK: - 비밀번호 변경
 
     func changePassword() {
-        userClient.request(.changePassword(oldPassword: oldPassword, newPassword: newPassword)) { res in
+        userClient.request(.changePasswordEmail(newPassword: newPassword, email: email)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {
                 case 204:
                     print("✅비번 변경 성공")
                     self.goSucced = 1
-                    KeychainWrapper.standard.set(self.newPassword, forKey: "pw")
                 default:
                     print(result.statusCode)
                 }

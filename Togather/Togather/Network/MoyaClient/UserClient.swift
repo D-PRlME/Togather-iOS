@@ -20,7 +20,7 @@ enum UserService {
     case getUserProfile(userID: Int)
     // 비밀번호 변경
     case sendFindEmail(email: String)
-    case changePasswordEmail(newPassword: String)
+    case changePasswordEmail(newPassword: String, email: String)
 }
 
 extension UserService: TargetType {
@@ -143,11 +143,12 @@ extension UserService: TargetType {
                         "email": email
                     ],
                 encoding: JSONEncoding.default)
-        case .changePasswordEmail(let newPassword):
+        case .changePasswordEmail(let newPassword, let email):
             return .requestParameters(
                 parameters:
                     [
-                        "new_password": newPassword
+                        "new_password": newPassword,
+                        "email": email
                     ],
                 encoding: JSONEncoding.default)
         case .quitAccount(let password):
@@ -162,13 +163,13 @@ extension UserService: TargetType {
     var headers: [String: String]? {
         switch self {
             // 토큰 필요없음
-        case .mailSignup, .mailVerify, .mailDuplicate, .signup, .login, .changePassword:
+        case .mailSignup, .mailVerify, .mailDuplicate, .signup, .login, .changePasswordEmail, .sendFindEmail:
             return Header.tokenIsEmpty.header()
             // 리프레시 토큰
         case .tokenReissue:
             return Header.refreshToken.header()
             // 엑세스 토큰
-        case .getMyprofile, .logout, .quitAccount, .changePasswordEmail, .sendFindEmail, .changeMyInfo, .getUserProfile:
+        case .getMyprofile, .logout, .quitAccount, .changePassword, .changeMyInfo, .getUserProfile:
             return Header.accessToken.header()
         }
     }

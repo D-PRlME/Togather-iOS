@@ -2,13 +2,17 @@ import SwiftUI
 
 struct ChangePasswordEmailView: View {
     @StateObject var changePasswordEmailViewModel = ChangePasswordEmailViewModel()
-    func buttonAtivation() -> Bool {
-        return true
+    private func buttonAtivation() -> Bool {
+        if changePasswordEmailViewModel.myEmail.contains("@dsm.hs.kr") {
+            return false
+        } else {
+            return true
+        }
     }
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-//                NavigationLink(destination: EnterNewPassword(), tag: 1, selection: $changePWToEmailViewModel.goEnterPW) { EmptyView() }
+                NavigationLink(destination: EmailVerifyView(email: changePasswordEmailViewModel.myEmail), tag: 1, selection: $changePasswordEmailViewModel.goEnterPW) { EmptyView() }
                 VStack(alignment: .leading, spacing: 0) {
                     Spacer()
                         .frame(height: proxy.size.height / 5)
@@ -28,7 +32,7 @@ struct ChangePasswordEmailView: View {
                         isDisable: .constant(buttonAtivation()),
                         text: "다음",
                         action: {
-                            print("여기 뭔가 이상해..")
+                            changePasswordEmailViewModel.sendChangePWEmail()
                         }
                     )
                     .padding(.bottom, proxy.safeAreaInsets.bottom == 0 ? 30 : 5)

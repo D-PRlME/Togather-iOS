@@ -1,10 +1,11 @@
 import SwiftUI
 
-struct EnterNewPasswordView: View {
-    @StateObject var enterNewPasswordViewModel = EnterNewPasswordViewModel()
+struct ChangeLostPasswordView: View {
+    @StateObject var changeLostPasswordViewModel = ChangeLostPasswordViewModel()
+    let email: String
     var body: some View {
         GeometryReader { proxy in
-            NavigationLink(destination: ChangePasswordSuccessView(), tag: 1, selection: $enterNewPasswordViewModel.goSucced) { EmptyView() }
+            NavigationLink(destination: ChangePasswordEmailSuccessView(), tag: 1, selection: $changeLostPasswordViewModel.goSucced) { EmptyView() }
             VStack(alignment: .leading, spacing: 0) {
                 Spacer()
                     .frame(height: proxy.size.height / 6)
@@ -14,20 +15,13 @@ struct EnterNewPasswordView: View {
                 )
                 VStack {
                     AuthTextField(
-                        placeholder: "기존 비밀번호",
+                        placeholder: "비밀번호",
                         isSecret: true,
-                        text: $enterNewPasswordViewModel.oldPassword,
-                        message: enterNewPasswordViewModel.errorMessage,
-                        isError: $enterNewPasswordViewModel.isError
+                        text: $changeLostPasswordViewModel.newPassword,
+                        message: changeLostPasswordViewModel.errorMessage,
+                        isError: $changeLostPasswordViewModel.isError
                     )
-                    AuthTextField(
-                        placeholder: "새 비밀번호",
-                        isSecret: true,
-                        text: $enterNewPasswordViewModel.newPassword,
-                        message: enterNewPasswordViewModel.errorMessage,
-                        isError: $enterNewPasswordViewModel.isError
-                    )
-                    if !enterNewPasswordViewModel.isError {
+                    if !changeLostPasswordViewModel.isError {
                         HStack {
                             Text("8자리 이상, 숫자, 영어 소문자, 특수문자를 포함해야 합니다")
                                 .font(.indicator)
@@ -39,10 +33,10 @@ struct EnterNewPasswordView: View {
                 }
                 Spacer()
                 ChangePasswordButton(
-                    isDisable: .constant(!enterNewPasswordViewModel.passwordValueCheck()),
+                    isDisable: .constant(!changeLostPasswordViewModel.passwordValueCheck()),
                     title: "다음",
                     action: {
-                        enterNewPasswordViewModel.changePassword()
+                        changeLostPasswordViewModel.changePassword()
                     }
                 )
                 .padding(.bottom, proxy.safeAreaInsets.bottom == 0 ? 30 : 5)
@@ -50,12 +44,15 @@ struct EnterNewPasswordView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         }
+        .onAppear {
+            changeLostPasswordViewModel.email = email
+        }
         .navigationBarHidden(true)
     }
 }
 
-struct EnterNewPassword_Previews: PreviewProvider {
+struct ChangeLostPassword_Previews: PreviewProvider {
     static var previews: some View {
-        EnterNewPasswordView()
+        ChangeLostPasswordView(email: "email")
     }
 }

@@ -14,7 +14,7 @@ struct LoginNavigationButton: View {
                 }
             }.frame(height: 48)
             NavigationLink {
-                SignUpView()
+                ChangePasswordEmailView()
             } label: {
                 VStack(spacing: 0) {
                     Rectangle().frame(height: 0)

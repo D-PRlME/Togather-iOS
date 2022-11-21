@@ -5,6 +5,7 @@ import Combine
 
 class EnterNewPasswordViewModel: ObservableObject {
     let userClient = MoyaProvider<UserService>(plugins: [MoyaLoggerPlugin()])
+    @Published var oldPassword: String = ""
     @Published var newPassword: String = ""
     @Published var isError: Bool = false
     @Published var errorMessage: String = ""
@@ -12,7 +13,7 @@ class EnterNewPasswordViewModel: ObservableObject {
     // MARK: - 비밀번호 변경
 
     func changePassword() {
-        userClient.request(.changePasswordEmail(newPassword: newPassword)) { res in
+        userClient.request(.changePassword(oldPassword: oldPassword, newPassword: newPassword)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {

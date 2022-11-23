@@ -38,7 +38,7 @@ struct LastChat: Codable {
     }
 }
 
-struct ChattingList {
+struct ChattingRoomList {
     let roomID: Int
     let roomType, roomLogoImage, roomName: String
     let lastChat: LastChatting

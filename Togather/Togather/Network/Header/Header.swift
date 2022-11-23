@@ -48,7 +48,7 @@ enum Header {
         case .tokenIsEmpty:
             return ["Content-Type": "application/json"]
         case .socket:
-            return ["Authorization": "Bearer " + token]
+            return ["Authorization": "Bearer " + token, "Content-Type": "application/json"]
         }
     }
 }

@@ -1,33 +1,46 @@
 import Foundation
 import SocketIO
-import Moya
 
 final class SocketViewModel: ObservableObject {
+    @Published var message = [String]()
     private var manager = SocketManager(
         socketURL: URL(string: "http://52.55.240.35:8081")!,
-        config: [.log(true),
-        .compress,
-//        .extraHeaders(Header.socket.header()!),
-//        .version(.two),
-        .reconnects(false)
-//        .forceWebsockets(false)
+        config: [
+            .log(true),
+            .compress
         ]
     )
     var socket: SocketIOClient!
-    @Published var message = [String]()
+    
     init() {
-        socket = self.manager.socket(forNamespace: "/socket.io")
-        socket.on(clientEvent: .connect) { (data, ack) in
-            print("서버에 연결되었습니다. \(data), \(ack)")
-        }
+        self.manager.config = SocketIOClientConfiguration(arrayLiteral: .extraHeaders(["Authorization": "Bearer " + (Token.localAccessToken ?? "")]), .version(.two), .path("/socket.io"), .reconnects(true))
+        self.socket = self.manager.defaultSocket
+        
+        socketSetting()
         socket.connect()
     }
+    
+    deinit {
+        socket.disconnect()
+    }
+    
+    func socketSetting() {
+        self.onError()
+        self.onChat()
+    }
+    
     func socketCounnect() {
         socket.connect()
+        
+        socket.on(clientEvent: .connect) { _, _ in
+            print("✅서버에 연결되었습니다")
+        }
     }
+    
     func socketDisconnect() {
         socket.disconnect()
     }
+    
     func onError() {
         socket.on("error") { (dataArrya, ack) in
             print("에러 타입: \(type(of: dataArrya))")
@@ -36,6 +49,7 @@ final class SocketViewModel: ObservableObject {
 //            print(data["code"] as! String)
         }
     }
+    
     func onChat() {
         socket.on("chat") { (dataArrya, ack) in
             print("chat 타입: \(type(of: dataArrya))")
@@ -44,8 +58,13 @@ final class SocketViewModel: ObservableObject {
 //            print(data["code"] as! String)
         }
     }
+    
     func onRoom() {
-        socket.emit("join", ["is_join_room": true, "room_id": 1])
+        socket.emit("join", ["is_join_room": true, "room_id": 2])
+    }
+    
+    func sendChat() {
+        socket.emit("chat", ["message" : "테슷트 입니다"])
     }
 
 }

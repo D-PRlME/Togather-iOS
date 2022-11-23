@@ -2,39 +2,13 @@ import SwiftUI
 import Kingfisher
 
 struct ChattingView: View {
+    @StateObject var chattingViewModel = ChatListViewModel()
+    
     @Environment(\.dismiss) private var dismiss
     @State private var sendChat: String = ""
     @Binding var index: Int
-    let user: [String] = [
-        "김성원",
-        "조병진",
-        "김상구",
-        "김은빈",
-        "홍승재",
-        "정승훈",
-        "심미진",
-        "장지성"
-    ]
-    let chatContent: [String] = [
-        "스프린트가 아닌 사이클링",
-        "나는 조뼝진 ㅋ",
-        "이거진짜살자각인듯",
-        "난 백준 플레 ㅋ",
-        "Hi! I'm studying SWIFT🔥",
-        "Android is power",
-        "새우가 주연인 드라마는 대하드라마 엌ㅋㅋㅋㅋㅋㅋㅋㅋ",
-        "프론트 나보다 못하면 접자 들들들아~"
-    ]
-    let imageUrlArr: [String] = [
-        "https://avatars.githubusercontent.com/u/102791105?v=4",
-        "https://avatars.githubusercontent.com/u/80248855?v=4",
-        "https://avatars.githubusercontent.com/u/76112135?v=4",
-        "https://avatars.githubusercontent.com/u/81006587?v=4",
-        "https://avatars.githubusercontent.com/u/102791216?v=4",
-        "https://avatars.githubusercontent.com/u/102812085?v=4",
-        "https://avatars.githubusercontent.com/u/80371353?v=4",
-        "https://avatars.githubusercontent.com/u/101026873?v=4"
-    ]
+    @Binding var roomName: String
+    
     enum WhatDate {
         case month
         case time
@@ -59,7 +33,7 @@ struct ChattingView: View {
                         .onTapGesture {
                             dismiss()
                         }
-                    Text(user[index])
+                    Text(roomName)
                         .font(.custom("Pretendard-Bold", size: 24))
                         .foregroundColor(.black)
                     Spacer()
@@ -67,29 +41,31 @@ struct ChattingView: View {
                 .padding(.leading, 16)
                 .padding(.vertical, 13)
                 .background(Color("white-Elevated1"))
-                ScrollView {
+                
+                ScrollView(showsIndicators: false) {
+                    Spacer()
+                    
                     VStack(spacing: 12) {
-                        Spacer()
-                            .frame(height: 30)
-                        OpponentChat(
-                            imageUrl: imageUrlArr[index],
-                            user: user[index],
-                            chatContent: chatContent[index],
-                            date: nowDate(what: .time)
-                        )
-                        MyChat(
-                            content: "진짜 넌 나가죽어라"
-                        )
-                        DividingLine(
-                            when: nowDate(what: .month)
-                        )
-                        OpponentChat(
-                            imageUrl: imageUrlArr[index],
-                            user: user[index],
-                            chatContent: "이거진짜살자각인듯",
-                            date: nowDate(what: .time)
-                        )
+                        ForEach(0..<chattingViewModel.chattingDataList.count, id: \.self) { index in
+                            if chattingViewModel.chattingDataList[index].isMine {
+                                MyChat(
+                                    content: chattingViewModel.chattingDataList[index].message
+                                )
+                            } else {
+                                OpponentChat(
+                                    imageUrl: chattingViewModel.chattingDataList[index].user.profileImageURL,
+                                    user: chattingViewModel.chattingDataList[index].user.userName,
+                                    chatContent: chattingViewModel.chattingDataList[index].message,
+                                    date: chattingViewModel.chattingDataList[index].sentAt
+                                )
+                            }
+                        }
+//                        DividingLine(
+//                            when: nowDate(what: .month)
+//                        )
                     }
+                    Spacer()
+                        .frame(height: 20)
                 }
                 .padding(.horizontal, 16)
                 HStack(spacing: 8) {
@@ -103,6 +79,8 @@ struct ChattingView: View {
                         .multilineTextAlignment(.leading)
                     Button {
                         print("보낼 채팅: \(sendChat)")
+                        chattingViewModel.sendMessage = sendChat
+                        chattingViewModel.sendChat()
                         sendChat = ""
                     } label: {
                         Text("전송")
@@ -117,9 +95,15 @@ struct ChattingView: View {
                             .cornerRadius(37)
                     }
                 }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 16)
+                .padding(.horizontal, 10)
+                .padding(.bottom, 5)
             }
+        }
+        .onAppear {
+            chattingViewModel.roomID = index
+            chattingViewModel.socketSetting()
+            chattingViewModel.fetchChat()
+            
         }
         .navigationBarHidden(true)
     }
@@ -127,6 +111,6 @@ struct ChattingView: View {
 
 struct ChattingView_Previews: PreviewProvider {
     static var previews: some View {
-        ChattingView(index: .constant(6))
+        ChattingView(index: .constant(6), roomName: .constant("김"))
     }
 }

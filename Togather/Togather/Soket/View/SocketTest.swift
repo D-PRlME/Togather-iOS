@@ -1,6 +1,22 @@
 import SwiftUI
+import SocketIO
 
 struct SocketTest: View {
+    @ObservedObject var socketVM = SocketViewModel()
+//    private var manager = SocketManager(
+//        socketURL: URL(string: "http://52.55.240.35:8081")!,
+//        config: [.log(true),
+//        .compress,
+//        .extraHeaders(Header.socket.header()!),
+//        .version(.two),
+//        .reconnects(false),
+//        .forceWebsockets(false)
+//        ]
+//    )
+//    var socket: SocketIOClient {
+//        return manager.socket(forNamespace: "/socket.io")
+//    }
+    
     @StateObject var socketViewModel = SocketViewModel()
     var body: some View {
         VStack {
@@ -32,6 +48,13 @@ struct SocketTest: View {
                 socketViewModel.onRoom()
             } label: {
                 Text("소켓 room")
+                    .frame(width: 100, height: 100)
+            }
+            
+            Button {
+                socketViewModel.sendChat()
+            } label: {
+                Text("sendChat")
                     .frame(width: 100, height: 100)
             }
         }

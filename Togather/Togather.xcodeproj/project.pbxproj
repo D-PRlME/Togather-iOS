@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0A52C6292CAFC5000FA229 /* ChattingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0A52C5292CAFC5000FA229 /* ChattingDataModel.swift */; };
 		4B14A850290934A30097E838 /* PostTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A84F290934A30097E838 /* PostTextField.swift */; };
 		4B14A8522909370B0097E838 /* PostTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A8512909370B0097E838 /* PostTextEditor.swift */; };
 		4B14A855290968160097E838 /* PostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A854290968160097E838 /* PostButton.swift */; };
@@ -17,6 +18,8 @@
 		4B1D95C3290FDE96001FAF2E /* ChangePasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1D95C2290FDE96001FAF2E /* ChangePasswordTextField.swift */; };
 		4B1D95C62910E45D001FAF2E /* ChangePasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1D95C52910E45D001FAF2E /* ChangePasswordButton.swift */; };
 		4B202AD0290F63800076E26C /* MyViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B202ACF290F63800076E26C /* MyViewButton.swift */; };
+		4B23E8D829262B1B00AACD37 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C09228DDC1940083577B /* SocketIO */; };
+		4B23E8DB29262B8E00AACD37 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 4B23E8DA29262B8E00AACD37 /* SwiftKeychainWrapper */; };
 		4B25488A291879CD00E62EA7 /* EditInfoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B254889291879CD00E62EA7 /* EditInfoTextField.swift */; };
 		4B25488C29187A2400E62EA7 /* EditInfoTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25488B29187A2400E62EA7 /* EditInfoTextEditor.swift */; };
 		4B2548922918F39400E62EA7 /* DeleteAcountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2548912918F39400E62EA7 /* DeleteAcountButton.swift */; };
@@ -46,10 +49,10 @@
 		4B4C6BF728FE949A007433C2 /* EmailVerifyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BF628FE949A007433C2 /* EmailVerifyTextField.swift */; };
 		4B5FE3B828E44A9700DE6184 /* DumyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3B728E44A9700DE6184 /* DumyData.swift */; };
 		4B5FE3BE28E4862000DE6184 /* SocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */; };
-		4B5FE3C028E4865500DE6184 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3BF28E4865500DE6184 /* SocketClient.swift */; };
 		4B5FE3C328E48EA900DE6184 /* SocketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3C228E48EA900DE6184 /* SocketTest.swift */; };
 		4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AA928BEE25900BBA52D /* PostClient.swift */; };
 		4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AAC28BEF0C300BBA52D /* Header.swift */; };
+		4B8EB44D2923D3FF00BFD954 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 4B8EB44C2923D3FF00BFD954 /* SocketIO */; };
 		4BA25B272907930A00D065BA /* PostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA25B262907930A00D065BA /* PostForm.swift */; };
 		4BA25B2D2907FA6300D065BA /* TagSelectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA25B2C2907FA6300D065BA /* TagSelectList.swift */; };
 		4BC8991828DA8CA000189553 /* TokenAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8990628DA8CA000189553 /* TokenAuthViewModel.swift */; };
@@ -111,9 +114,8 @@
 		90C8C08A28DDC1450083577B /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08928DDC1450083577B /* SwiftUIFlowLayout */; };
 		90C8C08D28DDC1620083577B /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08C28DDC1620083577B /* SwiftUIPullToRefresh */; };
 		90C8C09028DDC1800083577B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C08F28DDC1800083577B /* Kingfisher */; };
-		90C8C09328DDC1940083577B /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C09228DDC1940083577B /* SocketIO */; };
 		90CF12AE2924F0CD003B26ED /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 90CF12AD2924F0CD003B26ED /* .swiftlint.yml */; };
-		90CF12B1292527E3003B26ED /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 90CF12B0292527E3003B26ED /* SwiftKeychainWrapper */; };
+		90CF12B1292527E3003B26ED /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		90CF12B32925BD14003B26ED /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12B22925BD14003B26ED /* ContentViewModel.swift */; };
 		90CF12B529272016003B26ED /* ChangePasswordVerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12B429272016003B26ED /* ChangePasswordVerifyViewModel.swift */; };
 		90CF12B729272022003B26ED /* EnterNewPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF12B629272022003B26ED /* EnterNewPasswordViewModel.swift */; };
@@ -145,6 +147,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B0A52C5292CAFC5000FA229 /* ChattingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingDataModel.swift; sourceTree = "<group>"; };
 		4B14A84F290934A30097E838 /* PostTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextField.swift; sourceTree = "<group>"; };
 		4B14A8512909370B0097E838 /* PostTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextEditor.swift; sourceTree = "<group>"; };
 		4B14A854290968160097E838 /* PostButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButton.swift; sourceTree = "<group>"; };
@@ -184,7 +187,6 @@
 		4B4C6BF628FE949A007433C2 /* EmailVerifyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyTextField.swift; sourceTree = "<group>"; };
 		4B5FE3B728E44A9700DE6184 /* DumyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumyData.swift; sourceTree = "<group>"; };
 		4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewModel.swift; sourceTree = "<group>"; };
-		4B5FE3BF28E4865500DE6184 /* SocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketClient.swift; sourceTree = "<group>"; };
 		4B5FE3C228E48EA900DE6184 /* SocketTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketTest.swift; sourceTree = "<group>"; };
 		4B7F0AA928BEE25900BBA52D /* PostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
 		4B7F0AAC28BEF0C300BBA52D /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -279,16 +281,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B23E8D829262B1B00AACD37 /* SocketIO in Frameworks */,
 				90C8C08728DDC12D0083577B /* RxMoya in Frameworks */,
+				4B23E8DB29262B8E00AACD37 /* SwiftKeychainWrapper in Frameworks */,
 				90C8C08128DDC12D0083577B /* CombineMoya in Frameworks */,
-				90CF12B1292527E3003B26ED /* SwiftKeychainWrapper in Frameworks */,
+				90CF12B1292527E3003B26ED /* (null) in Frameworks */,
 				90C8C08A28DDC1450083577B /* SwiftUIFlowLayout in Frameworks */,
 				90C8C08528DDC12D0083577B /* ReactiveMoya in Frameworks */,
 				90C8C09028DDC1800083577B /* Kingfisher in Frameworks */,
 				90C8C07E28DDC1140083577B /* Alamofire in Frameworks */,
 				90C8C08328DDC12D0083577B /* Moya in Frameworks */,
 				90C8C08D28DDC1620083577B /* SwiftUIPullToRefresh in Frameworks */,
-				90C8C09328DDC1940083577B /* SocketIO in Frameworks */,
+				4B8EB44D2923D3FF00BFD954 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +644,7 @@
 		4B3FB51D291B45DB00E9BE51 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */,
 				4B2548962919117500E62EA7 /* ChatListViewModel.swift */,
 			);
 			path = ViewModel;
@@ -665,6 +670,7 @@
 			isa = PBXGroup;
 			children = (
 				909118C7290A14FA00C80B42 /* ChatListModel.swift */,
+				4B0A52C5292CAFC5000FA229 /* ChattingDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -704,7 +710,6 @@
 		4B3FB52D291D048900E9BE51 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -946,7 +951,6 @@
 				4BC8992D28DA8D0700189553 /* UserClient.swift */,
 				4B7F0AA928BEE25900BBA52D /* PostClient.swift */,
 				90D9B82C2911311700F381F9 /* ChatClient.swift */,
-				4B5FE3BF28E4865500DE6184 /* SocketClient.swift */,
 				909118CD290A3D7D00C80B42 /* ImageClient.swift */,
 			);
 			path = MoyaClient;
@@ -1223,7 +1227,7 @@
 				90C8C08C28DDC1620083577B /* SwiftUIPullToRefresh */,
 				90C8C08F28DDC1800083577B /* Kingfisher */,
 				90C8C09228DDC1940083577B /* SocketIO */,
-				90CF12B0292527E3003B26ED /* SwiftKeychainWrapper */,
+				4B23E8DA29262B8E00AACD37 /* SwiftKeychainWrapper */,
 			);
 			productName = Draw;
 			productReference = 907EF1DC28BBBA7E008A7562 /* Togather.app */;
@@ -1261,7 +1265,7 @@
 				90C8C08B28DDC1620083577B /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */,
 				90C8C08E28DDC1800083577B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				90C8C09128DDC1940083577B /* XCRemoteSwiftPackageReference "socket" */,
-				90CF12AF292527E3003B26ED /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				4B23E8D929262B8E00AACD37 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 907EF1DD28BBBA7E008A7562 /* Products */;
 			projectDirPath = "";
@@ -1368,6 +1372,7 @@
 				4B14A855290968160097E838 /* PostButton.swift in Sources */,
 				4B320D9728E1BA2600BCC086 /* SearchTagListView.swift in Sources */,
 				4B3FB523291B476900E9BE51 /* UserProfileModel.swift in Sources */,
+				4B0A52C6292CAFC5000FA229 /* ChattingDataModel.swift in Sources */,
 				90CF12B32925BD14003B26ED /* ContentViewModel.swift in Sources */,
 				4BC8991A28DA8CA000189553 /* ChangeMyInfoViewModel.swift in Sources */,
 				90DDB7902907B14B0094DE71 /* DividingLine.swift in Sources */,
@@ -1428,7 +1433,6 @@
 				4B1D95C3290FDE96001FAF2E /* ChangePasswordTextField.swift in Sources */,
 				4B4C6BF728FE949A007433C2 /* EmailVerifyTextField.swift in Sources */,
 				4B25488A291879CD00E62EA7 /* EditInfoTextField.swift in Sources */,
-				4B5FE3C028E4865500DE6184 /* SocketClient.swift in Sources */,
 				907EF1E028BBBA7E008A7562 /* ToGatherApp.swift in Sources */,
 				90CF12B729272022003B26ED /* EnterNewPasswordViewModel.swift in Sources */,
 				90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */,
@@ -1646,6 +1650,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4B23E8D929262B8E00AACD37 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		4B8EB44B2923D3FF00BFD954 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		90C8C07C28DDC1140083577B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1694,17 +1714,19 @@
 				kind = branch;
 			};
 		};
-		90CF12AF292527E3003B26ED /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4B23E8DA29262B8E00AACD37 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B23E8D929262B8E00AACD37 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+		4B8EB44C2923D3FF00BFD954 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B8EB44B2923D3FF00BFD954 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
 		90C8C07D28DDC1140083577B /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 90C8C07C28DDC1140083577B /* XCRemoteSwiftPackageReference "Alamofire" */;
@@ -1749,11 +1771,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90C8C09128DDC1940083577B /* XCRemoteSwiftPackageReference "socket" */;
 			productName = SocketIO;
-		};
-		90CF12B0292527E3003B26ED /* SwiftKeychainWrapper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 90CF12AF292527E3003B26ED /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
-			productName = SwiftKeychainWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

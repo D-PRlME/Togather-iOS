@@ -299,6 +299,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B0A52CC292F4C22000FA229 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				90DDB78D2907B0F10094DE71 /* MyChat.swift */,
+				90DDB78A29079DA90094DE71 /* OpponentChat.swift */,
+				90DDB78F2907B14B0094DE71 /* DividingLine.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		4B14A84A2909344E0097E838 /* WritingPost */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,9 +644,6 @@
 			children = (
 				90DDB7862906CE140094DE71 /* ChatListView.swift */,
 				90DDB7882907807F0094DE71 /* ChattingView.swift */,
-				90DDB78D2907B0F10094DE71 /* MyChat.swift */,
-				90DDB78A29079DA90094DE71 /* OpponentChat.swift */,
-				90DDB78F2907B14B0094DE71 /* DividingLine.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -796,6 +803,7 @@
 		4B4C6BBC28FBC270007433C2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4B0A52CC292F4C22000FA229 /* Chat */,
 				4B3FB51F291B466700E9BE51 /* BackButton */,
 				4B202ACE290F636D0076E26C /* MyView */,
 				909118D3290EB21300C80B42 /* TabBar */,

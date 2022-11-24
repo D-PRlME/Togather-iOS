@@ -11,8 +11,7 @@ struct OpponentChat: View {
             KFImage.url(URL(string: imageUrl))
                 .placeholder {
                     Circle()
-                        .fill(Color.secondary)
-                        .opacity(0.1)
+                        .fill(Color.whiteElevated3)
                 }
                 .resizable()
                 .scaledToFit()
@@ -20,28 +19,28 @@ struct OpponentChat: View {
                 .frame(width: 48, height: 48)
                 .cornerRadius(20)
                 .padding(1)
-                .overlay(Circle().stroke().foregroundColor(Color("TabBarStroke")))
+                .overlay(Circle().stroke().foregroundColor(.whiteElevated3))
+            
             VStack(alignment: .leading, spacing: 0) {
                 Text(user)
-                    .foregroundColor(Color("text1"))
-                    .font(.custom("Pretendard-ExtraBold", size: 14))
-                    .padding(.bottom, 4)
-                    .padding(.leading, 4)
+                    .foregroundColor(.whiteElevated4)
+                    .font(.indicator)
+                    .padding([.bottom, .leading], 4)
                 Text(chatContent)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.black)
-                    .font(.custom("Pretendard-Medium", size: 18))
+                    .font(.maintext1m)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 8)
-                    .background(Color("white-Elevated2"))
+                    .background(Color.whiteElevated2)
                     .cornerRadius(24)
                     .padding(1)
-                    .background(Color("TabBarStroke"))
+                    .background(Color.whiteElevated3)
                     .cornerRadius(24)
             }
             Text(date)
-                .foregroundColor(Color("text1"))
-                .font(.custom("Pretendard-ExtraBold", size: 14))
+                .foregroundColor(Color.whiteElevated4)
+                .font(.indicator)
             Spacer()
         }
     }

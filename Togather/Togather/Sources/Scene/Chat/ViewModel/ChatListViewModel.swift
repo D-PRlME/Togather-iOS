@@ -43,7 +43,7 @@ class ChatListViewModel: ObservableObject {
         socket.connect()
         
         socket.on(clientEvent: .connect) { _, _ in
-            print("✅서버에 연결되었습니다")
+            print("✅소켓서버에 연결되었습니다")
             self.joinRoom()
         }
     }
@@ -59,7 +59,7 @@ class ChatListViewModel: ObservableObject {
     }
     
     func onChat() {
-        socket.on("chat") { (dataArrya, ack) in
+        socket.on("chat") { (dataArrya, _) in
             let Decoder = JSONDecoder()
             if let messageData = try? Decoder.decode(ChatList.self, from: dataArrya[0] as! Data) {
                 self.chattingDataList.append(

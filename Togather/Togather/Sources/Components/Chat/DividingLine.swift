@@ -5,14 +5,14 @@ struct DividingLine: View {
     var body: some View {
         HStack {
             Rectangle()
-                .foregroundColor(Color("text1"))
+                .foregroundColor(Color.whiteElevated4)
                 .frame(height: 2)
                 .cornerRadius(10)
             Text(when)
-                .foregroundColor(Color("text1"))
-                .font(.custom("Pretendard-ExtraBold", size: 14))
+                .foregroundColor(Color.whiteElevated4)
+                .font(.indicator)
             Rectangle()
-                .foregroundColor(Color("text1"))
+                .foregroundColor(Color.whiteElevated4)
                 .frame(height: 2)
                 .cornerRadius(10)
         }

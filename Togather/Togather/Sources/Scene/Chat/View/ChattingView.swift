@@ -34,13 +34,13 @@ struct ChattingView: View {
                             dismiss()
                         }
                     Text(roomName)
-                        .font(.custom("Pretendard-Bold", size: 24))
+                        .font(.title2b)
                         .foregroundColor(.black)
                     Spacer()
                 }
                 .padding(.leading, 16)
                 .padding(.vertical, 13)
-                .background(Color("white-Elevated1"))
+                .background(Color.whiteElevated1)
                 
                 ScrollView(showsIndicators: false) {
                     Spacer()
@@ -49,7 +49,8 @@ struct ChattingView: View {
                         ForEach(0..<chattingViewModel.chattingDataList.count, id: \.self) { index in
                             if chattingViewModel.chattingDataList[index].isMine {
                                 MyChat(
-                                    content: chattingViewModel.chattingDataList[index].message
+                                    content: chattingViewModel.chattingDataList[index].message,
+                                    date: chattingViewModel.chattingDataList[index].sentAt
                                 )
                             } else {
                                 OpponentChat(
@@ -64,39 +65,48 @@ struct ChattingView: View {
 //                            when: nowDate(what: .month)
 //                        )
                     }
+                    .rotationEffect(Angle(degrees: 180))
                     Spacer()
                         .frame(height: 20)
                 }
+                .rotationEffect(Angle(degrees: 180))
                 .padding(.horizontal, 16)
-                HStack(spacing: 8) {
-                    TextField("채팅", text: $sendChat)
-                        .padding(12)
-                        .background(Color("white-Elevated1"))
-                        .cornerRadius(6)
-                        .padding(1)
-                        .background(Color("TabBarStroke"))
-                        .cornerRadius(6)
-                        .multilineTextAlignment(.leading)
-                    Button {
-                        print("보낼 채팅: \(sendChat)")
-                        chattingViewModel.sendMessage = sendChat
-                        chattingViewModel.sendChat()
-                        sendChat = ""
-                    } label: {
-                        Text("전송")
-                            .font(.maintext1m)
-                            .foregroundColor(.black)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(Color.main)
-                            .cornerRadius(37)
-                            .padding(2)
-                            .background(Color.mainDarken)
-                            .cornerRadius(37)
+                ZStack {
+                    HStack {
+                        TextField("" , text: $sendChat)
+                            .padding(12)
+                            .background(.white)
+                            .cornerRadius(65)
+                            .multilineTextAlignment(.leading)
+                        Button {
+                            chattingViewModel.sendMessage = sendChat
+                            chattingViewModel.sendChat()
+                            sendChat = ""
+                        } label: {
+                            Text("전송")
+                                .font(.maintext1m)
+                                .foregroundColor(.black)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 6)
+                                .background(Color.main)
+                                .cornerRadius(65)
+                                .padding(2)
+                                .background(Color.mainDarken)
+                                .cornerRadius(65)
+                        }
+                        .padding(.trailing, 5)
                     }
+                    .background(.white)
+                    .cornerRadius(65)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 65)
+                            .stroke(style: StrokeStyle(lineWidth: 1))
+                            .foregroundColor(.whiteElevated3)
+                    )
                 }
-                .padding(.horizontal, 10)
-                .padding(.bottom, 5)
+                .padding(.horizontal, 16)
+                .padding(.top, 16)
+                .background(Color.whiteElevated1)
             }
         }
         .onAppear {

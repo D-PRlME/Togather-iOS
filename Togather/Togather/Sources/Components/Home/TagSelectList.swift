@@ -3,6 +3,8 @@ import Kingfisher
 
 struct TagSelectList: View {
     @Binding var tags: [Tags]
+    @Binding var bindingTag: String
+    var action: () -> Void
     var body: some View {
         VStack(spacing: 0) {
             ScrollView(.horizontal, showsIndicators: true) {
@@ -24,7 +26,8 @@ struct TagSelectList: View {
                                 .padding(.bottom, 9)
                         }
                         .onTapGesture {
-                            print(index.name)
+                            action()
+                            bindingTag = index.name
                         }
                     }
                 }
@@ -37,10 +40,10 @@ struct TagSelectList: View {
     }
 }
 
-struct TagSelectList_Previews: PreviewProvider {
-    static var previews: some View {
-        TagSelectList(
-            tags: .constant([Tags(name: "SpringBoot", imageUrl: "https://wouldyou1214.s3.amazonaws.com/SPRING.png"), Tags(name: "MySQL", imageUrl: "https://wouldyou1214.s3.amazonaws.com/MySQL.png"), Tags(name: "Node.js", imageUrl: "https://wouldyou1214.s3.amazonaws.com/Node.js.pn")])
-        )
-    }
-}
+// struct TagSelectList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TagSelectList(
+//            tags: .constant([Tags(name: "SpringBoot", imageUrl: "https://wouldyou1214.s3.amazonaws.com/SPRING.png"), Tags(name: "MySQL", imageUrl: "https://wouldyou1214.s3.amazonaws.com/MySQL.png"), Tags(name: "Node.js", imageUrl: "https://wouldyou1214.s3.amazonaws.com/Node.js.pn")])
+//        )
+//    }
+// }

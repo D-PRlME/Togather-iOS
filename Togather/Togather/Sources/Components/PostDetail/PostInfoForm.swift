@@ -16,12 +16,20 @@ struct PostInfoForm: View {
             HStack(spacing: 8) {
                 NavigationLink(destination: UserProfileView(userID: userID)) {
                     KFImage.url(URL(string: imageLink))
+                        .placeholder {
+                            Circle()
+                                .fill(Color.whiteElevated3)
+                        }
                         .resizable()
                         .scaledToFill()
                         .clipShape(Circle())
                         .frame(width: 33, height: 33)
                         .cornerRadius(20)
-                        .overlay(Circle().stroke().foregroundColor(.whiteElevated3))
+                        .overlay(
+                            Circle()
+                                .stroke()
+                                .foregroundColor(.whiteElevated3)
+                        )
                 }
                 Text(userName)
                     .foregroundColor(.text)

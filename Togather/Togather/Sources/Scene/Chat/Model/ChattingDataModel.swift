@@ -3,7 +3,6 @@ import Foundation
 struct ChattingDataMadel: Codable {
     let page: Int
     let chatList: [ChatList]
-    
     enum CodingKeys: String, CodingKey {
         case page
         case chatList = "chat_list"
@@ -22,7 +21,6 @@ struct ChatList: Codable {
         case roomID = "room_id"
         case sentAt = "sent_at"
         case isMine = "is_mine"
-        
     }
 }
 
@@ -44,7 +42,6 @@ struct ChattingDataLocalModel {
     let roomID: Int
     let isMine: Bool
     let sentAt: String
-    
     init(user: ChattingUserLocal, message: String, roomID: Int, isMine: Bool, sentAt: String) {
         self.user = user
         self.message = message
@@ -58,7 +55,6 @@ struct ChattingUserLocal {
     let userID: Int
     let userName: String
     let profileImageURL: String
-    
     init(userID: Int, userName: String, profileImageURL: String) {
         self.userID = userID
         self.userName = userName

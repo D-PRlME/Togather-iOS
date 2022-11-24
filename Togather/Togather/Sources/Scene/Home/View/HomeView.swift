@@ -6,6 +6,8 @@ import SwiftUIPullToRefresh
 
 struct HomeView: View {
     @State private var isClose: Bool = false
+    @Binding var tabBarIndex: TabIndex
+    @Binding var bindingTag: String
     @StateObject var homeViewModel = HomeViewModel()
     let animation = Animation
         .linear
@@ -23,7 +25,11 @@ struct HomeView: View {
                 } content: {
                     VStack(spacing: 0) {
                         TagSelectList(
-                            tags: $homeViewModel.tagList
+                            tags: $homeViewModel.tagList,
+                            bindingTag: $bindingTag,
+                            action: {
+                                tabBarIndex = .search
+                            }
                         )
                         ForEach(homeViewModel.postList, id: \.postID) { data in
                             PostForm(
@@ -56,8 +62,8 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+// struct HomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView()
+//    }
+// }

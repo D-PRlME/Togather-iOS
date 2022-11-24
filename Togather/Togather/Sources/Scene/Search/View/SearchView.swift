@@ -5,10 +5,10 @@ import Kingfisher
 
 struct SearchView: View {
     @State private var postList: [PostList] = []
-    @State private var tagBtnValue: String = ""
     @State private var stringTagList: [String] = []
     @State private var goTagList: Bool = false
     @State private var isClose: Bool = false
+    @Binding var tagBtnValue: String
     @StateObject var searchViewModel = SearchViewModel()
     var body: some View {
         GeometryReader { proxy in
@@ -26,7 +26,7 @@ struct SearchView: View {
                         )
                         .padding(.top, 11)
                         .padding(.bottom, 16)
-                        SearchTagLabel(tag: tagBtnValue)
+                        SearchTagLabel(tag: $tagBtnValue)
                             .padding(.bottom, 8)
                         PostButton(
                             title: "모든 태그 보기",
@@ -53,6 +53,11 @@ struct SearchView: View {
                             SearchTagListView(goBack: $goTagList, tagBtnValue: $tagBtnValue)
                         }
                     )
+                    .onChange(of: tagBtnValue) { _ in
+                        searchViewModel.title = ""
+                        searchViewModel.tag = tagBtnValue
+                        searchViewModel.postTag()
+                    }
                     ScrollView(showsIndicators: false) {
                         ForEach(searchViewModel.postList, id: \.postID) { data in
                             PostForm(
@@ -84,8 +89,8 @@ struct SearchView: View {
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+// struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView()
+//    }
+// }

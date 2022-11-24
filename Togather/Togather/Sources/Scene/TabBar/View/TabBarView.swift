@@ -22,7 +22,7 @@ struct TabBarView: View {
             VStack(spacing: 0) {
                 Spacer()
                 ZStack(alignment: .bottom) {
-                    ShowView(tabIndex: tabIndex)
+                    ShowView(tabIndex: $tabIndex)
                         .padding(.top, getSafeAreaBot() ? 0 : 40)
                     ZStack {
                         VStack(spacing: 0) {

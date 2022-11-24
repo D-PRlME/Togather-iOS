@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SearchTagLabel: View {
-    let tag: String
+    @Binding var tag: String
     var body: some View {
         if tag != "" {
             Text(tag)
@@ -17,6 +17,6 @@ struct SearchTagLabel: View {
 
 struct SearchTagLabel_Previews: PreviewProvider {
     static var previews: some View {
-        SearchTagLabel(tag: "Swift")
+        SearchTagLabel(tag: .constant("swift"))
     }
 }

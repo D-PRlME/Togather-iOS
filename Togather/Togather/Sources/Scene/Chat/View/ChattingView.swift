@@ -3,12 +3,10 @@ import Kingfisher
 
 struct ChattingView: View {
     @StateObject var chattingViewModel = ChatListViewModel()
-    
     @Environment(\.dismiss) private var dismiss
     @State private var sendChat: String = ""
     @Binding var index: Int
     @Binding var roomName: String
-    
     enum WhatDate {
         case month
         case time
@@ -41,10 +39,8 @@ struct ChattingView: View {
                 .padding(.leading, 16)
                 .padding(.vertical, 13)
                 .background(Color.whiteElevated1)
-                
                 ScrollView(showsIndicators: false) {
                     Spacer()
-                    
                     VStack(spacing: 12) {
                         ForEach(0..<chattingViewModel.chattingDataList.count, id: \.self) { index in
                             if chattingViewModel.chattingDataList[index].isMine {
@@ -73,7 +69,7 @@ struct ChattingView: View {
                 .padding(.horizontal, 16)
                 ZStack {
                     HStack {
-                        TextField("" , text: $sendChat)
+                        TextField("", text: $sendChat)
                             .padding(12)
                             .background(.white)
                             .cornerRadius(65)
@@ -113,7 +109,6 @@ struct ChattingView: View {
             chattingViewModel.roomID = index
             chattingViewModel.socketSetting()
             chattingViewModel.fetchChat()
-            
         }
         .navigationBarHidden(true)
     }

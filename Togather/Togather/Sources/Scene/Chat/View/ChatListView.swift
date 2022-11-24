@@ -59,10 +59,9 @@ struct ChatListView: View {
                                         )
                                     }
                                 }
-                                
                                 if !chatListViewModel.chattingRoomList[index].isRead {
                                     Circle()
-                                        .frame(width: 16,height: 16)
+                                        .frame(width: 16, height: 16)
                                         .foregroundColor(.main)
                                         .overlay(
                                             Circle()
@@ -71,7 +70,6 @@ struct ChatListView: View {
                                         )
                                         .padding([.top, .trailing], 16)
                                 }
-                                
                             }
                         }
                     }

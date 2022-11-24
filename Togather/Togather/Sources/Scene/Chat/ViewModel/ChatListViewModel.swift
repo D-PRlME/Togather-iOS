@@ -2,6 +2,7 @@ import Foundation
 import Moya
 import SocketIO
 
+// swiftlint:disable force_cast
 class ChatListViewModel: ObservableObject {
     let chatClient = MoyaProvider<ChatService>(plugins: [MoyaLoggerPlugin()])
     private var manager = SocketManager(
@@ -12,12 +13,10 @@ class ChatListViewModel: ObservableObject {
         ]
     )
     var socket: SocketIOClient!
-    
     @Published var chattingRoomList: [ChattingRoomList] = []
     @Published var chattingDataList: [ChattingDataLocalModel] = []
     @Published var sendMessage: String = ""
     var roomID: Int = 0
-    
     init() {
         self.manager.config = SocketIOClientConfiguration(
             arrayLiteral:
@@ -28,40 +27,33 @@ class ChatListViewModel: ObservableObject {
         )
         self.socket = self.manager.defaultSocket
     }
-    
     deinit {
         socket.disconnect()
     }
-    
     func socketSetting() {
         socketCounnect()
         self.onError()
         self.onChat()
     }
-    
     func socketCounnect() {
         socket.connect()
-        
         socket.on(clientEvent: .connect) { _, _ in
             print("✅소켓서버에 연결되었습니다")
             self.joinRoom()
         }
     }
-    
     func socketDisconnect() {
         socket.disconnect()
     }
-    
     func onError() {
         socket.on("error") { (dataArrya, _) in
             print("에러: \(dataArrya)")
         }
     }
-    
     func onChat() {
         socket.on("chat") { (dataArrya, _) in
-            let Decoder = JSONDecoder()
-            if let messageData = try? Decoder.decode(ChatList.self, from: dataArrya[0] as! Data) {
+            let decoder = JSONDecoder()
+            if let messageData = try? decoder.decode(ChatList.self, from: dataArrya[0] as! Data) {
                 self.chattingDataList.append(
                     ChattingDataLocalModel(
                         user: ChattingUserLocal(
@@ -80,16 +72,12 @@ class ChatListViewModel: ObservableObject {
             }
         }
     }
-    
     func joinRoom() {
         socket.emit("join", ["is_join_room": true, "room_id": roomID])
     }
-    
     func sendChat() {
-        socket.emit("chat", ["message" : sendMessage])
+        socket.emit("chat", ["message": sendMessage])
     }
-    
-    
     func fetchChatList() {
         chatClient.request(.fetchChatList) { res in
             switch res {
@@ -129,7 +117,6 @@ class ChatListViewModel: ObservableObject {
             }
         }
     }
-    
     func fetchChat() {
         chatClient.request(.fetchChat(roomID: roomID, page: 0)) { res in
             switch res {
@@ -149,7 +136,6 @@ class ChatListViewModel: ObservableObject {
                                 let roomID = $0.roomID
                                 let isMine = $0.isMine
                                 let sentAt = $0.sentAt
-                                
                                 return ChattingDataLocalModel(user: user, message: message, roomID: roomID, isMine: isMine, sentAt: sentAt)
                             }
                         } else {
@@ -161,7 +147,6 @@ class ChatListViewModel: ObservableObject {
                 }
             case .failure(let err):
                 print("⛔️fetch Chat error: \(err.localizedDescription)")
-                
             }
         }
     }

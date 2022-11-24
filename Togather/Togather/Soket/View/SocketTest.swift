@@ -16,7 +16,6 @@ struct SocketTest: View {
 //    var socket: SocketIOClient {
 //        return manager.socket(forNamespace: "/socket.io")
 //    }
-    
     @StateObject var socketViewModel = SocketViewModel()
     var body: some View {
         VStack {
@@ -50,7 +49,6 @@ struct SocketTest: View {
                 Text("소켓 room")
                     .frame(width: 100, height: 100)
             }
-            
             Button {
                 socketViewModel.sendChat()
             } label: {

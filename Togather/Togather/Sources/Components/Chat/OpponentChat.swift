@@ -20,7 +20,6 @@ struct OpponentChat: View {
                 .cornerRadius(20)
                 .padding(1)
                 .overlay(Circle().stroke().foregroundColor(.whiteElevated3))
-            
             VStack(alignment: .leading, spacing: 0) {
                 Text(user)
                     .foregroundColor(.whiteElevated4)

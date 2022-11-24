@@ -578,7 +578,6 @@
 		4B3FB514291B1E8E00E9BE51 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				90CF12C0292B3B3D003B26ED /* idontknowPW */,
 				4BE919CB28CEF0C40002A268 /* ChangePasswordVerifyView.swift */,
 				4BE919CD28CEF0CE0002A268 /* EnterNewPasswordView.swift */,
 				4BE919CF28CEF0D60002A268 /* ChangePasswordSuccessView.swift */,
@@ -1153,13 +1152,6 @@
 				4B5FE3B728E44A9700DE6184 /* DumyData.swift */,
 			);
 			path = post;
-			sourceTree = "<group>";
-		};
-		90CF12C0292B3B3D003B26ED /* idontknowPW */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = idontknowPW;
 			sourceTree = "<group>";
 		};
 		90CF12C1292B3F2D003B26ED /* LoginChangePassword */ = {

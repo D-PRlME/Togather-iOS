@@ -6,6 +6,7 @@ struct PostDetailView: View {
     @Binding var showModal: Bool
     @StateObject var postDetailViewModel = PostDetailViewModel()
     @State private var showingAlert = false
+    @State private var isEdit = false
     let postID: Int
     var body: some View {
         NavigationView {
@@ -114,6 +115,7 @@ struct PostDetailView: View {
                                         tagBtnArr: $postDetailViewModel.tagName,
                                         title: $postDetailViewModel.postDetail.title,
                                         content: $postDetailViewModel.postDetail.content,
+                                        isEditing: $isEdit,
                                         postID: postID)
                                     ) {
                                         Text("수정")
@@ -158,9 +160,11 @@ struct PostDetailView: View {
             }
             .redacted(reason: postDetailViewModel.showSkeleton ? .placeholder : [])
             .onAppear {
-                postDetailViewModel.postID = postID
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                if !self.isEdit {
+                    postDetailViewModel.postID = postID
                     postDetailViewModel.getPostDetail()
+                } else {
+                    self.isEdit = false
                 }
             }
             .navigationBarHidden(true)

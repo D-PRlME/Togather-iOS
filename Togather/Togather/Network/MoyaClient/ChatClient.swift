@@ -33,7 +33,7 @@ extension ChatService: TargetType {
             return .requestParameters(
                 parameters:
                     [
-                        "page" : page,
+                        "page": page,
                         "sort": "id,desc"
                     ],
                 encoding: URLEncoding.default)

@@ -1,26 +1,27 @@
 import SwiftUI
 struct ShowView: View {
-    let tabIndex: TabIndex
+    @Binding var tabIndex: TabIndex
+    @State private var bindingTag = ""
     var body: some View {
         VStack {
             switch tabIndex {
             case .home:
-                HomeView()
+                HomeView(tabBarIndex: $tabIndex, bindingTag: $bindingTag)
             case .chat:
                 ChatListView()
             case .write:
-                SearchView()
+                EmptyView()
             case .search:
-                SearchView()
+                SearchView(tagBtnValue: $bindingTag)
             case .mypage:
                 MyView()
             }
         }
     }
 }
-
-struct ShowView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShowView(tabIndex: .home)
-    }
-}
+//
+// struct ShowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ShowView(tabIndex: )
+//    }
+// }

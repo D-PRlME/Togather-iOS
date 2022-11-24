@@ -713,13 +713,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		4B3FB52D291D048900E9BE51 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		4B4C6BAD28F2E3C1007433C2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -926,7 +919,6 @@
 		4B5FE3B928E47FF000DE6184 /* Soket */ = {
 			isa = PBXGroup;
 			children = (
-				4B3FB52D291D048900E9BE51 /* ViewModel */,
 				4B3FB52A291D046D00E9BE51 /* View */,
 			);
 			path = Soket;

@@ -6,6 +6,7 @@ struct EditPostView: View {
     @Binding var tagBtnArr: [String]
     @Binding var title: String
     @Binding var content: String
+    @Binding var isEditing: Bool
     @State private var goTags: Bool = false
     @StateObject var editPostViewModel = EditPostViewModel()
     let postID: Int
@@ -54,6 +55,7 @@ struct EditPostView: View {
                     backgroundColor: .main,
                     cornerColor: .mainDarken,
                     action: {
+                        self.isEditing = true
                         editPostViewModel.title = title
                         editPostViewModel.content = content
                         editPostViewModel.postID = postID
@@ -87,6 +89,7 @@ struct EditPostViewPreview: PreviewProvider {
             tagBtnArr: .constant(["Swift", "Backend"]),
             title: .constant("제목이져"),
             content: .constant("내용이죠"),
+            isEditing: .constant(false),
             postID: 1
         )
     }

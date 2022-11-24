@@ -102,6 +102,7 @@ struct ChattingView: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 16)
+                .padding(.bottom, 8)
                 .background(Color.whiteElevated1)
             }
         }

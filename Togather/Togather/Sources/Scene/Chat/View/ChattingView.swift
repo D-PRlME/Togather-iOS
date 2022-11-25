@@ -29,6 +29,7 @@ struct ChattingView: View {
                         .resizable()
                         .frame(width: 28, height: 28)
                         .onTapGesture {
+                            chattingViewModel.socketDisconnect()
                             dismiss()
                         }
                     Text(roomName)
@@ -108,7 +109,7 @@ struct ChattingView: View {
         }
         .onAppear {
             chattingViewModel.roomID = index
-            chattingViewModel.socketSetting()
+            chattingViewModel.socketCounnect()
             chattingViewModel.fetchChat()
         }
         .navigationBarHidden(true)

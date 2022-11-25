@@ -37,9 +37,15 @@ class ChatListViewModel: ObservableObject {
     }
     func socketCounnect() {
         socket.connect()
+        self.onError()
+        self.onChat()
         socket.on(clientEvent: .connect) { _, _ in
             print("✅소켓서버에 연결되었습니다")
             self.joinRoom()
+        }
+        
+        socket.on(clientEvent: .disconnect) { _, _ in
+            print("🚫소켓서버에 연결해제 되었습니다")
         }
     }
     func socketDisconnect() {
@@ -52,32 +58,43 @@ class ChatListViewModel: ObservableObject {
     }
     func onChat() {
         socket.on("chat") { (dataArrya, _) in
-            let decoder = JSONDecoder()
-            if let messageData = try? decoder.decode(ChatList.self, from: dataArrya[0] as! Data) {
-                self.chattingDataList.append(
-                    ChattingDataLocalModel(
-                        user: ChattingUserLocal(
-                            userID: messageData.user.userID,
-                            userName: messageData.user.userName,
-                            profileImageURL: messageData.user.profileImageURL
-                        ),
-                        message: messageData.message,
-                        roomID: messageData.roomID,
-                        isMine: messageData.isMine,
-                        sentAt: messageData.sentAt
+            let stringInData = dataArrya[0] as! String
+            let inputData = stringInData.data(using: .utf8)!
+            
+            let Decoder = JSONDecoder()
+            DispatchQueue.main.async {
+                if let messageData = try? Decoder.decode(ChatList.self, from: inputData) {
+                    self.chattingDataList.append(
+                        ChattingDataLocalModel(
+                            user: ChattingUserLocal(
+                                userID: messageData.user.userID,
+                                userName: messageData.user.userName,
+                                profileImageURL: messageData.user.profileImageURL
+                            ),
+                            message: messageData.message,
+                            roomID: messageData.roomID,
+                            isMine: messageData.isMine,
+                            sentAt: messageData.sentAt
+                        )
                     )
-                )
-            } else {
-                print("🚫 socket decoder error")
+                } else {
+                    print("🚫 socket decoder error")
+                }
             }
         }
     }
+    
+    func quitRoom() {
+        socket.emit("join", ["is_join_room": false])
+    }
+    
     func joinRoom() {
         socket.emit("join", ["is_join_room": true, "room_id": roomID])
     }
     func sendChat() {
-        socket.emit("chat", ["message": sendMessage])
+        socket.emit("chat2", ["message" : sendMessage])
     }
+    
     func fetchChatList() {
         chatClient.request(.fetchChatList) { res in
             switch res {
@@ -118,7 +135,7 @@ class ChatListViewModel: ObservableObject {
         }
     }
     func fetchChat() {
-        chatClient.request(.fetchChat(roomID: roomID, page: 0)) { res in
+        chatClient.request(.fetchChat(roomID: roomID, page: 1)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {

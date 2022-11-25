@@ -160,10 +160,13 @@ struct PostDetailView: View {
             }
             .redacted(reason: postDetailViewModel.showSkeleton ? .placeholder : [])
             .onAppear {
+                postDetailViewModel.postID = postID
                 if !self.isEdit {
-                    postDetailViewModel.postID = postID
                     postDetailViewModel.getPostDetail()
                 } else {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                        postDetailViewModel.getPostDetail()
+                    }
                     self.isEdit = false
                 }
             }

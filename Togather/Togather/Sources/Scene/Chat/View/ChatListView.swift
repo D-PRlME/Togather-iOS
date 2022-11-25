@@ -79,8 +79,12 @@ struct ChatListView: View {
             }
         }
         .onAppear {
+//            chatListViewModel.socketCounnect()
             chatListViewModel.fetchChatList()
         }
+//        .onDisappear {
+//            chatListViewModel.socketDisconnect()
+//        }
     }
 }
 

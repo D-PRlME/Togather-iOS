@@ -34,6 +34,7 @@ struct HomeView: View {
                         ForEach(homeViewModel.postList, id: \.postID) { data in
                             PostForm(
                                 close: $isClose,
+                                tabIndex: $tabBarIndex,
                                 postData: data
                             )
                             .padding(.horizontal, 14)

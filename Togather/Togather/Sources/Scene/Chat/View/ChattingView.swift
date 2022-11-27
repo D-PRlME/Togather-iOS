@@ -71,14 +71,17 @@ struct ChattingView: View {
                 ZStack {
                     HStack {
                         TextField("", text: $sendChat)
+                            .disableAutocorrection(true)
                             .padding(12)
                             .background(.white)
                             .cornerRadius(65)
                             .multilineTextAlignment(.leading)
                         Button {
-                            chattingViewModel.sendMessage = sendChat
-                            chattingViewModel.sendChat()
-                            sendChat = ""
+                            if !sendChat.isEmpty {
+                                chattingViewModel.sendMessage = sendChat
+                                chattingViewModel.sendChat()
+                                sendChat = ""
+                            }
                         } label: {
                             Text("전송")
                                 .font(.maintext1m)

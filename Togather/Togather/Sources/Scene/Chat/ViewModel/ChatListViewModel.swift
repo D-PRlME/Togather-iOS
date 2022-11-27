@@ -3,6 +3,7 @@ import Moya
 import SocketIO
 
 // swiftlint:disable force_cast
+// swiftlint:disable identifier_name
 class ChatListViewModel: ObservableObject {
     let chatClient = MoyaProvider<ChatService>(plugins: [MoyaLoggerPlugin()])
     private var manager = SocketManager(
@@ -43,7 +44,6 @@ class ChatListViewModel: ObservableObject {
             print("✅소켓서버에 연결되었습니다")
             self.joinRoom()
         }
-        
         socket.on(clientEvent: .disconnect) { _, _ in
             print("🚫소켓서버에 연결해제 되었습니다")
         }
@@ -60,7 +60,6 @@ class ChatListViewModel: ObservableObject {
         socket.on("chat") { (dataArrya, _) in
             let stringInData = dataArrya[0] as! String
             let inputData = stringInData.data(using: .utf8)!
-            
             let Decoder = JSONDecoder()
             DispatchQueue.main.async {
                 if let messageData = try? Decoder.decode(ChatList.self, from: inputData) {
@@ -83,18 +82,15 @@ class ChatListViewModel: ObservableObject {
             }
         }
     }
-    
     func quitRoom() {
         socket.emit("join", ["is_join_room": false])
     }
-    
     func joinRoom() {
         socket.emit("join", ["is_join_room": true, "room_id": roomID])
     }
     func sendChat() {
-        socket.emit("chat2", ["message" : sendMessage])
+        socket.emit("chat2", ["message": sendMessage])
     }
-    
     func fetchChatList() {
         chatClient.request(.fetchChatList) { res in
             switch res {
@@ -135,7 +131,7 @@ class ChatListViewModel: ObservableObject {
         }
     }
     func fetchChat() {
-        chatClient.request(.fetchChat(roomID: roomID, page: 1)) { res in
+        chatClient.request(.fetchChat(roomID: roomID, page: 0)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {

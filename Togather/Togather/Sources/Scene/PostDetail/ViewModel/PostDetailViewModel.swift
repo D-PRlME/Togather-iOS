@@ -3,6 +3,7 @@ import Moya
 
 class PostDetailViewModel: ObservableObject {
     let postClient = MoyaProvider<PostService>(plugins: [MoyaLoggerPlugin()])
+    let chatClient = MoyaProvider<ChatService>(plugins: [MoyaLoggerPlugin()])
     @Published var showSkeleton = true
     @Published var postID: Int = 0
     @Published var tagName: [String] = []
@@ -106,6 +107,23 @@ class PostDetailViewModel: ObservableObject {
                 }
             case .failure(let err):
                 print("⛔️post error: \(err.localizedDescription)")
+            }
+        }
+    }
+    func linkUser() {
+        chatClient.request(.creatIndividualChat(userID: postDetail.user.userID)) { res in
+            switch res {
+            case .success(let result):
+                switch result.statusCode {
+                case 201:
+                    print("\(self.postDetail.user.userName)님과의 채팅방이 생성되었습니다!")
+                case 409:
+                    print("\(self.postDetail.user.userName)님과의 채팅방이 이미 존재합니다!")
+                default:
+                    print(result.statusCode)
+                }
+            case .failure(let err):
+                print("⛔️creat chatting room error: \(err.localizedDescription)")
             }
         }
     }

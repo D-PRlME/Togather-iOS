@@ -1047,7 +1047,6 @@
 				90A05CB828D2FFDF0031E71B /* user */,
 				90A05CB928D2FFE70031E71B /* post */,
 				900990F628D05D7400FD9462 /* UploadImageModel.swift */,
-				909118C6290A14DC00C80B42 /* chat */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1092,13 +1091,6 @@
 				906908AD28CDC49C00BBF0B7 /* DevelopersView.swift */,
 			);
 			path = "myview ->";
-			sourceTree = "<group>";
-		};
-		909118C6290A14DC00C80B42 /* chat */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = chat;
 			sourceTree = "<group>";
 		};
 		909118D1290EB04200C80B42 /* TabBar */ = {
@@ -1570,6 +1562,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1605,6 +1598,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

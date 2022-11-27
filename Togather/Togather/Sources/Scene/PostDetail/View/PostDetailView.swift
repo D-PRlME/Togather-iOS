@@ -4,6 +4,7 @@ import Kingfisher
 
 struct PostDetailView: View {
     @Binding var showModal: Bool
+    @Binding var tabIndex: TabIndex
     @StateObject var postDetailViewModel = PostDetailViewModel()
     @State private var showingAlert = false
     @State private var isEdit = false
@@ -57,24 +58,31 @@ struct PostDetailView: View {
                     // MARK: - 버튼들
                     HStack(alignment: .bottom) {
                         if !postDetailViewModel.postDetail.isMine {
-                            HStack(spacing: 8) {
-                                Image("LinkImage")
-                                    .resizable()
-                                    .frame(width: 12, height: 12)
-                                    .padding(4)
-                                Text("연락하기")
-                                    .foregroundColor(.black)
-                                    .font(.maintext1b)
+                            Button {
+                                postDetailViewModel.linkUser()
+                                self.showModal.toggle()
+                                tabIndex = .chat
+                            } label: {
+                                HStack(spacing: 8) {
+                                    Image("LinkImage")
+                                        .resizable()
+                                        .frame(width: 12, height: 12)
+                                        .padding(4)
+                                    Text("연락하기")
+                                        .foregroundColor(.black)
+                                        .font(.maintext1b)
+                                }
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 8)
+                                .background(Color.main)
+                                .cornerRadius(37)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 37)
+                                        .stroke(lineWidth: 2)
+                                        .foregroundColor(.mainDarken)
+                                )
                             }
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(Color.main)
-                            .cornerRadius(37)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 37)
-                                    .stroke(lineWidth: 2)
-                                    .foregroundColor(.mainDarken)
-                            )
+
                         }
                         Spacer()
                         VStack(alignment: .trailing) {
@@ -177,6 +185,6 @@ struct PostDetailView: View {
 
 struct PostDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetailView(showModal: .constant(true), postID: 1)
+        PostDetailView(showModal: .constant(true), tabIndex: .constant(.home), postID: 1)
     }
 }

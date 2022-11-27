@@ -4,6 +4,7 @@ import Kingfisher
 
 struct PostForm: View {
     @Binding var close: Bool
+    @Binding var tabIndex: TabIndex
     @State private var showDetail: Bool = false
     let postData: Posts
     var body: some View {
@@ -75,6 +76,7 @@ struct PostForm: View {
                 content: {
                     PostDetailView(
                         showModal: $showDetail,
+                        tabIndex: $tabIndex,
                         postID: postData.postID
                     )
                 }

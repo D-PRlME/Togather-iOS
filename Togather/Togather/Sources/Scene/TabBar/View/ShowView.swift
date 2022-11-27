@@ -12,7 +12,7 @@ struct ShowView: View {
             case .write:
                 EmptyView()
             case .search:
-                SearchView(tagBtnValue: $bindingTag)
+                SearchView(tagBtnValue: $bindingTag, tabIndex: $tabIndex)
             case .mypage:
                 MyView()
             }

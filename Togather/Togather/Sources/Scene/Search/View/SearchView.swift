@@ -9,6 +9,7 @@ struct SearchView: View {
     @State private var goTagList: Bool = false
     @State private var isClose: Bool = false
     @Binding var tagBtnValue: String
+    @Binding var tabIndex: TabIndex
     @StateObject var searchViewModel = SearchViewModel()
     var body: some View {
         GeometryReader { proxy in
@@ -62,6 +63,7 @@ struct SearchView: View {
                         ForEach(searchViewModel.postList, id: \.postID) { data in
                             PostForm(
                                 close: $isClose,
+                                tabIndex: $tabIndex,
                                 postData: data
                             )
                         }

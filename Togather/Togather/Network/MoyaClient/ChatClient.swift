@@ -37,7 +37,14 @@ extension ChatService: TargetType {
                         "sort": "id,desc"
                     ],
                 encoding: URLEncoding.default)
-        case .creatIndividualChat, .fetchChatList:
+        case .creatIndividualChat(let userID):
+            return .requestParameters(
+                parameters:
+                    [
+                        "user_id": userID
+                    ],
+                encoding: JSONEncoding.default)
+        case .fetchChatList:
             return .requestPlain
         }
     }

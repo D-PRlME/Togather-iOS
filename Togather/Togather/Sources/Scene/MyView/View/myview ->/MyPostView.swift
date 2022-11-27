@@ -31,6 +31,7 @@ struct MyPostView: View {
                     ForEach(myPageViewModel.postList, id: \.postID) { data in
                         PostForm(
                             close: $isClose,
+                            tabIndex: .constant(.mypage),
                             postData: data
                         )
                     }

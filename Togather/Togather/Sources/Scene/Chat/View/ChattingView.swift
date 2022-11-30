@@ -30,7 +30,10 @@ struct ChattingView: View {
                         .frame(width: 28, height: 28)
                         .onTapGesture {
                             chattingViewModel.socketDisconnect()
-                            dismiss()
+                            if !(chattingViewModel.socketStatus ?? true) {
+                                print("연결 해제함")
+                                dismiss()
+                            }
                         }
                     Text(roomName)
                         .font(.title2b)
@@ -111,6 +114,7 @@ struct ChattingView: View {
             }
         }
         .onAppear {
+            print("시간: \(Date().timeFormater())")
             chattingViewModel.roomID = index
             chattingViewModel.socketCounnect()
             chattingViewModel.fetchChat()

@@ -29,11 +29,12 @@
 		4B320D8E28E1293500BCC086 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8D28E1293500BCC086 /* TagListView.swift */; };
 		4B320D9028E147C200BCC086 /* TagListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8F28E147C200BCC086 /* TagListViewModel.swift */; };
 		4B320D9728E1BA2600BCC086 /* SearchTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */; };
+		4B33429C2935ED6D00C84C12 /* Date+timeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B33429B2935ED6D00C84C12 /* Date+timeFormat.swift */; };
 		4B3FB523291B476900E9BE51 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB522291B476900E9BE51 /* UserProfileModel.swift */; };
 		4B3FB526291B55AA00E9BE51 /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB525291B55AA00E9BE51 /* ChangePasswordModel.swift */; };
 		4B3FB529291B55F500E9BE51 /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB528291B55F500E9BE51 /* MyModel.swift */; };
 		4B4C6B9028EE8635007433C2 /* EditInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6B8F28EE8635007433C2 /* EditInfoView.swift */; };
-		4B4C6BAF28F2E407007433C2 /* String+PositionTypeChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BAE28F2E407007433C2 /* String+PositionTypeChange.swift */; };
+		4B4C6BAF28F2E407007433C2 /* String+positionTypeChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BAE28F2E407007433C2 /* String+positionTypeChange.swift */; };
 		4B4C6BB328F44C85007433C2 /* ChangePasswordEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BB228F44C85007433C2 /* ChangePasswordEmailView.swift */; };
 		4B4C6BBF28FBC46A007433C2 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BBE28FBC46A007433C2 /* AuthTextField.swift */; };
 		4B4C6BC228FBD30E007433C2 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BC128FBD30E007433C2 /* AuthButton.swift */; };
@@ -49,7 +50,6 @@
 		4B4C6BF728FE949A007433C2 /* EmailVerifyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BF628FE949A007433C2 /* EmailVerifyTextField.swift */; };
 		4B5FE3B828E44A9700DE6184 /* DumyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3B728E44A9700DE6184 /* DumyData.swift */; };
 		4B5FE3BE28E4862000DE6184 /* SocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */; };
-		4B5FE3C328E48EA900DE6184 /* SocketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3C228E48EA900DE6184 /* SocketTest.swift */; };
 		4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AA928BEE25900BBA52D /* PostClient.swift */; };
 		4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AAC28BEF0C300BBA52D /* Header.swift */; };
 		4B8EB44D2923D3FF00BFD954 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 4B8EB44C2923D3FF00BFD954 /* SocketIO */; };
@@ -167,11 +167,12 @@
 		4B320D8D28E1293500BCC086 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		4B320D8F28E147C200BCC086 /* TagListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListViewModel.swift; sourceTree = "<group>"; };
 		4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagListView.swift; sourceTree = "<group>"; };
+		4B33429B2935ED6D00C84C12 /* Date+timeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+timeFormat.swift"; sourceTree = "<group>"; };
 		4B3FB522291B476900E9BE51 /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		4B3FB525291B55AA00E9BE51 /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
 		4B3FB528291B55F500E9BE51 /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
 		4B4C6B8F28EE8635007433C2 /* EditInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfoView.swift; sourceTree = "<group>"; };
-		4B4C6BAE28F2E407007433C2 /* String+PositionTypeChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PositionTypeChange.swift"; sourceTree = "<group>"; };
+		4B4C6BAE28F2E407007433C2 /* String+positionTypeChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+positionTypeChange.swift"; sourceTree = "<group>"; };
 		4B4C6BB228F44C85007433C2 /* ChangePasswordEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordEmailView.swift; sourceTree = "<group>"; };
 		4B4C6BBE28FBC46A007433C2 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		4B4C6BC128FBD30E007433C2 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
@@ -187,7 +188,6 @@
 		4B4C6BF628FE949A007433C2 /* EmailVerifyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyTextField.swift; sourceTree = "<group>"; };
 		4B5FE3B728E44A9700DE6184 /* DumyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumyData.swift; sourceTree = "<group>"; };
 		4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewModel.swift; sourceTree = "<group>"; };
-		4B5FE3C228E48EA900DE6184 /* SocketTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketTest.swift; sourceTree = "<group>"; };
 		4B7F0AA928BEE25900BBA52D /* PostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
 		4B7F0AAC28BEF0C300BBA52D /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		4BA25B262907930A00D065BA /* PostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostForm.swift; sourceTree = "<group>"; };
@@ -705,18 +705,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		4B3FB52A291D046D00E9BE51 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4B5FE3C228E48EA900DE6184 /* SocketTest.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		4B4C6BAD28F2E3C1007433C2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4B4C6BAE28F2E407007433C2 /* String+PositionTypeChange.swift */,
+				4B4C6BAE28F2E407007433C2 /* String+positionTypeChange.swift */,
+				4B33429B2935ED6D00C84C12 /* Date+timeFormat.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -916,14 +909,6 @@
 			path = EmailVerifyTextField;
 			sourceTree = "<group>";
 		};
-		4B5FE3B928E47FF000DE6184 /* Soket */ = {
-			isa = PBXGroup;
-			children = (
-				4B3FB52A291D046D00E9BE51 /* View */,
-			);
-			path = Soket;
-			sourceTree = "<group>";
-		};
 		4B6F48E12904FC41007B1465 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1075,7 +1060,6 @@
 				4B4C6BB528FBBF64007433C2 /* Resources */,
 				4B4C6BB428FBBF24007433C2 /* Sources */,
 				4BE919D228CF65750002A268 /* Model */,
-				4B5FE3B928E47FF000DE6184 /* Soket */,
 				90CF12AD2924F0CD003B26ED /* .swiftlint.yml */,
 			);
 			path = Togather;
@@ -1358,6 +1342,7 @@
 				4B3FB523291B476900E9BE51 /* UserProfileModel.swift in Sources */,
 				4B0A52C6292CAFC5000FA229 /* ChattingDataModel.swift in Sources */,
 				90CF12B32925BD14003B26ED /* ContentViewModel.swift in Sources */,
+				4B33429C2935ED6D00C84C12 /* Date+timeFormat.swift in Sources */,
 				4BC8991A28DA8CA000189553 /* ChangeMyInfoViewModel.swift in Sources */,
 				90DDB7902907B14B0094DE71 /* DividingLine.swift in Sources */,
 				4B4C6BCF28FD02DA007433C2 /* LoginTitle.swift in Sources */,
@@ -1380,7 +1365,7 @@
 				907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */,
 				4BC8992B28DA8CD800189553 /* SignUpSuccessView.swift in Sources */,
 				4B2548922918F39400E62EA7 /* DeleteAcountButton.swift in Sources */,
-				4B4C6BAF28F2E407007433C2 /* String+PositionTypeChange.swift in Sources */,
+				4B4C6BAF28F2E407007433C2 /* String+positionTypeChange.swift in Sources */,
 				4B320D8E28E1293500BCC086 /* TagListView.swift in Sources */,
 				909118C8290A14FA00C80B42 /* ChatListModel.swift in Sources */,
 				90EC086228D9D64400E34BCE /* MyPostViewModel.swift in Sources */,
@@ -1395,7 +1380,6 @@
 				4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */,
 				4BC8992E28DA8D0700189553 /* UserClient.swift in Sources */,
 				90CF12CD292BA4D1003B26ED /* ChangePasswordEmailSuccessView.swift in Sources */,
-				4B5FE3C328E48EA900DE6184 /* SocketTest.swift in Sources */,
 				90CF12C9292B4F9B003B26ED /* ChangeLostPasswordView.swift in Sources */,
 				900990AA28CE3E7E00FD9462 /* LoginView.swift in Sources */,
 				4B3FB526291B55AA00E9BE51 /* ChangePasswordModel.swift in Sources */,
@@ -1550,7 +1534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Togather/SupportingFiles/Preview Content\"";
-				DEVELOPMENT_TEAM = 63UM6H56P2;
+				DEVELOPMENT_TEAM = 629Q9H7922;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Togather/SupportingFiles/Info.plist;
@@ -1568,7 +1552,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather1234;
+				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1586,7 +1570,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Togather/SupportingFiles/Preview Content\"";
-				DEVELOPMENT_TEAM = 63UM6H56P2;
+				DEVELOPMENT_TEAM = 629Q9H7922;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Togather/SupportingFiles/Info.plist;
@@ -1604,7 +1588,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather1234;
+				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

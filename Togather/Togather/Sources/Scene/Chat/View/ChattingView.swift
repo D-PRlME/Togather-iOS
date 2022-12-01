@@ -46,6 +46,9 @@ struct ChattingView: View {
                 ScrollView(showsIndicators: false) {
                     Spacer()
                     VStack(spacing: 12) {
+                        if chattingViewModel.chattingDataList.isEmpty {
+                            ChattingSkeleton()
+                        }
                         ForEach(0..<chattingViewModel.chattingDataList.count, id: \.self) { index in
                             if chattingViewModel.chattingDataList[index].isMine {
                                 MyChat(

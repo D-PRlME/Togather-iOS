@@ -6,7 +6,6 @@ struct ChatListView: View {
     @State private var gotoChattingView: Bool = false
     @State private var selectRoomID: Int = 0
     @State private var selectRoomName: String = ""
-    
     var body: some View {
         GeometryReader { proxy in
             ZStack {

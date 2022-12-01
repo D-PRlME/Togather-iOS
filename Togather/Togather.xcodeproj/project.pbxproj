@@ -30,6 +30,9 @@
 		4B320D9028E147C200BCC086 /* TagListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8F28E147C200BCC086 /* TagListViewModel.swift */; };
 		4B320D9728E1BA2600BCC086 /* SearchTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */; };
 		4B33429C2935ED6D00C84C12 /* Date+timeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B33429B2935ED6D00C84C12 /* Date+timeFormat.swift */; };
+		4B3342A429381E8200C84C12 /* ChattingSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3342A329381E8200C84C12 /* ChattingSkeleton.swift */; };
+		4B3342A629381E8A00C84C12 /* MychatSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3342A529381E8A00C84C12 /* MychatSkeleton.swift */; };
+		4B3342A829381E9100C84C12 /* OpponentChatSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3342A729381E9100C84C12 /* OpponentChatSkeleton.swift */; };
 		4B3FB523291B476900E9BE51 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB522291B476900E9BE51 /* UserProfileModel.swift */; };
 		4B3FB526291B55AA00E9BE51 /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB525291B55AA00E9BE51 /* ChangePasswordModel.swift */; };
 		4B3FB529291B55F500E9BE51 /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3FB528291B55F500E9BE51 /* MyModel.swift */; };
@@ -168,6 +171,9 @@
 		4B320D8F28E147C200BCC086 /* TagListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListViewModel.swift; sourceTree = "<group>"; };
 		4B320D9628E1BA2600BCC086 /* SearchTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagListView.swift; sourceTree = "<group>"; };
 		4B33429B2935ED6D00C84C12 /* Date+timeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+timeFormat.swift"; sourceTree = "<group>"; };
+		4B3342A329381E8200C84C12 /* ChattingSkeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChattingSkeleton.swift; sourceTree = "<group>"; };
+		4B3342A529381E8A00C84C12 /* MychatSkeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MychatSkeleton.swift; sourceTree = "<group>"; };
+		4B3342A729381E9100C84C12 /* OpponentChatSkeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentChatSkeleton.swift; sourceTree = "<group>"; };
 		4B3FB522291B476900E9BE51 /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		4B3FB525291B55AA00E9BE51 /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
 		4B3FB528291B55F500E9BE51 /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
@@ -302,6 +308,9 @@
 		4B0A52CC292F4C22000FA229 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				4B3342A729381E9100C84C12 /* OpponentChatSkeleton.swift */,
+				4B3342A529381E8A00C84C12 /* MychatSkeleton.swift */,
+				4B3342A329381E8200C84C12 /* ChattingSkeleton.swift */,
 				90DDB78D2907B0F10094DE71 /* MyChat.swift */,
 				90DDB78A29079DA90094DE71 /* OpponentChat.swift */,
 				90DDB78F2907B14B0094DE71 /* DividingLine.swift */,
@@ -1339,14 +1348,17 @@
 				90DDB78B29079DA90094DE71 /* OpponentChat.swift in Sources */,
 				4B14A855290968160097E838 /* PostButton.swift in Sources */,
 				4B320D9728E1BA2600BCC086 /* SearchTagListView.swift in Sources */,
+				4B3342A629381E8A00C84C12 /* MychatSkeleton.swift in Sources */,
 				4B3FB523291B476900E9BE51 /* UserProfileModel.swift in Sources */,
 				4B0A52C6292CAFC5000FA229 /* ChattingDataModel.swift in Sources */,
 				90CF12B32925BD14003B26ED /* ContentViewModel.swift in Sources */,
 				4B33429C2935ED6D00C84C12 /* Date+timeFormat.swift in Sources */,
+				4B3342A429381E8200C84C12 /* ChattingSkeleton.swift in Sources */,
 				4BC8991A28DA8CA000189553 /* ChangeMyInfoViewModel.swift in Sources */,
 				90DDB7902907B14B0094DE71 /* DividingLine.swift in Sources */,
 				4B4C6BCF28FD02DA007433C2 /* LoginTitle.swift in Sources */,
 				909118D0290E70E300C80B42 /* ShowView.swift in Sources */,
+				4B3342A829381E9100C84C12 /* OpponentChatSkeleton.swift in Sources */,
 				4B14A8522909370B0097E838 /* PostTextEditor.swift in Sources */,
 				90D9B8292910DBE800F381F9 /* UserProfileView.swift in Sources */,
 				4B4C6BC228FBD30E007433C2 /* AuthButton.swift in Sources */,

@@ -17,6 +17,7 @@ class ChatListViewModel: ObservableObject {
     @Published var chattingRoomList: [ChattingRoomList] = []
     @Published var chattingDataList: [ChattingDataLocalModel] = []
     @Published var sendMessage: String = ""
+    @Published var socketStatus: Bool?
     var roomID: Int = 0
     init() {
         self.manager.config = SocketIOClientConfiguration(
@@ -31,10 +32,20 @@ class ChatListViewModel: ObservableObject {
     deinit {
         socket.disconnect()
     }
-    func socketSetting() {
-        socketCounnect()
+    func listSocketCounnect() {
+        socket.connect()
         self.onError()
         self.onChat()
+        socket.on(clientEvent: .connect) { _, _ in
+            print("✅소켓서버에 연결되었습니다")
+            self.socketStatus = true
+            self.quitRoom()
+
+        }
+        socket.on(clientEvent: .disconnect) { _, _ in
+            print("🚫소켓서버에 연결해제 되었습니다")
+            self.socketStatus = false
+        }
     }
     func socketCounnect() {
         socket.connect()
@@ -43,9 +54,11 @@ class ChatListViewModel: ObservableObject {
         socket.on(clientEvent: .connect) { _, _ in
             print("✅소켓서버에 연결되었습니다")
             self.joinRoom()
+            self.socketStatus = true
         }
         socket.on(clientEvent: .disconnect) { _, _ in
             print("🚫소켓서버에 연결해제 되었습니다")
+            self.socketStatus = false
         }
     }
     func socketDisconnect() {
@@ -131,7 +144,7 @@ class ChatListViewModel: ObservableObject {
         }
     }
     func fetchChat() {
-        chatClient.request(.fetchChat(roomID: roomID, page: 0)) { res in
+        chatClient.request(.fetchChat(roomID: roomID)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {

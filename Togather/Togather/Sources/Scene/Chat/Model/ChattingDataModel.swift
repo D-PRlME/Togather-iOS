@@ -1,10 +1,8 @@
 import Foundation
 
 struct ChattingDataMadel: Codable {
-    let page: Int
     let chatList: [ChatList]
     enum CodingKeys: String, CodingKey {
-        case page
         case chatList = "chat_list"
     }
 }

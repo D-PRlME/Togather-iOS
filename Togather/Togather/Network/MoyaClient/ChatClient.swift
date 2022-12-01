@@ -4,7 +4,7 @@ import Moya
 enum ChatService {
     case fetchChatList
     case creatIndividualChat(userID: Int)
-    case fetchChat(roomID: Int, page: Int)
+    case fetchChat(roomID: Int)
 }
 
 extension ChatService: TargetType {
@@ -15,7 +15,7 @@ extension ChatService: TargetType {
         switch self {
         case .fetchChatList, .creatIndividualChat:
             return "/room"
-        case .fetchChat(let roomID, _):
+        case .fetchChat(let roomID):
             return "/\(roomID)"
         }
     }
@@ -29,12 +29,11 @@ extension ChatService: TargetType {
     }
     var task: Task {
         switch self {
-        case .fetchChat(_, let page):
+        case .fetchChat:
             return .requestParameters(
                 parameters:
                     [
-                        "page": page,
-                        "sort": "id,desc"
+                        "time": "\(Date().timeFormater())"
                     ],
                 encoding: URLEncoding.default)
         case .creatIndividualChat(let userID):

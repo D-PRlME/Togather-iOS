@@ -6,55 +6,60 @@ struct SignUpEmailVerifyView: View {
     @Binding var name: String
     @StateObject var signUpEmailVerifyViewModel = SignUpEmailVerifyViewModel()
     var body: some View {
-        ZStack {
-            NavigationLink(
-                destination:
-                    SignUpSuccessView(
-                        email: $email,
-                        password: $password,
-                        name: $name
-                    ),
-                tag: 2,
-                selection: $signUpEmailVerifyViewModel.isSuccess
-            ) { EmptyView() }
-            VStack(alignment: .center, spacing: 12) {
-                Spacer()
-                // MARK: - Title
-                EmailVerifyTitle(
-                    email: email,
-                    second: $signUpEmailVerifyViewModel.timer
-                )
-                // MARK: - TextField
-                EmailVerifyTextField(
-                    code: $signUpEmailVerifyViewModel.code
-                )
-                // MARK: - Image
-                VStack(spacing: 0) {
-                    Rectangle()
-                        .frame(height: 50)
-                        .opacity(0)
-                    Image("PostBox")
-                        .resizable()
-                        .frame(width: 150, height: 150)
-                }
-                Spacer()
-                // MARK: - Button
-                AuthButton(
-                    text: "다음",
-                    action: {
-                        signUpEmailVerifyViewModel.emailVerify()
+        BackgroundTapGesture {
+            ZStack {
+                NavigationLink(
+                    destination:
+                        SignUpSuccessView(
+                            email: $email,
+                            password: $password,
+                            name: $name
+                        ),
+                    tag: 2,
+                    selection: $signUpEmailVerifyViewModel.isSuccess
+                ) { EmptyView() }
+                VStack(alignment: .center, spacing: 12) {
+                    Spacer()
+                    // MARK: - Title
+                    EmailVerifyTitle(
+                        email: email,
+                        second: $signUpEmailVerifyViewModel.timer
+                    )
+                    // MARK: - TextField
+                    EmailVerifyTextField(
+                        code: $signUpEmailVerifyViewModel.code
+                    )
+                    // MARK: - Image
+                    VStack(spacing: 0) {
+                        Rectangle()
+                            .frame(height: 50)
+                            .opacity(0)
+                        Image("PostBox")
+                            .resizable()
+                            .frame(width: 150, height: 150)
                     }
-                )
-            } // Vstack
-            .padding(.horizontal, 16)
-            .padding(.bottom, 16)
-            .onAppear {
-                signUpEmailVerifyViewModel.email = email
-                signUpEmailVerifyViewModel.sendEmailToUser()
+                    Spacer()
+                    // MARK: - Button
+                    AuthButton(
+                        text: "다음",
+                        action: {
+                            signUpEmailVerifyViewModel.emailVerify()
+                        }
+                    )
+                } // Vstack
+                .padding(.horizontal, 16)
+                .padding(.bottom, 16)
+                .onAppear {
+                    signUpEmailVerifyViewModel.email = email
+                    signUpEmailVerifyViewModel.sendEmailToUser()
+                }
+                BackBtn()
             }
-            BackBtn()
+            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
+        .onTapGesture {
+            UIApplication.shared.endEditing()
+        }
     }
 }
 

@@ -9,7 +9,7 @@ class ChatListViewModel: ObservableObject {
     private var manager = SocketManager(
         socketURL: URL(string: "http://52.55.240.35:8081")!,
         config: [
-            .log(true),
+            .log(false),
             .compress
         ]
     )
@@ -38,13 +38,11 @@ class ChatListViewModel: ObservableObject {
         self.onChat()
         socket.on(clientEvent: .connect) { _, _ in
             print("✅소켓서버에 연결되었습니다")
-            self.socketStatus = true
             self.quitRoom()
 
         }
         socket.on(clientEvent: .disconnect) { _, _ in
             print("🚫소켓서버에 연결해제 되었습니다")
-            self.socketStatus = false
         }
     }
     func socketCounnect() {
@@ -62,7 +60,7 @@ class ChatListViewModel: ObservableObject {
         }
     }
     func socketDisconnect() {
-        socket.disconnect()
+        socket.didDisconnect(reason: "소켓 종료")
     }
     func onError() {
         socket.on("error") { (dataArrya, _) in

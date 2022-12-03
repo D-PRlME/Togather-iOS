@@ -61,12 +61,14 @@ struct SearchView: View {
                             searchViewModel.postTag()
                         }
                         ScrollView(showsIndicators: false) {
-                            ForEach(searchViewModel.postList, id: \.postID) { data in
-                                PostForm(
-                                    close: $isClose,
-                                    tabIndex: $tabIndex,
-                                    postData: data
-                                )
+                            VStack {
+                                ForEach(searchViewModel.postList, id: \.postID) { data in
+                                    PostForm(
+                                        close: $isClose,
+                                        tabIndex: $tabIndex,
+                                        postData: data
+                                    )
+                                }
                             }
                             .onChange(of: isClose) { newValue in
                                 if newValue {

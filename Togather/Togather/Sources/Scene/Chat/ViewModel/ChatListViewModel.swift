@@ -14,6 +14,7 @@ class ChatListViewModel: ObservableObject {
         ]
     )
     var socket: SocketIOClient!
+    @Published var showSkeleton: Bool = true
     @Published var chattingRoomList: [ChattingRoomList] = []
     @Published var chattingDataList: [ChattingDataLocalModel] = []
     @Published var sendMessage: String = ""
@@ -162,6 +163,7 @@ class ChatListViewModel: ObservableObject {
                                 let sentAt = $0.sentAt
                                 return ChattingDataLocalModel(user: user, message: message, roomID: roomID, isMine: isMine, sentAt: sentAt)
                             }
+                            self.showSkeleton = false
                         } else {
                             print("⚠️featch chat docoder error")
                         }

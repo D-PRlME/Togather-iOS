@@ -45,14 +45,12 @@ struct UserProfileView: View {
                                 .foregroundColor(.whiteElevated3)
                         )
                 }
-                HStack {
-                    Text(userProfileViewModel.userIntroduce)
-                        .foregroundColor(.black)
-                        .font(.title3m)
-                        .multilineTextAlignment(.leading)
-                        .padding(.top, 8)
-                    Spacer()
-                }
+                Text(userProfileViewModel.userIntroduce)
+                    .foregroundColor(.black)
+                    .font(.title3m)
+                    .multilineTextAlignment(.leading)
+                    .padding(.top, 8)
+                    .padding(.horizontal, 6)
                 Spacer()
             }
             .navigationBarHidden(true)

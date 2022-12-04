@@ -54,6 +54,7 @@ struct PostDetailView: View {
                         .foregroundColor(.text)
                         .font(.maintext1m)
                         .multilineTextAlignment(.leading)
+                        .padding(.horizontal, 6)
                     Spacer()
                     // MARK: - 버튼들
                     HStack(alignment: .bottom) {

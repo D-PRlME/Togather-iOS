@@ -31,7 +31,7 @@ struct ChattingView: View {
                             .frame(width: 28, height: 28)
                             .onTapGesture {
                                 dismiss()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     chattingViewModel.socketDisconnect()
                                 }
                             }
@@ -43,39 +43,54 @@ struct ChattingView: View {
                     .padding(.leading, 16)
                     .padding(.vertical, 13)
                     .background(Color.whiteElevated1)
-                    ScrollView(showsIndicators: false) {
-                        Spacer()
-                        VStack(spacing: 12) {
-                            if chattingViewModel.chattingDataList.isEmpty {
-                                ChattingSkeleton()
-                            }
-                            ForEach(0..<chattingViewModel.chattingDataList.count, id: \.self) { index in
-                                if chattingViewModel.chattingDataList[index].isMine {
-                                    MyChat(
-                                        content: chattingViewModel.chattingDataList[index].message,
-                                        date: chattingViewModel.chattingDataList[index].sentAt
-                                    )
-                                } else {
-                                    OpponentChat(
-                                        imageUrl: chattingViewModel.chattingDataList[index].user.profileImageURL,
-                                        user: chattingViewModel.chattingDataList[index].user.userName,
-                                        chatContent: chattingViewModel.chattingDataList[index].message,
-                                        date: chattingViewModel.chattingDataList[index].sentAt
-                                    )
+                    GeometryReader { proxy in
+                        ScrollView(showsIndicators: false) {
+                            Spacer()
+                            VStack(spacing: 12) {
+                                if chattingViewModel.showSkeleton {
+                                    ChattingSkeleton()
+                                } else if chattingViewModel.chattingDataList.isEmpty {
+                                    VStack {
+                                        Image("gray_logo")
+                                            .resizable()
+                                            .frame(width: 119, height: 119)
+                                        Text(roomName + "님과의 채팅이에요")
+                                            .font(.title1b)
+                                            .foregroundColor(.whiteElevated4)
+                                        Text("채팅을 시작해보세요!")
+                                            .font(.title3m)
+                                            .foregroundColor(.whiteElevated4)
+                                    }
+                                    .padding(.bottom, proxy.size.height / 3)
                                 }
+                                ForEach(0..<chattingViewModel.chattingDataList.count, id: \.self) { index in
+                                    if chattingViewModel.chattingDataList[index].isMine {
+                                        MyChat(
+                                            content: chattingViewModel.chattingDataList[index].message,
+                                            date: chattingViewModel.chattingDataList[index].sentAt
+                                        )
+                                    } else {
+                                        OpponentChat(
+                                            imageUrl: chattingViewModel.chattingDataList[index].user.profileImageURL,
+                                            user: chattingViewModel.chattingDataList[index].user.userName,
+                                            chatContent: chattingViewModel.chattingDataList[index].message,
+                                            date: chattingViewModel.chattingDataList[index].sentAt
+                                        )
+                                    }
+                                }
+                                Rectangle()
+                                    .frame(height: 0)
+        //                        DividingLine(
+        //                            when: nowDate(what: .month)
+        //                        )
                             }
-                            Rectangle()
-                                .frame(height: 0)
-    //                        DividingLine(
-    //                            when: nowDate(what: .month)
-    //                        )
+                            .rotationEffect(Angle(degrees: 180))
+                            Spacer()
+                                .frame(height: 20)
                         }
                         .rotationEffect(Angle(degrees: 180))
-                        Spacer()
-                            .frame(height: 20)
+                        .padding(.horizontal, 16)
                     }
-                    .rotationEffect(Angle(degrees: 180))
-                    .padding(.horizontal, 16)
                     ZStack {
                         HStack {
                             TextField("", text: $sendChat)

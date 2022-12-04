@@ -19,9 +19,11 @@ struct ShowView: View {
         }
     }
 }
-//
-// struct ShowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ShowView(tabIndex: )
-//    }
-// }
+
+/*
+struct ShowView_Previews: PreviewProvider {
+    static var previews: some View {
+        ShowView(tabIndex: )
+    }
+}
+*/

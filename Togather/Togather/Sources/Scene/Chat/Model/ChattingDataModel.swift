@@ -1,6 +1,6 @@
 import Foundation
 
-struct ChattingDataMadel: Codable {
+struct ChattingDataModel: Codable {
     let chatList: [ChatList]
     enum CodingKeys: String, CodingKey {
         case chatList = "chat_list"

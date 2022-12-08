@@ -55,8 +55,8 @@ struct EditInfoView: View {
                         }
                         .padding(.top, 26)
                         // ID
-                        EditInfoTextField(
-                            text: $editInfoViewModel.name, placeholder: "이름"
+                        TitleTextField(
+                            placeholder: "이름", text: $editInfoViewModel.name
                         )
                         .padding(.top, 12)
                         // Email
@@ -75,9 +75,9 @@ struct EditInfoView: View {
                         .cornerRadius(6)
                         .padding(.top, 8)
                         // Introduce
-                        EditInfoTextEditor(
+                        ContentTextEditor(
                             text: $editInfoViewModel.introduce,
-                            placeholder: "자기소계"
+                            placeholder: "자기소개"
                         )
                         .frame(minHeight: 48, maxHeight: 48 * 3)
                         .padding(.vertical, 8)
@@ -96,16 +96,16 @@ struct EditInfoView: View {
                                     .font(.maintext2m)
                                     .padding(.horizontal, 12)
                                     .padding(.vertical, 6)
-                                    .background(editInfoViewModel.positions.contains(index.positionTypeChange) ? Color(red: 0.925, green: 0.792, blue: 0.357) : Color(red: 0.905, green: 0.905, blue: 0.905))
+                                    .background(editInfoViewModel.positions.contains(index) ? Color(red: 0.925, green: 0.792, blue: 0.357) : Color(red: 0.905, green: 0.905, blue: 0.905))
                                     .cornerRadius(37)
                                     .padding(1)
-                                    .background(editInfoViewModel.positions.contains(index.positionTypeChange) ? Color("YellowStroke") : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
+                                    .background(editInfoViewModel.positions.contains(index) ? Color("YellowStroke") : Color(red: 0.153, green: 0.153, blue: 0.153, opacity: 0.15))
                                     .cornerRadius(37)
                                     .onTapGesture {
-                                        if editInfoViewModel.positions.contains(index.positionTypeChange) {
-                                            editInfoViewModel.positions.removeAll { $0 == index.positionTypeChange }
+                                        if editInfoViewModel.positions.contains(index) {
+                                            editInfoViewModel.positions.removeAll { $0 == index }
                                         } else {
-                                            editInfoViewModel.positions.append(index.positionTypeChange)
+                                            editInfoViewModel.positions.append(index)
                                         }
                                     }
                             }

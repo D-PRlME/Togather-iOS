@@ -26,13 +26,13 @@ struct EditPostView: View {
                 }
                 // MARK: - 제목
 
-                PostTextField(
+                TitleTextField(
                     placeholder: "제목",
                     text: $title
                 )
                 // MARK: - 본문
 
-                PostTextEditor(
+                ContentTextEditor(
                     text: $content,
                     placeholder: "본문을 입력하세요"
                 )
@@ -92,8 +92,8 @@ struct EditPostViewPreview: PreviewProvider {
     static var previews: some View {
         EditPostView(
             tagBtnArr: .constant(["Swift", "Backend"]),
-            title: .constant("제목이져"),
-            content: .constant("내용이죠"),
+            title: .constant(""),
+            content: .constant(""),
             isEditing: .constant(false),
             postID: 1
         )

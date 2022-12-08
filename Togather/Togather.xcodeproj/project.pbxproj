@@ -54,7 +54,6 @@
 		4B5C88202939D9E5003F224E /* UIApplication+endEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C881F2939D9E5003F224E /* UIApplication+endEditing.swift */; };
 		4B5C88222939DA75003F224E /* BackgroundTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C88212939DA75003F224E /* BackgroundTapGesture.swift */; };
 		4B5FE3B828E44A9700DE6184 /* DumyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3B728E44A9700DE6184 /* DumyData.swift */; };
-		4B5FE3BE28E4862000DE6184 /* SocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */; };
 		4B7F0AAA28BEE25900BBA52D /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AA928BEE25900BBA52D /* PostClient.swift */; };
 		4B7F0AAD28BEF0C300BBA52D /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F0AAC28BEF0C300BBA52D /* Header.swift */; };
 		4B8EB44D2923D3FF00BFD954 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 4B8EB44C2923D3FF00BFD954 /* SocketIO */; };
@@ -95,6 +94,7 @@
 		900990F728D05D7400FD9462 /* UploadImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900990F628D05D7400FD9462 /* UploadImageModel.swift */; };
 		9053BBCE29091E1400D6C984 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053BBCD29091E1400D6C984 /* HomeView.swift */; };
 		906908AE28CDC49C00BBF0B7 /* DevelopersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906908AD28CDC49C00BBF0B7 /* DevelopersView.swift */; };
+		906CC5DB2941716E00A387C3 /* ChattingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906CC5DA2941716E00A387C3 /* ChattingViewModel.swift */; };
 		907EF1E028BBBA7E008A7562 /* ToGatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1DF28BBBA7E008A7562 /* ToGatherApp.swift */; };
 		907EF1E228BBBA7E008A7562 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EF1E128BBBA7E008A7562 /* ContentView.swift */; };
 		907EF1E428BBBA81008A7562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907EF1E328BBBA81008A7562 /* Assets.xcassets */; };
@@ -197,7 +197,6 @@
 		4B5C881F2939D9E5003F224E /* UIApplication+endEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+endEditing.swift"; sourceTree = "<group>"; };
 		4B5C88212939DA75003F224E /* BackgroundTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTapGesture.swift; sourceTree = "<group>"; };
 		4B5FE3B728E44A9700DE6184 /* DumyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumyData.swift; sourceTree = "<group>"; };
-		4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewModel.swift; sourceTree = "<group>"; };
 		4B7F0AA928BEE25900BBA52D /* PostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
 		4B7F0AAC28BEF0C300BBA52D /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		4BA25B262907930A00D065BA /* PostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostForm.swift; sourceTree = "<group>"; };
@@ -237,6 +236,7 @@
 		900990F628D05D7400FD9462 /* UploadImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageModel.swift; sourceTree = "<group>"; };
 		9053BBCD29091E1400D6C984 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		906908AD28CDC49C00BBF0B7 /* DevelopersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopersView.swift; sourceTree = "<group>"; };
+		906CC5DA2941716E00A387C3 /* ChattingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewModel.swift; sourceTree = "<group>"; };
 		907EF1DC28BBBA7E008A7562 /* Togather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Togather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907EF1DF28BBBA7E008A7562 /* ToGatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToGatherApp.swift; sourceTree = "<group>"; };
 		907EF1E128BBBA7E008A7562 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -663,8 +663,8 @@
 		4B3FB51D291B45DB00E9BE51 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4B5FE3BD28E4862000DE6184 /* SocketViewModel.swift */,
 				4B2548962919117500E62EA7 /* ChatListViewModel.swift */,
+				906CC5DA2941716E00A387C3 /* ChattingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1325,7 +1325,6 @@
 				909118CA290A187C00C80B42 /* ImagePicker.swift in Sources */,
 				4B4C6BDE28FE1881007433C2 /* LoginImageButton.swift in Sources */,
 				4B4C6BC428FC3B2E007433C2 /* Color.swift in Sources */,
-				4B5FE3BE28E4862000DE6184 /* SocketViewModel.swift in Sources */,
 				900990EF28D04EE700FD9462 /* MyPostModel.swift in Sources */,
 				4B4C6BD428FD3424007433C2 /* LoginTextField.swift in Sources */,
 				4B4C6BEB28FE486C007433C2 /* SignUpTextField.swift in Sources */,
@@ -1427,6 +1426,7 @@
 				4B4C6B9028EE8635007433C2 /* EditInfoView.swift in Sources */,
 				4B1D95C3290FDE96001FAF2E /* ChangePasswordTextField.swift in Sources */,
 				4B4C6BF728FE949A007433C2 /* EmailVerifyTextField.swift in Sources */,
+				906CC5DB2941716E00A387C3 /* ChattingViewModel.swift in Sources */,
 				4B5C88222939DA75003F224E /* BackgroundTapGesture.swift in Sources */,
 				4B25488A291879CD00E62EA7 /* EditInfoTextField.swift in Sources */,
 				907EF1E028BBBA7E008A7562 /* ToGatherApp.swift in Sources */,
@@ -1562,7 +1562,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Togather/SupportingFiles/Preview Content\"";
-				DEVELOPMENT_TEAM = 629Q9H7922;
+				DEVELOPMENT_TEAM = 63UM6H56P2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Togather/SupportingFiles/Info.plist;
@@ -1574,13 +1574,14 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather;
+				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather1234;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1598,7 +1599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Togather/SupportingFiles/Preview Content\"";
-				DEVELOPMENT_TEAM = 629Q9H7922;
+				DEVELOPMENT_TEAM = 63UM6H56P2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Togather/SupportingFiles/Info.plist;
@@ -1610,13 +1611,14 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather;
+				PRODUCT_BUNDLE_IDENTIFIER = D.PRIME.Togather1234;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

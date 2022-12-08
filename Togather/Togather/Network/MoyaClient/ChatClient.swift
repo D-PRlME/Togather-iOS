@@ -44,7 +44,12 @@ extension ChatService: TargetType {
                     ],
                 encoding: JSONEncoding.default)
         case .fetchChatList:
-            return .requestPlain
+            return .requestParameters(
+                parameters:
+                    [
+                        "sort": "id,desc"
+                    ],
+                encoding: URLEncoding.queryString)
         }
     }
     var headers: [String: String]? {

@@ -60,9 +60,9 @@ struct PostDetailView: View {
                     HStack(alignment: .bottom) {
                         if !postDetailViewModel.postDetail.isMine {
                             Button {
-                                postDetailViewModel.linkUser()
                                 self.showModal.toggle()
                                 tabIndex = .chat
+                                postDetailViewModel.linkUser()
                             } label: {
                                 HStack(spacing: 8) {
                                     Image("LinkImage")

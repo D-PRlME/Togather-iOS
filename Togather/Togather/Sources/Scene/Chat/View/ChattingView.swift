@@ -2,7 +2,7 @@ import SwiftUI
 import Kingfisher
 
 struct ChattingView: View {
-    @StateObject var chattingViewModel = ChatListViewModel()
+    @StateObject var chattingViewModel = ChattingViewModel()
     @Environment(\.dismiss) private var dismiss
     @State private var sendChat: String = ""
     @Binding var index: Int

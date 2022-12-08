@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4B0A52C6292CAFC5000FA229 /* ChattingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0A52C5292CAFC5000FA229 /* ChattingDataModel.swift */; };
-		4B14A850290934A30097E838 /* PostTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A84F290934A30097E838 /* PostTextField.swift */; };
-		4B14A8522909370B0097E838 /* PostTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A8512909370B0097E838 /* PostTextEditor.swift */; };
 		4B14A855290968160097E838 /* PostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A854290968160097E838 /* PostButton.swift */; };
 		4B14A865290A1CD50097E838 /* PostInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A864290A1CD50097E838 /* PostInfoForm.swift */; };
 		4B14A879290CEF540097E838 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14A878290CEF540097E838 /* SearchTextField.swift */; };
@@ -20,8 +18,8 @@
 		4B202AD0290F63800076E26C /* MyViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B202ACF290F63800076E26C /* MyViewButton.swift */; };
 		4B23E8D829262B1B00AACD37 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8C09228DDC1940083577B /* SocketIO */; };
 		4B23E8DB29262B8E00AACD37 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 4B23E8DA29262B8E00AACD37 /* SwiftKeychainWrapper */; };
-		4B25488A291879CD00E62EA7 /* EditInfoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B254889291879CD00E62EA7 /* EditInfoTextField.swift */; };
-		4B25488C29187A2400E62EA7 /* EditInfoTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25488B29187A2400E62EA7 /* EditInfoTextEditor.swift */; };
+		4B25488A291879CD00E62EA7 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B254889291879CD00E62EA7 /* TitleTextField.swift */; };
+		4B25488C29187A2400E62EA7 /* ContentTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25488B29187A2400E62EA7 /* ContentTextEditor.swift */; };
 		4B2548922918F39400E62EA7 /* DeleteAcountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2548912918F39400E62EA7 /* DeleteAcountButton.swift */; };
 		4B2548972919117500E62EA7 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2548962919117500E62EA7 /* ChatListViewModel.swift */; };
 		4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */; };
@@ -153,8 +151,6 @@
 
 /* Begin PBXFileReference section */
 		4B0A52C5292CAFC5000FA229 /* ChattingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingDataModel.swift; sourceTree = "<group>"; };
-		4B14A84F290934A30097E838 /* PostTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextField.swift; sourceTree = "<group>"; };
-		4B14A8512909370B0097E838 /* PostTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextEditor.swift; sourceTree = "<group>"; };
 		4B14A854290968160097E838 /* PostButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostButton.swift; sourceTree = "<group>"; };
 		4B14A864290A1CD50097E838 /* PostInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfoForm.swift; sourceTree = "<group>"; };
 		4B14A878290CEF540097E838 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
@@ -163,8 +159,8 @@
 		4B1D95C2290FDE96001FAF2E /* ChangePasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordTextField.swift; sourceTree = "<group>"; };
 		4B1D95C52910E45D001FAF2E /* ChangePasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordButton.swift; sourceTree = "<group>"; };
 		4B202ACF290F63800076E26C /* MyViewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewButton.swift; sourceTree = "<group>"; };
-		4B254889291879CD00E62EA7 /* EditInfoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoTextField.swift; sourceTree = "<group>"; };
-		4B25488B29187A2400E62EA7 /* EditInfoTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoTextEditor.swift; sourceTree = "<group>"; };
+		4B254889291879CD00E62EA7 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
+		4B25488B29187A2400E62EA7 /* ContentTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTextEditor.swift; sourceTree = "<group>"; };
 		4B2548912918F39400E62EA7 /* DeleteAcountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAcountButton.swift; sourceTree = "<group>"; };
 		4B2548962919117500E62EA7 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		4B320D8228DDCD6800BCC086 /* UserProfileUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUDModel.swift; sourceTree = "<group>"; };
@@ -359,8 +355,6 @@
 		4B14A84E2909348B0097E838 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				4B14A84F290934A30097E838 /* PostTextField.swift */,
-				4B14A8512909370B0097E838 /* PostTextEditor.swift */,
 				4B14A854290968160097E838 /* PostButton.swift */,
 			);
 			path = Post;
@@ -518,7 +512,6 @@
 			isa = PBXGroup;
 			children = (
 				4B25488E2918F24D00E62EA7 /* DeleteAccount */,
-				4B254888291879A900E62EA7 /* EditInfo */,
 				4B1D95BF290FBEF2001FAF2E /* ChagePassword */,
 				4B202ACF290F63800076E26C /* MyViewButton.swift */,
 			);
@@ -543,15 +536,6 @@
 				4BC8990828DA8CA000189553 /* EditInfo */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		4B254888291879A900E62EA7 /* EditInfo */ = {
-			isa = PBXGroup;
-			children = (
-				4B254889291879CD00E62EA7 /* EditInfoTextField.swift */,
-				4B25488B29187A2400E62EA7 /* EditInfoTextEditor.swift */,
-			);
-			path = EditInfo;
 			sourceTree = "<group>";
 		};
 		4B25488E2918F24D00E62EA7 /* DeleteAccount */ = {
@@ -802,6 +786,8 @@
 		4B4C6BBC28FBC270007433C2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4B254889291879CD00E62EA7 /* TitleTextField.swift */,
+				4B25488B29187A2400E62EA7 /* ContentTextEditor.swift */,
 				4B5C88232939DAA5003F224E /* BackgroundTapGesture */,
 				4B0A52CC292F4C22000FA229 /* Chat */,
 				4B3FB51F291B466700E9BE51 /* BackButton */,
@@ -1373,7 +1359,6 @@
 				4B4C6BCF28FD02DA007433C2 /* LoginTitle.swift in Sources */,
 				909118D0290E70E300C80B42 /* ShowView.swift in Sources */,
 				4B3342A829381E9100C84C12 /* OpponentChatSkeleton.swift in Sources */,
-				4B14A8522909370B0097E838 /* PostTextEditor.swift in Sources */,
 				90D9B8292910DBE800F381F9 /* UserProfileView.swift in Sources */,
 				4B4C6BC228FBD30E007433C2 /* AuthButton.swift in Sources */,
 				909118D9290EB94300C80B42 /* SearchModalButton.swift in Sources */,
@@ -1402,7 +1387,6 @@
 				4B320D9028E147C200BCC086 /* TagListViewModel.swift in Sources */,
 				90DDB7872906CE140094DE71 /* ChatListView.swift in Sources */,
 				4BC89A3328DDAF8F00189553 /* ChangePasswordEmailViewModel.swift in Sources */,
-				4B14A850290934A30097E838 /* PostTextField.swift in Sources */,
 				4B320D8328DDCD6800BCC086 /* UserProfileUDModel.swift in Sources */,
 				4BC8992E28DA8D0700189553 /* UserClient.swift in Sources */,
 				90CF12CD292BA4D1003B26ED /* ChangePasswordEmailSuccessView.swift in Sources */,
@@ -1422,13 +1406,13 @@
 				90D9B82D2911311700F381F9 /* ChatClient.swift in Sources */,
 				90CF12C5292B4B44003B26ED /* EmailVerifyView.swift in Sources */,
 				90D1C6E228BF6DBA00B653C3 /* TabBarView.swift in Sources */,
-				4B25488C29187A2400E62EA7 /* EditInfoTextEditor.swift in Sources */,
+				4B25488C29187A2400E62EA7 /* ContentTextEditor.swift in Sources */,
 				4B4C6B9028EE8635007433C2 /* EditInfoView.swift in Sources */,
 				4B1D95C3290FDE96001FAF2E /* ChangePasswordTextField.swift in Sources */,
 				4B4C6BF728FE949A007433C2 /* EmailVerifyTextField.swift in Sources */,
 				906CC5DB2941716E00A387C3 /* ChattingViewModel.swift in Sources */,
 				4B5C88222939DA75003F224E /* BackgroundTapGesture.swift in Sources */,
-				4B25488A291879CD00E62EA7 /* EditInfoTextField.swift in Sources */,
+				4B25488A291879CD00E62EA7 /* TitleTextField.swift in Sources */,
 				907EF1E028BBBA7E008A7562 /* ToGatherApp.swift in Sources */,
 				90CF12B729272022003B26ED /* EnterNewPasswordViewModel.swift in Sources */,
 				90D1C6EC28BF7C8E00B653C3 /* SearchView.swift in Sources */,

@@ -4,7 +4,7 @@ extension String {
     var positionTypeChange: String {
         switch self {
         // KR -> EN
-        case "PM": return "PM"
+        case "PM": return self
         case "웹 프론트엔드": return "FRONTEND"
         case "백엔드": return "BACKEND"
         case "안드로이드": return "ANDROID"

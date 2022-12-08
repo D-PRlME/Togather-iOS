@@ -22,13 +22,13 @@ struct WritingView: View {
                 }
                 // MARK: - 제목
 
-                PostTextField(
+                TitleTextField(
                     placeholder: "제목",
                     text: $writingViewModel.title
                 )
                 // MARK: - 본문
 
-                PostTextEditor(
+                ContentTextEditor(
                     text: $writingViewModel.content,
                     placeholder: "본문을 입력하세요"
                 )

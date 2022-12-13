@@ -4,7 +4,103 @@ import SocketIO
 
 class ChatListViewModel: ObservableObject {
     let chatClient = MoyaProvider<ChatService>(plugins: [MoyaLoggerPlugin()])
+    private var manager = SocketManager(
+        socketURL: URL(string: "http://52.55.240.35:8081")!,
+        config: [
+            .log(true),
+            .compress
+        ]
+    )
+    var socket: SocketIOClient!
+    @Published var showSkeleton: Bool = true
     @Published var chattingRoomList: [ChattingRoomList] = []
+    @Published var chattingDataList: [ChattingDataLocalModel] = []
+    @Published var sendMessage: String = ""
+    @Published var socketStatus: Bool?
+    var roomID: Int = 0
+    init() {
+        self.manager.config = SocketIOClientConfiguration(
+            arrayLiteral:
+                .extraHeaders(["Authorization": "Bearer " + (Token.localAccessToken ?? "")]),
+                .version(.two),
+                .path("/socket.io"),
+                .reconnects(true)
+        )
+        self.socket = self.manager.defaultSocket
+    }
+    deinit {
+        socket.disconnect()
+    }
+    func listSocketCounnect() {
+        socket.connect()
+        self.onError()
+        self.onChat()
+        socket.on(clientEvent: .connect) { _, _ in
+            print("✅소켓서버에 연결되었습니다")
+            self.quitRoom()
+
+        }
+        socket.on(clientEvent: .disconnect) { _, _ in
+            print("🚫소켓서버에 연결해제 되었습니다")
+        }
+    }
+    func socketCounnect() {
+        socket.connect()
+        self.onError()
+        self.onChat()
+        socket.on(clientEvent: .connect) { _, _ in
+            print("✅소켓서버에 연결되었습니다")
+            self.joinRoom()
+            self.socketStatus = true
+        }
+        socket.on(clientEvent: .disconnect) { _, _ in
+            print("🚫소켓서버에 연결해제 되었습니다")
+            self.socketStatus = false
+        }
+    }
+    func socketDisconnect() {
+        socket.disconnect()
+    }
+    func onError() {
+        socket.on("error") { (dataArrya, _) in
+            print("에러: \(dataArrya)")
+        }
+    }
+    func onChat() {
+        socket.on("chat") { (dataArrya, _) in
+            let stringInData = dataArrya[0] as! String
+            let inputData = stringInData.data(using: .utf8)!
+            let Decoder = JSONDecoder()
+            DispatchQueue.main.async {
+                if let messageData = try? Decoder.decode(ChatList.self, from: inputData) {
+                    self.chattingDataList.append(
+                        ChattingDataLocalModel(
+                            user: ChattingUserLocal(
+                                userID: messageData.user.userID,
+                                userName: messageData.user.userName,
+                                profileImageURL: messageData.user.profileImageURL
+                            ),
+                            message: messageData.message,
+                            roomID: messageData.roomID,
+                            isMine: messageData.isMine,
+                            sentAt: messageData.sentAt
+                        )
+                    )
+                } else {
+                    print("🚫 socket decoder error")
+                }
+            }
+        }
+    }
+    func quitRoom() {
+        socket.emit("join", ["is_join_room": false])
+    }
+    func joinRoom() {
+        socket.emit("join", ["is_join_room": true, "room_id": roomID])
+    }
+    func sendChat() {
+        socket.emit("chat2", ["message": sendMessage])
+    }
     func fetchChatList() {
         chatClient.request(.fetchChatList) { res in
             switch res {

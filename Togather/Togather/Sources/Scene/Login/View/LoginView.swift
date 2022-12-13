@@ -26,7 +26,6 @@ struct LoginView: View {
                     )
                     LoginNavigationButton()
                     Spacer()
-                    LoginImageButton()
                 }
             }
             .padding([.horizontal, .bottom], 16)

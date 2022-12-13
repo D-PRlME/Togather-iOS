@@ -27,7 +27,7 @@ struct ChatListView: View {
                                                     .opacity(0.1)
                                             }
                                             .resizable()
-                                            .scaledToFit()
+                                            .scaledToFill()
                                             .clipShape(Circle())
                                             .frame(width: 56, height: 56)
                                             .cornerRadius(20)
@@ -52,12 +52,18 @@ struct ChatListView: View {
                                     .background(Color.whiteElevated1)
                                     .frame(width: proxy.size.width - 32)
                                     .cornerRadius(8)
-                                    .fullScreenCover(isPresented: $gotoChattingView) {
-                                        ChattingView(
-                                            index: $selectRoomID,
-                                            roomName: $selectRoomName
-                                        )
-                                    }
+                                    .fullScreenCover(
+                                        isPresented: $gotoChattingView,
+                                        onDismiss: {
+                                            chatListViewModel.fetchChatList()
+                                        },
+                                        content: {
+                                            ChattingView(
+                                                index: $selectRoomID,
+                                                roomName: $selectRoomName
+                                            )
+                                        }
+                                    )
                                 }
                                 .padding(.horizontal, 16)
                                 if !chatListViewModel.chattingRoomList[index].isRead {

@@ -163,13 +163,13 @@ extension UserService: TargetType {
     var headers: [String: String]? {
         switch self {
             // 토큰 필요없음
-        case .mailSignup, .mailVerify, .mailDuplicate, .signup, .login, .changePasswordEmail, .sendFindEmail:
+        case .mailSignup, .mailVerify, .mailDuplicate, .signup, .login, .changePasswordEmail:
             return Header.tokenIsEmpty.header()
             // 리프레시 토큰
         case .tokenReissue:
             return Header.refreshToken.header()
             // 엑세스 토큰
-        case .getMyprofile, .logout, .quitAccount, .changePassword, .changeMyInfo, .getUserProfile:
+        case .getMyprofile, .logout, .quitAccount, .changePassword, .changeMyInfo, .getUserProfile, .sendFindEmail:
             return Header.accessToken.header()
         }
     }

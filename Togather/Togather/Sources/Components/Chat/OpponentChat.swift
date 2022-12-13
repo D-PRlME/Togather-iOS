@@ -14,7 +14,7 @@ struct OpponentChat: View {
                         .fill(Color.whiteElevated3)
                 }
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
                 .clipShape(Circle())
                 .frame(width: 48, height: 48)
                 .cornerRadius(20)

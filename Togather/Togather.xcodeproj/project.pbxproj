@@ -44,7 +44,6 @@
 		4B4C6BCF28FD02DA007433C2 /* LoginTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BCE28FD02DA007433C2 /* LoginTitle.swift */; };
 		4B4C6BD428FD3424007433C2 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BD328FD3424007433C2 /* LoginTextField.swift */; };
 		4B4C6BDC28FE160C007433C2 /* LoginNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BDB28FE160C007433C2 /* LoginNavigationButton.swift */; };
-		4B4C6BDE28FE1881007433C2 /* LoginImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BDD28FE1881007433C2 /* LoginImageButton.swift */; };
 		4B4C6BE128FE45AC007433C2 /* SignUpTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BE028FE45AC007433C2 /* SignUpTitle.swift */; };
 		4B4C6BEB28FE486C007433C2 /* SignUpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BEA28FE486C007433C2 /* SignUpTextField.swift */; };
 		4B4C6BF328FE9255007433C2 /* EmailVerifyTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C6BF228FE9255007433C2 /* EmailVerifyTitle.swift */; };
@@ -185,7 +184,6 @@
 		4B4C6BCE28FD02DA007433C2 /* LoginTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTitle.swift; sourceTree = "<group>"; };
 		4B4C6BD328FD3424007433C2 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		4B4C6BDB28FE160C007433C2 /* LoginNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationButton.swift; sourceTree = "<group>"; };
-		4B4C6BDD28FE1881007433C2 /* LoginImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginImageButton.swift; sourceTree = "<group>"; };
 		4B4C6BE028FE45AC007433C2 /* SignUpTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTitle.swift; sourceTree = "<group>"; };
 		4B4C6BEA28FE486C007433C2 /* SignUpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextField.swift; sourceTree = "<group>"; };
 		4B4C6BF228FE9255007433C2 /* EmailVerifyTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyTitle.swift; sourceTree = "<group>"; };
@@ -849,7 +847,6 @@
 			isa = PBXGroup;
 			children = (
 				4B4C6BDB28FE160C007433C2 /* LoginNavigationButton.swift */,
-				4B4C6BDD28FE1881007433C2 /* LoginImageButton.swift */,
 			);
 			path = LoginButton;
 			sourceTree = "<group>";
@@ -1052,6 +1049,7 @@
 				907EF1DD28BBBA7E008A7562 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		907EF1DD28BBBA7E008A7562 /* Products */ = {
 			isa = PBXGroup;
@@ -1309,7 +1307,6 @@
 				90A05CBD28D304220031E71B /* UserPostModel.swift in Sources */,
 				90C50A5728CCBE8C007EA639 /* PostDetailView.swift in Sources */,
 				909118CA290A187C00C80B42 /* ImagePicker.swift in Sources */,
-				4B4C6BDE28FE1881007433C2 /* LoginImageButton.swift in Sources */,
 				4B4C6BC428FC3B2E007433C2 /* Color.swift in Sources */,
 				900990EF28D04EE700FD9462 /* MyPostModel.swift in Sources */,
 				4B4C6BD428FD3424007433C2 /* LoginTextField.swift in Sources */,

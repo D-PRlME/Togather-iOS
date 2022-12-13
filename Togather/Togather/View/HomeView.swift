@@ -12,7 +12,7 @@ struct HomeView: View {
         .linear
         .repeatForever(autoreverses: false)
     var body: some View {
-        GeometryReader { proxy in
+        GeometryReader { _ in
             ZStack {
                 ColorManager.BackgroundColor.ignoresSafeArea()
                 VStack(spacing: 0) {

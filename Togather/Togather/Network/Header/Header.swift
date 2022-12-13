@@ -1,5 +1,4 @@
 import Foundation
-import ReactiveSwift
 import SwiftKeychainWrapper
 
 struct Token {
@@ -32,7 +31,7 @@ struct Token {
 }
 
 enum Header {
-    case refreshToken, accessToken, tokenIsEmpty, socket
+    case refreshToken, accessToken, tokenIsEmpty
     func header() -> [String: String]? {
         guard let token = Token.accessToken else {
             return ["Content-Type": "application/json"]
@@ -47,8 +46,6 @@ enum Header {
             return ["Authorization": "Bearer " + token, "Content-Type": "application/json"]
         case .tokenIsEmpty:
             return ["Content-Type": "application/json"]
-        case .socket:
-            return ["Authorization": "Bearer " + token, "Content-Type": "application/json"]
         }
     }
 }
